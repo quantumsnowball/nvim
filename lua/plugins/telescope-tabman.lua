@@ -5,7 +5,7 @@ return {
     event = 'VeryLazy',
     branch = 'dev',
     dependencies = 'nvim-telescope/telescope.nvim',
-    config = function()
+    init = function()
         local tele = require('telescope')
         local tabman = tele.extensions.tabman.tabman
         -- load extension
