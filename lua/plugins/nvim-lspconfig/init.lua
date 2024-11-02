@@ -17,9 +17,7 @@ return {
         "williamboman/mason.nvim",
         cmd = "Mason",
         keys = { { "<leader>M", "<cmd>Mason<cr>", desc = "Mason" } },
-        config = function()
-            require("mason").setup()
-        end,
+        opts = {}
     },
     -- mason-lspconfig
     -- https://github.com/williamboman/mason-lspconfig.nvim
