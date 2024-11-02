@@ -9,7 +9,7 @@ return {
         -- close last buffer doesn't play well with nvimtree, using vim-bbye now
         map('n', '<M-w>', ':Bdelete<CR>')
         map('n', '<space>x', ':Bdelete<CR>')
-        map('n', 'qb', ':Bdelete<CR>')
+        map('n', 'qb', ':Bdelete<CR>', { desc = 'close buffer' })
         -- close all and other buffer by close-buffers.nvim
         local delete = require('close_buffers').delete
         local close_all_buffers = function()

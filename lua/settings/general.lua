@@ -8,7 +8,7 @@ map('n', '<leader>L', ':Lazy<cr>')
 map('n', '<c-s>', ':noautocmd w<cr>')
 map('i', '<c-s>', '<c-o>:w<cr>')
 map('v', '<c-s>', '<esc>:w<cr>')
-map('n', 'qs', ':w<cr>')
+map('n', 'qs', ':w<cr>', { desc = 'quick save' })
 map('n', ';s', ':w<cr>')
 map('n', ';S', ':wa<cr>')
 map('n', '<leader><leader>', ':wa<cr>')
@@ -28,7 +28,7 @@ map('n', 'gw', ':set wrap!<cr>')
 -- quick fix list --
 map('n', '<leader>qf', ':copen<cr>')
 -- close tabpages to the right
-map('n', 'q>', '<cmd>.+1,$tabdo :tabclose<cr>')
+map('n', 'q>', '<cmd>.+1,$tabdo :tabclose<cr>', { desc = 'close tabs to the right' })
 map('n', 't>', '<cmd>.+1,$tabdo :tabclose<cr>')
 -- exit terminal insert mode easily
 map('t', '<c-h>', '<c-\\><c-n><c-w>h')

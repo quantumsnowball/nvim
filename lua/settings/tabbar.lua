@@ -4,9 +4,9 @@
 local map = require('utils').map
 
 -- navigate between buffers
-map('n', 'q-', ':bprev<CR>')
-map('n', 'q=', ':bnext<CR>')
-map('n', 'q;', ':e #<CR>')
+map('n', 'q-', ':bprev<CR>', { desc = 'previous buffer' })
+map('n', 'q=', ':bnext<CR>', { desc = 'next buffer' })
+map('n', 'q;', ':e #<CR>', { desc = 'edit previous buffer' })
 
 -- navigate between tabpages
 map('n', 'tj', ':tabprevious<cr>')
