@@ -6,11 +6,11 @@ return {
         silent = false,
         termOpts = {
             direction = "horizontal", -- terminal's direction ("horizontal"|"vertical"|"float")
-            height = 10, -- terminal's height (for horizontal|float)
+            height = 10,              -- terminal's height (for horizontal|float)
             go_back = true
         },
     },
-    config = function(_, opts)
+    init = function(_, opts)
         require('nvim-test').setup(opts)
         -- @pytest . -k 'not lab' --pdb --workers auto
         require('nvim-test.runners.pytest'):setup {

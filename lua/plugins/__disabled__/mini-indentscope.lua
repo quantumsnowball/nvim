@@ -10,7 +10,7 @@ return {
         symbol = "│",
         options = { try_as_border = true },
     },
-    config = function(_, opts)
+    init = function(_, opts)
         vim.api.nvim_create_autocmd("FileType", {
             pattern = { "vimdoc", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason", "NvimTree" },
             callback = function()

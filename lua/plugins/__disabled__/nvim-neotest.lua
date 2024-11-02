@@ -29,7 +29,7 @@ return {
             { '<leader>TS', function() require("neotest").summary.toggle() end,      desc = 'neotest.summary.toggle()' },
             { '<leader>TO', function() require("neotest").output_panel.toggle() end, desc = 'neotest.summary.output()' },
         },
-        config = true
+        opts = {}
     },
     {
         -- adapters
@@ -39,7 +39,7 @@ return {
         dependencies = {
             "quantumsnowball/neotest",
         },
-        config = function()
+        init = function()
             -- @pytest . -k 'not lab' --pdb --workers auto
             require("neotest").setup({
                 adapters = {

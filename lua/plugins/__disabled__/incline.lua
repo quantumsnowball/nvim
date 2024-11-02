@@ -3,7 +3,7 @@
 return {
     'b0o/incline.nvim',
     lazy = true,
-    config = function()
+    init = function()
         -- define its own highligh group
         vim.cmd [[ autocmd VimEnter,ColorScheme * hi InclineActive guifg=#deff00 guibg=#555555 gui=bold ]]
         vim.cmd [[ autocmd VimEnter,ColorScheme * hi InclineInactive guifg=#deff00 guibg=#444444 ]]

@@ -3,7 +3,7 @@
 return {
     'sainnhe/sonokai',
     enabled = false,
-    config = function()
+    init = function()
         -- enable the theme and choose the variant
         -- options:
         --   default, atlantis, andromeda, shusia, maia, espresso
