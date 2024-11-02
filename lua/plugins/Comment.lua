@@ -5,7 +5,8 @@ return {
     event = 'VeryLazy',
     opts = {},
     init = function()
+        local map = require('utils').map
         -- remap <leader>/ to line comment toggle
-        vim.cmd 'nmap <leader>/ gcc'
+        map('n', '<leader>/', 'gcc', { remap = true, desc = 'toggle line comment' })
     end
 }
