@@ -24,12 +24,11 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         keys = require('plugins.nvim-lspconfig.keymaps'),
-        config = function()
+        opts = {
             -- auto install some servers
-            local list = require('plugins.nvim-lspconfig.constants').ensure_installed
-            require("mason-lspconfig").setup { ensure_installed = list }
-            -- neovim's default capabilities
-            local caps = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+            ensure_installed = require('plugins.nvim-lspconfig.constants').ensure_installed
+        },
+        init = function()
             --
             -- lsp server settings
             --
@@ -45,6 +44,8 @@ return {
                 "jsonls",
                 "html",
             }
+            -- neovim's default capabilities
+            local caps = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
             for _, name in pairs(selected) do
                 require('plugins.nvim-lspconfig.lsp')(name, caps)
             end
