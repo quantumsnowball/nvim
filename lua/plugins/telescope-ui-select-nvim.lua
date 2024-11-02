@@ -5,7 +5,7 @@ return {
     'nvim-telescope/telescope-ui-select.nvim',
     event = 'VeryLazy',
     dependencies = 'nvim-telescope/telescope.nvim',
-    config = function()
+    init = function()
         local tele = require('telescope')
         tele.load_extension("ui-select")
     end

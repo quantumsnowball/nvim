@@ -2,7 +2,7 @@
 -- https://github.com/Shatur/neovim-session-manager
 return {
     'Shatur/neovim-session-manager',
-    config = function()
+    init = function()
         -- plugin custom
         require('session_manager').setup({
             -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession

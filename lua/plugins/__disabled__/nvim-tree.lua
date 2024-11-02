@@ -8,7 +8,7 @@ return {
     keys = {
         { '<leader>E', '<cmd>NvimTreeToggle .<cr>', desc = 'NvimTreeToggle' },
     },
-    config = function()
+    init = function()
         require('nvim-tree').setup {
             actions = {
                 change_dir = {

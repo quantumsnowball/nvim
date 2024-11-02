@@ -55,7 +55,7 @@ return {
     keys = {
         { '<F7>', function() require('dapui').toggle({ reset = true }) end, desc = 'nvim-dap-ui.toggle()' },
     },
-    config = function()
+    init = function()
         -- events
         local dapui = require("dapui")
         dapui.setup(opts)

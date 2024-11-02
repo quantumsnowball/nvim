@@ -11,16 +11,16 @@
 return {
     'ggandor/leap.nvim',
     event = 'VeryLazy',
-    config = function()
-        require('leap').set_default_keymaps()
-        require('leap').setup {
-            special_keys = {
-                repeat_search = '<tab>',
-                next_target = '<tab>',
-                prev_target = '<s-tab>',
-                next_group = ']',
-                prev_group = '['
-            }
+    opts = {
+        special_keys = {
+            repeat_search = '<tab>',
+            next_target = '<tab>',
+            prev_target = '<s-tab>',
+            next_group = ']',
+            prev_group = '['
         }
+    },
+    init = function()
+        require('leap').set_default_keymaps()
     end
 }

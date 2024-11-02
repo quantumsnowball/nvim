@@ -4,10 +4,8 @@ return {
     'nvim-telescope/telescope.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
     event = 'VeryLazy',
-    config = function()
-        -- configs
-        local configs = require('plugins.telescope.configs')
-        require('telescope').setup(configs)
+    opts = require('plugins.telescope.configs'),
+    init = function()
         -- telescope keymaps
         require('plugins.telescope.keymaps')
     end
