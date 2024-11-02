@@ -42,7 +42,7 @@ map('n', 'g;', 'A:<esc>', { desc = 'insert `;` at line end' })
 -- C-o will also open new line in insert mode
 map('i', '<C-o>', '<esc>o')
 -- toggle spell checking
-map('n', '<leader>sc', ':set spell!<cr>')
+map('n', '<leader>sc', ':set spell!<cr>', { desc = 'toggle spell checking' })
 -- use Tab to toggle matching group
 -- -- normal mode: matching  or tags (by matchit.vim, need to set remap=true)
 -- -- visual mode: easily select the opposite matching whole section
@@ -66,15 +66,15 @@ map('n', ';C', '"_ciW', { desc = 'change inner word' })
 map('n', ';l', '"_dd', { desc = 'delete whole line' })
 -- quick pairs
 --   new line
-map('n', '<leader>[', 'A<space>[<cr>]<esc>O')
-map('n', '<leader>{', 'A<space>{<cr>}<esc>O')
-map('n', '<leader>(', 'A<space>(<cr>)<esc>O')
+map('n', '<leader>[', 'A<space>[<cr>]<esc>O', { desc = 'insert `[]` pair on new line' })
+map('n', '<leader>{', 'A<space>{<cr>}<esc>O', { desc = 'insert `{}` pair on new line' })
+map('n', '<leader>(', 'A<space>(<cr>)<esc>O', { desc = 'insert `()` pair on new line' })
 --   same line
-map('n', '<leader>]', 'a[]<left>')
-map('n', '<leader>}', 'a{}<left>')
-map('n', '<leader>)', 'a()<left>')
-map('n', "<leader>'", "a''<left>")
-map('n', '<leader>"', 'a""<left>')
+map('n', '<leader>]', 'a[]<left>', { desc = 'insert `[]` pair on same line' })
+map('n', '<leader>}', 'a{}<left>', { desc = 'insert `{}` pair on same line' })
+map('n', '<leader>)', 'a()<left>', { desc = 'insert `()` pair on same line' })
+map('n', "<leader>'", "a''<left>", { desc = "insert `''` pair on same line" })
+map('n', '<leader>"', 'a""<left>', { desc = 'insert `""` pair on same line' })
 -- </> tags
-map('n', '<leader><', 'A<><left>')
-map('n', '<leader>>', 'A</><left>')
+map('n', '<leader><', 'A<><left>', { desc = 'insert `<>` pair on same line' })
+map('n', '<leader>>', 'A</><left>', { desc = 'insert `</>` pair on same line' })

@@ -46,10 +46,10 @@ map('n', 'tL', ':tablast<cr>', { desc = 'go to last tab' })
 -- quickly go to a tabpage with number 1 to 9
 for i = 1, 9, 1 do
     map('n', 't' .. i, i .. 'gt', { desc = 'go to tab ' .. i })
-    map('n', '<leader>' .. i, i .. 'gt')
+    map('n', '<leader>' .. i, i .. 'gt', { desc = 'go to tab ' .. i })
 end
 map('n', 't0', '10gt', { desc = 'go to tab 10' })
-map('n', '<leader>0', '10gt')
+map('n', '<leader>0', '10gt', { desc = 'go to tab 10' })
 
 -- default split to right and below
 vim.opt.splitbelow = true

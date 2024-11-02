@@ -11,7 +11,7 @@ map('v', '<c-s>', '<esc>:w<cr>')
 map('n', 'qs', ':w<cr>', { desc = 'quick save' })
 map('n', ';s', ':w<cr>', { desc = 'quick save' })
 map('n', ';S', ':wa<cr>', { desc = 'quick save all buffers' })
-map('n', '<leader><leader>', ':wa<cr>')
+map('n', '<leader><leader>', ':wa<cr>', { desc = 'quick save all buffers' })
 -- show which-key root
 map('n', '<F1>', ':WhichKey<cr>', { silent = true })
 -- cancel search highlight after search
@@ -26,7 +26,7 @@ map({ 'n', 'v' }, 'q', '<Nop>')
 -- toggle word wrap
 map('n', 'gw', ':set wrap!<cr>')
 -- quick fix list --
-map('n', '<leader>qf', ':copen<cr>')
+map('n', '<leader>qf', ':copen<cr>', { desc = 'open quickfix list' })
 -- close tabpages to the right
 map('n', 'q>', '<cmd>.+1,$tabdo :tabclose<cr>', { desc = 'close tabs to the right' })
 map('n', 't>', '<cmd>.+1,$tabdo :tabclose<cr>', { desc = 'close tabs to the right' })
