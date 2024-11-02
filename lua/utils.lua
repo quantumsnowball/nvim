@@ -41,6 +41,4 @@ function M.get_nearest_pytest_function_name(prefix)
     return nil
 end
 
--- dev
-M.map('n', '<space>t', M.get_nearest_pytest_function_name)
 return M
