@@ -45,10 +45,10 @@ map('n', 'daa', 'ggVG"_d', { desc = 'delete all text' })
 map('n', '<leader>daa', 'ggVGd', { desc = 'cut all text' })
 map('n', 'caa', 'ggVG"_c', { desc = 'change all text' })
 -- copy/duplicate lines/block above/below
-map('n', 'zk', '""yy""P^')      -- line above
-map('v', 'zk', '""y`<""P`[V`]') -- block above
-map('n', 'zj', '""yy""p$')      -- line below
-map('v', 'zj', '""y`>""p`[V`]') -- block above
+map('n', 'zk', '""yy""P^', { desc = 'duplicate line to above' })
+map('v', 'zk', '""y`<""P`[V`]', { desc = 'duplicate block to above' })
+map('n', 'zj', '""yy""p$', { desc = 'duplicate line to below' })
+map('v', 'zj', '""y`>""p`[V`]', { desc = 'duplicate block to below' })
 -- #debug yy is delay, yj/yk somethings will copy the adjacent lines
 -- temp fix map all mistake key to copy line
 map('n', 'yj', 'yy')
