@@ -4,7 +4,7 @@ return {
     'moll/vim-bbye',
     event = 'VeryLazy',
     dependencies = 'kazhala/close-buffers.nvim',
-    config = function()
+    init = function()
         local map = require('utils').map
         -- close last buffer doesn't play well with nvimtree, using vim-bbye now
         map('n', '<M-w>', ':Bdelete<CR>')
