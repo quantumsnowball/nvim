@@ -7,8 +7,8 @@ map('n', 'qw', ':q<cr>', { desc = 'quit window' })
 map('n', 'qW', ':qa<cr>', { desc = 'quit all windows' })
 map('n', 'qv', ':qa<cr>', { desc = 'quit neovim' })
 -- toggle split windows
-map('n', 'g-', ':split<cr>')
-map('n', 'g\\', ':vsplit<cr>')
+map('n', 'g-', ':split<cr>', { desc = 'split horizontally to bottom' })
+map('n', 'g\\', ':vsplit<cr>', { desc = 'split vertically to right' })
 -- window rotation
 map('n', 'q]', '<c-w>r', { desc = 'rotate windows (forward)' })
 map('n', 'q[', '<c-w>R', { desc = 'rotate windows (backward)' })
@@ -32,4 +32,4 @@ local function toggleMaximize()
     isZoomed = not isZoomed
 end
 
-map('n', 'gm', toggleMaximize)
+map('n', 'gm', toggleMaximize, { desc = 'toggle maximize window' })

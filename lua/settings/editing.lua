@@ -25,20 +25,20 @@ map('i', '<S-Tab>', '<C-d>')
 map('n', '|', 'i<C-m><esc>:MoveLine(-1)<CR>')
 map('n', '\\', 'i<C-m><esc>')
 -- go and gO will open new line but stay in normal mode
-map('n', 'gO', 'O<esc>')
-map('n', 'go', 'o<esc>')
+map('n', 'gO', 'O<esc>', { desc = 'open a new line above' })
+map('n', 'go', 'o<esc>', { desc = 'open a new line below' })
 -- g, and g. insert space before/after cursor
-map('n', 'g,', 'i<space><esc><right>')
-map('n', 'g.', 'a<space><esc><left>')
+map('n', 'g,', 'i<space><esc><right>', { desc = 'insert a space right' })
+map('n', 'g.', 'a<space><esc><left>', { desc = 'insert a space left' })
 -- g), g], g} insert closing pair match at line end in normal mode
-map('n', 'g)', '$a)<esc>')
-map('n', 'g0', '$a)<esc>') -- shorthand for )
-map('n', 'g]', '$a]<esc>')
-map('n', 'g}', '$a}<esc>')
-map('n', "g'", "$a'<esc>")
-map('n', 'g"', '$a"<esc>')
+map('n', 'g)', '$a)<esc>', { desc = 'insert `)` at line end' })
+map('n', 'g0', '$a)<esc>', { desc = 'insert `)` at line end' }) -- shorthand for )
+map('n', 'g]', '$a]<esc>', { desc = 'insert `]` at line end' })
+map('n', 'g}', '$a}<esc>', { desc = 'insert `}` at line end' })
+map('n', "g'", "$a'<esc>", { desc = "insert `'` at line end" })
+map('n', 'g"', '$a"<esc>', { desc = 'insert `"` at line end' })
 -- g; insert : at the end of line
-map('n', 'g;', 'A:<esc>')
+map('n', 'g;', 'A:<esc>', { desc = 'insert `;` at line end' })
 -- C-o will also open new line in insert mode
 map('i', '<C-o>', '<esc>o')
 -- toggle spell checking
