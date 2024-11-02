@@ -1,9 +1,9 @@
 return {
 	"jose-elias-alvarez/null-ls.nvim",
 	event = "BufReadPre",
-	config = function()
+	opts = function()
 		local null_ls = require("null-ls")
-		null_ls.setup({
+		local opts = {
 			sources = {
 				null_ls.builtins.formatting.isort,
 				null_ls.builtins.formatting.autopep8.with({
@@ -13,6 +13,8 @@ return {
 				-- null_ls.builtins.formatting.stylua,
 				-- null_ls.builtins.diagnostics.eslint,
 			},
-		})
+		}
+		-- return opts to setup()
+		return opts
 	end,
 }
