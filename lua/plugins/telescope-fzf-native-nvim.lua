@@ -13,7 +13,7 @@ return {
     event = 'VeryLazy',
     build = 'make',
     dependencies = 'nvim-telescope/telescope.nvim',
-    config = function()
+    init = function()
         local tele = require('telescope')
         tele.load_extension('fzf')
     end
