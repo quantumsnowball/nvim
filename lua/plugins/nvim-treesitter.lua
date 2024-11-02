@@ -42,14 +42,12 @@ return {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     event = 'BufReadPost',
-    config = function()
-        require('nvim-treesitter.configs').setup {
-            ensure_installed = selected_parser,
-            ignore_install = { "phpdoc" }, -- can never download successfully on macos
-            highlight = { enable = true },
-            incremental_selection = { enable = true },
-            textobjects = { enable = true },
-            indent = { enable = false }
-        }
-    end
+    opts = {
+        ensure_installed = selected_parser,
+        ignore_install = { "phpdoc" },     -- can never download successfully on macos
+        highlight = { enable = true },
+        incremental_selection = { enable = true },
+        textobjects = { enable = true },
+        indent = { enable = false }
+    },
 }
