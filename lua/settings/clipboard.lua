@@ -56,7 +56,7 @@ map('n', 'yk', 'yy')
 -- `'` as register operator, `gm` as go to mark
 map({ 'n', 'v' }, "'", '"')
 map({ 'n', 'v' }, 'zm', "'")
--- copy/paste helpers
+-- copy/cut/paste helpers
 local function parse_range(opts)
     -- with nargs = '+', at least one arg is supplied
     local arg1 = tonumber(opts.fargs[1])
@@ -78,3 +78,13 @@ vim.api.nvim_create_user_command('YankPutAfter', function(opts)
 end, { nargs = '+' })
 map('n', 'yP', ':YankPutBefore ')
 map('n', 'yp', ':YankPutAfter ')
+vim.api.nvim_create_user_command('DeletePutBefore', function(opts)
+    vim.cmd('' .. parse_range(opts) .. 'delete')
+    vim.api.nvim_feedkeys('``P', 'n', false)
+end, { nargs = '+' })
+vim.api.nvim_create_user_command('DeletePutAfter', function(opts)
+    vim.cmd('' .. parse_range(opts) .. 'delete')
+    vim.api.nvim_feedkeys('``p', 'n', false)
+end, { nargs = '+' })
+map('n', 'dP', ':DeletePutBefore ')
+map('n', 'dp', ':DeletePutAfter ')
