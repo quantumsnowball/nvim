@@ -3,8 +3,8 @@
 return {
     'numToStr/Comment.nvim',
     event = 'VeryLazy',
-    config = function()
-        require('Comment').setup {}
+    opts = {},
+    init = function()
         -- remap <leader>/ to line comment toggle
         vim.cmd 'nmap <leader>/ gcc'
     end

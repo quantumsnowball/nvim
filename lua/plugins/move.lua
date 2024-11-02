@@ -3,12 +3,10 @@
 return {
     'fedepujol/move.nvim',
     event = 'VeryLazy',
-    config = function()
+    opts = {},
+    init = function()
         local map = require('utils').map
         local opts = { silent = true }
-
-        -- enable the plugin
-        require('move').setup({})
 
         -- Normal-mode
         map('n', '<C-down>', ':MoveLine(1)<CR>', opts)

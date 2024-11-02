@@ -4,7 +4,7 @@ return {
     'goolord/alpha-nvim',
     event = 'VimEnter',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
-    config = function()
+    opts = function()
         local dashboard = require("alpha.themes.dashboard")
         -- Set header
         dashboard.section.header.val = {
@@ -38,7 +38,8 @@ return {
             -- dashboard.button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
             -- dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
         }
-        -- Send config to alpha
-        require('alpha').setup(dashboard.opts)
+
+        -- Send config to alpha.setup()
+        return dashboard.opts
     end
 }

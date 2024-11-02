@@ -3,7 +3,7 @@
 return {
     'tpope/vim-sleuth',
     event = 'VimEnter',
-    config = function()
+    init = function()
         -- default neovim tabsize to 4 space
         vim.opt.tabstop = 4
         -- shift width match with tabstop

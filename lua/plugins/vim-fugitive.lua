@@ -3,7 +3,7 @@
 return {
     'tpope/vim-fugitive',
     event = 'VeryLazy',
-    config = function()
+    init = function()
         require('utils').map('n', '<leader>Gd', ':Gvdiff<cr>', { desc = 'telescope.diagnostics()' })
         require('utils').map('n', '<leader>gc', ':Git commit<cr>', {})
         require('utils').map('n', '<leader>gp', ':Git push<cr>', {})
