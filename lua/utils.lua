@@ -1,14 +1,14 @@
 local M = {}
 
 -- create keymap with presets
-function M.map(mode, keys, command, options)
+function M.map(mode, lhs, rhs, opts)
     -- defaults
     local defaults = {
         silent = true,
     }
     -- set keymaps
-    options = vim.tbl_extend('force', defaults, options or {})
-    vim.keymap.set(mode, keys, command, options)
+    opts = vim.tbl_extend('force', defaults, opts or {})
+    vim.keymap.set(mode, lhs, rhs, opts)
 end
 
 -- a debug helper
