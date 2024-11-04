@@ -3,9 +3,14 @@
 return {
     'kazhala/close-buffers.nvim',
     event = 'VeryLazy',
+    opts = {
+        -- Types of deletion that should preserve the window layout
+        preserve_window_layout = { 'this', 'nameless', 'other' },
+    },
     init = function()
         local map = require('utils').map
         local delete = require('close_buffers').delete
+
         -- keymaps
         map('n', 'qb',
             function()
