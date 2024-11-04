@@ -110,7 +110,7 @@ return {
                     filetype = { 'neo-tree', "neo-tree-popup", "notify" },
 
                     -- if the buffer type is one of following, the window will be ignored
-                    buftype = { 'terminal', "quickfix" },
+                    buftype = { 'terminal', "quickfix", "nofile" },
                 },
             },
             -- other_win_hl_color = '#e35e4f',
