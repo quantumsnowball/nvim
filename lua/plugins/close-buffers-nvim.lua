@@ -11,17 +11,28 @@ return {
         local map = require('utils').map
         local delete = require('close_buffers').delete
 
+        --
         -- keymaps
-        map('n', 'qb',
-            function()
-                delete({ type = 'this' })
-            end,
-            { desc = 'close current buffer' })
-        map('n', 'qB',
-            function()
-                delete({ type = 'this', force = true })
-            end,
-            { desc = 'close current buffer (force)' })
+        --
+        -- current
+        local function qb(force)
+            return function()
+                delete({ type = 'this', force = force })
+            end
+        end
+        map('n', 'qb', qb(false), { desc = 'close current buffer' })
+        map('n', 'qB', qb(true), { desc = 'close current buffer (force)' })
+        -- all
+        local function qa(force)
+            return function()
+                vim.cmd('tabnew | Alpha')
+                vim.cmd('tabonly')
+                delete({ type = 'hidden', force = force })
+            end
+        end
+        map('n', 'qa', qa(false), { desc = 'close all buffers and tabpages' })
+        map('n', 'qA', qa(true), { desc = 'close all buffers and tabpages (force)' })
+        -- others
         map('n', 'qo',
             function()
                 vim.cmd('tabonly')
@@ -38,24 +49,5 @@ return {
                 vim.cmd('tabonly')
             end,
             { desc = 'close other tabpages' })
-        map('n', 'qa',
-            function()
-                vim.cmd('tabnew | Alpha')
-                vim.cmd('tabonly')
-                delete({ type = 'hidden' })
-            end,
-            { desc = 'close all buffers and tabpages' })
-        map('n', 'qA',
-            function()
-                vim.cmd('tabnew | Alpha')
-                vim.cmd('tabonly')
-                delete({ type = 'hidden', force = true })
-            end,
-            { desc = 'close all buffers and tabpages (force)' })
-        map('n', 'qh',
-            function()
-                delete({ type = 'hidden', force = true })
-            end,
-            { desc = 'close all hidden buffers' })
     end
 }
