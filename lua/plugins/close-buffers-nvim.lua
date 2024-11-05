@@ -35,14 +35,14 @@ return {
             { desc = 'close other tabpages' })
         map('n', 'qa',
             function()
-                vim.cmd('Alpha')
+                vim.cmd('tabnew | Alpha')
                 vim.cmd('tabonly')
-                delete({ type = 'other' })
+                delete({ type = 'hidden' })
             end,
             { desc = 'close all buffers and tabpages' })
         map('n', 'qh',
             function()
-                delete({ type = 'hidden' })
+                delete({ type = 'hidden', force = true })
             end,
             { desc = 'close all hidden buffers' })
     end
