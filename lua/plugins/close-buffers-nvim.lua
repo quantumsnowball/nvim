@@ -17,6 +17,11 @@ return {
                 delete({ type = 'this' })
             end,
             { desc = 'close current buffer' })
+        map('n', 'qB',
+            function()
+                delete({ type = 'this', force = true })
+            end,
+            { desc = 'close current buffer (force)' })
         map('n', 'qo',
             function()
                 vim.cmd('tabonly')
