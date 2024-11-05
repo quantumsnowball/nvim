@@ -24,7 +24,7 @@ map('n', 'gg', 'ggzz')
 map({ 'n', 'v' }, '<leader>q', 'q')
 map({ 'n', 'v' }, 'q', '<Nop>')
 -- toggle word wrap
-map('n', 'gw', ':set wrap!<cr>')
+map('n', 'gw', ':set wrap!<cr>', { desc = 'toggle text wrap' })
 -- quick fix list --
 map('n', '<leader>qf', ':copen<cr>', { desc = 'open quickfix list' })
 -- close tabpages to the right
