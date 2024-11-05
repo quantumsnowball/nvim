@@ -29,6 +29,7 @@ return {
             { type = "text",    val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
             { type = "padding", val = 1 },
             dashboard.button("e", "E  File Explorer", "<cmd>Neotree reveal float<cr>"),
+            dashboard.button("g", "G  LazyGit", "<cmd>LazyGit<cr>"),
             dashboard.button("r", "R  Recent",
                 '<cmd>lua require("telescope.builtin").oldfiles({layout_strategy="vertical"})<cr>'),
             dashboard.button("f", "F  Find file",
