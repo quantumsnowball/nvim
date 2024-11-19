@@ -3,10 +3,9 @@
 return {
     {
         'nvim-neo-tree/neo-tree.nvim',
-        branch = "v2.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+            "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
             's1n7ax/nvim-window-picker'
         },
@@ -43,13 +42,6 @@ return {
                 name = {
                     trailing_slash = true,
                 },
-                git_status = {
-                    symbols = {
-                        -- Change type
-                        added    = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
-                        modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
-                    }
-                }
             },
             window = {
                 mappings = {
