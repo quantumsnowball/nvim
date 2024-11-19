@@ -46,8 +46,9 @@ return {
             window = {
                 mappings = {
                     ['<esc>'] = 'close_window',
-                    ['o'] = 'toggle_node',
+                    ['l'] = 'toggle_node',
                     ['e'] = 'toggle_node',
+                    ['h'] = 'close_node',
                     ['<right>'] = 'open',
                     ['<left>'] = 'close_node',
                     ["<bs>"] = 'close_node',
@@ -61,7 +62,6 @@ return {
                     -- disable
                     ['s'] = '',
                     ['S'] = '',
-                    ['l'] = '',
                     ['.'] = '',
                 }
             },
