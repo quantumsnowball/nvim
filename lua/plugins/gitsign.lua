@@ -42,5 +42,18 @@ return {
         -- highlight current line and column
         vim.opt.cursorline = true
         vim.opt.cursorcolumn = true
+        -- TODO: #bug
+        -- Gitsigns doesn't always refresh after stage or commit
+        -- force reset_base every BufEnter event may be a temp solution
+        -- vim.api.nvim_create_autocmd("BufEnter", {
+        --     pattern = "*",
+        --     callback = function()
+        --         local success, gitsigns = pcall(require, 'gitsigns')
+        --         if success then
+        --             gitsigns.reset_base()
+        --             -- print(':Gitsigns reset_base')
+        --         end
+        --     end,
+        -- })
     end
 }
