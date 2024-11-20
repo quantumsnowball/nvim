@@ -55,5 +55,11 @@ return {
         --         end
         --     end,
         -- })
+        vim.api.nvim_create_autocmd('User', {
+            pattern = { 'GitSignsUpdate', 'GitSignsChanged' },
+            callback = function(args)
+                print(os.date(), ':', vim.inspect(args))
+            end
+        })
     end
 }
