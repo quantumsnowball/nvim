@@ -28,16 +28,16 @@ return {
             vim.api.nvim_set_hl(0, highlight[7], { fg = "#56B6C2" })
         end)
         -- other opts to send to setup()
+        -- - left bar char choice: █ ▉ ▊ ▋ ▌ ▍ ▎ ▏
         return {
-            -- show_end_of_line = true,
-            -- space_char_blankline = " ",
-            -- show_current_context = true,
-            -- show_current_context_start = true,
-            indent = { highlight = highlight, },
+            indent = {
+                char = '▎',
+                highlight = highlight,
+            },
             scope = {
                 enabled = true,
-                char = '󱋱',
-                highlight = { "Function", "Label" },
+                char = '▊',
+                highlight = "RainbowGreen",
             }
         }
     end,
