@@ -39,12 +39,14 @@ C.new('diff_text', '#23324d')
 
 
 -- Groups
--- common
+-- basic
 G.new('Normal', c.white, c.base2)
-G.new('Identifier', c.white, c.base2)
-G.new('Comment', c.base6)
-G.new('Identifier', c.white)
+G.new('NormalFloat', nil, c.base1)
+-- core
 G.new('Keyword', c.pink)
+G.new('Identifier', c.white, c.base2)
+G.new('Variable', c.white, c.base2)
+G.new('Constant', c.aqua)
 G.new('Include', c.pink)
 G.new('Statement', c.pink)
 G.new('Function', c.green)
@@ -52,18 +54,25 @@ G.new('String', c.yellow)
 G.new('Character', c.yellow)
 G.new('Operator', c.pink)
 G.new('MatchParen', c.pink)
+G.new('Define', c.pink)
 G.new('Number', c.purple)
 G.new('Float', c.purple)
 G.new('Boolean', c.purple)
 G.new('Type', c.aqua)
-G.new('Constant', c.aqua)
+-- comment
+G.new('Comment', c.base6)
+G.new('Todo', c.orange)
 G.new('Visual', nil, c.base4)
 G.new('Special', c.red)
+G.new('SpecialChar', c.pink)
+G.new('WarningMsg', c.yellow)
+G.new('Error', c.red)
+G.new('ErrorMsg', c.red)
+-- interface
 G.new('Search', nil, c.yellow)
 G.new('CursorLineNr', c.orange, c.base2)
 G.new('LineNr', c.base5, c.base2)
-G.new('ErrorMsg', c.red)
-G.new('WarningMsg', c.yellow)
+G.new('Directory', c.aqua)
 -- Telescope
 G.new('TelescopeBorder', c.base7)
 G.new('TelescopeNormal', c.base8, c.base0)
