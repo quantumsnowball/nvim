@@ -4,314 +4,103 @@
 -- module
 local M = {}
 
-M.setup = function(palette)
+M.setup = function(c)
     local groups = {
-        Normal = {
-            fg = palette.white,
-            bg = palette.base2,
-        },
-        NormalFloat = {
-            bg = palette.base1,
-        },
-        Pmenu = {
-            fg = palette.white,
-            bg = palette.base3,
-        },
-        PmenuSel = {
-            fg = palette.base4,
-            bg = palette.orange,
-        },
-        PmenuSelBold = {
-            fg = palette.base4,
-            bg = palette.orange,
-        },
-        PmenuThumb = {
-            fg = palette.purple,
-            bg = palette.green,
-        },
-        PmenuSbar = {
-            bg = palette.base3,
-        },
-        Cursor = {
-            -- style = 'reverse',
-        },
-        ColorColumn = {
-            bg = palette.base3,
-        },
-        CursorLine = {
-            bg = palette.base3,
-        },
-        NonText = { -- used for "eol", "extends" and "precedes" in listchars
-            fg = palette.base5,
-        },
-        Visual = {
-            bg = palette.base4,
-        },
-        VisualNOS = {
-            bg = palette.base3,
-        },
-        Search = {
-            fg = palette.base2,
-            bg = palette.yellow,
-        },
-        IncSearch = {
-            fg = palette.base2,
-            bg = palette.orange,
-        },
-        CursorLineNr = {
-            fg = palette.orange,
-            bg = palette.base2,
-        },
-        MatchParen = {
-            fg = palette.pink,
-        },
-        Question = {
-            fg = palette.yellow,
-        },
-        ModeMsg = {
-            fg = palette.white,
-            -- style = 'bold',
-        },
-        MoreMsg = {
-            fg = palette.white,
-            -- style = 'bold',
-        },
-        ErrorMsg = {
-            fg = palette.red,
-            -- style = 'bold',
-        },
-        WarningMsg = {
-            fg = palette.yellow,
-            -- style = 'bold',
-        },
-        VertSplit = {
-            fg = palette.brown,
-        },
-        LineNr = {
-            fg = palette.base5,
-            bg = palette.base2,
-        },
-        SignColumn = {
-            fg = palette.white,
-            bg = palette.base2,
-        },
-        StatusLine = {
-            fg = palette.base7,
-            bg = palette.base3,
-        },
-        StatusLineNC = {
-            fg = palette.grey,
-            bg = palette.base3,
-        },
+        Normal = { fg = c.white, bg = c.base2, },
+        NormalFloat = { bg = c.base1, },
+        Pmenu = { fg = c.white, bg = c.base3, },
+        PmenuSel = { fg = c.base4, bg = c.orange, },
+        PmenuSelBold = { fg = c.base4, bg = c.orange, },
+        PmenuThumb = { fg = c.purple, bg = c.green, },
+        PmenuSbar = { bg = c.base3, },
+        Cursor = { reverse = true, },
+        ColorColumn = { bg = c.base3, },
+        CursorLine = { bg = c.base3, },
+        NonText = { fg = c.base5, },
+        Visual = { bg = c.base4, },
+        VisualNOS = { bg = c.base3, },
+        Search = { fg = c.base2, bg = c.yellow, },
+        IncSearch = { fg = c.base2, bg = c.orange, },
+        CursorLineNr = { fg = c.orange, bg = c.base2, },
+        MatchParen = { fg = c.pink, },
+        Question = { fg = c.yellow, },
+        ModeMsg = { fg = c.white, bold = true },
+        MoreMsg = { fg = c.white, bold = true, },
+        ErrorMsg = { fg = c.red, bold = true, },
+        WarningMsg = { fg = c.yellow, bold = true, },
+        VertSplit = { fg = c.brown, },
+        LineNr = { fg = c.base5, bg = c.base2, },
+        SignColumn = { fg = c.white, bg = c.base2, },
+        StatusLine = { fg = c.base7, bg = c.base3, },
+        StatusLineNC = { fg = c.grey, bg = c.base3, },
         Tabline = {},
         TabLineFill = {},
-        TabLineSel = {
-            bg = palette.base4,
-        },
-        SpellBad = {
-            fg = palette.red,
-            -- style = 'undercurl',
-        },
-        SpellCap = {
-            fg = palette.purple,
-            -- style = 'undercurl',
-        },
-        SpellRare = {
-            fg = palette.aqua,
-            -- style = 'undercurl',
-        },
-        SpellLocal = {
-            fg = palette.pink,
-            -- style = 'undercurl',
-        },
-        SpecialKey = {
-            fg = palette.pink,
-        },
-        Title = {
-            fg = palette.yellow,
-            -- style = 'bold',
-        },
-        Directory = {
-            fg = palette.aqua,
-        },
-        DiffAdd = {
-            bg = palette.diff_add,
-        },
-        DiffDelete = {
-            bg = palette.diff_remove,
-        },
-        DiffChange = {
-            bg = palette.diff_change,
-        },
-        DiffText = {
-            bg = palette.diff_text,
-        },
-        diffAdded = {
-            fg = palette.green,
-        },
-        diffRemoved = {
-            fg = palette.pink,
-        },
-        Folded = {
-            fg = palette.grey,
-            bg = palette.base3,
-        },
-        FoldColumn = {
-            fg = palette.white,
-            bg = palette.black,
-        },
-        Constant = {
-            fg = palette.aqua,
-        },
-        Number = {
-            fg = palette.purple,
-        },
-        Float = {
-            fg = palette.purple,
-        },
-        Boolean = {
-            fg = palette.purple,
-        },
-        Character = {
-            fg = palette.yellow,
-        },
-        String = {
-            fg = palette.yellow,
-        },
-        Type = {
-            fg = palette.aqua,
-        },
-        Structure = {
-            fg = palette.aqua,
-        },
-        StorageClass = {
-            fg = palette.aqua,
-        },
-        Typedef = {
-            fg = palette.aqua,
-        },
-        Identifier = {
-            fg = palette.white,
-        },
-        Function = {
-            fg = palette.green,
-            -- style = 'italic',
-        },
-        Statement = {
-            fg = palette.pink,
-        },
-        Operator = {
-            fg = palette.pink,
-        },
-        Label = {
-            fg = palette.pink,
-        },
-        Keyword = {
-            fg = palette.pink,
-            -- style = 'italic',
-        },
-        PreProc = {
-            fg = palette.green,
-        },
-        Include = {
-            fg = palette.pink,
-            -- style = 'italic',
-        },
-        Define = {
-            fg = palette.pink,
-        },
-        Macro = {
-            fg = palette.pink,
-        },
-        PreCondit = {
-            fg = palette.pink,
-        },
-        Special = {
-            fg = palette.white,
-        },
-        SpecialChar = {
-            fg = palette.pink,
-        },
-        Delimiter = {
-            fg = palette.white,
-        },
-        SpecialComment = {
-            fg = palette.grey,
-            -- style = 'italic',
-        },
-        Tag = {
-            fg = palette.orange,
-        },
-        Todo = {
-            fg = palette.orange,
-        },
-        Comment = {
-            fg = palette.base6,
-            -- style = 'italic',
-        },
-        Underlined = {
-            -- style = 'underline',
-        },
+        TabLineSel = { bg = c.base4, },
+        SpellBad = { fg = c.red, undercurl = true, },
+        SpellCap = { fg = c.purple, undercurl = true, },
+        SpellRare = { fg = c.aqua, undercurl = true, },
+        SpellLocal = { fg = c.pink, undercurl = true, },
+        SpecialKey = { fg = c.pink, },
+        Title = { fg = c.yellow, bold = true, },
+        Directory = { fg = c.aqua, },
+        DiffAdd = { bg = c.diff_add, },
+        DiffDelete = { bg = c.diff_remove, },
+        DiffChange = { bg = c.diff_change, },
+        DiffText = { bg = c.diff_text, },
+        diffAdded = { fg = c.green, },
+        diffRemoved = { fg = c.pink, },
+        Folded = { fg = c.grey, bg = c.base3, },
+        FoldColumn = { fg = c.white, bg = c.black, },
+        Constant = { fg = c.aqua, },
+        Number = { fg = c.purple, },
+        Float = { fg = c.purple, },
+        Boolean = { fg = c.purple, },
+        Character = { fg = c.yellow, },
+        String = { fg = c.yellow, },
+        Type = { fg = c.aqua, },
+        Structure = { fg = c.aqua, },
+        StorageClass = { fg = c.aqua, },
+        Typedef = { fg = c.aqua, },
+        Identifier = { fg = c.white, },
+        Function = { fg = c.green, italic = true, },
+        Statement = { fg = c.pink, },
+        Operator = { fg = c.pink, },
+        Label = { fg = c.pink, },
+        Keyword = { fg = c.pink, italic = true, },
+        PreProc = { fg = c.green, },
+        Include = { fg = c.pink, italic = true, },
+        Define = { fg = c.pink, },
+        Macro = { fg = c.pink, },
+        PreCondit = { fg = c.pink, },
+        Special = { fg = c.white, },
+        SpecialChar = { fg = c.pink, },
+        Delimiter = { fg = c.white, },
+        SpecialComment = { fg = c.grey, italic = true, },
+        Tag = { fg = c.orange, },
+        Todo = { fg = c.orange, },
+        Comment = { fg = c.base6, italic = true, },
+        Underlined = { underline = true, },
         Ignore = {},
-        Error = {
-            fg = palette.red,
-        },
-        Terminal = {
-            fg = palette.white,
-            bg = palette.base2,
-        },
-        EndOfBuffer = {
-            fg = palette.base2,
-        },
-        Conceal = {
-            fg = palette.grey,
-        },
-        vCursor = {
-            -- style = 'reverse',
-        },
-        iCursor = {
-            -- style = 'reverse',
-        },
-        lCursor = {
-            -- style = 'reverse',
-        },
-        CursorIM = {
-            -- style = 'reverse',
-        },
-        CursorColumn = {
-            bg = palette.base3,
-        },
-        Whitespace = { -- used for "nbsp", "space", "tab" and "trail" in listchars
-            fg = palette.base5,
-        },
-        WildMenu = {
-            fg = palette.white,
-            bg = palette.orange,
-        },
-        QuickFixLine = {
-            fg = palette.purple,
-            -- style = 'bold',
-        },
-        Debug = {
-            fg = palette.orange,
-        },
-        debugBreakpoint = {
-            fg = palette.base2,
-            bg = palette.red,
-        },
-        Conditional = {
-            fg = palette.pink,
-        },
-        Repeat = {
-            fg = palette.pink,
-        },
-        Exception = {
-            fg = palette.pink,
-        },
+        Error = { fg = c.red, },
+        Terminal = { fg = c.white, bg = c.base2, },
+        EndOfBuffer = { fg = c.base2, },
+        Conceal = { fg = c.grey, },
+        vCursor = { reverse = true, },
+        iCursor = { reverse = true, },
+        lCursor = { reverse = true, },
+        CursorIM = { reverse = true, },
+        CursorColumn = { bg = c.base3, },
+        Whitespace = { fg = c.base5, },
+        WildMenu = { fg = c.white, bg = c.orange, },
+        QuickFixLine = { fg = c.purple, bold = true, },
+        Debug = { fg = c.orange, },
+        debugBreakpoint = { fg = c.base2, bg = c.red, },
+        Conditional = { fg = c.pink, },
+        Repeat = { fg = c.pink, },
+        Exception = { fg = c.pink, },
     }
 
     -- set hl groups
-    local str = 'string'
     for name, val in pairs(groups) do
         vim.api.nvim_set_hl(0, name, val)
     end
