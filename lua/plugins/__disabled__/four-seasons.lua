@@ -1,5 +1,6 @@
 return {
     'quantumsnowball/four-seasons.nvim',
+    enabled = false,
     branch = 'dev',
     -- url = 'git@github.com:quantumsnowball/four-seasons.nvim.git',
     init = function()
