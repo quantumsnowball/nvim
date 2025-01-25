@@ -6,6 +6,7 @@ vim.cmd 'set clipboard^=unnamed,unnamedplus'
 
 -- keymaps and hints
 require('settings.general')
+require('settings.colorscheme')
 require('settings.clipboard')
 require('settings.editing')
 require('settings.configs')

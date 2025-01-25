@@ -1,5 +1,5 @@
 -- colors
-local c = {
+local colors = {
     base0 = '#191515',
     base1 = '#211c1c',
     base2 = '#2c2525',
@@ -27,5 +27,5 @@ local c = {
     diff_text = '#23324d',
 }
 
--- groups
-vim.api.nvim_set_hl(0, 'String', { fg = c.yellow })
+-- setup
+require('settings.colorscheme').setup(colors)
