@@ -1,117 +1,31 @@
-local colorbuddy = require('colorbuddy')
-local C = colorbuddy.Color
-local G = colorbuddy.Group
-local c = colorbuddy.colors
-local g = colorbuddy.groups
-local s = colorbuddy.styles
+-- colors
+local c = {
+    base0 = '#191515',
+    base1 = '#211c1c',
+    base2 = '#2c2525',
+    base3 = '#403838',
+    base4 = '#5b5353',
+    base5 = '#72696a',
+    base6 = '#8c8384',
+    base7 = '#c3b7b8',
+    base8 = '#fff1f3',
+    border = '#A1B5B1',
+    brown = '#352e2e',
+    white = '#fff1f3',
+    grey = '#72696a',
+    black = '#000000',
+    pink = '#FF6188',
+    green = '#adda78',
+    aqua = '#85dacc',
+    yellow = '#f9cc6c',
+    orange = '#f38d70',
+    purple = '#a8a9eb',
+    red = '#fd6883',
+    diff_add = '#527728',
+    diff_remove = '#842335',
+    diff_change = '#247c6e',
+    diff_text = '#23324d',
+}
 
-
--- setup colorscheme
-colorbuddy.colorscheme("FourSeasons-Winter")
-
-
--- Colors
-C.new('base0', '#191515')
-C.new('base1', '#211c1c')
-C.new('base2', '#2c2525')
-C.new('base3', '#403838')
-C.new('base4', '#5b5353')
-C.new('base5', '#72696a')
-C.new('base6', '#8c8384')
-C.new('base7', '#c3b7b8')
-C.new('base8', '#fff1f3')
-C.new('border', '#A1B5B1')
-C.new('brown', '#352e2e')
-C.new('white', '#fff1f3')
-C.new('grey', '#72696a')
-C.new('black', '#000000')
-C.new('pink', '#FF6188')
-C.new('green', '#adda78')
-C.new('aqua', '#85dacc')
-C.new('yellow', '#f9cc6c')
-C.new('orange', '#f38d70')
-C.new('purple', '#a8a9eb')
-C.new('red', '#fd6883')
-C.new('diff_add', '#527728')
-C.new('diff_remove', '#842335')
-C.new('diff_change', '#247c6e')
-C.new('diff_text', '#23324d')
-
-
--- Groups
--- basic
-G.new('Normal', c.white, c.base2)
-G.new('NormalFloat', nil, c.base1)
--- core
-G.new('Keyword', c.pink)
-G.new('Identifier', c.white)
-G.new('Variable', c.white)
-G.new('Constant', c.aqua)
-G.new('Include', c.pink)
-G.new('Statement', c.pink)
-G.new('Function', c.green)
-G.new('String', c.yellow)
-G.new('Character', c.yellow)
-G.new('Operator', c.pink)
-G.new('MatchParen', c.pink)
-G.new('Define', c.pink)
-G.new('Number', c.purple)
-G.new('Float', c.purple)
-G.new('Boolean', c.purple)
-G.new('Type', c.aqua); G.new('@type', g.Type)
--- comment
-G.new('Comment', c.base6)
-G.new('Todo', c.orange)
-G.new('Visual', nil, c.base4)
-G.new('Special', c.red)
-G.new('SpecialChar', c.pink)
-G.new('NonText', c.base5)
-G.new('Whitespace', c.base5)
-G.new('WarningMsg', c.yellow)
-G.new('Error', c.red)
-G.new('ErrorMsg', c.red)
--- interface
-G.new('Search', nil, c.yellow)
-G.new('LineNr', c.base5, c.base2)
-G.new('CursorLineNr', c.orange, c.base2)
-G.new('Directory', c.aqua)
-G.new('FloatBorder', nil, c.base1)
-G.new('Pmenu', c.white, c.base3)
-G.new('PmenuSel', c.base4, c.orange)
-G.new('PmenuSbar', nil, c.base3)
-G.new('Conceal', c.grey)
-G.new('Structure', c.aqua)
-G.new('TelescopeBorder', c.base7)
-G.new('TelescopeNormal', c.base8, c.base0)
-G.new('TelescopeSelection', c.white)
-G.new('TelescopeSelectionCaret', c.green)
-G.new('TelescopeMultiSelection', c.pink)
-G.new('TelescopeMatching', c.pink, c.base3)
--- hrsh7th/nvim-cmp
-G.new('CmpDocumentation', c.white, c.base1)
-G.new('CmpDocumentationBorder', c.white, c.base1)
-G.new('CmpItemAbbr', c.white)
-G.new('CmpItemAbbrMatch', c.aqua)
-G.new('CmpItemAbbrMatchFuzzy', c.aqua)
-G.new('CmpItemKindDefault', c.white)
-G.new('CmpItemMenu', c.base6)
-G.new('CmpItemKindKeyword', c.pink)
-G.new('CmpItemKindVariable', c.pink)
-G.new('CmpItemKindConstant', c.pink)
-G.new('CmpItemKindReference', c.pink)
-G.new('CmpItemKindValue', c.pink)
-G.new('CmpItemKindFunction', c.aqua)
-G.new('CmpItemKindMethod', c.aqua)
-G.new('CmpItemKindConstructor', c.aqua)
-G.new('CmpItemKindClass', c.orange)
-G.new('CmpItemKindInterface', c.orange)
-G.new('CmpItemKindStruct', c.orange)
-G.new('CmpItemKindEvent', c.orange)
-G.new('CmpItemKindEnum', c.orange)
-G.new('CmpItemKindUnit', c.orange)
-G.new('CmpItemKindModule', c.yellow)
-G.new('CmpItemKindProperty', c.green)
-G.new('CmpItemKindField', c.green)
-G.new('CmpItemKindTypeParameter', c.green)
-G.new('CmpItemKindEnumMember', c.green)
-G.new('CmpItemKindOperator', c.green)
+-- groups
+vim.api.nvim_set_hl(0, 'String', { fg = c.yellow })
