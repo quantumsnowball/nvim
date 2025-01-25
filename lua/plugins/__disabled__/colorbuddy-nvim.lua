@@ -2,6 +2,7 @@
 -- https://github.com/tjdevries/colorbuddy.nvim
 return {
     'tjdevries/colorbuddy.nvim',
+    enabled = false,
     init = function()
         vim.cmd('hi clear')
         if vim.fn.exists('syntax_on') then
