@@ -1,6 +1,3 @@
--- default theme
---vim.cmd('colorscheme FourSeasons-Winter')
-
 -- module
 local M = {}
 

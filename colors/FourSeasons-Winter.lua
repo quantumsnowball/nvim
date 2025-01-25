@@ -28,4 +28,4 @@ local colors = {
 }
 
 -- setup
-require('settings.colorscheme').setup(colors)
+require('settings.colorscheme.highlight').setup(colors)
