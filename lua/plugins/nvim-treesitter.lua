@@ -40,14 +40,20 @@ local selected_parser = {
 -- https://github.com/nvim-treesitter/nvim-treesitter
 return {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-    event = 'BufReadPost',
+    build = ':TSUpdate',
+    -- event = 'VimEnter',
     opts = {
         ensure_installed = selected_parser,
-        ignore_install = { "phpdoc" },     -- can never download successfully on macos
+        ignore_install = { "phpdoc" }, -- can never download successfully on macos
+        auto_install = true,
         highlight = { enable = true },
         incremental_selection = { enable = true },
         textobjects = { enable = true },
         indent = { enable = false }
     },
+    init = function()
+        -- somehow the highligh enable settings doesn't always enable TS highligh
+        -- this autocmd ensures the highligh module is enabled when entering a buffer
+        vim.cmd('autocmd BufEnter * TSEnable highlight')
+    end,
 }
