@@ -8,7 +8,6 @@ local selected_parser = {
     'bash',
     'markdown',
     'markdown_inline',
-    -- 'latex',
     'sql',
     'ini',
     'toml',
