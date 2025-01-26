@@ -8,7 +8,6 @@ local selected_parser = {
     'bash',
     'markdown',
     'markdown_inline',
-    'latex',
     'sql',
     'ini',
     'toml',
@@ -40,11 +39,18 @@ local selected_parser = {
 -- https://github.com/nvim-treesitter/nvim-treesitter
 return {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-    event = 'BufReadPost',
+    event = 'VimEnter',
+    build = ':TSUpdate',
+    -- why?
+    -- because treesitter needs require('nvim-treesitter.configs').setup(opts)
+    -- but lazy.nvim default to run require('nvim-treesitter').setup(opts)
+    -- that's why without manually pointing the correct setup() location
+    -- highlight is not enabled by default, and this one line fix it all
+    main = 'nvim-treesitter.configs',
     opts = {
         ensure_installed = selected_parser,
-        ignore_install = { "phpdoc" },     -- can never download successfully on macos
+        ignore_install = { "phpdoc" }, -- can never download successfully on macos
+        auto_install = true,
         highlight = { enable = true },
         incremental_selection = { enable = true },
         textobjects = { enable = true },
