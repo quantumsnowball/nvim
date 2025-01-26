@@ -48,12 +48,21 @@ return {
     -- highlight is not enabled by default, and this one line fix it all
     main = 'nvim-treesitter.configs',
     opts = {
-        ensure_installed = selected_parser,
-        ignore_install = { "phpdoc" }, -- can never download successfully on macos
+        ensure_installed = {},
         auto_install = true,
         highlight = { enable = true },
         incremental_selection = { enable = true },
         textobjects = { enable = true },
         indent = { enable = false }
     },
+    init = function()
+        -- allow to install all selected parsers by running these two commands when ready
+        -- this prevent from freezing on first run by not using ensure_installed table directly
+        vim.api.nvim_create_user_command('TSEnsured', function()
+            require("nvim-treesitter.install").ensure_installed(selected_parser)
+        end, {})
+        vim.api.nvim_create_user_command('TSEnsuredSync', function()
+            require("nvim-treesitter.install").ensure_installed_sync(selected_parser)
+        end, {})
+    end
 }
