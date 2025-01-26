@@ -78,3 +78,6 @@ map('n', '<leader>"', 'a""<left>', { desc = 'insert `""` pair on same line' })
 -- </> tags
 map('n', '<leader><', 'A<><left>', { desc = 'insert `<>` pair on same line' })
 map('n', '<leader>>', 'A</><left>', { desc = 'insert `</>` pair on same line' })
+-- Inspect lexical / syntax / semantics
+map('n', ';i', ':Inspect<cr>', { desc = 'Inspect semantics under cursor' })
+map('n', ';I', ':InspectTree<cr>', { desc = 'InspectTree' })
