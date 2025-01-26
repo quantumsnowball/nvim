@@ -29,8 +29,7 @@ M.defaults = {
     border = true,
     dynamic_preview_title = true,
     prompt_prefix = '🔍 ',
-    cache_picker = { num_pickers = 50 },
-    preview = { treesitter = false, } -- if disabled treesitter, if shows exactly the same false color in python
+    cache_picker = { num_pickers = 50 }
 }
 
 M.pickers = {
