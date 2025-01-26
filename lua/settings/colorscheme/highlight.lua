@@ -1,7 +1,7 @@
 -- module
 local M = {}
 
-M.setup = function(c)
+M.setup = function(c, opts)
     local groups = {
         Normal = { fg = c.white, bg = c.base2, },
         NormalFloat = { bg = c.base1, },
@@ -250,6 +250,13 @@ M.setup = function(c)
         -- ray-x/lsp_signature.nvim
         LspSignatureActiveParameter = { fg = c.orange },
     }
+
+    -- filter style
+    if opts.italic == false then
+        for _, g in pairs(groups) do
+            g.italic = nil
+        end
+    end
 
     -- set hl groups
     for name, val in pairs(groups) do
