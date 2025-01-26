@@ -28,6 +28,7 @@ return {
                 { name = "buffer" },
                 { name = "path" },
                 { name = 'luasnip' },
+                { name = "lazydev", group_index = 0 }
             }),
             formatting = {
                 format = function(_, item)
