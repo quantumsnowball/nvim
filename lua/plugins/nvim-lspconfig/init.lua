@@ -26,7 +26,7 @@ return {
         keys = require('plugins.nvim-lspconfig.keymaps'),
         opts = {
             -- auto install some servers
-            ensure_installed = require('plugins.nvim-lspconfig.constants').ensure_installed
+            -- ensure_installed = require('plugins.nvim-lspconfig.constants').ensure_installed
         },
         init = function()
             --
@@ -51,6 +51,12 @@ return {
             end
             -- auto format document on save
             vim.cmd('autocmd BufWritePre * silent! lua vim.lsp.buf.format({async=false})')
+
+            -- manually install the selected LSPs
+            vim.api.nvim_create_user_command('MasonLSPEnsureInstalled', function()
+                local args = table.concat(selected, " ")
+                vim.cmd(":LspInstall " .. args)
+            end, { desc = "Ensure selected LSP tools are installed using Mason" })
         end
     }
 }
