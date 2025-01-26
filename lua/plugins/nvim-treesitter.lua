@@ -56,13 +56,10 @@ return {
         indent = { enable = false }
     },
     init = function()
-        -- allow to install all selected parsers by running these two commands when ready
+        -- allow to install all selected parsers by running this command when ready
         -- this prevent from freezing on first run by not using ensure_installed table directly
-        vim.api.nvim_create_user_command('TSEnsured', function()
+        vim.api.nvim_create_user_command('TSEnsureInstalled', function()
             require("nvim-treesitter.install").ensure_installed(selected_parser)
-        end, {})
-        vim.api.nvim_create_user_command('TSEnsuredSync', function()
-            require("nvim-treesitter.install").ensure_installed_sync(selected_parser)
         end, {})
     end
 }
