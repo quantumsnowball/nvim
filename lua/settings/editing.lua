@@ -10,9 +10,9 @@ map('n', 'U', '~')
 -- quick set shiftwidth
 map('n', '<space>2', ':set shiftwidth=2<cr>')
 map('n', '<space>4', ':set shiftwidth=4<cr>')
--- begin and end of Word in visual mode
--- map('v', 'gk', 'E')
--- map('v', 'gj', 'B')
+-- commenting code
+map('n', '<leader>/', 'gcc', { remap = true, desc = 'toggle line comment' })
+map('v', '<leader>/', 'gc', { remap = true, desc = 'toggle selection comment' })
 -- home and end in normal, visual, operator mode
 map({ 'n', 'v', 'o' }, 'gh', '^', { desc = 'Home' })
 map({ 'n', 'v', 'o' }, 'gl', '$', { desc = 'End' })
