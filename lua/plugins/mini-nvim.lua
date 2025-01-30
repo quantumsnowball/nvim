@@ -21,5 +21,9 @@ return {
         require('mini.pairs').setup({
             --
         })
+
+        require('mini.cursorword').setup({
+            --
+        })
     end
 }
