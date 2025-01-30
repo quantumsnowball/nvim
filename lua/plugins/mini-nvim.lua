@@ -17,5 +17,9 @@ return {
                 join = '',
             },
         })
+
+        require('mini.pairs').setup({
+            --
+        })
     end
 }
