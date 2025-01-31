@@ -11,6 +11,12 @@ vim.cmd('autocmd BufEnter * hi CursorColumn ctermbg=999 guibg=#555555')
 vim.cmd("autocmd BufEnter *.txt if &filetype == 'help' || &filetype == 'vimdoc' | silent wincmd T | endif")
 -- add margins when scrolling with curosr
 vim.opt.scrolloff = 5
+-- default neovim tabsize to 4 space
+vim.opt.tabstop = 4
+-- shift width match with tabstop
+vim.opt.shiftwidth = 4
+-- use space instead of tab char
+vim.opt.expandtab = true
 -- set scroll=10 for normal buffer, scroll more
 -- p.s. will fail for very short windows, therefore silent!
 vim.cmd('autocmd BufEnter,WinScrolled * if &buftype == "" | silent! set scroll=10 | endif')
