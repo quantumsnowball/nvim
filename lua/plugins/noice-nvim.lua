@@ -12,15 +12,18 @@ return {
     },
     event = "VeryLazy",
     opts = {
+        -- src: https://github.com/folke/noice.nvim/blob/main/lua/noice/config/init.lua
         cmdline = {
         },
         routes = {
         },
         messages = {
+            enabled = true,
             view = "mini",
             view_error = "mini",
             view_warn = "mini",
-            view_search = "mini",
+            view_history = "messages",
+            view_search = "virtualtext",
         },
         lsp = {
             override = {
