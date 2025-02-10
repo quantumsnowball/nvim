@@ -13,10 +13,11 @@ return {
     },
     config = function()
         local cmp = require("cmp")
+        local keymaps = require('plugins.nvim-cmp.keymaps')
 
         -- cmdline cmp
         cmp.setup.cmdline(':', {
-            mapping = cmp.mapping.preset.cmdline(),
+            mapping = cmp.mapping.preset.cmdline(keymaps.cmdline),
             sources = cmp.config.sources({
                 { name = 'path' }
             }, {
@@ -39,8 +40,7 @@ return {
             completion = {
                 completeopt = "menu,menuone,noinsert",
             },
-            mapping = cmp.mapping.preset.insert(
-                require('plugins.nvim-cmp.keymaps')),
+            mapping = cmp.mapping.preset.insert(keymaps.insert),
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
                 { name = "buffer" },
