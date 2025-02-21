@@ -10,6 +10,7 @@ return {
             -- put missing trigger key here
             { "q",      mode = { "n" } },
             { "t",      mode = { "n" } },
+            { "m",      mode = { "n" } },
         },
         plugins = {
             marks = false,
