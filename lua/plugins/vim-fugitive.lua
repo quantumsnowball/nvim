@@ -5,5 +5,6 @@ return {
     event = 'VeryLazy',
     keys = {
         { '<leader>c', ':Git commit<cr>', desc = 'Git commit' },
+        { '<leader>P', ':Git push<cr>',   desc = 'Git push' },
     },
 }
