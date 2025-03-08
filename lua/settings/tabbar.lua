@@ -23,7 +23,10 @@ map('n', 'tN', function()
     vim.cmd('Alpha')
     require('close_buffers').delete({ type = 'nameless' })
 end, { desc = 'open new tab on left' })
-map('n', 'to', ':tab split<cr>', { desc = 'open current buffer on new tab' })
+map('n', 'to', ':tab split<cr>:Neotree reveal float<cr>',
+    { desc = 'open current buffer on new tab on right, then open explorer' })
+map('n', 'tO', ':-1tab split<cr>:Neotree reveal float<cr>',
+    { desc = 'open current buffer on new tab on right, then open explorer' })
 map('n', 'tm', '<C-W>T', { desc = 'move window to new tabpage' })
 map('n', '<F12>', '<C-W>T', { desc = 'move window to new tabpage' })
 
