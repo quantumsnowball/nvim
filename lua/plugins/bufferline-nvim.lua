@@ -20,12 +20,17 @@ return {
                 -- find win coordinates
                 local winpos_a = vim.api.nvim_win_get_position(winid_a)
                 local winpos_b = vim.api.nvim_win_get_position(winid_b)
-                -- distance score from top left corner
-                -- amplifying column index ensuring vertical splits sorted earlier
-                local dist_a = winpos_a[1] * winpos_a[2] * 10
-                local dist_b = winpos_b[1] * winpos_b[2] * 10
-                -- smaller dist go to top
-                return dist_a < dist_b
+                -- sorting
+                -- sort horizontally windows first
+                if winpos_a[2] < winpos_b[2] then
+                    return true
+                end
+                -- then sort vertical windows
+                if winpos_a[2] == winpos_b[2] and winpos_a[1] < winpos_b[1] then
+                    return true
+                end
+                -- otherwise keep the original order
+                return false
             end,
             -- only show active buffer in the current tabpage on bufferline
             custom_filter = function(cur_buf_num, _)
