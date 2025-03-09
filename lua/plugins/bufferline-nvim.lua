@@ -75,7 +75,7 @@ return {
 
 
         local DARK = '#303030'
-        local BG_BUF = '#003366'
+        local BG_BUF = '#206020'
         local BG_TAB = '#226622'
         local BG_TAB_OTHER = '#22ff44'
 
