@@ -74,16 +74,17 @@ return {
         }
 
 
+        local DARK = '#303030'
         local BG_BUF = '#003366'
         local BG_TAB = '#226622'
         local BG_TAB_OTHER = '#22ff44'
 
         opts.highlights = {
-            -- fill                        = { fg = '#303030', bg = '#303030', },
-            -- background                  = { fg = '#303030', bg = '#303030', },
+            fill                        = { bg = DARK },
             -- buffer
+            separator_visible           = { fg = DARK },
             buffer_selected             = { fg = 'white', bg = BG_BUF },
-            separator_selected          = { fg = '#121212', bg = BG_BUF, },
+            separator_selected          = { fg = DARK, bg = BG_BUF, },
             numbers_selected            = { bg = BG_BUF },
             diagnostic_selected         = { bg = BG_BUF },
             hint_selected               = { bg = BG_BUF },
@@ -100,9 +101,9 @@ return {
             pick_selected               = { bg = BG_BUF },
             -- tab
             tab                         = { fg = 'white', bg = BG_TAB },
-            tab_separator               = { fg = '#121212', bg = BG_TAB },
+            tab_separator               = { fg = DARK, bg = BG_TAB },
             tab_selected                = { fg = 'black', bg = BG_TAB_OTHER },
-            tab_separator_selected      = { fg = '#121212', bg = BG_TAB_OTHER },
+            tab_separator_selected      = { fg = DARK, bg = BG_TAB_OTHER },
         }
 
         return opts
