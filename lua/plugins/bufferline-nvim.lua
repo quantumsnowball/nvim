@@ -73,6 +73,10 @@ return {
             right_mouse_command = jump_to_buffer_window,
         }
 
+        if os.getenv("TERMUX_VERSION") then
+            opts.options.separator_style = "thin"
+        end
+
 
         local DARK = '#303030'
         local BG_BUF = '#206020'
