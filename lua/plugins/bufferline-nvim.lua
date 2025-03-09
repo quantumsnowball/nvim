@@ -69,6 +69,9 @@ return {
                 -- click to focus win containing the buffer
                 left_mouse_command = jump_to_buffer_window,
                 right_mouse_command = jump_to_buffer_window,
+            },
+            highlights = {
+                buffer_selected = { fg = 'white', bg = '#003366' },
             }
         }
     end,
