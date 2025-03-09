@@ -72,17 +72,20 @@ return {
                 right_mouse_command = jump_to_buffer_window,
             },
             highlights = {
-                buffer_selected = { fg = 'white', bg = '#003366' },
+                buffer_selected = {
+                    fg = 'white', bg = '#003366' },
+                tab = {
+                    fg = 'white', bg = '#226622' },
+                tab_separator = {
+                    fg = '#121212', bg = '#226622' },
+                tab_selected = {
+                    fg = 'black', bg = '#22ff44' },
+                tab_separator_selected = {
+                    fg = '#121212', bg = '#22ff44' },
             }
         }
     end,
     init = function()
         vim.opt.termguicolors = true
-        -- tab highlights
-        vim.cmd('autocmd VimEnter,ColorScheme * hi BufferLineTab guifg=White guibg=#226622')
-        vim.cmd('autocmd VimEnter,ColorScheme * hi BufferLineTabSelected guifg=Black guibg=#22ff44')
-        vim.cmd('autocmd VimEnter,ColorScheme * hi BufferLineTabClose guifg=White')
-        vim.cmd('autocmd VimEnter,ColorScheme * hi BufferLineTabSeparator guifg=White guibg=#226622')
-        vim.cmd('autocmd VimEnter,ColorScheme * hi BufferLineTabSeparatorSelected guifg=White guibg=#22ff44')
     end,
 }
