@@ -2,18 +2,21 @@
 -- https://github.com/xiyaowong/nvim-transparent
 return {
     'xiyaowong/nvim-transparent',
-    event = 'VimEnter',
+    event = 'VeryLazy',
+    dependencies = {
+        'akinsho/bufferline.nvim'
+    },
     opts = {
         -- table/string: additional groups that should be cleared
         extra_groups = {
             -- In particular, when you set it to 'all', that means all available groups
             -- example of akinsho/nvim-bufferline.lua
-            "BufferLineTabClose",
-            "BufferLineBufferSelected",
-            "BufferLineFill",
-            "BufferLineBackground",
-            "BufferLineSeparator",
-            "BufferLineIndicatorSelected",
+            -- "BufferLineTabClose",
+            -- "BufferLineBufferSelected",
+            -- "BufferLineFill",
+            -- "BufferLineBackground",
+            -- "BufferLineSeparator",
+            -- "BufferLineIndicatorSelected",
         },
         -- table: groups you don't want to clear
         exclude_groups = {
