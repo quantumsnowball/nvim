@@ -74,5 +74,11 @@ return {
     end,
     init = function()
         vim.opt.termguicolors = true
+        -- tab highlights
+        vim.cmd('autocmd VimEnter,ColorScheme * hi BufferLineTab guifg=White guibg=#226622')
+        vim.cmd('autocmd VimEnter,ColorScheme * hi BufferLineTabSelected guifg=Black guibg=#22ff44')
+        vim.cmd('autocmd VimEnter,ColorScheme * hi BufferLineTabClose guifg=White')
+        vim.cmd('autocmd VimEnter,ColorScheme * hi BufferLineTabSeparator guifg=White guibg=#226622')
+        vim.cmd('autocmd VimEnter,ColorScheme * hi BufferLineTabSeparatorSelected guifg=White guibg=#22ff44')
     end,
 }
