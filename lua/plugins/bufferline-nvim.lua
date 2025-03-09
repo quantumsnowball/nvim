@@ -9,7 +9,7 @@ return {
     opts = {
         options = {
             -- mode = 'tabs', -- enable to show tabpages mode
-            offsets = { { filetype = "NvimTree", text = "NvimTree", text_align = "left" } },
+            offsets = { { filetype = "neo-tree", text = "Neotree", text_align = "left" } },
             show_buffer_close_icons = false,
             show_close_icon = false,
             -- sort by buffer's first window position
