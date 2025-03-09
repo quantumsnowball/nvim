@@ -25,7 +25,7 @@ return {
                 offsets = { { filetype = "neo-tree", text = "Neotree", text_align = "left" } },
                 show_buffer_close_icons = false,
                 show_close_icon = false,
-                separator_style = "thin", -- "slant" | "slope" | "thick" | "thin"
+                separator_style = "slant", -- "slant" | "slope" | "thick" | "thin"
                 -- sort by buffer's first window position
                 sort_by = function(buffer_a, buffer_b)
                     -- find first windows id
@@ -72,8 +72,13 @@ return {
                 right_mouse_command = jump_to_buffer_window,
             },
             highlights = {
+                -- buffer
                 buffer_selected = {
                     fg = 'white', bg = '#003366' },
+                separator_selected = {
+                    fg = '#121212', bg = '#003366',
+                },
+                -- tab
                 tab = {
                     fg = 'white', bg = '#226622' },
                 tab_separator = {
