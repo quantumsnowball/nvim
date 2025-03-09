@@ -11,6 +11,7 @@ return {
             -- mode = 'tabs', -- enable to show tabpages mode
             offsets = { { filetype = "NvimTree", text = "NvimTree", text_align = "left" } },
             show_buffer_close_icons = false,
+            show_close_icon = false,
             -- only show active buffer in the current tabpage on bufferline
             custom_filter = function(cur_buf_num, _)
                 local win_buf_ls = vim.fn.tabpagebuflist(vim.fn.tabpagenr())
