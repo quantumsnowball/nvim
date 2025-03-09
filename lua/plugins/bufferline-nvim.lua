@@ -8,7 +8,8 @@ return {
     event = 'VeryLazy',
     opts = {
         options = {
-            -- mode = 'tabs', -- enable to show tabpages mode
+            mode = 'tabs',
+            tab_size = 3,
             offsets = { { filetype = "NvimTree", text = "NvimTree", text_align = "left" } },
             show_buffer_close_icons = false,
             -- only show active buffer in the current tabpage on bufferline
