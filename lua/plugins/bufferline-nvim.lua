@@ -73,19 +73,33 @@ return {
             },
             highlights = {
                 -- buffer
-                buffer_selected = {
+                buffer_selected             = {
                     fg = 'white', bg = '#003366' },
-                separator_selected = {
+                separator_selected          = {
                     fg = '#121212', bg = '#003366',
                 },
+                numbers_selected            = { bg = '#003366' },
+                diagnostic_selected         = { bg = '#003366' },
+                hint_selected               = { bg = '#003366' },
+                hint_diagnostic_selected    = { bg = '#003366' },
+                info_selected               = { bg = '#003366' },
+                info_diagnostic_selected    = { bg = '#003366' },
+                warning_selected            = { bg = '#003366' },
+                warning_diagnostic_selected = { bg = '#003366' },
+                error_selected              = { bg = '#003366' },
+                error_diagnostic_selected   = { bg = '#003366' },
+                modified_selected           = { bg = '#003366' },
+                duplicate_selected          = { bg = '#003366' },
+                indicator_selected          = { bg = '#003366' },
+                pick_selected               = { bg = '#003366' },
                 -- tab
-                tab = {
+                tab                         = {
                     fg = 'white', bg = '#226622' },
-                tab_separator = {
+                tab_separator               = {
                     fg = '#121212', bg = '#226622' },
-                tab_selected = {
+                tab_selected                = {
                     fg = 'black', bg = '#22ff44' },
-                tab_separator_selected = {
+                tab_separator_selected      = {
                     fg = '#121212', bg = '#22ff44' },
             }
         }
