@@ -9,7 +9,7 @@ return {
             -- In particular, when you set it to 'all', that means all available groups
             -- example of akinsho/nvim-bufferline.lua
             "BufferLineTabClose",
-            "BufferlineBufferSelected",
+            "BufferLineBufferSelected",
             "BufferLineFill",
             "BufferLineBackground",
             "BufferLineSeparator",
