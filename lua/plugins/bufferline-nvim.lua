@@ -25,6 +25,7 @@ return {
                 offsets = { { filetype = "neo-tree", text = "Neotree", text_align = "left" } },
                 show_buffer_close_icons = false,
                 show_close_icon = false,
+                separator_style = "thin", -- "slant" | "slope" | "thick" | "thin"
                 -- sort by buffer's first window position
                 sort_by = function(buffer_a, buffer_b)
                     -- find first windows id
