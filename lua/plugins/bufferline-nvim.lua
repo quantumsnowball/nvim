@@ -7,6 +7,18 @@ return {
     },
     event = 'VeryLazy',
     opts = function()
+        local jump_to_buffer_window = function(bufnr)
+            local tabnr = vim.fn.tabpagenr()
+            local wins = vim.api.nvim_tabpage_list_wins(tabnr)
+            local targetWin = vim.fn.bufwinid(bufnr)
+            for _, win in ipairs(wins) do
+                if win == targetWin then
+                    vim.api.nvim_set_current_win(targetWin)
+                    return
+                end
+            end
+        end
+
         return {
             options = {
                 -- mode = 'tabs', -- enable to show tabpages mode
@@ -55,17 +67,8 @@ return {
                     return s
                 end,
                 -- click to focus win containing the buffer
-                left_mouse_command = function(bufnr)
-                    local tabnr = vim.fn.tabpagenr()
-                    local wins = vim.api.nvim_tabpage_list_wins(tabnr)
-                    local targetWin = vim.fn.bufwinid(bufnr)
-                    for _, win in ipairs(wins) do
-                        if win == targetWin then
-                            vim.api.nvim_set_current_win(targetWin)
-                            return
-                        end
-                    end
-                end
+                left_mouse_command = jump_to_buffer_window,
+                right_mouse_command = jump_to_buffer_window,
             }
         }
     end,
