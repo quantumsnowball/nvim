@@ -74,29 +74,35 @@ return {
         }
 
 
+        local BG_BUF = '#003366'
+        local BG_TAB = '#226622'
+        local BG_TAB_OTHER = '#22ff44'
+
         opts.highlights = {
+            -- fill                        = { fg = '#303030', bg = '#303030', },
+            -- background                  = { fg = '#303030', bg = '#303030', },
             -- buffer
-            buffer_selected             = { fg = 'white', bg = '#003366' },
-            separator_selected          = { fg = '#121212', bg = '#003366', },
-            numbers_selected            = { bg = '#003366' },
-            diagnostic_selected         = { bg = '#003366' },
-            hint_selected               = { bg = '#003366' },
-            hint_diagnostic_selected    = { bg = '#003366' },
-            info_selected               = { bg = '#003366' },
-            info_diagnostic_selected    = { bg = '#003366' },
-            warning_selected            = { bg = '#003366' },
-            warning_diagnostic_selected = { bg = '#003366' },
-            error_selected              = { bg = '#003366' },
-            error_diagnostic_selected   = { bg = '#003366' },
-            modified_selected           = { bg = '#003366' },
-            duplicate_selected          = { bg = '#003366' },
-            indicator_selected          = { bg = '#003366' },
-            pick_selected               = { bg = '#003366' },
+            buffer_selected             = { fg = 'white', bg = BG_BUF },
+            separator_selected          = { fg = '#121212', bg = BG_BUF, },
+            numbers_selected            = { bg = BG_BUF },
+            diagnostic_selected         = { bg = BG_BUF },
+            hint_selected               = { bg = BG_BUF },
+            hint_diagnostic_selected    = { bg = BG_BUF },
+            info_selected               = { bg = BG_BUF },
+            info_diagnostic_selected    = { bg = BG_BUF },
+            warning_selected            = { bg = BG_BUF },
+            warning_diagnostic_selected = { bg = BG_BUF },
+            error_selected              = { bg = BG_BUF },
+            error_diagnostic_selected   = { bg = BG_BUF },
+            modified_selected           = { bg = BG_BUF },
+            duplicate_selected          = { bg = BG_BUF },
+            indicator_selected          = { bg = BG_BUF },
+            pick_selected               = { bg = BG_BUF },
             -- tab
-            tab                         = { fg = 'white', bg = '#226622' },
-            tab_separator               = { fg = '#121212', bg = '#226622' },
-            tab_selected                = { fg = 'black', bg = '#22ff44' },
-            tab_separator_selected      = { fg = '#121212', bg = '#22ff44' },
+            tab                         = { fg = 'white', bg = BG_TAB },
+            tab_separator               = { fg = '#121212', bg = BG_TAB },
+            tab_selected                = { fg = 'black', bg = BG_TAB_OTHER },
+            tab_separator_selected      = { fg = '#121212', bg = BG_TAB_OTHER },
         }
 
         return opts
