@@ -11,6 +11,7 @@ return {
             mode = 'tabs',
             tab_size = 3,
             offsets = { { filetype = "NvimTree", text = "NvimTree", text_align = "left" } },
+            show_buffer_icons = true,
             show_buffer_close_icons = false,
             name_formatter = function(buf)
                 return '' .. vim.api.nvim_tabpage_get_number(buf.tabnr)
