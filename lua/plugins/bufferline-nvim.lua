@@ -22,7 +22,6 @@ return {
         end
 
         opts.options = {
-            -- mode = 'tabs', -- enable to show tabpages mode
             offsets = { { filetype = "neo-tree", text = "Neotree", text_align = "left" } },
             show_buffer_close_icons = false,
             show_close_icon = false,
