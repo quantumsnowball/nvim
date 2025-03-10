@@ -16,6 +16,8 @@ map('v', '<leader>/', 'gc', { remap = true, desc = 'toggle selection comment' })
 -- home and end in normal, visual, operator mode
 map({ 'n', 'v', 'o' }, 'gh', '^', { desc = 'Home' })
 map({ 'n', 'v', 'o' }, 'gl', '$', { desc = 'End' })
+map({ 'n', 'v', 'o' }, 'L', 'E')
+map({ 'n', 'v', 'o' }, 'H', 'B')
 -- home and end in insert mode
 map('i', '<C-h>', '<home>')
 map('i', '<C-l>', '<end>')
