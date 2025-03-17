@@ -6,6 +6,7 @@ return {
     keys = {
         { '<leader>gg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
         { 'mm',         '<cmd>LazyGit<cr>', desc = 'LazyGit' },
+        { 'zz',         '<cmd>LazyGit<cr>', desc = 'LazyGit' },
     },
     init = function()
         -- config
