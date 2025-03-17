@@ -18,6 +18,8 @@ map({ 'n', 'v', 'o' }, 'gh', '^', { desc = 'Home' })
 map({ 'n', 'v', 'o' }, 'gl', '$', { desc = 'End' })
 map({ 'n', 'v', 'o' }, 'L', 'E')
 map({ 'n', 'v', 'o' }, 'H', 'B')
+-- center cursor line
+map({ 'n', 'v' }, 'M', 'zz')
 -- home and end in insert mode
 map('i', '<C-h>', '<home>')
 map('i', '<C-l>', '<end>')
