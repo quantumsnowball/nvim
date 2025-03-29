@@ -34,6 +34,16 @@ return {
         --   :TransparentToggle
         map('n', '<M-u>', ':TransparentToggle<cr>')
         map('n', '<F4>', ':TransparentToggle<cr>')
+
+        -- winbar
+        require('transparent').clear_prefix('barbecue')
+        require('transparent').clear_prefix('WinBar')
+
+        -- neotree
+        require('transparent').clear_prefix('NeoTree')
+
+        -- telescope
+        require('transparent').clear_prefix('Telescope')
     end
 
 }

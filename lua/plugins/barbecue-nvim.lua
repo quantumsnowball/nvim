@@ -13,8 +13,4 @@ return {
     opts = {
         -- configurations go here
     },
-    init = function()
-        -- all highlight related to barbecue.nvim will be made transparent
-        require('transparent').clear_prefix('barbecue')
-    end
 }
