@@ -13,7 +13,7 @@ return {
             -- example of akinsho/nvim-bufferline.lua
             -- "BufferLineTabClose",
             -- "BufferLineBufferSelected",
-            -- "BufferLineFill",
+            "BufferLineFill",
             -- "BufferLineBackground",
             -- "BufferLineSeparator",
             -- "BufferLineIndicatorSelected",
