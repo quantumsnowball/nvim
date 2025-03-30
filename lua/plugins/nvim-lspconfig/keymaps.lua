@@ -3,6 +3,9 @@
 local hover = function()
     vim.lsp.buf.hover({ border = 'rounded' })
 end
+local signature_help = function()
+    vim.lsp.buf.signature_help({ border = 'rounded' })
+end
 
 return {
     -- editing
@@ -15,8 +18,8 @@ return {
     { 'gd',        vim.lsp.buf.definition,      desc = 'lsp.buf.definition()' },
     { 'K',         hover,                       desc = 'lsp.buf.hover()' },
     { 'gi',        vim.lsp.buf.implementation,  desc = 'lsp.buf.implementation()' },
-    { '<leader>k', vim.lsp.buf.signature_help,  desc = 'lsp.buf.signature_help()' },
-    { '<C-k>',     vim.lsp.buf.signature_help,  desc = 'lsp.buf.signature_help()',  mode = 'i' },
+    { '<leader>k', signature_help,              desc = 'lsp.buf.signature_help()' },
+    { '<C-k>',     signature_help,              desc = 'lsp.buf.signature_help()',  mode = 'i' },
     { '<space>D',  vim.lsp.buf.type_definition, desc = 'lsp.buf.type_definition()' },
     { ']e',        vim.diagnostic.goto_next,    desc = 'lsp.diagnostic.goto_next()' },
     { '[e',        vim.diagnostic.goto_prev,    desc = 'lsp.diagnostic.goto_prev()' },
