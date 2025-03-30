@@ -6,6 +6,12 @@ end
 local signature_help = function()
     vim.lsp.buf.signature_help({ border = 'rounded' })
 end
+local next_diagnostic = function()
+    vim.diagnostic.jump({ count = 1, float = true })
+end
+local prev_diagnostic = function()
+    vim.diagnostic.jump({ count = -1, float = true })
+end
 
 return {
     -- editing
@@ -19,8 +25,8 @@ return {
     { 'K',         hover,                       desc = 'lsp.buf.hover()' },
     { 'gi',        vim.lsp.buf.implementation,  desc = 'lsp.buf.implementation()' },
     { '<leader>k', signature_help,              desc = 'lsp.buf.signature_help()' },
-    { '<C-k>',     signature_help,              desc = 'lsp.buf.signature_help()',  mode = 'i' },
+    { '<C-k>',     signature_help,              desc = 'lsp.buf.signature_help()', mode = 'i' },
     { '<space>D',  vim.lsp.buf.type_definition, desc = 'lsp.buf.type_definition()' },
-    { ']e',        vim.diagnostic.goto_next,    desc = 'lsp.diagnostic.goto_next()' },
-    { '[e',        vim.diagnostic.goto_prev,    desc = 'lsp.diagnostic.goto_prev()' },
+    { ']e',        next_diagnostic,             desc = 'lsp.diagnostic.next()' },
+    { '[e',        prev_diagnostic,             desc = 'lsp.diagnostic.prev()' },
 }
