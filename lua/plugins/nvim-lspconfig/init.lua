@@ -9,7 +9,17 @@ return {
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
-        }
+        },
+        init = function()
+            vim.diagnostic.config({
+                float = {
+                    border = 'rounded'
+                },
+                jump = {
+                    float = true
+                }
+            })
+        end
     },
     -- cmdline tools and lsp servers
     -- https://github.com/williamboman/mason.nvim
