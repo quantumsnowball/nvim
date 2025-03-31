@@ -17,6 +17,8 @@ map('n', '<F1>', ':WhichKey<cr>', { silent = true })
 -- cancel search highlight after search
 map('n', 'zi', ':noh<cr>', { desc = 'Clear search result highlight' })
 map('n', 'z/', ':noh<cr>', { desc = 'Clear search result highlight' })
+-- This unsets the "last search pattern" register by hitting return
+map('n', '<cr>', ':noh<cr><cr>')
 -- G and gg also center line
 map('n', 'G', 'Gzz')
 map('n', 'gg', 'ggzz')
