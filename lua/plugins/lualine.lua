@@ -42,6 +42,7 @@ return {
                     }
                 },
                 lualine_y = {
+                    'lsp_status',
                     function() return require('lsp-status').status() end,
                     'filetype',
                     'encoding',
