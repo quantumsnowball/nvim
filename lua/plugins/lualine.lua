@@ -29,7 +29,7 @@ return {
                 },
                 lualine_c = {
                     { 'filename',    path = 1 },
-                    { 'searchcount', color = 'Search' },
+                    { 'searchcount', color = 'IncSearch' },
                 },
                 lualine_x = {
                     'diagnostics',
