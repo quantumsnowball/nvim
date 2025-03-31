@@ -28,10 +28,10 @@ return {
                     'diff',
                 },
                 lualine_c = {
-                    { 'filename', path = 1 }
+                    { 'filename',    path = 1 },
+                    { 'searchcount', color = 'Search' },
                 },
                 lualine_x = {
-                    'searchcount',
                     'diagnostics',
                 },
                 lualine_y = {
