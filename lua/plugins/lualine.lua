@@ -42,8 +42,8 @@ return {
                     }
                 },
                 lualine_y = {
+                    'diagnostics',
                     'lsp_status',
-                    function() return require('lsp-status').status() end,
                     'filetype',
                     'encoding',
                     'fileformat',

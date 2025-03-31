@@ -2,6 +2,7 @@
 -- https://github.com/nvim-lua/lsp-status.nvim#configuration
 return {
     'nvim-lua/lsp-status.nvim',
+    enabled = false,
     event = 'VeryLazy',
     init = function()
         require('lsp-status').config({
