@@ -19,6 +19,10 @@ return {
                 globalstatus = true,
             },
             sections = {
+                lualine_a = {
+                    'mode',
+                    'selectioncount',
+                },
                 lualine_c = { { 'filename', path = 1 } },
                 lualine_x = {
                     -- {
