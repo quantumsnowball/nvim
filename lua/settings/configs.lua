@@ -41,3 +41,5 @@ vim.cmd('autocmd VimEnter,BufEnter,ColorScheme * hi SpellRare guibg=#770000')
 vim.cmd('autocmd VimEnter,BufEnter,ColorScheme * hi SpellLocal guibg=#770000')
 -- list help buffer
 vim.cmd('autocmd FileType help set buflisted')
+-- do not show cmdline when not using
+vim.cmd('set cmdheight=0')
