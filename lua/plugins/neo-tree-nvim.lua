@@ -82,7 +82,14 @@ return {
             source_selector = {
                 winbar = true,
             }
-        }
+        },
+        init = function()
+            -- FIXME: this is a bug after neo-tree update, the NeoTreeFloatBorder highlights will not
+            -- link to FloatBorder as it should
+            -- check commit a2f0245a509f1fc70c7af2c3e156305c55fd52cd
+            -- on ui/highlights.lua, line 68-71, the 'hl' was an empty table for NeoTreeFloatBorder
+            vim.cmd('autocmd VimEnter * highlight link NeoTreeFloatBorder FloatBorder')
+        end
     },
     {
         's1n7ax/nvim-window-picker',
