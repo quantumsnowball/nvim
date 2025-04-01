@@ -84,6 +84,9 @@ return {
             }
         },
         init = function()
+            -- selected tab color align to bufferline
+            vim.cmd('autocmd VimEnter * highlight link NeoTreeTabActive BufferLineBufferSelected')
+
             -- FIXME: this is a bug after neo-tree update, the NeoTreeFloatBorder highlights will not
             -- link to FloatBorder as it should
             -- check commit a2f0245a509f1fc70c7af2c3e156305c55fd52cd

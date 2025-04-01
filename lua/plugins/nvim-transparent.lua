@@ -24,6 +24,7 @@ return {
             "MatchParen",
             "CursorLine",
             "CursorColumn",
+            "NeoTreeTabActive",
         },
     },
     init = function()
