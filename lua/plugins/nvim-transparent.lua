@@ -17,6 +17,7 @@ return {
             -- "BufferLineBackground",
             -- "BufferLineSeparator",
             -- "BufferLineIndicatorSelected",
+            "NormalFloat",
         },
         -- table: groups you don't want to clear
         exclude_groups = {
