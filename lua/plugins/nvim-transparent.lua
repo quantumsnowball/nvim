@@ -44,6 +44,9 @@ return {
         -- neotree
         require('transparent').clear_prefix('NeoTree')
 
+        -- render markdown
+        require('transparent').clear_prefix('RenderMarkdownCode')
+
         -- telescope
         require('transparent').clear_prefix('Telescope')
     end
