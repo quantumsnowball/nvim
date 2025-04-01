@@ -32,6 +32,18 @@ return {
                     { 'searchcount', color = 'IncSearch' },
                 },
                 lualine_x = {
+                    {
+                        -- show keypress sequence
+                        require("noice").api.status.command.get,
+                        cond = require("noice").api.status.command.has,
+                        color = { fg = "#ff9e64" },
+                    },
+                    {
+                        -- show macro recording info
+                        require("noice").api.status.mode.get,
+                        cond = require("noice").api.status.mode.has,
+                        color = { fg = "#ff9e64" },
+                    },
                     'diagnostics',
                 },
                 lualine_y = {
