@@ -23,9 +23,22 @@ return {
         },
         -- lsp related
         lsp = {
-            -- I have my own config for lsp hover and signature
-            hover = { enabled = false, },
-            signature = { enabled = true, },
+            -- somehow using Noice to display is better looking, e.g. correct escape chars, alignment
+            -- also have a vertical scroll bar for longer content
+            override = {
+                -- override the default lsp markdown formatter with Noice
+                ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+                -- override the lsp markdown formatter with Noice
+                ["vim.lsp.util.stylize_markdown"] = true,
+                -- override cmp documentation with Noice (needs the other options to work)
+                ["cmp.entry.get_documentation"] = true,
+            },
+            hover = {
+                enabled = true,
+            },
+            signature = {
+                enabled = true,
+            },
         },
         -- message contnrol
         messages = {
@@ -36,6 +49,10 @@ return {
             view_warn = "mini",
             view_history = "messages",
             view_search = false,
+        },
+        presets = {
+            -- add a border to hover docs and signature help
+            lsp_doc_border = true,
         },
         -- options for the message history that you get with `:Noice`
         commands = {
