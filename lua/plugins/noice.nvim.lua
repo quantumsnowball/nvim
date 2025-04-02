@@ -73,7 +73,6 @@ return {
                 size = {
                     width = "auto",
                     height = "auto",
-                    min_height = 5,
                 },
                 border = {
                     padding = {
