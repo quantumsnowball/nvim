@@ -39,7 +39,7 @@ return {
             }),
             formatting = {
                 format = function(_, item)
-                    local icons = require("plugins.nvim-cmp/constants").icons.kinds
+                    local icons = require("plugins.nvim-cmp/icons").kinds
                     if icons[item.kind] then
                         item.kind = icons[item.kind] .. item.kind
                     end

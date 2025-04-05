@@ -1,6 +1,4 @@
-local M = {}
-
-M.icons = {
+return {
     diagnostics = {
         Error = " ",
         Warn = " ",
@@ -49,5 +47,3 @@ M.icons = {
         Variable = " ",
     },
 }
-
-return M
