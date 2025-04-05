@@ -11,27 +11,11 @@ return {
         'hrsh7th/cmp-cmdline',
         'L3MON4D3/LuaSnip',
     },
-    config = function()
+    opts = function()
         local cmp = require("cmp")
-        local keymaps = require('plugins.nvim-cmp.keymaps')
 
-        -- cmdline cmp
-        cmp.setup.cmdline(':', {
-            mapping = cmp.mapping.preset.cmdline({}),
-            sources = cmp.config.sources({
-                { name = 'path' }
-            }, {
-                {
-                    name = 'cmdline',
-                    option = {
-                        ignore_cmds = { 'Man', '!' }
-                    }
-                }
-            })
-        })
-
-        -- buffer cmp
-        cmp.setup {
+        -- setup opts
+        return {
             snippet = {
                 expand = function(args)
                     require('luasnip').lsp_expand(args.body)
@@ -40,7 +24,12 @@ return {
             completion = {
                 completeopt = "menu,menuone,noinsert",
             },
-            mapping = cmp.mapping.preset.insert({}),
+            mapping = cmp.mapping.preset.insert({
+                ["<Tab>"] = cmp.mapping.confirm(),
+                ["<C-d>"] = cmp.mapping.scroll_docs(4),
+                ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+                ["<CR>"] = cmp.mapping.confirm({ select = true }),
+            }),
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
                 { name = "buffer" },
@@ -50,7 +39,7 @@ return {
             }),
             formatting = {
                 format = function(_, item)
-                    local icons = require("plugins.nvim-cmp/constants").icons.kinds
+                    local icons = require("plugins.nvim-cmp/icons").kinds
                     if icons[item.kind] then
                         item.kind = icons[item.kind] .. item.kind
                     end
