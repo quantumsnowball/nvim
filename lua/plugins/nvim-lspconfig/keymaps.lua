@@ -14,19 +14,23 @@ local prev_diagnostic = function()
 end
 
 return {
+    -- service
+    { '<leader>lr', '<cmd>LspRestart<cr>',       desc = 'LSP restart' },
+    { '<leader>ll', '<cmd>LspLog<cr>',           desc = 'LSP log' },
+    { '<leader>li', '<cmd>LspInfo<cr>',          desc = 'LSP info' },
     -- editing
-    { '<leader>r', vim.lsp.buf.rename,          desc = 'lsp.buf.rename()' },
-    { ';f',        vim.lsp.buf.format,          desc = 'lsp.buf.format()' },
-    { 'qf',        vim.lsp.buf.code_action,     desc = 'lsp.buf.code_action()' },
+    { '<leader>r',  vim.lsp.buf.rename,          desc = 'lsp.buf.rename()' },
+    { ';f',         vim.lsp.buf.format,          desc = 'lsp.buf.format()' },
+    { 'qf',         vim.lsp.buf.code_action,     desc = 'lsp.buf.code_action()' },
     -- code inspect
-    { 'gr',        vim.lsp.buf.references,      desc = 'lsp.buf.references()' },
-    { 'gD',        vim.lsp.buf.declaration,     desc = 'lsp.buf.declaration()' },
-    { 'gd',        vim.lsp.buf.definition,      desc = 'lsp.buf.definition()' },
-    { 'K',         hover,                       desc = 'lsp.buf.hover()' },
-    { 'gi',        vim.lsp.buf.implementation,  desc = 'lsp.buf.implementation()' },
-    { '<leader>k', signature_help,              desc = 'lsp.buf.signature_help()' },
-    { '<C-k>',     signature_help,              desc = 'lsp.buf.signature_help()', mode = 'i' },
-    { '<space>D',  vim.lsp.buf.type_definition, desc = 'lsp.buf.type_definition()' },
-    { ']e',        next_diagnostic,             desc = 'lsp.diagnostic.next()' },
-    { '[e',        prev_diagnostic,             desc = 'lsp.diagnostic.prev()' },
+    { 'gr',         vim.lsp.buf.references,      desc = 'lsp.buf.references()' },
+    { 'gD',         vim.lsp.buf.declaration,     desc = 'lsp.buf.declaration()' },
+    { 'gd',         vim.lsp.buf.definition,      desc = 'lsp.buf.definition()' },
+    { 'K',          hover,                       desc = 'lsp.buf.hover()' },
+    { 'gi',         vim.lsp.buf.implementation,  desc = 'lsp.buf.implementation()' },
+    { '<leader>k',  signature_help,              desc = 'lsp.buf.signature_help()' },
+    { '<C-k>',      signature_help,              desc = 'lsp.buf.signature_help()', mode = 'i' },
+    { '<space>D',   vim.lsp.buf.type_definition, desc = 'lsp.buf.type_definition()' },
+    { ']e',         next_diagnostic,             desc = 'lsp.diagnostic.next()' },
+    { '[e',         prev_diagnostic,             desc = 'lsp.diagnostic.prev()' },
 }
