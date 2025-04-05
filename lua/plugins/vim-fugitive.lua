@@ -1,11 +1,25 @@
 -- git fugitive
 -- https://github.com/tpope/vim-fugitive
+
+local git_push_async = function()
+    -- exit callback
+    local on_exit = function(obj)
+        print(obj.code)
+        print(obj.signal)
+        print(obj.stdout)
+        print(obj.stderr)
+    end
+
+    -- run shell command asynchronously
+    vim.system({ 'git', 'push' }, { text = true }, on_exit)
+end
+
 return {
     'tpope/vim-fugitive',
     event = 'VeryLazy',
     keys = {
         { '<leader>c', ':Git commit<cr>',         desc = 'Git commit',         silent = true },
         { '<leader>a', ':Git commit --amend<cr>', desc = 'Git commit --amend', silent = true },
-        { '<leader>P', ':!git push &<cr>',        desc = 'Git push',           silent = true },
+        { '<leader>P', git_push_async,            desc = 'Git push',           silent = true },
     },
 }
