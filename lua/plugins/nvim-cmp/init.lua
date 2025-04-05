@@ -11,9 +11,8 @@ return {
         'hrsh7th/cmp-cmdline',
         'L3MON4D3/LuaSnip',
     },
-    config = function()
+    opts = function()
         local cmp = require("cmp")
-        local keymaps = require('plugins.nvim-cmp.keymaps')
 
         -- cmdline cmp
         cmp.setup.cmdline(':', {
@@ -30,8 +29,8 @@ return {
             })
         })
 
-        -- buffer cmp
-        cmp.setup {
+        -- setup opts
+        return {
             snippet = {
                 expand = function(args)
                     require('luasnip').lsp_expand(args.body)
