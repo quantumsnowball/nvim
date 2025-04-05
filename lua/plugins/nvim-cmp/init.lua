@@ -17,7 +17,7 @@ return {
 
         -- cmdline cmp
         cmp.setup.cmdline(':', {
-            mapping = cmp.mapping.preset.cmdline(keymaps.cmdline),
+            mapping = cmp.mapping.preset.cmdline({}),
             sources = cmp.config.sources({
                 { name = 'path' }
             }, {
@@ -40,7 +40,7 @@ return {
             completion = {
                 completeopt = "menu,menuone,noinsert",
             },
-            mapping = cmp.mapping.preset.insert(keymaps.insert),
+            mapping = cmp.mapping.preset.insert({}),
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
                 { name = "buffer" },
