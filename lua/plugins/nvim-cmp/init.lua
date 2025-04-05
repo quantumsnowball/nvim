@@ -14,21 +14,6 @@ return {
     opts = function()
         local cmp = require("cmp")
 
-        -- cmdline cmp
-        cmp.setup.cmdline(':', {
-            mapping = cmp.mapping.preset.cmdline({}),
-            sources = cmp.config.sources({
-                { name = 'path' }
-            }, {
-                {
-                    name = 'cmdline',
-                    option = {
-                        ignore_cmds = { 'Man', '!' }
-                    }
-                }
-            })
-        })
-
         -- setup opts
         return {
             snippet = {
