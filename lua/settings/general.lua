@@ -6,8 +6,8 @@ local map = require('utils').map
 map('n', '<leader>L', '<cmd>Lazy<cr>')
 -- quick save buffer
 map('n', '<c-s>', '<cmd>noautocmd w<cr>')
-map('i', '<c-s>', '<c-o>:w<cr>')
-map('v', '<c-s>', '<esc>:w<cr>')
+map('i', '<c-s>', '<c-o><cmd>w<cr>')
+map('v', '<c-s>', '<esc><cmd>w<cr>')
 map('n', 'qs', '<cmd>w<cr>', { desc = 'quick save' })
 map('n', ';;', '<cmd>w<cr>', { desc = 'quick save' })
 map('n', ';s', '<cmd>wa<cr>', { desc = 'quick save all buffers' })
