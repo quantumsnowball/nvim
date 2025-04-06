@@ -10,7 +10,7 @@ return {
     },
     keys = {
         -- just show me all messages possible
-        { "<leader>m", ':Noice all<cr>', desc = 'Show all message capture by Noice' }
+        { "<leader>m", '<cmd>Noice all<cr>', desc = 'Show all message capture by Noice' }
     },
     -- default opts:
     -- https://github.com/folke/noice.nvim/blob/main/lua/noice/config/init.lua
