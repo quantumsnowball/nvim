@@ -1,6 +1,8 @@
 local M = {}
 
 local actions = require "telescope.actions"
+local layout = require "telescope.actions.layout"
+local themes = require("telescope.themes")
 
 M.defaults = {
     layout_strategy = 'vertical',
@@ -13,19 +15,19 @@ M.defaults = {
     },
     mappings = {
         n = {
-            o = 'toggle_all',
-            p = require('telescope.actions.layout').toggle_preview,
-            J = require('telescope.actions').cycle_history_next,
-            K = require('telescope.actions').cycle_history_prev,
+            o = actions.toggle_all,
+            p = layout.toggle_preview,
+            J = actions.cycle_history_next,
+            K = actions.cycle_history_prev,
             t = { actions.select_tab, type = 'action', opts = { nowait = true }, },
-            ["\\"] = require('telescope.actions').select_vertical,
-            ["-"] = require('telescope.actions').select_horizontal,
+            ["\\"] = actions.select_vertical,
+            ["-"] = actions.select_horizontal,
         },
         i = {
-            ["<C-j>"] = require('telescope.actions').cycle_history_next,
-            ["<C-k>"] = require('telescope.actions').cycle_history_prev,
-            ["<Down>"] = require('telescope.actions').cycle_history_next,
-            ["<Up>"] = require('telescope.actions').cycle_history_prev,
+            ["<C-j>"] = actions.cycle_history_next,
+            ["<C-k>"] = actions.cycle_history_prev,
+            ["<Down>"] = actions.cycle_history_next,
+            ["<Up>"] = actions.cycle_history_prev,
         },
     },
     sorting_strategy = 'ascending',
@@ -76,7 +78,7 @@ M.extensions = {
         -- the default case_mode is "smart_case"
     },
     ["ui-select"] = {
-        require("telescope.themes").get_cursor({
+        themes.get_cursor({
             border = true
         }),
     },
