@@ -36,9 +36,9 @@ return {
                 '<cmd>lua require("telescope.builtin").find_files({layout_strategy="vertical", hidden=true})<cr>'),
             dashboard.button("w", "W  Find Word",
                 '<cmd>lua require("telescope.builtin").live_grep({layout_strategy="vertical", additional_args=function(opts) return {"--hidden"} end})<cr>'),
-            dashboard.button("n", "N  New file", ":ene <BAR> startinsert <CR>"),
-            -- dashboard.button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
-            -- dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
+            dashboard.button("n", "N  New file", ":ene <BAR> startinsert <cr>"),
+            -- dashboard.button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<cr>"),
+            -- dashboard.button("q", "  > Quit NVIM", ":qa<cr>"),
         }
 
         -- Send config to alpha.setup()

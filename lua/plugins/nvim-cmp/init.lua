@@ -28,7 +28,7 @@ return {
                 ["<Tab>"] = cmp.mapping.confirm(),
                 ["<C-d>"] = cmp.mapping.scroll_docs(4),
                 ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-                ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                ["<cr>"] = cmp.mapping.confirm({ select = true }),
             }),
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },

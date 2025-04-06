@@ -26,7 +26,7 @@ map('i', '<C-l>', '<end>')
 -- shift-tab will go one tab backward
 map('i', '<S-Tab>', '<C-d>')
 -- \ break line, | reverse break line
-map('n', '|', 'i<C-m><esc>:MoveLine(-1)<CR>')
+map('n', '|', 'i<C-m><esc>:MoveLine(-1)<cr>')
 map('n', '\\', 'i<C-m><esc>')
 -- go and gO will open new line but stay in normal mode
 map('n', 'gO', 'O<esc>', { desc = 'open a new line above' })
@@ -55,8 +55,8 @@ map({ 'n', 'v', 'o' }, '<Tab>', '%', { remap = true })
 map({ 'n', 'v', 'o' }, '[<Tab>', '[m', { remap = true })
 map({ 'n', 'v', 'o' }, ']<Tab>', ']m', { remap = true })
 -- search for pairable symbols
-vim.cmd "noremap zl <Cmd>call search('[([{<>}\\])]')<CR>"
-vim.cmd "noremap zh <Cmd>call search('[([{<>}\\])]', 'b')<CR>"
+vim.cmd "noremap zl <Cmd>call search('[([{<>}\\])]')<cr>"
+vim.cmd "noremap zh <Cmd>call search('[([{<>}\\])]', 'b')<cr>"
 -- select inner word/line(without linebreak)
 map('n', ';w', 'hevb', { desc = 'select word, curosr to beginning' })
 map('n', ';e', 'viw', { desc = 'select word, cursor to end' })

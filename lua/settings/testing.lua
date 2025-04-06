@@ -9,7 +9,7 @@ How about :new | lua vim.fn.termopen("fd | fzf")?
 
 You can then expand by creating your own lua function that grabs the output
 from termopen using vim.api.nvim_buf_lines and send it wherever you want.
-You can also use vim.api.nvim_feedkeys to send <CR> to get rid of the
+You can also use vim.api.nvim_feedkeys to send <cr> to get rid of the
 [Process exited] prompt.
 
 There is a the nvim_treesitter#statusline() function which returns a string
