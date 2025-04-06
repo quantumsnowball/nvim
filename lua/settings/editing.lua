@@ -1,15 +1,15 @@
 local map = require('utils').map
 
 -- manual reload the file if modified externally
-map('n', '<F5>', ':checktime<CR>')
+map('n', '<F5>', '<cmd>checktime<cr>')
 -- t is free
 map('n', 't', '<Nop>')
 map('n', 'T', '<Nop>')
 -- switch case
 map('n', 'U', '~')
 -- quick set shiftwidth
-map('n', '<space>2', ':set shiftwidth=2<cr>')
-map('n', '<space>4', ':set shiftwidth=4<cr>')
+map('n', '<space>2', '<cmd>set shiftwidth=2<cr>')
+map('n', '<space>4', '<cmd>set shiftwidth=4<cr>')
 -- commenting code
 map('n', '<leader>/', 'gcc', { remap = true, desc = 'toggle line comment' })
 map('v', '<leader>/', 'gc', { remap = true, desc = 'toggle selection comment' })
@@ -46,7 +46,7 @@ map('n', 'g;', 'A:<esc>', { desc = 'insert `;` at line end' })
 -- C-o will also open new line in insert mode
 map('i', '<C-o>', '<esc>o')
 -- toggle spell checking
-map('n', '<leader>sc', ':set spell!<cr>', { desc = 'toggle spell checking' })
+map('n', '<leader>sc', '<cmd>set spell!<cr>', { desc = 'toggle spell checking' })
 -- use Tab to toggle matching group
 -- -- normal mode: matching  or tags (by matchit.vim, need to set remap=true)
 -- -- visual mode: easily select the opposite matching whole section
@@ -83,5 +83,5 @@ map('n', '<leader>"', 'a""<left>', { desc = 'insert `""` pair on same line' })
 map('n', '<leader><', 'A<><left>', { desc = 'insert `<>` pair on same line' })
 map('n', '<leader>>', 'A</><left>', { desc = 'insert `</>` pair on same line' })
 -- Inspect lexical / syntax / semantics
-map('n', ';i', ':Inspect<cr>', { desc = 'Inspect semantics under cursor' })
-map('n', ';I', ':InspectTree<cr>', { desc = 'InspectTree' })
+map('n', ';i', '<cmd>Inspect<cr>', { desc = 'Inspect semantics under cursor' })
+map('n', ';I', '<cmd>InspectTree<cr>', { desc = 'InspectTree' })
