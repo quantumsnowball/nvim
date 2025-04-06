@@ -70,8 +70,7 @@ map('n', "<space>F'", tb.registers, { desc = 'telescope.registers()' })
 map('n', '<leader>Fj', tb.jumplist, { desc = 'telescope.jumplist()' })
 
 -- grep visual selected text directly
-map('v', '<leader>Fsw', tb.grep_string, { desc = 'telescope.grep_string(--visual-mode)' })
-map('v', '<leader>*', tb.grep_string, { desc = 'telescope.grep_string(--visual-mode)' })
+map('v', '<leader>w', tb.grep_string, { desc = 'telescope.grep_string(--visual-mode)' })
 
 -- color scheme
 map('n', '<leader>Fcs', tb.colorscheme, { desc = 'telescope.colorscheme()' })
