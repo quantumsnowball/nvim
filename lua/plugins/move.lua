@@ -9,26 +9,26 @@ return {
         local opts = { silent = true }
 
         -- Normal-mode
-        map('n', '<C-down>', ':MoveLine(1)<CR>', opts)
-        map('n', '<C-up>', ':MoveLine(-1)<CR>', opts)
-        map('n', 'gj', ':MoveLine(1)<CR>', opts)
-        map('n', 'gk', ':MoveLine(-1)<CR>', opts)
-        -- map('n', '<A-h>', ':MoveHChar(-1)<CR>', opts)
-        -- map('n', '<A-l>', ':MoveHChar(1)<CR>', opts)
+        map('n', '<C-down>', '<cmd>MoveLine(1)<cr>', opts)
+        map('n', '<C-up>', '<cmd>MoveLine(-1)<cr>', opts)
+        map('n', 'gj', '<cmd>MoveLine(1)<cr>', opts)
+        map('n', 'gk', '<cmd>MoveLine(-1)<cr>', opts)
+        -- map('n', '<A-h>', '<cmd>MoveHChar(-1)<cr>', opts)
+        -- map('n', '<A-l>', '<cmd>MoveHChar(1)<cr>', opts)
 
         -- Visual-mode
         --   ctrl + arrows
-        map('v', '<C-down>', ':MoveBlock(1)<CR>', opts)
-        map('v', '<C-up>', ':MoveBlock(-1)<CR>', opts)
-        map('v', '<C-left>', ':MoveHBlock(-1)<CR>', opts)
-        map('v', '<C-right>', ':MoveHBlock(1)<CR>', opts)
+        map('v', '<C-down>', '<cmd>MoveBlock(1)<cr>', opts)
+        map('v', '<C-up>', '<cmd>MoveBlock(-1)<cr>', opts)
+        map('v', '<C-left>', '<cmd>MoveHBlock(-1)<cr>', opts)
+        map('v', '<C-right>', '<cmd>MoveHBlock(1)<cr>', opts)
         --   ctrl + hjkl
-        map('v', '<C-j>', ':MoveBlock(1)<CR>', opts)
-        map('v', '<C-k>', ':MoveBlock(-1)<CR>', opts)
-        map('v', '<C-h>', ':MoveHBlock(-1)<CR>', opts)
-        map('v', '<C-l>', ':MoveHBlock(1)<CR>', opts)
+        map('v', '<C-j>', '<cmd>MoveBlock(1)<cr>', opts)
+        map('v', '<C-k>', '<cmd>MoveBlock(-1)<cr>', opts)
+        map('v', '<C-h>', '<cmd>MoveHBlock(-1)<cr>', opts)
+        map('v', '<C-l>', '<cmd>MoveHBlock(1)<cr>', opts)
         --   g + hjkl
-        map('x', 'gj', ':MoveBlock(1)<CR>', opts)
-        map('x', 'gk', ':MoveBlock(-1)<CR>', opts)
+        map('x', 'gj', '<cmd>MoveBlock(1)<cr>', opts)
+        map('x', 'gk', '<cmd>MoveBlock(-1)<cr>', opts)
     end
 }
