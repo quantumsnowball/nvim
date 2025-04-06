@@ -51,8 +51,8 @@ return {
         ]])
         -- quick fix list related keymaps
         local map = require('utils').map
-        map('n', 'qn', ':cnext<cr>', { desc = 'quickfix_list.next()' })
-        map('n', 'qp', ':cprevious<cr>', { desc = 'quickfix_list.previous()' })
-        map('n', 'qc', ':cclose<cr>', { desc = 'quickfix_list.close()' })
+        map('n', 'qn', '<cmd>cnext<cr>', { desc = 'quickfix_list.next()' })
+        map('n', 'qp', '<cmd>cprevious<cr>', { desc = 'quickfix_list.previous()' })
+        map('n', 'qc', '<cmd>cclose<cr>', { desc = 'quickfix_list.close()' })
     end
 }
