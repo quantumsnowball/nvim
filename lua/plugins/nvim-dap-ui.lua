@@ -41,7 +41,7 @@ local opts = {
         }
     },
     mappings = {
-        expand = { "h", "l", "<CR>", "<2-LeftMouse>" },
+        expand = { "h", "l", "<cr>", "<2-LeftMouse>" },
     },
 }
 

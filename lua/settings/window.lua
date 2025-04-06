@@ -3,13 +3,13 @@ local map = require('utils').map
 -- windows --
 -------------
 -- quit window shortcut
-map('n', 'qw', ':q<cr>', { desc = 'quit window' })
-map('n', 'qW', ':qa<cr>', { desc = 'quit all windows' })
-map('n', 'qq', ':qa<cr>', { desc = 'quit neovim' })
-map('n', 'qQ', ':qa!<cr>', { desc = 'quit neovim (force)' })
+map('n', 'qw', '<cmd>q<cr>', { desc = 'quit window' })
+map('n', 'qW', '<cmd>qa<cr>', { desc = 'quit all windows' })
+map('n', 'qq', '<cmd>qa<cr>', { desc = 'quit neovim' })
+map('n', 'qQ', '<cmd>qa!<cr>', { desc = 'quit neovim (force)' })
 -- toggle split windows
-map('n', 'g-', ':split<cr>', { desc = 'split horizontally to bottom' })
-map('n', 'g\\', ':vsplit<cr>', { desc = 'split vertically to right' })
+map('n', 'g-', '<cmd>split<cr>', { desc = 'split horizontally to bottom' })
+map('n', 'g\\', '<cmd>vsplit<cr>', { desc = 'split vertically to right' })
 -- window rotation
 map('n', 'q]', '<c-w>r', { desc = 'rotate windows (forward)' })
 map('n', 'q[', '<c-w>R', { desc = 'rotate windows (backward)' })

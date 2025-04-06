@@ -47,8 +47,8 @@ return {
         vim.opt.listchars:append("eol:↴")
         -- toggle space and eol chars
         vim.opt.list = false
-        require('utils').map('n', '<F6>', ':set list!<CR>')
-        require('utils').map('n', '<space>`', ':set list!<CR>')
+        require('utils').map('n', '<F6>', '<cmd>set list!<cr>')
+        require('utils').map('n', '<space>`', '<cmd>:set list!<cr>')
         -- wrapped lines follow indentation
         vim.opt.breakindent = true
     end
