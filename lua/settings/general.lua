@@ -19,9 +19,11 @@ map('n', '<esc>', '<cmd>nohlsearch<cr>', { desc = 'Clear search result highlight
 -- G and gg also center line
 map('n', 'G', 'Gzz')
 map('n', 'gg', 'ggzz')
--- <leader>Q records macro, q is free
-map({ 'n', 'v' }, '<leader>q', 'q')
+-- mr record macro, mp play macro, q and @ are free
 map({ 'n', 'v' }, 'q', '<Nop>')
+map({ 'n', 'v' }, '@', '<Nop>')
+map({ 'n', 'v' }, 'mr', 'q', { desc = 'start/stop marco record' })
+map({ 'n', 'v' }, 'mp', '@', { desc = 'play marco' })
 -- toggle word wrap
 map('n', 'gw', '<cmd>set wrap!<cr>', { desc = 'toggle text wrap' })
 -- quick fix list --
