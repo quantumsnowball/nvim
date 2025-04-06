@@ -37,8 +37,7 @@ return {
             dashboard.button("w", "W  Find Word",
                 '<cmd>lua require("telescope.builtin").live_grep({layout_strategy="vertical", additional_args=function(opts) return {"--hidden"} end})<cr>'),
             dashboard.button("n", "N  New file", ":ene <BAR> startinsert <cr>"),
-            -- dashboard.button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<cr>"),
-            -- dashboard.button("q", "  > Quit NVIM", ":qa<cr>"),
+            -- dashboard.button("q", "  > Quit NVIM", "<cmd>qa<cr>"),
         }
 
         -- Send config to alpha.setup()
