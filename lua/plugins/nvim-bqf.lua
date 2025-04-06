@@ -11,6 +11,7 @@ return {
         preview = {
             win_height = 12,
             win_vheight = 12,
+            winblend = 0,
             delay_syntax = 80,
             border_chars = { '┃', '┃', '━', '━', '┏', '┓', '┗', '┛', '█' },
             should_preview_cb = function(bufnr, qwinid)

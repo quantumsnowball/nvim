@@ -49,6 +49,8 @@ return {
 
         -- telescope
         require('transparent').clear_prefix('Telescope')
+
+        require('transparent').clear_prefix('Bqf')
     end
 
 }
