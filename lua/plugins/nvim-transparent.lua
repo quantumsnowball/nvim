@@ -34,8 +34,8 @@ return {
         --   :TransparentEnable
         --   :TransparentDisable
         --   :TransparentToggle
-        map('n', '<M-u>', ':TransparentToggle<cr>')
-        map('n', '<F4>', ':TransparentToggle<cr>')
+        map('n', '<M-u>', '<cmd>TransparentToggle<cr>')
+        map('n', '<F4>', '<cmd>TransparentToggle<cr>')
 
         -- winbar
         require('transparent').clear_prefix('barbecue')
