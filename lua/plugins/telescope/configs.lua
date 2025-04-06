@@ -1,5 +1,7 @@
 local M = {}
 
+local actions = require "telescope.actions"
+
 M.defaults = {
     layout_strategy = 'vertical',
     layout_config = {
@@ -15,7 +17,7 @@ M.defaults = {
             p = require('telescope.actions.layout').toggle_preview,
             J = require('telescope.actions').cycle_history_next,
             K = require('telescope.actions').cycle_history_prev,
-            t = require('telescope.actions').select_tab,
+            t = { actions.select_tab, type = 'action', opts = { nowait = true }, },
             ["\\"] = require('telescope.actions').select_vertical,
             ["-"] = require('telescope.actions').select_horizontal,
         },
