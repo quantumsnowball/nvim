@@ -87,5 +87,5 @@ map('n', ';r',
     function() run_current_python_file() end,
     { desc = 'run current python file' })
 map('n', ';R',
-    function() run_current_python_file('-m pdb -c cont') end,
+    function() run_current_python_file('-i') end,
     { desc = 'run current python file interactively' })
