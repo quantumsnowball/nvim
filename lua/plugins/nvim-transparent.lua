@@ -37,20 +37,22 @@ return {
         map('n', '<M-u>', '<cmd>TransparentToggle<cr>')
         map('n', '<F4>', '<cmd>TransparentToggle<cr>')
 
+        -- clear prefix
+        local clear_prefix = require('transparent').clear_prefix
         -- winbar
-        require('transparent').clear_prefix('barbecue')
-        require('transparent').clear_prefix('WinBar')
+        clear_prefix('barbecue')
+        clear_prefix('WinBar')
 
         -- neotree
-        require('transparent').clear_prefix('NeoTree')
+        clear_prefix('NeoTree')
 
         -- render markdown
-        require('transparent').clear_prefix('RenderMarkdownCode')
+        clear_prefix('RenderMarkdownCode')
 
         -- telescope
-        require('transparent').clear_prefix('Telescope')
+        clear_prefix('Telescope')
 
-        require('transparent').clear_prefix('Bqf')
+        clear_prefix('Bqf')
     end
 
 }
