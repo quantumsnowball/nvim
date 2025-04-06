@@ -3,19 +3,19 @@ local map = require('utils').map
 -- general --
 -------------
 -- lazy.nvim plugin manager quick launch
-map('n', '<leader>L', ':Lazy<cr>')
+map('n', '<leader>L', '<cmd>Lazy<cr>')
 -- quick save buffer
-map('n', '<c-s>', ':noautocmd w<cr>')
+map('n', '<c-s>', '<cmd>noautocmd w<cr>')
 map('i', '<c-s>', '<c-o>:w<cr>')
 map('v', '<c-s>', '<esc>:w<cr>')
-map('n', 'qs', ':w<cr>', { desc = 'quick save' })
-map('n', ';;', ':w<cr>', { desc = 'quick save' })
-map('n', ';s', ':wa<cr>', { desc = 'quick save all buffers' })
-map('n', '<leader><leader>', ':wa<cr>', { desc = 'quick save all buffers' })
+map('n', 'qs', '<cmd>w<cr>', { desc = 'quick save' })
+map('n', ';;', '<cmd>w<cr>', { desc = 'quick save' })
+map('n', ';s', '<cmd>wa<cr>', { desc = 'quick save all buffers' })
+map('n', '<leader><leader>', '<cmd>wa<cr>', { desc = 'quick save all buffers' })
 -- show which-key root
-map('n', '<F1>', ':WhichKey<cr>', { silent = true })
+map('n', '<F1>', '<cmd>WhichKey<cr>', { silent = true })
 -- cancel search highlight after search
-map('n', '<esc>', ':nohlsearch<cr>', { desc = 'Clear search result highlight' })
+map('n', '<esc>', '<cmd>nohlsearch<cr>', { desc = 'Clear search result highlight' })
 -- G and gg also center line
 map('n', 'G', 'Gzz')
 map('n', 'gg', 'ggzz')
@@ -23,9 +23,9 @@ map('n', 'gg', 'ggzz')
 map({ 'n', 'v' }, '<leader>q', 'q')
 map({ 'n', 'v' }, 'q', '<Nop>')
 -- toggle word wrap
-map('n', 'gw', ':set wrap!<cr>', { desc = 'toggle text wrap' })
+map('n', 'gw', '<cmd>set wrap!<cr>', { desc = 'toggle text wrap' })
 -- quick fix list --
-map('n', '<leader>qf', ':copen<cr>', { desc = 'open quickfix list' })
+map('n', '<leader>qf', '<cmd>copen<cr>', { desc = 'open quickfix list' })
 -- close tabpages to the right
 map('n', 'q>', '<cmd>.+1,$tabdo :tabclose<cr>', { desc = 'close tabs to the right' })
 map('n', 't>', '<cmd>.+1,$tabdo :tabclose<cr>', { desc = 'close tabs to the right' })
