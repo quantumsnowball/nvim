@@ -80,11 +80,11 @@ map('n', 'g0', 'mzA()<esc>`z', { desc = 'insert `()` pair at line end' })
 map('n', 'z[', 'A<space>[<cr>]<esc>O', { desc = 'insert `[]` pair on new line' })
 map('n', 'z{', 'A<space>{<cr>}<esc>O', { desc = 'insert `{}` pair on new line' })
 map('n', 'z(', 'A<space>(<cr>)<esc>O', { desc = 'insert `()` pair on new line' })
---   end of line pad
-map('n', 'z)', '$a)<esc>', { desc = 'insert `)` at line end' })
-map('n', 'z0', '$a)<esc>', { desc = 'insert `)` at line end' }) -- shorthand for )
-map('n', 'z]', '$a]<esc>', { desc = 'insert `]` at line end' })
-map('n', 'z}', '$a}<esc>', { desc = 'insert `}` at line end' })
+--   end of line matching, then jump back
+map('n', 'z)', 'mzA)<esc>`z', { desc = 'insert `)` at line end' })
+map('n', 'z0', 'mzA)<esc>`z', { desc = 'insert `)` at line end' })
+map('n', 'z]', 'mzA]<esc>`z', { desc = 'insert `]` at line end' })
+map('n', 'z}', 'mzA}<esc>`z', { desc = 'insert `}` at line end' })
 --   quotes'
 map('n', "g'", "a''<left>", { desc = "insert `''` pair on same line" })
 map('n', 'g"', 'a""<left>', { desc = 'insert `""` pair on same line' })
