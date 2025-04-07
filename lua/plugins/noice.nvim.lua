@@ -91,7 +91,7 @@ return {
             mini = {
                 timeout = 7000,
                 position = {
-                    row = 2,
+                    row = -1,
                 },
                 border = {
                     style = 'none',
