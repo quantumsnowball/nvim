@@ -4,12 +4,26 @@ return {
     "folke/noice.nvim",
     event = "VeryLazy",
     dependencies = {
-        -- for displaying popup and text input UI
-        -- https://github.com/MunifTanjim/nui.nvim
-        "MunifTanjim/nui.nvim",
-        -- for displaying notification popup
-        -- https://github.com/rcarriga/nvim-notify
-        "rcarriga/nvim-notify",
+        {
+            -- for displaying popup and text input UI
+            -- https://github.com/MunifTanjim/nui.nvim
+            "MunifTanjim/nui.nvim",
+        },
+        {
+            -- for displaying notification popup
+            -- https://github.com/rcarriga/nvim-notify
+            "rcarriga/nvim-notify",
+            -- nvim-notify opts:
+            -- https://github.com/rcarriga/nvim-notify/blob/master/lua/notify/config/init.lua
+            opts = {
+                top_down = false,
+                timeout = 1000,
+                stages = "fade",
+                render = "compact",
+                max_width = 80,
+                background_colour = "#000000",
+            }
+        },
     },
     keys = {
         -- just show me all messages possible
