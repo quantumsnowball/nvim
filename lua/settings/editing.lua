@@ -34,16 +34,9 @@ map('n', 'go', 'o<esc>', { desc = 'open a new line below' })
 -- g, and g. insert space before/after cursor
 map('n', 'g,', 'i<space><esc><right>', { desc = 'insert a space right' })
 map('n', 'g.', 'a<space><esc><left>', { desc = 'insert a space left' })
--- g), g], g} insert closing pair match at line end in normal mode
-map('n', 'z)', '$a)<esc>', { desc = 'insert `)` at line end' })
-map('n', 'z0', '$a)<esc>', { desc = 'insert `)` at line end' }) -- shorthand for )
-map('n', 'z]', '$a]<esc>', { desc = 'insert `]` at line end' })
-map('n', 'z}', '$a}<esc>', { desc = 'insert `}` at line end' })
-map('n', "z'", "$a'<esc>", { desc = "insert `'` at line end" })
-map('n', 'z"', '$a"<esc>', { desc = 'insert `"` at line end' })
--- insert ;/: at the end of line
-map('n', 'g;', 'A;<esc>', { desc = 'insert `;` at line end' })
-map('n', 'g:', 'A:<esc>', { desc = 'insert `:` at line end' })
+-- insert ;/: at the end of line, then jump back:
+map('n', 'g;', 'mzA;<esc>`z', { desc = 'insert `;` at line end' })
+map('n', 'g:', 'mzA:<esc>`z', { desc = 'insert `:` at line end' })
 -- C-o will also open new line in insert mode
 map('i', '<C-o>', '<esc>o')
 -- toggle spell checking
@@ -69,20 +62,37 @@ map('n', ';c', '"_ciw', { desc = 'change inner word' })
 map('n', ';C', '"_ciW', { desc = 'change inner word' })
 -- delete line
 map('n', ';l', '"_dd', { desc = 'delete whole line' })
--- quick pairs
---   new line
-map('n', 'g[', 'A<space>[<cr>]<esc>O', { desc = 'insert `[]` pair on new line' })
-map('n', 'g{', 'A<space>{<cr>}<esc>O', { desc = 'insert `{}` pair on new line' })
-map('n', 'g(', 'A<space>(<cr>)<esc>O', { desc = 'insert `()` pair on new line' })
---   same line
-map('n', 'g]', 'a[]<left>', { desc = 'insert `[]` pair on same line' })
-map('n', 'g}', 'a{}<left>', { desc = 'insert `{}` pair on same line' })
-map('n', 'g)', 'a()<left>', { desc = 'insert `()` pair on same line' })
-map('n', "g'", "a''<left>", { desc = "insert `''` pair on same line" })
-map('n', 'g"', 'a""<left>', { desc = 'insert `""` pair on same line' })
--- </> tags
-map('n', 'g<', 'A<><left>', { desc = 'insert `<>` pair on same line' })
-map('n', 'g>', 'A</><left>', { desc = 'insert `</>` pair on same line' })
 -- Inspect lexical / syntax / semantics
 map('n', ';i', '<cmd>Inspect<cr>', { desc = 'Inspect semantics under cursor' })
 map('n', ';I', '<cmd>InspectTree<cr>', { desc = 'InspectTree' })
+-- quick pairs
+--   pairs at cursor end, then insert
+map('n', 'g[', 'a[]<left>', { desc = 'insert `[]` pair on same line' })
+map('n', 'g{', 'a{}<left>', { desc = 'insert `{}` pair on same line' })
+map('n', 'g(', 'a()<left>', { desc = 'insert `()` pair on same line' })
+map('n', 'g9', 'a()<left>', { desc = 'insert `()` pair on same line' })
+--   pairs at line end, then jump back
+map('n', 'g]', 'mzA[]<esc>`z', { desc = 'insert `[]` pair at line end' })
+map('n', 'g}', 'mzA{}<esc>`z', { desc = 'insert `{}` pair at line end' })
+map('n', 'g)', 'mzA()<esc>`z', { desc = 'insert `()` pair at line end' })
+map('n', 'g0', 'mzA()<esc>`z', { desc = 'insert `()` pair at line end' })
+--   pairs at new line, then insert
+map('n', 'z[', 'A<space>[<cr>]<esc>O', { desc = 'insert `[]` pair on new line' })
+map('n', 'z{', 'A<space>{<cr>}<esc>O', { desc = 'insert `{}` pair on new line' })
+map('n', 'z(', 'A<space>(<cr>)<esc>O', { desc = 'insert `()` pair on new line' })
+--   end of line matching, then jump back
+map('n', 'z)', 'mzA)<esc>`z', { desc = 'insert `)` at line end' })
+map('n', 'z0', 'mzA)<esc>`z', { desc = 'insert `)` at line end' })
+map('n', 'z]', 'mzA]<esc>`z', { desc = 'insert `]` at line end' })
+map('n', 'z}', 'mzA}<esc>`z', { desc = 'insert `}` at line end' })
+--   quotes pairs, then insert
+map('n', "g'", "a''<left>", { desc = "insert `''` pair on same line" })
+map('n', 'g"', 'a""<left>', { desc = 'insert `""` pair on same line' })
+map('n', 'g`', 'a``<left>', { desc = "insert '``' pair on same line" })
+--   quote closing at line end, then jump back
+map('n', "z'", "mzA'<esc>`z", { desc = "insert `'` at line end" })
+map('n', 'z"', 'mzA"<esc>`z', { desc = 'insert `"` at line end' })
+map('n', 'z`', 'mzA`<esc>`z', { desc = "insert '`' at line end" })
+--   </> tags, then insert
+map('n', 'g<', 'a<><left>', { desc = 'insert `<>` pair on same line' })
+map('n', 'g>', 'a</><left>', { desc = 'insert `</>` pair on same line' })

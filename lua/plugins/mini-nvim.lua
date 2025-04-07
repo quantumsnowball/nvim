@@ -6,7 +6,11 @@ return {
     event = 'VeryLazy',
     config = function()
         require('mini.ai').setup({
-            --
+            mappings = {
+                -- remove g[ and g] bindings for other uses
+                goto_left = '',
+                goto_right = '',
+            }
         })
 
         require('mini.splitjoin').setup({
