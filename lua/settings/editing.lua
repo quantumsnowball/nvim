@@ -66,12 +66,13 @@ map('n', ';l', '"_dd', { desc = 'delete whole line' })
 map('n', ';i', '<cmd>Inspect<cr>', { desc = 'Inspect semantics under cursor' })
 map('n', ';I', '<cmd>InspectTree<cr>', { desc = 'InspectTree' })
 -- quick pairs
---   same line
-map('n', 'g]', 'a[]<left>', { desc = 'insert `[]` pair on same line' })
-map('n', 'g}', 'a{}<left>', { desc = 'insert `{}` pair on same line' })
-map('n', 'g)', 'a()<left>', { desc = 'insert `()` pair on same line' })
+--   pairs at cursor
+map('n', 'g[', 'a[]<left>', { desc = 'insert `[]` pair on same line' })
+map('n', 'g{', 'a{}<left>', { desc = 'insert `{}` pair on same line' })
+map('n', 'g(', 'a()<left>', { desc = 'insert `()` pair on same line' })
 map('n', "g'", "a''<left>", { desc = "insert `''` pair on same line" })
 map('n', 'g"', 'a""<left>', { desc = 'insert `""` pair on same line' })
+--   pairs at line end
 -- </> tags
 map('n', 'g<', 'A<><left>', { desc = 'insert `<>` pair on same line' })
 map('n', 'g>', 'A</><left>', { desc = 'insert `</>` pair on same line' })
