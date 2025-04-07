@@ -41,8 +41,9 @@ map('n', 'z]', '$a]<esc>', { desc = 'insert `]` at line end' })
 map('n', 'z}', '$a}<esc>', { desc = 'insert `}` at line end' })
 map('n', "z'", "$a'<esc>", { desc = "insert `'` at line end" })
 map('n', 'z"', '$a"<esc>', { desc = 'insert `"` at line end' })
--- g; insert : at the end of line
-map('n', 'g;', 'A:<esc>', { desc = 'insert `;` at line end' })
+-- insert ;/: at the end of line
+map('n', 'g;', 'A;<esc>', { desc = 'insert `;` at line end' })
+map('n', 'g:', 'A:<esc>', { desc = 'insert `:` at line end' })
 -- C-o will also open new line in insert mode
 map('i', '<C-o>', '<esc>o')
 -- toggle spell checking
