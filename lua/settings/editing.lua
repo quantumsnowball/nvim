@@ -72,8 +72,11 @@ map('n', 'g{', 'a{}<left>', { desc = 'insert `{}` pair on same line' })
 map('n', 'g(', 'a()<left>', { desc = 'insert `()` pair on same line' })
 map('n', "g'", "a''<left>", { desc = "insert `''` pair on same line" })
 map('n', 'g"', 'a""<left>', { desc = 'insert `""` pair on same line' })
---   pairs at line end
--- </> tags
+--   pairs at line end, then jump back
+map('n', 'g]', 'mzA[]<esc>`z', { desc = 'insert `[]` pair at line end' })
+map('n', 'g}', 'mzA{}<esc>`z', { desc = 'insert `{}` pair at line end' })
+map('n', 'g)', 'mzA()<esc>`z', { desc = 'insert `()` pair at line end' })
+--   </> tags
 map('n', 'g<', 'A<><left>', { desc = 'insert `<>` pair on same line' })
 map('n', 'g>', 'A</><left>', { desc = 'insert `</>` pair on same line' })
 --   new line
