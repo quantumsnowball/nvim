@@ -34,9 +34,9 @@ map('n', 'go', 'o<esc>', { desc = 'open a new line below' })
 -- g, and g. insert space before/after cursor
 map('n', 'g,', 'i<space><esc><right>', { desc = 'insert a space right' })
 map('n', 'g.', 'a<space><esc><left>', { desc = 'insert a space left' })
--- insert ;/: at the end of line
-map('n', 'g;', 'A;<esc>', { desc = 'insert `;` at line end' })
-map('n', 'g:', 'A:<esc>', { desc = 'insert `:` at line end' })
+-- insert ;/: at the end of line, then jump back:
+map('n', 'g;', 'mzA;<esc>`z', { desc = 'insert `;` at line end' })
+map('n', 'g:', 'mzA:<esc>`z', { desc = 'insert `:` at line end' })
 -- C-o will also open new line in insert mode
 map('i', '<C-o>', '<esc>o')
 -- toggle spell checking
