@@ -34,13 +34,6 @@ map('n', 'go', 'o<esc>', { desc = 'open a new line below' })
 -- g, and g. insert space before/after cursor
 map('n', 'g,', 'i<space><esc><right>', { desc = 'insert a space right' })
 map('n', 'g.', 'a<space><esc><left>', { desc = 'insert a space left' })
--- g), g], g} insert closing pair match at line end in normal mode
-map('n', 'z)', '$a)<esc>', { desc = 'insert `)` at line end' })
-map('n', 'z0', '$a)<esc>', { desc = 'insert `)` at line end' }) -- shorthand for )
-map('n', 'z]', '$a]<esc>', { desc = 'insert `]` at line end' })
-map('n', 'z}', '$a}<esc>', { desc = 'insert `}` at line end' })
-map('n', "z'", "$a'<esc>", { desc = "insert `'` at line end" })
-map('n', 'z"', '$a"<esc>', { desc = 'insert `"` at line end' })
 -- insert ;/: at the end of line
 map('n', 'g;', 'A;<esc>', { desc = 'insert `;` at line end' })
 map('n', 'g:', 'A:<esc>', { desc = 'insert `:` at line end' })
@@ -69,6 +62,9 @@ map('n', ';c', '"_ciw', { desc = 'change inner word' })
 map('n', ';C', '"_ciW', { desc = 'change inner word' })
 -- delete line
 map('n', ';l', '"_dd', { desc = 'delete whole line' })
+-- Inspect lexical / syntax / semantics
+map('n', ';i', '<cmd>Inspect<cr>', { desc = 'Inspect semantics under cursor' })
+map('n', ';I', '<cmd>InspectTree<cr>', { desc = 'InspectTree' })
 -- quick pairs
 --   new line
 map('n', 'g[', 'A<space>[<cr>]<esc>O', { desc = 'insert `[]` pair on new line' })
@@ -83,6 +79,10 @@ map('n', 'g"', 'a""<left>', { desc = 'insert `""` pair on same line' })
 -- </> tags
 map('n', 'g<', 'A<><left>', { desc = 'insert `<>` pair on same line' })
 map('n', 'g>', 'A</><left>', { desc = 'insert `</>` pair on same line' })
--- Inspect lexical / syntax / semantics
-map('n', ';i', '<cmd>Inspect<cr>', { desc = 'Inspect semantics under cursor' })
-map('n', ';I', '<cmd>InspectTree<cr>', { desc = 'InspectTree' })
+-- end of line pad
+map('n', 'z)', '$a)<esc>', { desc = 'insert `)` at line end' })
+map('n', 'z0', '$a)<esc>', { desc = 'insert `)` at line end' }) -- shorthand for )
+map('n', 'z]', '$a]<esc>', { desc = 'insert `]` at line end' })
+map('n', 'z}', '$a}<esc>', { desc = 'insert `}` at line end' })
+map('n', "z'", "$a'<esc>", { desc = "insert `'` at line end" })
+map('n', 'z"', '$a"<esc>', { desc = 'insert `"` at line end' })
