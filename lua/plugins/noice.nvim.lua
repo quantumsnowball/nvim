@@ -7,6 +7,9 @@ return {
         -- for displaying popup and text input UI
         -- https://github.com/MunifTanjim/nui.nvim
         "MunifTanjim/nui.nvim",
+        -- for displaying notification popup
+        -- https://github.com/rcarriga/nvim-notify
+        "rcarriga/nvim-notify",
     },
     keys = {
         -- just show me all messages possible
@@ -40,9 +43,9 @@ return {
                 enabled = true,
             },
         },
-        -- message contnrol
+        -- message control
         messages = {
-            -- I don't use nvim.notify at all as it slows
+            -- everything default to use mini
             enabled = true,
             view = "mini",
             view_error = "mini",
@@ -50,9 +53,31 @@ return {
             view_history = "messages",
             view_search = false,
         },
+        -- vim.notify
+        notify = {
+            -- everything default to use mini
+            enabled = true,
+            view = "mini",
+        },
         presets = {
             -- add a border to hover docs and signature help
             lsp_doc_border = true,
+        },
+        -- message filter
+        routes = {
+            -- only selected message use notify
+            {
+                view = "notify",
+                filter = {
+                    event = "msg_show",
+                    kind = {
+                        -- git push confirmation
+                        "lua_print",
+                        -- git commit edit buffer save or discard
+                        "echo"
+                    },
+                },
+            },
         },
         -- options for the message history that you get with `:Noice`
         commands = {
@@ -105,7 +130,7 @@ return {
                         FloatBorder = "SpecialComment"
                     },
                 },
-            }
+            },
         },
     },
 }
