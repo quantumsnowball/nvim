@@ -85,11 +85,14 @@ map('n', 'z)', 'mzA)<esc>`z', { desc = 'insert `)` at line end' })
 map('n', 'z0', 'mzA)<esc>`z', { desc = 'insert `)` at line end' })
 map('n', 'z]', 'mzA]<esc>`z', { desc = 'insert `]` at line end' })
 map('n', 'z}', 'mzA}<esc>`z', { desc = 'insert `}` at line end' })
---   quotes'
+--   quotes pairs, then insert
 map('n', "g'", "a''<left>", { desc = "insert `''` pair on same line" })
 map('n', 'g"', 'a""<left>', { desc = 'insert `""` pair on same line' })
-map('n', "z'", "$a'<esc>", { desc = "insert `'` at line end" })
-map('n', 'z"', '$a"<esc>', { desc = 'insert `"` at line end' })
---   </> tags
+map('n', 'g`', 'a``<left>', { desc = "insert '``' pair on same line" })
+--   quote closing at line end, then jump back
+map('n', "z'", "mzA'<esc>`z", { desc = "insert `'` at line end" })
+map('n', 'z"', 'mzA"<esc>`z', { desc = 'insert `"` at line end' })
+map('n', 'z`', 'mzA`<esc>`z', { desc = "insert '`' at line end" })
+--   </> tags, then insert
 map('n', 'g<', 'A<><left>', { desc = 'insert `<>` pair on same line' })
 map('n', 'g>', 'A</><left>', { desc = 'insert `</>` pair on same line' })
