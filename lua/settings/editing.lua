@@ -66,10 +66,6 @@ map('n', ';l', '"_dd', { desc = 'delete whole line' })
 map('n', ';i', '<cmd>Inspect<cr>', { desc = 'Inspect semantics under cursor' })
 map('n', ';I', '<cmd>InspectTree<cr>', { desc = 'InspectTree' })
 -- quick pairs
---   new line
-map('n', 'g[', 'A<space>[<cr>]<esc>O', { desc = 'insert `[]` pair on new line' })
-map('n', 'g{', 'A<space>{<cr>}<esc>O', { desc = 'insert `{}` pair on new line' })
-map('n', 'g(', 'A<space>(<cr>)<esc>O', { desc = 'insert `()` pair on new line' })
 --   same line
 map('n', 'g]', 'a[]<left>', { desc = 'insert `[]` pair on same line' })
 map('n', 'g}', 'a{}<left>', { desc = 'insert `{}` pair on same line' })
@@ -79,7 +75,11 @@ map('n', 'g"', 'a""<left>', { desc = 'insert `""` pair on same line' })
 -- </> tags
 map('n', 'g<', 'A<><left>', { desc = 'insert `<>` pair on same line' })
 map('n', 'g>', 'A</><left>', { desc = 'insert `</>` pair on same line' })
--- end of line pad
+--   new line
+map('n', 'z[', 'A<space>[<cr>]<esc>O', { desc = 'insert `[]` pair on new line' })
+map('n', 'z{', 'A<space>{<cr>}<esc>O', { desc = 'insert `{}` pair on new line' })
+map('n', 'z(', 'A<space>(<cr>)<esc>O', { desc = 'insert `()` pair on new line' })
+--   end of line pad
 map('n', 'z)', '$a)<esc>', { desc = 'insert `)` at line end' })
 map('n', 'z0', '$a)<esc>', { desc = 'insert `)` at line end' }) -- shorthand for )
 map('n', 'z]', '$a]<esc>', { desc = 'insert `]` at line end' })
