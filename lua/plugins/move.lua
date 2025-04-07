@@ -17,18 +17,19 @@ return {
         -- map('n', '<A-l>', '<cmd>MoveHChar(1)<cr>', opts)
 
         -- Visual-mode
+        -- NOTE: only work in :, not <cmd>
         --   ctrl + arrows
-        map('v', '<C-down>', '<cmd>MoveBlock(1)<cr>', opts)
-        map('v', '<C-up>', '<cmd>MoveBlock(-1)<cr>', opts)
-        map('v', '<C-left>', '<cmd>MoveHBlock(-1)<cr>', opts)
-        map('v', '<C-right>', '<cmd>MoveHBlock(1)<cr>', opts)
+        map('v', '<C-down>', ':MoveBlock(1)<cr>', opts)
+        map('v', '<C-up>', ':MoveBlock(-1)<cr>', opts)
+        map('v', '<C-left>', ':MoveHBlock(-1)<cr>', opts)
+        map('v', '<C-right>', ':MoveHBlock(1)<cr>', opts)
         --   ctrl + hjkl
-        map('v', '<C-j>', '<cmd>MoveBlock(1)<cr>', opts)
-        map('v', '<C-k>', '<cmd>MoveBlock(-1)<cr>', opts)
-        map('v', '<C-h>', '<cmd>MoveHBlock(-1)<cr>', opts)
-        map('v', '<C-l>', '<cmd>MoveHBlock(1)<cr>', opts)
+        map('v', '<C-j>', ':MoveBlock(1)<cr>', opts)
+        map('v', '<C-k>', ':MoveBlock(-1)<cr>', opts)
+        map('v', '<C-h>', ':MoveHBlock(-1)<cr>', opts)
+        map('v', '<C-l>', ':MoveHBlock(1)<cr>', opts)
         --   g + hjkl
-        map('x', 'gj', '<cmd>MoveBlock(1)<cr>', opts)
-        map('x', 'gk', '<cmd>MoveBlock(-1)<cr>', opts)
+        map('v', 'gj', ':MoveBlock(1)<cr>', opts)
+        map('v', 'gk', ':MoveBlock(-1)<cr>', opts)
     end
 }
