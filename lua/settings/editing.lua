@@ -31,9 +31,9 @@ map('n', '\\', 'i<C-m><esc>')
 -- go and gO will open new line but stay in normal mode
 map('n', 'gO', 'O<esc>', { desc = 'open a new line above' })
 map('n', 'go', 'o<esc>', { desc = 'open a new line below' })
--- g, and g. insert space before/after cursor
-map('n', 'g,', 'i<space><esc><right>', { desc = 'insert a space right' })
-map('n', 'g.', 'a<space><esc><left>', { desc = 'insert a space left' })
+-- g, and g. insert ,/. at line end, then jump back
+map('n', 'g,', 'mzA,<esc>`z', { desc = 'insert `,` at line end' })
+map('n', 'g.', 'mzA.<esc>`z', { desc = 'insert `.` at line end' })
 -- insert ;/: at the end of line, then jump back:
 map('n', 'g;', 'mzA;<esc>`z', { desc = 'insert `;` at line end' })
 map('n', 'g:', 'mzA:<esc>`z', { desc = 'insert `:` at line end' })
