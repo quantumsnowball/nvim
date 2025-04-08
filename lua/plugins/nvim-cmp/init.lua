@@ -9,7 +9,17 @@ return {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         'hrsh7th/cmp-cmdline',
-        'L3MON4D3/LuaSnip',
+        {
+            "L3MON4D3/LuaSnip",
+            dependencies = {
+                'saadparwaiz1/cmp_luasnip',
+                "rafamadriz/friendly-snippets",
+            },
+            init = function()
+                require("luasnip.loaders.from_vscode").lazy_load()
+            end
+        },
+
     },
     opts = function()
         local cmp = require("cmp")
