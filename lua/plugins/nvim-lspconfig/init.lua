@@ -67,8 +67,19 @@ return {
                 end
             end
             -- activate desiered server here
-            activate('lua_ls')
-            activate('pyright')
+            local selected_servers = {
+                'lua_ls',
+                'pyright',
+                'ts_ls',
+                "cssls",
+                "jsonls",
+                "html",
+            }
+            for _, name in pairs(selected_servers) do
+                activate(name)
+            end
+
+
 
             -- manually install the selected LSPs
             -- vim.api.nvim_create_user_command('MasonLSPEnsureInstalled', function()
