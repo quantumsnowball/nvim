@@ -56,9 +56,26 @@ return {
             }
             -- neovim's default capabilities
             local caps = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-            for _, name in pairs(selected) do
-                require('plugins.nvim-lspconfig.lsp')(name, caps)
-            end
+            local lspconfig = require('lspconfig')
+
+            -- for _, name in pairs(selected) do
+            --     require('plugins.nvim-lspconfig.lsp')(name, caps)
+            -- end
+            --
+            -- init caps
+            -- lua_ls
+            lspconfig.lua_ls.setup({
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { 'vim' }
+                        }
+                    }
+                }
+            })
+
+
+
 
             -- manually install the selected LSPs
             -- vim.api.nvim_create_user_command('MasonLSPEnsureInstalled', function()
