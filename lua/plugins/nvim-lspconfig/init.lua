@@ -36,7 +36,7 @@ return {
         keys = require('plugins.nvim-lspconfig.keymaps'),
         opts = {
             -- auto install some servers
-            -- ensure_installed = require('plugins.nvim-lspconfig.constants').ensure_installed
+            -- ensure_installed = {}
         },
         init = function()
             --
