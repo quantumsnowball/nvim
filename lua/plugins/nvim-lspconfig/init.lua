@@ -57,6 +57,8 @@ return {
             local selected_servers = {
                 -- lua
                 'lua_ls',
+                -- shell
+                'bashls',
                 -- python
                 'pyright',
                 -- web dev
