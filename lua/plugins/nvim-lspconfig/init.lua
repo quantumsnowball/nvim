@@ -40,14 +40,6 @@ return {
             -- ensure_installed = {}
         },
         init = function()
-            --
-            -- lsp server settings
-            --
-            -- 1. use Mason to install the server
-            -- 2. add the correct name to this lise
-            -- 3. to provide extra configs, create a module with the exact name and return the table
-            -- TODO I can't print any message inside the config(), hard to debug vars. #debug
-
             -- activate LSP
             local caps = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
             local function activate(lspconfig_name, opts)
@@ -61,26 +53,28 @@ return {
                     require("lspconfig")[lspconfig_name].setup(opts)
                 end
             end
-            -- activate desiered server here
+            -- put desiered server here
             local selected_servers = {
+                -- lua
                 'lua_ls',
+                -- python
                 'pyright',
+                -- web dev
                 'ts_ls',
                 "cssls",
-                "jsonls",
                 "html",
+                -- data
+                "jsonls",
             }
             for _, name in pairs(selected_servers) do
                 activate(name)
             end
 
-
-
             -- manually install the selected LSPs
-            -- vim.api.nvim_create_user_command('MasonLSPEnsureInstalled', function()
-            --     local args = table.concat(selected, " ")
-            --     vim.cmd(":LspInstall " .. args)
-            -- end, { desc = "Ensure selected LSP tools are installed using Mason" })
+            vim.api.nvim_create_user_command('MasonLSPEnsureInstalled', function()
+                local args = table.concat(selected_servers, " ")
+                vim.cmd(":LspInstall " .. args)
+            end, { desc = "Ensure selected LSP tools are installed using Mason" })
         end
     }
 }
