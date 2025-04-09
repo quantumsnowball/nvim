@@ -54,9 +54,15 @@ return {
                 "jsonls",
                 "html",
             }
-            -- neovim's default capabilities
+
+            -- activate LSP
             local caps = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-            local lspconfig = require('lspconfig')
+            local function activate(name, id, opts)
+                -- ensure installed
+                if require('mason-registry').is_installed(name) then
+                    require("lspconfig")[id].setup(opts)
+                end
+            end
 
             -- for _, name in pairs(selected) do
             --     require('plugins.nvim-lspconfig.lsp')(name, caps)
@@ -64,12 +70,9 @@ return {
             --
             -- init caps
             -- lua_ls
-            lspconfig.lua_ls.setup({})
+            activate('lua-language-server', 'lua_ls', {})
             -- pyright
-            lspconfig.pyright.setup({})
-
-
-
+            activate('pyright', 'pyright', {})
 
             -- manually install the selected LSPs
             -- vim.api.nvim_create_user_command('MasonLSPEnsureInstalled', function()
