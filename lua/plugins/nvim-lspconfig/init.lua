@@ -62,14 +62,12 @@ return {
                 local mason_name = translation.lspconfig_to_mason[lspconfig_name]
                 -- ensure server binary is installed before activating it in lspconfig
                 if require('mason-registry').is_installed(mason_name) then
-                    require("lspconfig")[lspconfig_name].setup(opts)
+                    require("lspconfig")[lspconfig_name].setup(opts or {})
                 end
             end
-            -- lua_ls
-            activate('lua_ls', {})
-            -- pyright
-            activate('pyright', {})
-            -- ts_ls
+            -- activate desiered server here
+            activate('lua_ls')
+            activate('pyright')
 
             -- manually install the selected LSPs
             -- vim.api.nvim_create_user_command('MasonLSPEnsureInstalled', function()
