@@ -59,8 +59,6 @@ return {
             for _, name in pairs(selected) do
                 require('plugins.nvim-lspconfig.lsp')(name, caps)
             end
-            -- auto format document on save
-            vim.cmd('autocmd BufWritePre * silent! lua vim.lsp.buf.format({async=false})')
 
             -- manually install the selected LSPs
             -- vim.api.nvim_create_user_command('MasonLSPEnsureInstalled', function()
