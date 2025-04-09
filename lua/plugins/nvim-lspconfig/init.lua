@@ -73,6 +73,8 @@ return {
                     }
                 }
             })
+            -- pyright
+            lspconfig.pyright.setup({})
 
 
 
