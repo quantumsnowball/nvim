@@ -64,15 +64,7 @@ return {
             --
             -- init caps
             -- lua_ls
-            lspconfig.lua_ls.setup({
-                settings = {
-                    Lua = {
-                        diagnostics = {
-                            globals = { 'vim' }
-                        }
-                    }
-                }
-            })
+            lspconfig.lua_ls.setup({})
             -- pyright
             lspconfig.pyright.setup({})
 
