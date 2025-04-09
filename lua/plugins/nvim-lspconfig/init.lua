@@ -47,23 +47,18 @@ return {
             -- 2. add the correct name to this lise
             -- 3. to provide extra configs, create a module with the exact name and return the table
             -- TODO I can't print any message inside the config(), hard to debug vars. #debug
-            local selected = {
-                'lua_ls',
-                'pyright',
-                'ts_ls', -- 'tsserver'
-                "cssls",
-                "jsonls",
-                "html",
-            }
 
             -- activate LSP
+            local caps = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
             local function activate(lspconfig_name, opts)
+                opts = opts or {}
+                opts.capabilities = caps
                 -- lspconfig and mason names are different, mason-lspconfig is the translation
                 local translation = require('mason-lspconfig').get_mappings()
                 local mason_name = translation.lspconfig_to_mason[lspconfig_name]
                 -- ensure server binary is installed before activating it in lspconfig
                 if require('mason-registry').is_installed(mason_name) then
-                    require("lspconfig")[lspconfig_name].setup(opts or {})
+                    require("lspconfig")[lspconfig_name].setup(opts)
                 end
             end
             -- activate desiered server here
