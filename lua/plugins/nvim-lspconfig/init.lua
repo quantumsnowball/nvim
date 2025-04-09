@@ -63,10 +63,10 @@ return {
             vim.cmd('autocmd BufWritePre * silent! lua vim.lsp.buf.format({async=false})')
 
             -- manually install the selected LSPs
-            vim.api.nvim_create_user_command('MasonLSPEnsureInstalled', function()
-                local args = table.concat(selected, " ")
-                vim.cmd(":LspInstall " .. args)
-            end, { desc = "Ensure selected LSP tools are installed using Mason" })
+            -- vim.api.nvim_create_user_command('MasonLSPEnsureInstalled', function()
+            --     local args = table.concat(selected, " ")
+            --     vim.cmd(":LspInstall " .. args)
+            -- end, { desc = "Ensure selected LSP tools are installed using Mason" })
         end
     }
 }
