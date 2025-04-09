@@ -56,23 +56,20 @@ return {
             }
 
             -- activate LSP
-            local caps = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-            local function activate(name, id, opts)
-                -- ensure installed
-                if require('mason-registry').is_installed(name) then
-                    require("lspconfig")[id].setup(opts)
+            local function activate(lspconfig_name, opts)
+                -- lspconfig and mason names are different, mason-lspconfig is the translation
+                local translation = require('mason-lspconfig').get_mappings()
+                local mason_name = translation.lspconfig_to_mason[lspconfig_name]
+                -- ensure server binary is installed before activating it in lspconfig
+                if require('mason-registry').is_installed(mason_name) then
+                    require("lspconfig")[lspconfig_name].setup(opts)
                 end
             end
-
-            -- for _, name in pairs(selected) do
-            --     require('plugins.nvim-lspconfig.lsp')(name, caps)
-            -- end
-            --
-            -- init caps
             -- lua_ls
-            activate('lua-language-server', 'lua_ls', {})
+            activate('lua_ls', {})
             -- pyright
-            activate('pyright', 'pyright', {})
+            activate('pyright', {})
+            -- ts_ls
 
             -- manually install the selected LSPs
             -- vim.api.nvim_create_user_command('MasonLSPEnsureInstalled', function()
