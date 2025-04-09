@@ -61,11 +61,14 @@ return {
                     filetypes = { 'sh', 'bash', 'zsh' }
                 },
             }
-            -- activate LSP
+            -- capabilities supported by completion engine
             local caps = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+            -- activate each LSP
             local function activate(lspconfig_name, opts)
                 opts = opts or {}
+                -- inject capabilities
                 opts.capabilities = caps
+                -- inject extra server opts
                 opts = vim.tbl_deep_extend('force', opts, server_opts[lspconfig_name] or {})
                 -- lspconfig and mason names are different, mason-lspconfig is the translation
                 local translation = require('mason-lspconfig').get_mappings()
