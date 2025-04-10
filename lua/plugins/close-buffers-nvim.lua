@@ -39,12 +39,12 @@ return {
                 delete({ type = 'other' })
             end,
             { desc = 'close other buffers and tabpages' })
-        map('n', 'qOb',
+        map('n', 'qOB',
             function()
                 delete({ type = 'other' })
             end,
             { desc = 'close other buffers' })
-        map('n', 'qOt',
+        map('n', 'qOT',
             function()
                 vim.cmd('tabonly')
             end,
