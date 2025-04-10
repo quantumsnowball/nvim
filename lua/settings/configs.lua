@@ -8,7 +8,7 @@ vim.cmd('autocmd BufEnter * hi MatchParen ctermbg=Gray guibg=Gray')
 vim.cmd('autocmd BufEnter * hi CursorLine ctermbg=999 guibg=#555555')
 vim.cmd('autocmd BufEnter * hi CursorColumn ctermbg=999 guibg=#555555')
 -- always open help in a new tab
-vim.cmd("autocmd BufEnter *.txt if &filetype == 'help' || &filetype == 'vimdoc' | silent wincmd T | endif")
+vim.cmd("autocmd BufWinEnter * if &filetype == 'help' || &filetype == 'vimdoc' | silent wincmd T | endif")
 -- add margins when scrolling with curosr
 vim.opt.scrolloff = 5
 -- default neovim tabsize to 4 space
