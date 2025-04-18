@@ -34,6 +34,9 @@ map('n', 'go', 'o<esc>', { desc = 'open a new line below' })
 -- g, and g. insert ,/. at line end, then jump back
 map('n', 'g,', 'mzA,<esc>`z', { desc = 'insert `,` at line end' })
 map('n', 'g.', 'mzA.<esc>`z', { desc = 'insert `.` at line end' })
+-- z, and z. insert ,/. at line end, then jump back
+map('n', 'z,', 'mzA,<esc>`z', { desc = 'insert `,` at line end' })
+map('n', 'z.', 'mzA.<esc>`z', { desc = 'insert `.` at line end' })
 -- insert ;/: at the end of line, then jump back:
 map('n', 'g;', 'mzA;<esc>`z', { desc = 'insert `;` at line end' })
 map('n', 'g:', 'mzA:<esc>`z', { desc = 'insert `:` at line end' })
@@ -49,8 +52,8 @@ map({ 'n', 'v', 'o' }, '<Tab>', '%', { remap = true })
 map({ 'n', 'v', 'o' }, '[<Tab>', '[m', { remap = true })
 map({ 'n', 'v', 'o' }, ']<Tab>', ']m', { remap = true })
 -- search for pairable symbols
-vim.cmd "noremap zl <Cmd>call search('[([{<>}\\])]')<cr>"
-vim.cmd "noremap zh <Cmd>call search('[([{<>}\\])]', 'b')<cr>"
+vim.cmd("noremap zl <Cmd>call search('[([{<>}\\])]')<cr>")
+vim.cmd("noremap zh <Cmd>call search('[([{<>}\\])]', 'b')<cr>")
 -- select inner word/line(without linebreak)
 map('n', ';w', 'hevb', { desc = 'select word, curosr to beginning' })
 map('n', ';e', 'viw', { desc = 'select word, cursor to end' })
