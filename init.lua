@@ -50,6 +50,10 @@ require('lazy').setup({
         notify = true,
     },
 })
+-- lazy manager keymaps
+-- ref:
+-- https://github.com/folke/lazy.nvim/blob/main/lua/lazy/view/config.lua
+require('lazy.view.config').keys.close = '<esc>'
 
 -- other nvim settings
 require('settings')
