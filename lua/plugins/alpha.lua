@@ -10,8 +10,6 @@ return {
         dashboard.section.header.val = {
             "                                                     ",
             "                                                     ",
-            "                                                     ",
-            "                                                     ",
             "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
             "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
             "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
@@ -19,15 +17,12 @@ return {
             "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
             "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
             "                                                     ",
-            "                                                     ",
-            "                                                     ",
-            "                                                     ",
         }
 
         -- Set menu
         dashboard.section.buttons.val = {
-            { type = "text",    val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
-            { type = "padding", val = 1 },
+            -- { type = "text",    val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
+            -- { type = "padding", val = 1 },
             dashboard.button("e", "-  File Explorer", "<cmd>Neotree reveal float<cr>"),
             dashboard.button("g", "-  LazyGit", "<cmd>LazyGit<cr>"),
             dashboard.button("r", "-  Recent",
