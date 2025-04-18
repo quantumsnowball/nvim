@@ -37,6 +37,8 @@ return {
             dashboard.button("w", "W  Find Word",
                 '<cmd>lua require("telescope.builtin").live_grep({layout_strategy="vertical", additional_args=function(opts) return {"--hidden"} end})<cr>'),
             dashboard.button("n", "N  New file", ":ene <BAR> startinsert <cr>"),
+            dashboard.button("l", "L  Lazy", '<cmd>Lazy<cr>'),
+            dashboard.button("M", "M  Mason", '<cmd>Mason<cr>'),
             -- dashboard.button("q", "  > Quit NVIM", "<cmd>qa<cr>"),
         }
 
