@@ -28,7 +28,11 @@ return {
         'williamboman/mason.nvim',
         cmd = 'Mason',
         keys = { { '<leader>M', '<cmd>Mason<cr>', desc = 'Mason' } },
-        opts = {},
+        opts = {
+            ui = {
+                border = 'rounded',
+            },
+        },
     },
     -- mason-lspconfig
     -- https://github.com/williamboman/mason-lspconfig.nvim
