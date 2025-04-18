@@ -33,6 +33,7 @@ return {
 		})
 
 		-- manual trigger keymap
-		map("n", ";f", format, { desc = "conform format buffer" })
+		map("n", ";f", format, { desc = "conform: format current buffer" })
+		map("v", ";f", format, { desc = "conform: format selected lines" })
 	end,
 }
