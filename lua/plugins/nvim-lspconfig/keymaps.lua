@@ -24,7 +24,7 @@ return {
     { '<leader>li', '<cmd>LspInfo<cr>',      desc = 'LSP info' },
     -- editing
     { '<leader>r',  vim.lsp.buf.rename,      desc = 'LSP rename' },
-    { ';f',         vim.lsp.buf.format,      desc = 'LSP format code' },
+    -- { ';f',         vim.lsp.buf.format,      desc = 'LSP format code' },
     { 'qf',         vim.lsp.buf.code_action, desc = 'LSP code action' },
     -- code inspect
     { 'gr',         tb.lsp_references,       desc = 'LSP references' },

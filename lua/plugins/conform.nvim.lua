@@ -2,6 +2,7 @@
 -- https://github.com/stevearc/conform.nvim
 return {
 	"stevearc/conform.nvim",
+	event = "VeryLazy",
 	opts = {
 		-- enable formatter when useful
 		formatters_by_ft = {
@@ -10,6 +11,9 @@ return {
 		},
 	},
 	init = function()
+		local map = require("utils").map
+		local format = require("conform").format
+
 		-- auto format on save
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			pattern = "*",
@@ -17,7 +21,7 @@ return {
 				-- docs:
 				-- format(opts, callback)
 				-- https://github.com/stevearc/conform.nvim#formatopts-callback
-				require("conform").format({
+				format({
 					-- as given by official example
 					bufnr = args.buf,
 					-- default skip lsp format, always use a specific formatter
@@ -27,5 +31,8 @@ return {
 				})
 			end,
 		})
+
+		-- manual trigger keymap
+		map("n", ";f", format, { desc = "conform format buffer" })
 	end,
 }
