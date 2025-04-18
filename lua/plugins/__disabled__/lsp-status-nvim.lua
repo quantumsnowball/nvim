@@ -7,7 +7,7 @@ return {
     init = function()
         require('lsp-status').config({
             -- this is temp fix for a wrong line spacing that breaks lualine
-            status_symbol = ''
+            status_symbol = '',
         })
-    end
+    end,
 }

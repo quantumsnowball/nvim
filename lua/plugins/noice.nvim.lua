@@ -1,33 +1,33 @@
 -- better messaging system UI
 -- https://github.com/folke/noice.nvim
 return {
-    "folke/noice.nvim",
-    event = "VeryLazy",
+    'folke/noice.nvim',
+    event = 'VeryLazy',
     dependencies = {
         {
             -- for displaying popup and text input UI
             -- https://github.com/MunifTanjim/nui.nvim
-            "MunifTanjim/nui.nvim",
+            'MunifTanjim/nui.nvim',
         },
         {
             -- for displaying notification popup
             -- https://github.com/rcarriga/nvim-notify
-            "rcarriga/nvim-notify",
+            'rcarriga/nvim-notify',
             -- nvim-notify opts:
             -- https://github.com/rcarriga/nvim-notify/blob/master/lua/notify/config/init.lua
             opts = {
                 top_down = false,
                 timeout = 1000,
-                stages = "fade",
-                render = "compact",
+                stages = 'fade',
+                render = 'compact',
                 max_width = 80,
-                background_colour = "#000000",
-            }
+                background_colour = '#000000',
+            },
         },
     },
     keys = {
         -- just show me all messages possible
-        { "<leader>m", '<cmd>Noice all<cr>', desc = 'Show all message capture by Noice' }
+        { '<leader>m', '<cmd>Noice all<cr>', desc = 'Show all message capture by Noice' },
     },
     -- default opts:
     -- https://github.com/folke/noice.nvim/blob/main/lua/noice/config/init.lua
@@ -36,7 +36,7 @@ return {
         cmdline = {
             enabled = true,
             -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
-            view = "cmdline_popup",
+            view = 'cmdline_popup',
         },
         -- lsp related
         lsp = {
@@ -44,11 +44,11 @@ return {
             -- also have a vertical scroll bar for longer content
             override = {
                 -- override the default lsp markdown formatter with Noice
-                ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+                ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
                 -- override the lsp markdown formatter with Noice
-                ["vim.lsp.util.stylize_markdown"] = true,
+                ['vim.lsp.util.stylize_markdown'] = true,
                 -- override cmp documentation with Noice (needs the other options to work)
-                ["cmp.entry.get_documentation"] = true,
+                ['cmp.entry.get_documentation'] = true,
             },
             hover = {
                 enabled = true,
@@ -61,17 +61,17 @@ return {
         messages = {
             -- everything default to use mini
             enabled = true,
-            view = "mini",
-            view_error = "mini",
-            view_warn = "mini",
-            view_history = "messages",
+            view = 'mini',
+            view_error = 'mini',
+            view_warn = 'mini',
+            view_history = 'messages',
             view_search = false,
         },
         -- vim.notify
         notify = {
             -- everything default to use mini
             enabled = true,
-            view = "mini",
+            view = 'mini',
         },
         presets = {
             -- add a border to hover docs and signature help
@@ -81,14 +81,14 @@ return {
         routes = {
             -- only selected message use notify
             {
-                view = "notify",
+                view = 'notify',
                 filter = {
-                    event = "msg_show",
+                    event = 'msg_show',
                     kind = {
                         -- git push confirmation
-                        "lua_print",
+                        'lua_print',
                         -- git commit edit buffer save or discard
-                        "echo"
+                        'echo',
                     },
                 },
             },
@@ -98,9 +98,9 @@ return {
             -- maybe I just use this one cmd, I will search in it to get all I want
             all = {
                 -- config the layout in `views` table below
-                view = "popup",
+                view = 'popup',
                 filter_opts = { reverse = true },
-            }
+            },
         },
         -- default views configs:
         -- https://github.com/folke/noice.nvim/blob/main/lua/noice/config/views.lua
@@ -108,10 +108,10 @@ return {
             -- popup powered by nui.nvim, its configs:
             -- https://github.com/MunifTanjim/nui.nvim/tree/main/lua/nui/popup
             popup = {
-                position = "50%",
+                position = '50%',
                 size = {
-                    width = "auto",
-                    height = "auto",
+                    width = 'auto',
+                    height = 'auto',
                 },
                 border = {
                     padding = {
@@ -119,7 +119,7 @@ return {
                         2, -- left/right
                     },
                     text = {
-                        top = " Noice ",
+                        top = ' Noice ',
                     },
                 },
                 close = {
@@ -134,14 +134,14 @@ return {
                 },
                 border = {
                     style = 'none',
-                    padding = { left = 0, right = 3, },
+                    padding = { left = 0, right = 3 },
                 },
                 size = {
                     max_height = 20,
                 },
                 win_options = {
                     winhighlight = {
-                        FloatBorder = "SpecialComment"
+                        FloatBorder = 'SpecialComment',
                     },
                 },
             },

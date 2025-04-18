@@ -7,6 +7,6 @@ return {
     dependencies = 'nvim-telescope/telescope.nvim',
     init = function()
         local tele = require('telescope')
-        tele.load_extension("ui-select")
-    end
+        tele.load_extension('ui-select')
+    end,
 }

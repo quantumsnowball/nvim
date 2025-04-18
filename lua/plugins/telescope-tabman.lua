@@ -11,16 +11,25 @@ return {
         -- load extension
         tele.load_extension('tabman')
         -- configs
-        local layout_config = { width = 0.7, preview_height = 0.5, }
+        local layout_config = { width = 0.7, preview_height = 0.5 }
         -- keymaps
-        require('utils').map('n', '<leader>t', function()
-            tabman({ layout_config = layout_config })
-        end, { desc = 'telescope.tabpages()' })
-        require('utils').map('n', 'tt', function()
-            tabman({ layout_config = layout_config })
-        end, { desc = 'telescope.tabpages()' })
-        require('utils').map('n', '<space>t', function()
-            tabman({ layout_config = layout_config })
-        end, { desc = 'telescope.tabpages()' })
-    end
+        require('utils').map(
+            'n',
+            '<leader>t',
+            function() tabman({ layout_config = layout_config }) end,
+            { desc = 'telescope.tabpages()' }
+        )
+        require('utils').map(
+            'n',
+            'tt',
+            function() tabman({ layout_config = layout_config }) end,
+            { desc = 'telescope.tabpages()' }
+        )
+        require('utils').map(
+            'n',
+            '<space>t',
+            function() tabman({ layout_config = layout_config }) end,
+            { desc = 'telescope.tabpages()' }
+        )
+    end,
 }

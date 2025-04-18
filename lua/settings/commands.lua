@@ -29,9 +29,13 @@ vim.api.nvim_create_user_command('MyLSPClientCaps', function()
     local caps = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
     print(vim.inspect(caps))
 end, {})
-vim.api.nvim_create_user_command('MyTypeScriptOrganizeImports', function()
-    vim.lsp.buf.execute_command({
-        command = '_typescript.organizeImports',
-        arguments = { vim.api.nvim_buf_get_name(0) }
-    })
-end, {})
+vim.api.nvim_create_user_command(
+    'MyTypeScriptOrganizeImports',
+    function()
+        vim.lsp.buf.execute_command({
+            command = '_typescript.organizeImports',
+            arguments = { vim.api.nvim_buf_get_name(0) },
+        })
+    end,
+    {}
+)

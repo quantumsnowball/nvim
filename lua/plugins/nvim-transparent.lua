@@ -4,7 +4,7 @@ return {
     'xiyaowong/nvim-transparent',
     event = 'VeryLazy',
     dependencies = {
-        'akinsho/bufferline.nvim'
+        'akinsho/bufferline.nvim',
     },
     opts = {
         -- table/string: additional groups that should be cleared
@@ -13,18 +13,18 @@ return {
             -- example of akinsho/nvim-bufferline.lua
             -- "BufferLineTabClose",
             -- "BufferLineBufferSelected",
-            "BufferLineFill",
+            'BufferLineFill',
             -- "BufferLineBackground",
             -- "BufferLineSeparator",
             -- "BufferLineIndicatorSelected",
-            "NormalFloat",
+            'NormalFloat',
         },
         -- table: groups you don't want to clear
         exclude_groups = {
-            "MatchParen",
-            "CursorLine",
-            "CursorColumn",
-            "NeoTreeTabActive",
+            'MatchParen',
+            'CursorLine',
+            'CursorColumn',
+            'NeoTreeTabActive',
         },
     },
     init = function()
@@ -53,6 +53,5 @@ return {
         clear_prefix('Telescope')
 
         clear_prefix('Bqf')
-    end
-
+    end,
 }

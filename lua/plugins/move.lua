@@ -31,5 +31,5 @@ return {
         --   g + hjkl
         map('v', 'gj', ':MoveBlock(1)<cr>', opts)
         map('v', 'gk', ':MoveBlock(-1)<cr>', opts)
-    end
+    end,
 }

@@ -18,8 +18,8 @@ return {
     'tpope/vim-fugitive',
     event = 'VeryLazy',
     keys = {
-        { '<leader>c', '<cmd>Git commit<cr>',         desc = 'Git commit',         silent = true },
+        { '<leader>c', '<cmd>Git commit<cr>', desc = 'Git commit', silent = true },
         { '<leader>a', '<cmd>Git commit --amend<cr>', desc = 'Git commit --amend', silent = true },
-        { '<leader>P', git_push_async,            desc = 'Git push',           silent = true },
+        { '<leader>P', git_push_async, desc = 'Git push', silent = true },
     },
 }

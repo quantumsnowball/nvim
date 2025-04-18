@@ -9,10 +9,12 @@ local map = require('utils').map
 map('n', '<leader>f', function() tb.find_files({ hidden = true }) end, { desc = 'telescope.find_files()' })
 map('n', '<space>f', function() tb.find_files({ hidden = true }) end, { desc = 'telescope.find_files()' })
 -- find words
-map('n', '<leader>w', function() tb.live_grep({ additional_args = function() return { "--hidden" } end }) end,
-    { desc = 'telescope.live_grep()' })
-map('n', '<space>w', function() tb.live_grep({ additional_args = function() return { "--hidden" } end }) end,
-    { desc = 'telescope.live_grep()' })
+map('n', '<leader>w', function()
+    tb.live_grep({ additional_args = function() return { '--hidden' } end })
+end, { desc = 'telescope.live_grep()' })
+map('n', '<space>w', function()
+    tb.live_grep({ additional_args = function() return { '--hidden' } end })
+end, { desc = 'telescope.live_grep()' })
 -- find recent files
 map('n', '<leader>R', function() tb.oldfiles({ only_cwd = true }) end, { desc = 'telescope.oldfiles()' })
 map('n', '<space>R', function() tb.oldfiles({ only_cwd = true }) end, { desc = 'telescope.oldfiles()' })
@@ -38,8 +40,6 @@ map('n', '<leader>v', tb.lsp_references, { desc = 'telescope.lsp_references()' }
 map('n', '<space>v', tb.lsp_references, { desc = 'telescope.lsp_references()' })
 map('n', 'gd', tb.lsp_definitions, { desc = 'telescope.lsp_definitions()' })
 
-
-
 --
 -- less common pickers
 -- propose to start with ,F to give way to fastest ,f
@@ -50,13 +50,17 @@ map('n', '<leader>F/', tb.pickers, { desc = 'telescope.pickers()' })
 
 -- find files
 map('n', '<leader>Fnf', tb.find_files, { desc = 'telescope.find_files(--no-hidden)' })
-map('n', '<leader>Faf', function() tb.find_files({ hidden = true, no_ignore = true }) end,
-    { desc = 'telescope.find_files(--everything)' })
+map(
+    'n',
+    '<leader>Faf',
+    function() tb.find_files({ hidden = true, no_ignore = true }) end,
+    { desc = 'telescope.find_files(--everything)' }
+)
 
 -- find words
 map('n', '<leader>Fnw', tb.live_grep, { desc = 'telescope.live_grep(--no-hidden)' })
 map('n', '<leader>Faw', function()
-    tb.live_grep({ additional_args = function() return { "--hidden", "--no-ignore" } end })
+    tb.live_grep({ additional_args = function() return { '--hidden', '--no-ignore' } end })
 end, { desc = 'telescope.live_grep(--everything)' })
 
 -- find tabpages

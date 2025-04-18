@@ -5,24 +5,24 @@ return {
     lazy = true,
     init = function()
         -- define its own highligh group
-        vim.cmd [[ autocmd VimEnter,ColorScheme * hi InclineActive guifg=#deff00 guibg=#555555 gui=bold ]]
-        vim.cmd [[ autocmd VimEnter,ColorScheme * hi InclineInactive guifg=#deff00 guibg=#444444 ]]
+        vim.cmd([[ autocmd VimEnter,ColorScheme * hi InclineActive guifg=#deff00 guibg=#555555 gui=bold ]])
+        vim.cmd([[ autocmd VimEnter,ColorScheme * hi InclineInactive guifg=#deff00 guibg=#444444 ]])
         -- config
         require('incline').setup({
             hide = {
-                cursorline = 'focused_win'
+                cursorline = 'focused_win',
             },
             highlight = {
                 groups = {
                     InclineNormal = {
                         default = true,
-                        group = "InclineActive"
+                        group = 'InclineActive',
                     },
                     InclineNormalNC = {
                         default = true,
-                        group = "InclineInactive"
-                    }
-                }
+                        group = 'InclineInactive',
+                    },
+                },
             },
             -- output formatting function
             render = function(props)
@@ -31,7 +31,7 @@ return {
                 local cwd = vim.fn.getcwd()
                 -- full path relative to cwd
                 return string.sub(path, #cwd + 2)
-            end
+            end,
         })
-    end
+    end,
 }

@@ -16,9 +16,7 @@ return {
         --
         -- current
         local function qb(force)
-            return function()
-                delete({ type = 'this', force = force })
-            end
+            return function() delete({ type = 'this', force = force }) end
         end
         map('n', 'qb', qb(false), { desc = 'close current buffer' })
         map('n', 'qB', qb(true), { desc = 'close current buffer (force)' })
@@ -33,21 +31,11 @@ return {
         map('n', 'qa', qa(false), { desc = 'close all buffers and tabpages' })
         map('n', 'qA', qa(true), { desc = 'close all buffers and tabpages (force)' })
         -- others
-        map('n', 'qo',
-            function()
-                vim.cmd('tabonly')
-                delete({ type = 'other' })
-            end,
-            { desc = 'close other buffers and tabpages' })
-        map('n', 'qOB',
-            function()
-                delete({ type = 'other' })
-            end,
-            { desc = 'close other buffers' })
-        map('n', 'qOT',
-            function()
-                vim.cmd('tabonly')
-            end,
-            { desc = 'close other tabpages' })
-    end
+        map('n', 'qo', function()
+            vim.cmd('tabonly')
+            delete({ type = 'other' })
+        end, { desc = 'close other buffers and tabpages' })
+        map('n', 'qOB', function() delete({ type = 'other' }) end, { desc = 'close other buffers' })
+        map('n', 'qOT', function() vim.cmd('tabonly') end, { desc = 'close other tabpages' })
+    end,
 }

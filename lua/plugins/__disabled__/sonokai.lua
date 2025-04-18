@@ -18,7 +18,7 @@ return {
             'andromeda',
             'shusia',
             'maia',
-            'espresso'
+            'espresso',
         }
         local map = require('utils').map
         map('n', '<F3>', function()
@@ -29,5 +29,5 @@ return {
             current = current + 1
         end)
         require('which-key').register({ ['<F3>'] = 'toggle_colorscheme()' })
-    end
+    end,
 }

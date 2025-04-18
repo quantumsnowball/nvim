@@ -32,7 +32,7 @@ return {
             -- Text object
             map('o', 'ih', '<cmd><C-U>Gitsigns select_hunk<cr>')
             map('x', 'ih', '<cmd><C-U>Gitsigns select_hunk<cr>')
-        end
+        end,
     },
     init = function()
         -- show line number
@@ -62,5 +62,5 @@ return {
         --         print(os.date(), ':', vim.inspect(args))
         --     end
         -- })
-    end
+    end,
 }

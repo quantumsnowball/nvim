@@ -9,5 +9,5 @@ return {
         map('n', '<M-w>', ':Bdelete<cr>')
         map('n', '<space>x', ':Bdelete<cr>')
         map('n', 'qb', ':Bdelete<cr>', { desc = 'close buffer' })
-    end
+    end,
 }

@@ -70,12 +70,16 @@ local function parse_range(opts)
         return arg1 .. ',' .. arg2
     end
 end
-vim.api.nvim_create_user_command('YankPutBefore', function(opts)
-    vim.cmd('' .. parse_range(opts) .. 'yank | put!')
-end, { nargs = '+' })
-vim.api.nvim_create_user_command('YankPutAfter', function(opts)
-    vim.cmd('' .. parse_range(opts) .. 'yank | put')
-end, { nargs = '+' })
+vim.api.nvim_create_user_command(
+    'YankPutBefore',
+    function(opts) vim.cmd('' .. parse_range(opts) .. 'yank | put!') end,
+    { nargs = '+' }
+)
+vim.api.nvim_create_user_command(
+    'YankPutAfter',
+    function(opts) vim.cmd('' .. parse_range(opts) .. 'yank | put') end,
+    { nargs = '+' }
+)
 map('n', 'yP', function() vim.fn.feedkeys(':YankPutBefore ') end)
 map('n', 'yp', function() vim.fn.feedkeys(':YankPutAfter ') end)
 vim.api.nvim_create_user_command('DeletePutBefore', function(opts)

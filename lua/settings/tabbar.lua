@@ -23,10 +23,18 @@ map('n', 'tN', function()
     vim.cmd('Alpha')
     require('close_buffers').delete({ type = 'nameless' })
 end, { desc = 'open new tab on left' })
-map('n', 'to', '<cmd>tab split<cr><cmd>Neotree reveal float<cr>',
-    { desc = 'open current buffer on new tab on right, then open explorer' })
-map('n', 'tO', '<cmd>-1tab split<cr><cmd>Neotree reveal float<cr>',
-    { desc = 'open current buffer on new tab on right, then open explorer' })
+map(
+    'n',
+    'to',
+    '<cmd>tab split<cr><cmd>Neotree reveal float<cr>',
+    { desc = 'open current buffer on new tab on right, then open explorer' }
+)
+map(
+    'n',
+    'tO',
+    '<cmd>-1tab split<cr><cmd>Neotree reveal float<cr>',
+    { desc = 'open current buffer on new tab on right, then open explorer' }
+)
 map('n', 'tm', '<C-W>T', { desc = 'move window to new tabpage' })
 map('n', '<F12>', '<C-W>T', { desc = 'move window to new tabpage' })
 
@@ -35,9 +43,7 @@ local close_onto_previous_tab = function()
     local idx = vim.fn.tabpagenr()
     local cnt = vim.fn.tabpagenr('$')
     vim.cmd('tabclose')
-    if ((idx ~= 1) and (idx < cnt)) then
-        vim.cmd('tabprevious')
-    end
+    if (idx ~= 1) and (idx < cnt) then vim.cmd('tabprevious') end
 end
 map('n', 'qt', close_onto_previous_tab, { desc = 'close tab' })
 map('n', 'tq', close_onto_previous_tab, { desc = 'close tab' })

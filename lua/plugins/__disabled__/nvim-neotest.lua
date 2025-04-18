@@ -15,21 +15,29 @@
 
 return {
     {
-        "quantumsnowball/neotest",
+        'quantumsnowball/neotest',
         enabled = false,
         branch = 'removed-lib.subprocess.init',
         event = 'VeryLazy',
         dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
-            "antoinemadec/FixCursorHold.nvim",
+            'nvim-lua/plenary.nvim',
+            'nvim-treesitter/nvim-treesitter',
+            'antoinemadec/FixCursorHold.nvim',
         },
         keys = {
-            { '<leader>TT', function() require("neotest").run.run() end,             desc = 'neotest.run.run()' },
-            { '<leader>TS', function() require("neotest").summary.toggle() end,      desc = 'neotest.summary.toggle()' },
-            { '<leader>TO', function() require("neotest").output_panel.toggle() end, desc = 'neotest.summary.output()' },
+            { '<leader>TT', function() require('neotest').run.run() end, desc = 'neotest.run.run()' },
+            {
+                '<leader>TS',
+                function() require('neotest').summary.toggle() end,
+                desc = 'neotest.summary.toggle()',
+            },
+            {
+                '<leader>TO',
+                function() require('neotest').output_panel.toggle() end,
+                desc = 'neotest.summary.output()',
+            },
         },
-        opts = {}
+        opts = {},
     },
     {
         -- adapters
@@ -37,20 +45,20 @@ return {
         enabled = false,
         event = 'VeryLazy',
         dependencies = {
-            "quantumsnowball/neotest",
+            'quantumsnowball/neotest',
         },
         init = function()
             -- @pytest . -k 'not lab' --pdb --workers auto
-            require("neotest").setup({
+            require('neotest').setup({
                 adapters = {
-                    require("neotest-python")({
+                    require('neotest-python')({
                         -- runner = 'pytest',
                         -- args = { "-k 'not lab'" }
                         -- pytest-parallel not working
                         -- args = { '--workers', 'auto' }
-                    })
-                }
+                    }),
+                },
             })
-        end
-    }
+        end,
+    },
 }

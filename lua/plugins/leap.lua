@@ -17,10 +17,8 @@ return {
             next_target = '<tab>',
             prev_target = '<s-tab>',
             next_group = ']',
-            prev_group = '['
-        }
+            prev_group = '[',
+        },
     },
-    init = function()
-        require('leap').set_default_keymaps()
-    end
+    init = function() require('leap').set_default_keymaps() end,
 }

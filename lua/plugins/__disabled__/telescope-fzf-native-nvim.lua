@@ -16,5 +16,5 @@ return {
     init = function()
         local tele = require('telescope')
         tele.load_extension('fzf')
-    end
+    end,
 }

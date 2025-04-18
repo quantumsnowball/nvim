@@ -1,8 +1,7 @@
 return {
     'tanvirtin/monokai.nvim',
     enabled = false,
-    opts = {
-    },
+    opts = {},
     init = function()
         require('monokai').setup({ palette = require('monokai').ristretto })
         vim.cmd('colorscheme monokai')

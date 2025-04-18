@@ -4,7 +4,5 @@ return {
     'echasnovski/mini.pairs',
     enabled = false,
     event = 'VeryLazy',
-    init = function(_, opts)
-        require('mini.pairs').setup(opts)
-    end,
+    init = function(_, opts) require('mini.pairs').setup(opts) end,
 }

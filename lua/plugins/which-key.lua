@@ -5,13 +5,13 @@ return {
     event = 'VeryLazy',
     opts = {
         -- classic, modern, and helix
-        preset = "modern",
+        preset = 'modern',
         triggers = {
-            { "<auto>", mode = "nixsotc" },
+            { '<auto>', mode = 'nixsotc' },
             -- put missing trigger key here
-            { "q",      mode = { "n" } },
-            { "t",      mode = { "n" } },
-            { "m",      mode = { "n" } },
+            { 'q', mode = { 'n' } },
+            { 't', mode = { 'n' } },
+            { 'm', mode = { 'n' } },
         },
         plugins = {
             marks = false,
@@ -20,10 +20,10 @@ return {
         win = {
             width = 0.95,
             height = { min = 4, max = 12 },
-            border = "rounded",
+            border = 'rounded',
             wo = {
                 winblend = 0,
-            }
+            },
         },
-    }
+    },
 }

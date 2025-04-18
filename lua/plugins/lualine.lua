@@ -4,7 +4,7 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = {
         { 'kyazdani42/nvim-web-devicons', opt = true },
-        'nvim-lua/lsp-status.nvim'
+        'nvim-lua/lsp-status.nvim',
     },
     event = 'VeryLazy',
     opts = function()
@@ -28,21 +28,21 @@ return {
                     'diff',
                 },
                 lualine_c = {
-                    { 'filename',    path = 1 },
+                    { 'filename', path = 1 },
                     { 'searchcount', color = 'IncSearch' },
                 },
                 lualine_x = {
                     {
                         -- show keypress sequence
-                        require("noice").api.status.command.get,
-                        cond = require("noice").api.status.command.has,
-                        color = { fg = "#ff9e64" },
+                        require('noice').api.status.command.get,
+                        cond = require('noice').api.status.command.has,
+                        color = { fg = '#ff9e64' },
                     },
                     {
                         -- show macro recording info
-                        require("noice").api.status.mode.get,
-                        cond = require("noice").api.status.mode.has,
-                        color = { fg = "#ff9e64" },
+                        require('noice').api.status.mode.get,
+                        cond = require('noice').api.status.mode.has,
+                        color = { fg = '#ff9e64' },
                     },
                     'diagnostics',
                 },
@@ -55,11 +55,11 @@ return {
                 },
             },
             inactive_sections = {
-                lualine_c = { { 'filename', path = 1 } }
-            }
+                lualine_c = { { 'filename', path = 1 } },
+            },
         }
 
-        if os.getenv("TERMUX_VERSION") then
+        if os.getenv('TERMUX_VERSION') then
             opts.options.component_separators = { left = '|', right = '|' }
             opts.options.section_separators = { left = '', right = '' }
         end
@@ -69,5 +69,5 @@ return {
     init = function()
         -- disable the original mode indicator
         vim.opt.showmode = false
-    end
+    end,
 }

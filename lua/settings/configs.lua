@@ -26,7 +26,7 @@ vim.cmd('command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i
 -- treat dash-connected word as single word
 -- vim.cmd('set iskeyword+=-')
 -- write and delete buffer command
-vim.cmd [[cnoreabbrev wd w\|bd"]]
+vim.cmd([[cnoreabbrev wd w\|bd"]])
 -- virtualedit in all modes
 vim.opt.virtualedit = 'all'
 -- split border color

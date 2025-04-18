@@ -26,7 +26,7 @@ return {
                     ret = false
                 end
                 return ret
-            end
+            end,
         },
         -- make `drop` and `tab drop` to become preferred
         func_map = {
@@ -40,9 +40,9 @@ return {
         filter = {
             fzf = {
                 action_for = { ['ctrl-s'] = 'split', ['ctrl-t'] = 'tab drop' },
-                extra_opts = { '--bind', 'ctrl-o:toggle-all', '--prompt', '> ' }
-            }
-        }
+                extra_opts = { '--bind', 'ctrl-o:toggle-all', '--prompt', '> ' },
+            },
+        },
     },
     init = function()
         -- official recommended settings
@@ -55,5 +55,5 @@ return {
         map('n', 'qn', '<cmd>cnext<cr>', { desc = 'quickfix_list.next()' })
         map('n', 'qp', '<cmd>cprevious<cr>', { desc = 'quickfix_list.previous()' })
         map('n', 'qc', '<cmd>cclose<cr>', { desc = 'quickfix_list.close()' })
-    end
+    end,
 }

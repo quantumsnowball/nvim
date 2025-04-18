@@ -2,12 +2,12 @@
 -- https://github.com/hedyhli/outline.nvim
 -- (this is a fork from the original symbols-outline)
 return {
-    "hedyhli/outline.nvim",
+    'hedyhli/outline.nvim',
     lazy = true,
-    cmd = { "Outline", "OutlineOpen" },
+    cmd = { 'Outline', 'OutlineOpen' },
     keys = { -- Example mapping to toggle outline
-        { "<leader>o", "<cmd>belowright Outline<cr>", desc = "Toggle outline" },
-        { "zo",        "<cmd>topleft Outline<cr>",    desc = "Toggle outline" },
+        { '<leader>o', '<cmd>belowright Outline<cr>', desc = 'Toggle outline' },
+        { 'zo', '<cmd>topleft Outline<cr>', desc = 'Toggle outline' },
     },
     opts = {
         outline_window = {

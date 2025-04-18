@@ -1,12 +1,12 @@
 -- bootstrap lazy load
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
+        'git',
+        'clone',
+        '--filter=blob:none',
+        'https://github.com/folke/lazy.nvim.git',
+        '--branch=stable', -- latest stable release
         lazypath,
     })
 end
@@ -18,14 +18,13 @@ vim.opt.termguicolors = true
 -- global leader key
 vim.g.mapleader = ','
 
-
 -- Setup lazy.nvim
-require("lazy").setup({
+require('lazy').setup({
     -- ref:
     -- https://github.com/folke/lazy.nvim/blob/main/lua/lazy/core/config.lua
     spec = {
         -- import your plugins
-        { import = "plugins" },
+        { import = 'plugins' },
     },
     defaults = {
         -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -39,7 +38,7 @@ require("lazy").setup({
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.
     install = {
-        colorscheme = { "habamax" }
+        colorscheme = { 'habamax' },
     },
     -- automatically check for plugin updates
     checker = {
@@ -47,7 +46,6 @@ require("lazy").setup({
         notify = true,
     },
 })
-
 
 -- other nvim settings
 require('settings')

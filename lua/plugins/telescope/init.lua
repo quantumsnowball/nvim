@@ -8,5 +8,5 @@ return {
     init = function()
         -- telescope keymaps
         require('plugins.telescope.keymaps')
-    end
+    end,
 }

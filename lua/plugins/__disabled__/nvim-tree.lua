@@ -9,7 +9,7 @@ return {
         { '<leader>E', '<cmd>NvimTreeToggle .<cr>', desc = 'NvimTreeToggle' },
     },
     init = function()
-        require('nvim-tree').setup {
+        require('nvim-tree').setup({
             actions = {
                 change_dir = {
                     enable = false,
@@ -25,20 +25,20 @@ return {
                     open_win_config = {
                         relative = 'win',
                         height = 1000,
-                    }
+                    },
                 },
                 adaptive_size = true,
                 mappings = {
                     list = {
-                        { key = "<esc>", action = "close" }
-                    }
-                }
+                        { key = '<esc>', action = 'close' },
+                    },
+                },
             },
             renderer = { highlight_opened_files = 'all' },
             -- default hide dotfiles and ignored files
             -- simply type H I to toggle show
             filters = { dotfiles = true },
-            git = { ignore = true }
-        }
-    end
+            git = { ignore = true },
+        })
+    end,
 }

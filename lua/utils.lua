@@ -30,9 +30,7 @@ function M.get_nearest_pytest_function_name(prefix)
         if current:type() == 'function_definition' then
             local fnname = get_node_text(current:child(1), 0)
             -- return fnname only when starts with PREFIX
-            if string.sub(fnname, 1, 5) == prefix then
-                return fnname
-            end
+            if string.sub(fnname, 1, 5) == prefix then return fnname end
         end
         current = current:parent()
     end

@@ -4,36 +4,36 @@ return {
     -- https://github.com/williamboman/mason.nvim,
     -- https://github.com/williamboman/mason-lspconfig.nvim,
     {
-        "neovim/nvim-lspconfig",
-        event = "BufReadPre",
+        'neovim/nvim-lspconfig',
+        event = 'BufReadPre',
         dependencies = {
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
-            "hrsh7th/nvim-cmp",
+            'williamboman/mason.nvim',
+            'williamboman/mason-lspconfig.nvim',
+            'hrsh7th/nvim-cmp',
         },
         init = function()
             vim.diagnostic.config({
                 float = {
-                    border = 'rounded'
+                    border = 'rounded',
                 },
                 jump = {
-                    float = true
-                }
+                    float = true,
+                },
             })
-        end
+        end,
     },
     -- cmdline tools and lsp servers
     -- https://github.com/williamboman/mason.nvim
     {
-        "williamboman/mason.nvim",
-        cmd = "Mason",
-        keys = { { "<leader>M", "<cmd>Mason<cr>", desc = "Mason" } },
-        opts = {}
+        'williamboman/mason.nvim',
+        cmd = 'Mason',
+        keys = { { '<leader>M', '<cmd>Mason<cr>', desc = 'Mason' } },
+        opts = {},
     },
     -- mason-lspconfig
     -- https://github.com/williamboman/mason-lspconfig.nvim
     {
-        "williamboman/mason-lspconfig.nvim",
+        'williamboman/mason-lspconfig.nvim',
         keys = require('plugins.nvim-lspconfig.keymaps'),
         opts = {
             -- auto install some servers
@@ -50,15 +50,15 @@ return {
                 'pyright',
                 -- web dev
                 'ts_ls',
-                "cssls",
-                "html",
+                'cssls',
+                'html',
                 -- data
-                "jsonls",
+                'jsonls',
             }
             -- extra server opts
             local server_opts = {
                 bashls = {
-                    filetypes = { 'sh', 'bash', 'zsh' }
+                    filetypes = { 'sh', 'bash', 'zsh' },
                 },
             }
             -- capabilities supported by completion engine
@@ -76,16 +76,14 @@ return {
                 -- lspconfig and mason names are different, mason-lspconfig is the translation
                 local mason_name = translation.lspconfig_to_mason[lspconfig_name]
                 -- ensure server binary is installed before activating it in lspconfig
-                if mason_registry.is_installed(mason_name) then
-                    lspconfig[lspconfig_name].setup(opts)
-                end
+                if mason_registry.is_installed(mason_name) then lspconfig[lspconfig_name].setup(opts) end
             end
 
             -- vim cmd to manually install the selected LSPs
             vim.api.nvim_create_user_command('MasonLSPEnsureInstalled', function()
-                local args = table.concat(selected_servers, " ")
-                vim.cmd(":LspInstall " .. args)
-            end, { desc = "Ensure selected LSP tools are installed using Mason" })
-        end
-    }
+                local args = table.concat(selected_servers, ' ')
+                vim.cmd(':LspInstall ' .. args)
+            end, { desc = 'Ensure selected LSP tools are installed using Mason' })
+        end,
+    },
 }
