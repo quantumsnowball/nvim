@@ -9,9 +9,10 @@ map('n', '<c-s>', '<cmd>noautocmd w<cr>')
 map('i', '<c-s>', '<c-o><cmd>w<cr>')
 map('v', '<c-s>', '<esc><cmd>w<cr>')
 map('n', 'qs', '<cmd>w<cr>', { desc = 'quick save' })
-map('n', ';;', '<cmd>w<cr>', { desc = 'quick save' })
-map('n', ';s', '<cmd>wa<cr>', { desc = 'quick save all buffers' })
+map('n', ';s', '<cmd>w<cr>', { desc = 'quick save' })
+map('n', ';;', '<cmd>wa<cr>', { desc = 'quick save all buffers' })
 map('n', '<leader><leader>', '<cmd>wa<cr>', { desc = 'quick save all buffers' })
+map('n', ';z', '<cmd>wq<cr>', { desc = 'quick save and quit window' })
 -- show which-key root
 map('n', '<F1>', '<cmd>WhichKey<cr>', { silent = true })
 -- cancel search highlight after search
