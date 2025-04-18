@@ -40,6 +40,10 @@ require('lazy').setup({
     install = {
         colorscheme = { 'habamax' },
     },
+    -- ui interface style
+    ui = {
+        border = 'rounded',
+    },
     -- automatically check for plugin updates
     checker = {
         enabled = true,
