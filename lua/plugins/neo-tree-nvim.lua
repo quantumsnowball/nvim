@@ -53,11 +53,12 @@ return {
                     ['e'] = 'open',
                     ['<space>'] = 'open_tabnew',
                     ['t'] = 'open_tabnew',
+                    ['<tab>'] = 'open_tabnew',
                     ['<bs>'] = 'close_node',
                     ['E'] = 'expand_all_nodes',
                     ['-'] = 'split_with_window_picker',
                     ['\\'] = 'vsplit_with_window_picker',
-                    ['<tab>'] = 'next_source',
+                    ['<s-tab>'] = 'next_source',
                     -- disable
                     ['s'] = '',
                     ['S'] = '',
