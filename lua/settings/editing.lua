@@ -57,7 +57,6 @@ vim.cmd("noremap zh <Cmd>call search('[([{<>}\\])]', 'b')<cr>")
 -- select inner word/line(without linebreak)
 map('n', ';w', 'hevb', { desc = 'select word, curosr to beginning' })
 map('n', ';e', 'viw', { desc = 'select word, cursor to end' })
-map('n', ';a', '$v^', { desc = 'select whole line' })
 -- edit/delete inner word
 map('n', ';d', '"_diw', { desc = 'delete inner word' })
 map('n', ';D', '"_diW', { desc = 'delete inner word' })

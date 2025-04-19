@@ -49,4 +49,10 @@ return {
         -- Send config to alpha.setup()
         return dashboard.opts
     end,
+    init = function()
+        local map = require('utils').map
+
+        -- ;a is 'Home' gesture
+        map('n', ';a', '<cmd>Alpha<cr><cmd>tabonly<cr>', { desc = 'open Alpha and quit other tabpages' })
+    end,
 }
