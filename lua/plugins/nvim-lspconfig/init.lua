@@ -22,18 +22,6 @@ return {
             })
         end,
     },
-    -- cmdline tools and lsp servers
-    -- https://github.com/williamboman/mason.nvim
-    {
-        'williamboman/mason.nvim',
-        cmd = 'Mason',
-        keys = { { '<leader>M', '<cmd>Mason<cr>', desc = 'Mason' } },
-        opts = {
-            ui = {
-                border = 'rounded',
-            },
-        },
-    },
     -- mason-lspconfig
     -- https://github.com/williamboman/mason-lspconfig.nvim
     {
