@@ -4,7 +4,11 @@ return {
     'saghen/blink.cmp',
     -- optional: provides snippets for the snippet source
     dependencies = {
+        -- vscode like snippets
         'rafamadriz/friendly-snippets',
+        -- add color to cmp menu
+        -- https://github.com/xzbdmw/colorful-menu.nvim
+        'xzbdmw/colorful-menu.nvim',
     },
 
     -- use a release tag to download pre-built binaries
@@ -41,6 +45,11 @@ return {
         },
 
         appearance = {
+            -- Sets the fallback highlight groups to nvim-cmp's highlight groups
+            -- Useful for when your theme doesn't support blink.cmp
+            -- Will be removed in a future release
+            -- FIXME: may be need to write a new theme for this purpose?
+            use_nvim_cmp_as_default = true,
             -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
             -- Adjusts spacing to ensure icons are aligned
             nerd_font_variant = 'normal',
@@ -59,9 +68,16 @@ return {
                 border = 'rounded',
                 draw = {
                     columns = {
-                        { 'label', 'label_description', gap = 1 },
-                        { 'kind_icon', gap = 1 },
-                        { 'kind', gap = 1 },
+                        { 'label' },
+                        { 'kind_icon' },
+                        { 'kind' },
+                        { 'source_name' },
+                    },
+                    components = {
+                        label = {
+                            text = function(ctx) return require('colorful-menu').blink_components_text(ctx) end,
+                            highlight = function(ctx) return require('colorful-menu').blink_components_highlight(ctx) end,
+                        },
                     },
                 },
             },
