@@ -5,7 +5,6 @@ return {
     dependencies = {
         'williamboman/mason.nvim',
         'neovim/nvim-lspconfig',
-        'hrsh7th/nvim-cmp',
     },
     opts = {
         -- auto install some servers
@@ -34,7 +33,7 @@ return {
             },
         }
         -- capabilities supported by completion engine
-        local caps = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+        -- local caps = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
         -- activate each LSP
         local translation = require('mason-lspconfig').get_mappings()
         local mason_registry = require('mason-registry')
@@ -42,7 +41,7 @@ return {
         for _, lspconfig_name in pairs(selected_servers) do
             local opts = {}
             -- inject capabilities
-            opts.capabilities = caps
+            -- opts.capabilities = caps
             -- inject extra server opts
             opts = vim.tbl_deep_extend('force', opts, server_opts[lspconfig_name] or {})
             -- lspconfig and mason names are different, mason-lspconfig is the translation
