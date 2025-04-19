@@ -8,6 +8,7 @@ return {
         event = 'BufReadPre',
         keys = require('plugins.nvim-lspconfig.keymaps'),
         dependencies = {
+            'nvim-telescope/telescope.nvim',
             'williamboman/mason-lspconfig.nvim',
             'hrsh7th/nvim-cmp',
         },
