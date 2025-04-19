@@ -17,9 +17,11 @@ return {
             },
             init = function() require('luasnip.loaders.from_vscode').lazy_load() end,
         },
+        'onsails/lspkind.nvim',
     },
     opts = function()
         local cmp = require('cmp')
+        local lspkind = require('lspkind')
 
         -- setup opts
         return {
@@ -43,11 +45,11 @@ return {
                 { name = 'lazydev', group_index = 0 },
             }),
             formatting = {
-                format = function(_, item)
-                    local icons = require('plugins.nvim-cmp/icons').kinds
-                    if icons[item.kind] then item.kind = icons[item.kind] .. item.kind end
-                    return item
-                end,
+                -- ref:
+                -- https://github.com/onsails/lspkind.nvim
+                format = lspkind.cmp_format({
+                    mode = 'symbol_text',
+                }),
             },
             view = {
                 entries = { name = 'custom', selection_order = 'near_cursor' },
