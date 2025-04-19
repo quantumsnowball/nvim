@@ -47,7 +47,9 @@ return {
             formatting = {
                 -- ref:
                 -- https://github.com/onsails/lspkind.nvim
-                format = lspkind.cmp_format(),
+                format = lspkind.cmp_format({
+                    mode = 'symbol_text',
+                }),
             },
             view = {
                 entries = { name = 'custom', selection_order = 'near_cursor' },
