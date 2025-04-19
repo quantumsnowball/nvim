@@ -25,14 +25,8 @@ map('n', 'tN', function()
 end, { desc = 'open new tab on left' })
 map(
     'n',
-    'to',
+    'te',
     '<cmd>tab split<cr><cmd>Neotree reveal float<cr>',
-    { desc = 'open current buffer on new tab on right, then open explorer' }
-)
-map(
-    'n',
-    'tO',
-    '<cmd>-1tab split<cr><cmd>Neotree reveal float<cr>',
     { desc = 'open current buffer on new tab on right, then open explorer' }
 )
 map('n', 'tm', '<C-W>T', { desc = 'move window to new tabpage' })
