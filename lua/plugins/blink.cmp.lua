@@ -38,7 +38,6 @@ return {
             ['<CR>'] = { 'select_and_accept', 'fallback' },
             ['<C-u>'] = { 'scroll_documentation_up', 'fallback' },
             ['<C-d>'] = { 'scroll_documentation_down', 'fallback' },
-            ['<Esc>'] = { 'cancel', 'fallback' },
         },
 
         appearance = {
@@ -49,6 +48,13 @@ return {
 
         -- (Default) Only show the documentation popup when manually triggered
         completion = {
+            list = {
+                selection = {
+                    -- pre select, but only insert text when accepted
+                    preselect = true,
+                    auto_insert = false,
+                },
+            },
             menu = {
                 border = 'rounded',
                 draw = {
