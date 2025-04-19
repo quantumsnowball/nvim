@@ -51,6 +51,13 @@ return {
         completion = {
             menu = {
                 border = 'rounded',
+                draw = {
+                    columns = {
+                        { 'label', 'label_description', gap = 1 },
+                        { 'kind_icon', gap = 1 },
+                        { 'kind', gap = 1 },
+                    },
+                },
             },
             documentation = {
                 auto_show = true,
