@@ -3,6 +3,7 @@ local map = require('utils').map
 -- windows --
 -------------
 -- quit window shortcut
+map('n', ';q', '<cmd>q<cr>', { desc = 'quit window' })
 map('n', 'qw', '<cmd>q<cr>', { desc = 'quit window' })
 map('n', 'qW', '<cmd>qa<cr>', { desc = 'quit all windows' })
 map('n', 'qq', '<cmd>qa<cr>', { desc = 'quit neovim' })
