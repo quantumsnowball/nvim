@@ -18,6 +18,8 @@ return {
             -- "BufferLineSeparator",
             -- "BufferLineIndicatorSelected",
             'NormalFloat',
+            -- clear cmp menu backgrund
+            'Pmenu',
         },
         -- table: groups you don't want to clear
         exclude_groups = {
@@ -52,6 +54,7 @@ return {
         -- telescope
         clear_prefix('Telescope')
 
+        -- quickfix list
         clear_prefix('Bqf')
     end,
 }
