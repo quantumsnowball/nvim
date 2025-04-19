@@ -39,10 +39,10 @@ return {
             }),
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
-                { name = 'buffer' },
-                { name = 'path' },
                 { name = 'luasnip' },
                 { name = 'lazydev', group_index = 0 },
+                { name = 'buffer' },
+                { name = 'path' },
             }),
             formatting = {
                 -- ref:
