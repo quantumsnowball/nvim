@@ -6,6 +6,7 @@ return {
     {
         'neovim/nvim-lspconfig',
         event = 'BufReadPre',
+        keys = require('plugins.nvim-lspconfig.keymaps'),
         dependencies = {
             'williamboman/mason-lspconfig.nvim',
             'hrsh7th/nvim-cmp',
@@ -25,7 +26,6 @@ return {
     -- https://github.com/williamboman/mason-lspconfig.nvim
     {
         'williamboman/mason-lspconfig.nvim',
-        keys = require('plugins.nvim-lspconfig.keymaps'),
         dependencies = {
             'williamboman/mason.nvim',
         },
