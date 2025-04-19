@@ -7,7 +7,6 @@ return {
         'neovim/nvim-lspconfig',
         event = 'BufReadPre',
         dependencies = {
-            'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
             'hrsh7th/nvim-cmp',
         },
@@ -27,6 +26,9 @@ return {
     {
         'williamboman/mason-lspconfig.nvim',
         keys = require('plugins.nvim-lspconfig.keymaps'),
+        dependencies = {
+            'williamboman/mason.nvim',
+        },
         opts = {
             -- auto install some servers
             -- ensure_installed = {}
