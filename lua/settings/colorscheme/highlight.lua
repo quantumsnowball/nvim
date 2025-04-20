@@ -284,6 +284,7 @@ M.setup = function(c, opts)
         BlinkCmpKindColor = { fg = c.white },
         BlinkCmpKindFile = { fg = c.aqua },
         BlinkCmpKindFolder = { fg = c.yellow },
+        BlinkCmpKindDict = { fg = c.purple },
     }
 
     -- filter style
