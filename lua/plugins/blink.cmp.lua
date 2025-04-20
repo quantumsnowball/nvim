@@ -9,6 +9,12 @@ return {
         -- add color to cmp menu
         -- https://github.com/xzbdmw/colorful-menu.nvim
         'xzbdmw/colorful-menu.nvim',
+        -- dictionary source (depends on WordNet)
+        -- https://github.com/Kaiser-Yang/blink-cmp-dictionary
+        {
+            'Kaiser-Yang/blink-cmp-dictionary',
+            dependencies = { 'nvim-lua/plenary.nvim' },
+        },
     },
 
     -- use a release tag to download pre-built binaries
@@ -92,6 +98,25 @@ return {
                 'snippets',
                 'buffer',
                 'path',
+                'dictionary',
+            },
+            providers = {
+                -- community reference
+                -- https://github.com/linkarzu/dotfiles-latest/blob/c1a04c9324fdb2669255889defc6302efefe4d9d/neovim/neobean/lua/plugins/blink-cmp.lua#L160
+                dictionary = {
+                    module = 'blink-cmp-dictionary',
+                    name = 'English',
+                    min_keyword_length = 3,
+                    max_items = 6,
+                    opts = {
+                        -- word list download src: https://github.com/dwyl/english-words
+                        -- word definition: wn, download src: yay -S wordnet-common
+                        dictionary_files = {
+                            -- put downloaded dictionary in .dictionary
+                            vim.fn.expand('~/.config/nvim/.dictionary/words_alpha.txt'),
+                        },
+                    },
+                },
             },
         },
 
