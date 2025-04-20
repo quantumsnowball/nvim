@@ -108,6 +108,7 @@ return {
                     name = 'English',
                     min_keyword_length = 3,
                     max_items = 6,
+                    score_offset = -5,
                     opts = {
                         -- word list download src: https://github.com/dwyl/english-words
                         -- word definition: wn, download src: yay -S wordnet-common
