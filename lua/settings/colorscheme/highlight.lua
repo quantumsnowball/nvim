@@ -6,6 +6,7 @@ M.setup = function(c, opts)
         Normal = { fg = c.white, bg = c.base2 },
         NormalFloat = { bg = c.base1 },
         Pmenu = { fg = c.white, bg = c.base3 },
+        PMenuExtra = { fg = c.base6 },
         PmenuSel = { fg = c.base4, bg = c.orange },
         PmenuSelBold = { fg = c.base4, bg = c.orange },
         PmenuThumb = { fg = c.purple, bg = c.green },
@@ -249,6 +250,35 @@ M.setup = function(c, opts)
         CmpItemKindOperator = { fg = c.green },
         -- ray-x/lsp_signature.nvim
         LspSignatureActiveParameter = { fg = c.orange },
+
+        -- blink.nvim
+        -- NOTE:
+        -- in blink.cmp source code, if use_nvim_cmp_as_default is disabled, you must define all BlinkCcmpKind* hlgroups,
+        -- otherwise it is all set to the same BlinkCmpKind and therefore no color difference
+        -- https://github.com/Saghen/blink.cmp/blob/3ce61ae041927082f962791f59e3aadc774b206c/lua/blink/cmp/highlights.lua#L24
+        BlinkCmpLabel = { fg = c.white },
+        BlinkCmpLabelMatch = { fg = c.aqua },
+        BlinkCmpKindDefault = { fg = c.white },
+        BlinkCmpKindKeyword = { fg = c.pink },
+        BlinkCmpKindVariable = { fg = c.pink },
+        BlinkCmpKindConstant = { fg = c.pink },
+        BlinkCmpKindReference = { fg = c.pink },
+        BlinkCmpKindValue = { fg = c.pink },
+        BlinkCmpKindFunction = { fg = c.aqua },
+        BlinkCmpKindMethod = { fg = c.aqua },
+        BlinkCmpKindConstructor = { fg = c.aqua },
+        BlinkCmpKindClass = { fg = c.orange },
+        BlinkCmpKindInterface = { fg = c.orange },
+        BlinkCmpKindStruct = { fg = c.orange },
+        BlinkCmpKindEvent = { fg = c.orange },
+        BlinkCmpKindEnum = { fg = c.orange },
+        BlinkCmpKindUnit = { fg = c.orange },
+        BlinkCmpKindModule = { fg = c.yellow },
+        BlinkCmpKindProperty = { fg = c.green },
+        BlinkCmpKindField = { fg = c.green },
+        BlinkCmpKindTypeParameter = { fg = c.green },
+        BlinkCmpKindEnumMember = { fg = c.green },
+        BlinkCmpKindOperator = { fg = c.green },
     }
 
     -- filter style
