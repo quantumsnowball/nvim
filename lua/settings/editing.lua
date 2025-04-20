@@ -11,8 +11,8 @@ map('n', 'U', '~')
 map('n', '<space>2', '<cmd>set shiftwidth=2<cr>')
 map('n', '<space>4', '<cmd>set shiftwidth=4<cr>')
 -- commenting code
-map('n', '<leader>/', 'gcc', { remap = true, desc = 'toggle line comment' })
-map('v', '<leader>/', 'gc', { remap = true, desc = 'toggle selection comment' })
+map('n', 'g;', 'gccj', { remap = true, desc = 'toggle line comment' })
+map('v', 'g;', 'gc', { remap = true, desc = 'toggle selection comment' })
 -- home and end in normal, visual, operator mode
 map({ 'n', 'v', 'o' }, 'gh', '^', { desc = 'Home' })
 map({ 'n', 'v', 'o' }, 'gl', '$', { desc = 'End' })
@@ -37,8 +37,7 @@ map('n', 'g.', 'mzA.<esc>`z', { desc = 'insert `.` at line end' })
 -- z, and z. insert ,/. at line end, then jump back
 map('n', 'z,', 'mzA,<esc>`z', { desc = 'insert `,` at line end' })
 map('n', 'z.', 'mzA.<esc>`z', { desc = 'insert `.` at line end' })
--- insert ;/: at the end of line, then jump back:
-map('n', 'g;', 'mzA;<esc>`z', { desc = 'insert `;` at line end' })
+-- insert : at the end of line, then jump back:
 map('n', 'g:', 'mzA:<esc>`z', { desc = 'insert `:` at line end' })
 -- C-o will also open new line in insert mode
 map('i', '<C-o>', '<esc>o')
