@@ -77,7 +77,12 @@ map('n', '<leader>Fj', tb.jumplist, { desc = 'telescope.jumplist()' })
 map('v', '<leader>w', tb.grep_string, { desc = 'telescope.grep_string(--visual-mode)' })
 
 -- color scheme
-map('n', '<leader>Fcs', tb.colorscheme, { desc = 'telescope.colorscheme()' })
+map(
+    'n',
+    '<leader>T',
+    function() tb.colorscheme({ enable_preview = true, ignore_builtins = true }) end,
+    { desc = 'telescope.colorscheme()' }
+)
 
 -- git navigation
 map('n', '<leader>gC', tb.git_commits, { desc = 'telescope.git_commits()' })

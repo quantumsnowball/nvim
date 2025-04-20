@@ -61,7 +61,7 @@ M.pickers = {
     registers = { initial_mode = 'insert', layout_config = { width = 0.7, height = 0.1 } },
     builtin = { layout_config = { preview_height = 0.4 } },
     vim_options = { initial_mode = 'insert' },
-    colorscheme = { layout_config = { width = 0.2, height = 0.7 } },
+    colorscheme = { layout_config = { width = 0.5, height = 0.7, preview_height = 0.5 } },
     spell_suggest = { layout_config = { width = 0.2, height = 0.7 } },
     command_history = { layout_config = { width = 0.6 } },
     highlights = { layout_config = { width = 0.7 } },
