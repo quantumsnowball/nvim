@@ -23,9 +23,20 @@ return {
             },
         })
 
-        -- require('mini.pairs').setup({
-        --     --
-        -- })
+        require('mini.move').setup({
+            mappings = {
+                -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
+                left = '',
+                right = '',
+                down = '<C-j>',
+                up = '<C-k>',
+                -- Move current line in Normal mode
+                line_left = '',
+                line_right = '',
+                line_down = 'gj',
+                line_up = 'gk',
+            },
+        })
 
         require('mini.cursorword').setup({
             --
