@@ -21,6 +21,7 @@ return {
             map('v', ';hr', '<cmd>Gitsigns reset_hunk<cr>')
             map('n', ';hS', '<cmd>Gitsigns stage_buffer<cr>')
             map('n', ';hu', '<cmd>Gitsigns undo_stage_hunk<cr>')
+            map('n', ';hz', '<cmd>Gitsigns undo_stage_hunk<cr>')
             map('n', ';hR', '<cmd>Gitsigns reset_buffer<cr>')
             map('n', ';hp', '<cmd>Gitsigns preview_hunk<cr>')
             map('n', ';hb', '<cmd>lua require"gitsigns".blame_line{full=true}<cr>')
