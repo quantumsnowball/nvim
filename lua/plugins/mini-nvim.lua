@@ -55,5 +55,14 @@ return {
         require('mini.trailspace').setup({
             --
         })
+
+        require('mini.operators').setup({
+            -- set prefix to '' to disable any feature
+            evaluate = { prefix = 'g=' }, -- Evaluate text and replace with output
+            exchange = { prefix = 'gx' }, -- Exchange text regions
+            multiply = { prefix = 'zm' }, -- Multiply (duplicate) text
+            replace = { prefix = 'zr' }, --  Replace text with register
+            sort = { prefix = 'zs' }, -- Sort text
+        })
     end,
 }
