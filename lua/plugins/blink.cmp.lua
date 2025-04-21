@@ -111,7 +111,10 @@ return {
                     score_offset = -5,
                     opts = {
                         -- word list download src: https://github.com/dwyl/english-words
-                        -- word definition: wn, download src: yay -S wordnet-common
+                        --   wget https://raw.github.com/dwyl/english-words/master/words.txt
+                        --   wget https://raw.github.com/dwyl/english-words/master/words_alpha.txt
+                        -- word definition: wn, download src: https://wordnet.princeton.edu
+                        --   yay -S wordnet-common
                         dictionary_files = {
                             -- put downloaded dictionary in .dictionary
                             vim.fn.expand('~/.config/nvim/.dictionary/words_alpha.txt'),
