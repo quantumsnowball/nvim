@@ -3,6 +3,7 @@ local M = {}
 
 M.setup = function(c, opts)
     local groups = {
+        -- neovim
         Normal = { fg = c.white, bg = c.base2 },
         NormalFloat = { bg = c.base1 },
         Pmenu = { fg = c.white, bg = c.base3 },
@@ -11,9 +12,10 @@ M.setup = function(c, opts)
         PmenuSelBold = { fg = c.black, bg = c.yellow },
         PmenuThumb = { fg = c.purple, bg = c.green },
         PmenuSbar = { bg = c.base3 },
-        Cursor = { reverse = true },
         ColorColumn = { bg = c.base3 },
-        CursorLine = { bg = c.base3 },
+        Cursor = { reverse = true },
+        CursorLine = { bg = c.base4 },
+        CursorColumn = { bg = c.base4 },
         NonText = { fg = c.base5 },
         Visual = { bg = c.base4 },
         VisualNOS = { bg = c.base3 },
@@ -87,7 +89,6 @@ M.setup = function(c, opts)
         iCursor = { reverse = true },
         lCursor = { reverse = true },
         CursorIM = { reverse = true },
-        CursorColumn = { bg = c.base3 },
         Whitespace = { fg = c.base5 },
         WildMenu = { fg = c.white, bg = c.orange },
         QuickFixLine = { fg = c.purple, bold = true },
@@ -97,6 +98,7 @@ M.setup = function(c, opts)
         Repeat = { fg = c.pink },
         Exception = { fg = c.pink },
 
+        -- treesitter
         ['@annotation'] = { fg = c.green },
         ['@attribute'] = { fg = c.green },
         ['@boolean'] = { fg = c.purple },
@@ -194,7 +196,13 @@ M.setup = function(c, opts)
         ['@type.qualifier'] = { fg = c.pink },
         ['@uri'] = { fg = c.aqua, underline = true },
         ['@variable'] = { fg = c.white },
-        ['@variable.builtin'] = { fg = c.orange },
+        ['@variable.builtin'] = { fg = c.purple },
+        -- python
+        ['@variable.parameter.python'] = { fg = c.orange },
+        -- lua
+        ['@lsp.typemod.parameter.declaration.lua'] = { fg = c.orange },
+
+        -- diagnostic
         dbui_tables = { fg = c.white },
         DiagnosticSignError = { fg = c.red },
         DiagnosticSignWarn = { fg = c.yellow },
@@ -213,6 +221,7 @@ M.setup = function(c, opts)
         NvimTreeFolderName = { fg = c.white },
         NvimTreeRootFolder = { fg = c.pink },
         NvimTreeSpecialFile = { fg = c.white },
+
         -- Telescope
         TelescopeBorder = { fg = c.base7 },
         TelescopeNormal = { fg = c.base8, bg = c.base0 },
@@ -220,6 +229,7 @@ M.setup = function(c, opts)
         TelescopeSelectionCaret = { fg = c.green },
         TelescopeMultiSelection = { fg = c.pink },
         TelescopeMatching = { fg = c.aqua },
+
         -- hrsh7th/nvim-cmp
         CmpDocumentation = { fg = c.white, bg = c.base1 },
         CmpDocumentationBorder = { fg = c.white, bg = c.base1 },
@@ -248,6 +258,7 @@ M.setup = function(c, opts)
         CmpItemKindTypeParameter = { fg = c.green },
         CmpItemKindEnumMember = { fg = c.green },
         CmpItemKindOperator = { fg = c.green },
+
         -- ray-x/lsp_signature.nvim
         LspSignatureActiveParameter = { fg = c.orange },
 
@@ -284,6 +295,7 @@ M.setup = function(c, opts)
         BlinkCmpKindColor = { fg = c.white },
         BlinkCmpKindFile = { fg = c.aqua },
         BlinkCmpKindFolder = { fg = c.yellow },
+        BlinkCmpKindDict = { fg = c.purple },
     }
 
     -- filter style
