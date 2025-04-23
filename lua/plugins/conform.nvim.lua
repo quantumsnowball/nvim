@@ -9,6 +9,11 @@ return {
             lua = { 'stylua' },
             python = { 'isort', 'autopep8' },
         },
+        formatters = {
+            autopep8 = {
+                prepend_args = { '--max-line-length', '120' },
+            },
+        },
     },
     init = function()
         local map = require('utils').map
