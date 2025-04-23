@@ -11,8 +11,10 @@ map('n', 'U', '~')
 map('n', '<space>2', '<cmd>set shiftwidth=2<cr>')
 map('n', '<space>4', '<cmd>set shiftwidth=4<cr>')
 -- commenting code
-map('n', 'g;', 'gccj', { remap = true, desc = 'toggle line comment' })
-map('v', 'g;', 'gc', { remap = true, desc = 'toggle selection comment' })
+map('n', 'zb', 'gccj', { remap = true, desc = 'toggle line comment' })
+map('v', 'zb', 'gc', { remap = true, desc = 'toggle selection comment' })
+map('n', '<leader>/', 'gccj', { remap = true, desc = 'toggle line comment' })
+map('v', '<leader>/', 'gc', { remap = true, desc = 'toggle selection comment' })
 -- home and end in normal, visual, operator mode
 map({ 'n', 'v', 'o' }, 'gh', '^', { desc = 'Home' })
 map({ 'n', 'v', 'o' }, 'gl', '$', { desc = 'End' })
