@@ -46,7 +46,7 @@ return {
             -- inject extra server opts
             opts = vim.tbl_deep_extend('force', opts, server_opts[lspconfig_name] or {})
             -- lspconfig and mason names are different, mason-lspconfig is the translation
-            local mason_name = translation.lspconfig_to_mason[lspconfig_name]
+            local mason_name = translation.lspconfig_to_package[lspconfig_name]
             -- ensure server binary is installed before activating it in lspconfig
             if mason_registry.is_installed(mason_name) then lspconfig[lspconfig_name].setup(opts) end
         end
