@@ -9,20 +9,11 @@ return {
     opts = {
         -- auto install some servers
         -- ensure_installed = {}
-        -- automatic enable all installed and selected server by calling vim.lsp.enable()
+        -- mason-lspconfig will enable all install tools by calling vim.lsp.enable()
         automatic_enable = {
-            -- lua
-            'lua_ls',
-            -- shell
-            'bashls',
-            -- python
-            'pyright',
-            -- web dev
-            'ts_ls',
-            'cssls',
-            'html',
-            -- data
-            'jsonls',
+            exclude = {
+                -- disable any installed tools here
+            },
         },
     },
     init = function()
