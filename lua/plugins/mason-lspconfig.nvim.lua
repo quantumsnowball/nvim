@@ -42,11 +42,14 @@ return {
         --     'jsonls',
         -- }
         -- -- extra server opts
-        -- local server_opts = {
-        --     bashls = {
-        --         filetypes = { 'sh', 'bash', 'zsh' },
-        --     },
-        -- }
+        local server_opts = {
+            bashls = {
+                filetypes = { 'sh', 'bash', 'zsh' },
+            },
+        }
+        for server, opts in pairs(server_opts) do
+            vim.lsp.config(server, opts)
+        end
         -- -- activate each LSP
         -- local translation = require('mason-lspconfig').get_mappings()
         -- local mason_registry = require('mason-registry')
