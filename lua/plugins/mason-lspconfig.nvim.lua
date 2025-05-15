@@ -9,6 +9,9 @@ return {
     opts = {
         -- auto install some servers
         -- ensure_installed = {}
+        -- automatic enable all installed server
+        -- FIXME: since 6b2ba82e, if leave default as true, duplicated lsp server
+        automatic_enable = false,
     },
     init = function()
         -- desiered server
