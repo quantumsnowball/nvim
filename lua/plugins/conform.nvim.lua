@@ -32,7 +32,7 @@ return {
                     -- default skip lsp format, always use a specific formatter
                     lsp_format = 'never',
                     -- milliseconds to block for formatting, default = 1000
-                    timeout_ms = 500,
+                    timeout_ms = 1000,
                 })
             end,
         })
