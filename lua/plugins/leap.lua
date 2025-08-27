@@ -20,5 +20,5 @@ return {
             prev_group = '[',
         },
     },
-    init = function() require('leap').set_default_keymaps() end,
+    init = function() require('leap').set_default_mappings() end,
 }
