@@ -8,10 +8,14 @@ return {
         formatters_by_ft = {
             lua = { 'stylua' },
             python = { 'isort', 'autopep8' },
+            json = { 'jq' },
         },
         formatters = {
             autopep8 = {
                 prepend_args = { '--max-line-length', '120' },
+            },
+            jq = {
+                append_args = function() return { '--indent', vim.bo.shiftwidth } end,
             },
         },
     },
