@@ -84,6 +84,10 @@ map('n', 'g[', 'A<space>[<cr>]<esc>O', { desc = 'insert `[]` pair on new line' }
 map('n', 'g{', 'A<space>{<cr>}<esc>O', { desc = 'insert `{}` pair on new line' })
 map('n', 'g(', 'A<space>(<cr>)<esc>O', { desc = 'insert `()` pair on new line' })
 --   end of line matching, then jump back
+map('n', 'g(', 'mzA()<esc>`z', { desc = 'insert `()` at line end' })
+map('n', 'g9', 'mzA()<esc>`z', { desc = 'insert `()` at line end' })
+map('n', 'g[', 'mzA[]<esc>`z', { desc = 'insert `[]` at line end' })
+map('n', 'g{', 'mzA{}<esc>`z', { desc = 'insert `{}` at line end' })
 map('n', 'g)', 'mzA)<esc>`z', { desc = 'insert `)` at line end' })
 map('n', 'g0', 'mzA)<esc>`z', { desc = 'insert `)` at line end' })
 map('n', 'g]', 'mzA]<esc>`z', { desc = 'insert `]` at line end' })
