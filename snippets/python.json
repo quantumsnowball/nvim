@@ -22,5 +22,14 @@
       "    pass"
     ],
     "description": "Basic Python class __exit__ method"
+  },
+  "property": {
+    "prefix": "prop",
+    "body": [
+      "@property",
+      "def ${1:name}(self) -> ${2:type}:",
+      "    return"
+    ],
+    "description": "Basic Python class @property method"
   }
 }
