@@ -1,0 +1,26 @@
+{
+  "init": {
+    "prefix": "init",
+    "body": [
+      "def __init__(self) -> None:",
+      "    pass"
+    ],
+    "description": "Python class __init__ method"
+  },
+  "enter": {
+    "prefix": "enter",
+    "body": [
+      "def __enter__(self) -> Self:",
+      "    return self"
+    ],
+    "description": "Basic Python class __enter__ method"
+  },
+  "exit": {
+    "prefix": "exit",
+    "body": [
+      "def __exit__(self, *_) -> None:",
+      "    pass"
+    ],
+    "description": "Basic Python class __exit__ method"
+  }
+}
