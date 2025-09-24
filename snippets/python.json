@@ -23,6 +23,14 @@
     ],
     "description": "Basic Python class __exit__ method"
   },
+  "exit2": {
+    "prefix": "exit2",
+    "body": [
+      "def __exit__(self, exc_type, exc_val, exc_tb) -> None:",
+      "    pass"
+    ],
+    "description": "Basic Python class __exit__ method"
+  },
   "property": {
     "prefix": "prop",
     "body": [
