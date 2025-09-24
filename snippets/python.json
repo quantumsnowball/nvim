@@ -39,5 +39,12 @@
       "    return"
     ],
     "description": "Basic Python class @property method"
+  },
+  "fstring": {
+    "prefix": "fstr",
+    "body": [
+      "f'{${1:name}}'"
+    ],
+    "description": "Basic Python f-string"
   }
 }
