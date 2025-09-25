@@ -9,6 +9,7 @@ return {
             lua = { 'stylua' },
             python = { 'isort', 'autopep8' },
             json = { 'jq' },
+            html = { 'prettier' },
             javascript = { 'prettier' },
             javascriptreact = { 'prettier' },
             typescript = { 'prettier' },
