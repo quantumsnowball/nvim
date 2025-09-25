@@ -13,6 +13,7 @@ return {
             javascriptreact = { 'prettier' },
             typescript = { 'prettier' },
             typescriptreact = { 'prettier' },
+            css = { 'prettier' },
         },
         formatters = {
             autopep8 = {
