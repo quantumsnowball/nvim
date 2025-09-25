@@ -40,3 +40,5 @@ vim.cmd('autocmd VimEnter,BufEnter,ColorScheme * hi SpellLocal guibg=#770000')
 vim.cmd('autocmd FileType help set buflisted')
 -- do not show cmdline when not using
 vim.cmd('set cmdheight=0')
+-- ensure overwrite the current file inode when saving, preserve fs events for hot reloading watcher
+vim.opt.backupcopy = 'yes'
