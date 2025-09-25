@@ -42,3 +42,5 @@ map('n', '<leader>.', function() vim.fn.feedkeys(':setfiletype ') end, { desc = 
 -- jumping
 map('n', 'g<bs>', '<c-o>zz', { desc = 'jump to previous position' })
 map('n', 'g<cr>', '<c-i>zz', { desc = 'jump to next position' })
+map('n', '[j', '<c-o>zz', { desc = 'jump to previous position' })
+map('n', ']j', '<c-i>zz', { desc = 'jump to next position' })
