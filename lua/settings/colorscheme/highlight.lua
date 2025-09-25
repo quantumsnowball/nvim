@@ -298,6 +298,10 @@ M.setup = function(c, opts)
         BlinkCmpKindDict = { fg = c.purple },
     }
 
+    -- custom link
+    -- tsx
+    vim.api.nvim_set_hl(0, '@tag.builtin.tsx', { link = '@tag' })
+
     -- filter style
     if opts.italic == false then
         for _, g in pairs(groups) do
