@@ -1,0 +1,9 @@
+{
+  "arror-function": {
+    "prefix": "af",
+    "body": [
+      "(${1:}) => {${2:}}"
+    ],
+    "description": "ts arrow function basic"
+  }
+}
