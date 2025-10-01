@@ -71,20 +71,20 @@ map('n', ';I', '<cmd>InspectTree<cr>', { desc = 'InspectTree' })
 --
 -- quick pairs
 --
---   pairs at new line, then insert
-map('n', 'g[', 'A<space>[<cr>]<esc>O', { desc = 'insert `[]` pair on new line' })
-map('n', 'g{', 'A<space>{<cr>}<esc>O', { desc = 'insert `{}` pair on new line' })
-map('n', 'g(', 'A<space>(<cr>)<esc>O', { desc = 'insert `()` pair on new line' })
-map('n', 'g9', 'A<space>(<cr>)<esc>O', { desc = 'insert `()` pair on new line' })
+--   pairs at cursor end, then insert
+map('n', 'g[', 'a[]<left>', { desc = 'insert `[]` pair on same line' })
+map('n', 'g{', 'a{}<left>', { desc = 'insert `{}` pair on same line' })
+map('n', 'g(', 'a()<left>', { desc = 'insert `()` pair on same line' })
+map('n', 'g9', 'a()<left>', { desc = 'insert `()` pair on same line' })
 --   quotes pairs, then insert
 map('n', "g'", "a''<left>", { desc = "insert `''` pair on same line" })
 map('n', 'g"', 'a""<left>', { desc = 'insert `""` pair on same line' })
 map('n', 'g`', 'a``<left>', { desc = "insert '``' pair on same line" })
---   pairs at cursor end, then insert
-map('n', 'g]', 'a[]<left>', { desc = 'insert `[]` pair on same line' })
-map('n', 'g}', 'a{}<left>', { desc = 'insert `{}` pair on same line' })
-map('n', 'g)', 'a()<left>', { desc = 'insert `()` pair on same line' })
-map('n', 'g0', 'a()<left>', { desc = 'insert `()` pair on same line' })
+--   pairs at new line, then insert
+map('n', 'g]', 'A<space>[<cr>]<esc>O', { desc = 'insert `[]` pair on new line' })
+map('n', 'g}', 'A<space>{<cr>}<esc>O', { desc = 'insert `{}` pair on new line' })
+map('n', 'g)', 'A<space>(<cr>)<esc>O', { desc = 'insert `()` pair on new line' })
+map('n', 'g0', 'A<space>(<cr>)<esc>O', { desc = 'insert `()` pair on new line' })
 --
 --   pairs at line end, then jump back
 map('n', 'z[', 'mzA[]<esc>`z', { desc = 'insert `[]` pair at line end' })
