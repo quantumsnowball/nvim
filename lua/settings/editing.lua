@@ -39,8 +39,9 @@ map('n', 'g.', 'mzA.<esc>`z', { desc = 'insert `.` at line end' })
 -- z, and z. insert ,/. at line end, then jump back
 map('n', 'z,', 'mzA,<esc>`z', { desc = 'insert `,` at line end' })
 map('n', 'z.', 'mzA.<esc>`z', { desc = 'insert `.` at line end' })
--- insert : at the end of line, then jump back:
+-- insert :/; at the end of line, then jump back:
 map('n', 'g:', 'mzA:<esc>`z', { desc = 'insert `:` at line end' })
+map('n', 'g;', 'mzA;<esc>`z', { desc = 'insert `:` at line end' })
 -- C-o will also open new line in insert mode
 map('i', '<C-o>', '<esc>o')
 -- toggle spell checking
