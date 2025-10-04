@@ -97,11 +97,21 @@ return {
             default = {
                 'lsp',
                 'snippets',
-                'buffer',
                 'path',
+                'buffer',
                 'dictionary',
             },
             providers = {
+                lsp = {
+                    -- Empty fallbacks: buffer no longer waits for LSP to fail
+                    -- so buffer will always provide suggestion along with LSP
+                    fallbacks = {},
+                },
+                path = {
+                    -- disable path buffer fallback default
+                    -- so buffer will always provide suggestion along with path
+                    fallbacks = {},
+                },
                 -- community reference
                 -- https://github.com/linkarzu/dotfiles-latest/blob/c1a04c9324fdb2669255889defc6302efefe4d9d/neovim/neobean/lua/plugins/blink-cmp.lua#L160
                 dictionary = {
