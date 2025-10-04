@@ -15,8 +15,9 @@ return {
             googleai = {
                 -- enable this
                 disable = false,
-                -- see https://ai.google.dev/gemini-api/docs/quickstart#rest for the correct REST api url format
-                endpoint = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={{secret}}',
+                -- see https://ai.google.dev/gemini-api/docs/quickstart#rest for the correct REST api url
+                -- see https://ai.google.dev/api for different version endpoint available
+                endpoint = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent?key={{secret}}',
                 -- create .gemini file, with one line `export GEMINI_API_KEY="<your-key>"`
                 -- source this file inside the
                 secret = os.getenv('GEMINI_API_KEY'),
@@ -38,6 +39,7 @@ return {
         { '<leader>at', '<cmd>GpChatNew tabnew<cr>G', desc = 'create new GP chat in tabpage' },
         -- generate response
         { '<leader>ag', '<cmd>GpChatRespond<cr>', desc = 'generate GP chat response' },
+        { '<leader>as', '<cmd>GpStop<cr>', desc = 'stop generate GP chat response' },
         -- delete chat
         { '<leader>ad', '<cmd>GpChatDelete<cr>', desc = 'delete GP chat' },
         -- copy / paste text
