@@ -29,7 +29,21 @@ return {
         },
     },
     keys = {
-        { '<leader>ai', '<cmd>GpChatToggle<cr>', desc = 'create GP new chat in vsplit' },
-        { '<leader>ai', '<cmd>GpChatToggle<cr>', desc = 'create GP new chat in vsplit' },
+        -- open chat / new chat
+        { '<leader>ai', '<cmd>GpChatToggle<cr>G', desc = 'toggle GP chat' },
+        { '<leader>a-', '<cmd>GpChatNew split<cr>G', desc = 'create new GP chat in split' },
+        { '<leader>an', '<cmd>GpChatNew vsplit<cr>G', desc = 'create new GP chat' },
+        { '<leader>a\\', '<cmd>GpChatNew vsplit<cr>G', desc = 'create new GP chat in vsplit' },
+        { '<leader>ap', '<cmd>GpChatNew popup<cr>G', desc = 'create new GP chat in popup' },
+        { '<leader>at', '<cmd>GpChatNew tabnew<cr>G', desc = 'create new GP chat in tabpage' },
+        -- generate response
+        { '<leader>ag', '<cmd>GpChatRespond<cr>', desc = 'generate GP chat response' },
+        -- delete chat
+        { '<leader>ad', '<cmd>GpChatDelete<cr>', desc = 'delete GP chat' },
+        -- copy / paste text
+        { '<leader>ay', ':GpChatPaste<cr>', desc = 'paste selection to the last GP chat', mode = 'v' },
+        -- direct text manipulation
+        { '<leader>ar', ':GpImplement<cr>', desc = 'implement selection using GP', mode = 'v' },
+        { '<leader>aa', ':GpAppend<cr>', desc = 'append GP result after current line', mode = { 'n', 'v' } },
     },
 }
