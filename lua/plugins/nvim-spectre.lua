@@ -16,20 +16,19 @@ return {
         local map = require('utils').map
         -- open_visual is delayed by one if setting up using keys props
         -- temp fix: setup keymaps using vim cmd
-        --
-        -- step: open, pull to far bottom, enter insert
+
+        -- example keymaps, see :help Spectre-usage
         map(
             'n',
             '<leader>sr',
-            ":lua require('spectre').open()<cr><c-w>Ji",
-            { noremap = true, desc = 'spectre: search and replace, bottom window' }
+            '<cmd>lua require("spectre").open_file_search()<cr><c-w>Ji',
+            { noremap = true, desc = 'spectre: search and replace in current file' }
         )
-        -- step: open, pull to far right, enter insert
         map(
             'n',
             '<leader>SR',
-            ":lua require('spectre').open()<cr><c-w>Li",
-            { noremap = true, desc = 'spectre: search and replace, right window' }
+            ":lua require('spectre').open()<cr><c-w>J<c-w>_i",
+            { noremap = true, desc = 'spectre: search and replace, all files' }
         )
         -- step: copy, restore selection, open_visual, pull to far bottom, enter insert, paste from " register
         map(
