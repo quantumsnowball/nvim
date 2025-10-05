@@ -6,6 +6,8 @@ return {
     -- Config spec:
     -- https://github.com/Robitx/gp.nvim/blob/main/lua/gp/config.lua
     opts = {
+        -- chat user prompt prefix
+        chat_user_prefix = '💬 >>>',
         -- For customization, refer to Install > Configuration in the Documentation/Readme
         providers = {
             openai = {
