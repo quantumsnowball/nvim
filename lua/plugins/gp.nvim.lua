@@ -10,6 +10,9 @@ return {
         chat_user_prefix = '💬 >>>',
         -- if true, finished ChatResponder won't move the cursor to the end of the buffer
         chat_free_cursor = true,
+        -- auto select command response (easier chaining of commands)
+        -- if false it also frees up the buffer cursor for further editing elsewhere
+        command_auto_select_response = false,
         -- For customization, refer to Install > Configuration in the Documentation/Readme
         providers = {
             openai = {
