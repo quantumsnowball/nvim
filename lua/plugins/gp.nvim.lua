@@ -8,6 +8,8 @@ return {
     opts = {
         -- chat user prompt prefix
         chat_user_prefix = '💬 >>>',
+        -- if true, finished ChatResponder won't move the cursor to the end of the buffer
+        chat_free_cursor = true,
         -- For customization, refer to Install > Configuration in the Documentation/Readme
         providers = {
             openai = {
