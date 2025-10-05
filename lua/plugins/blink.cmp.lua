@@ -5,7 +5,7 @@ return {
     -- optional: provides snippets for the snippet source
     dependencies = {
         -- vscode like snippets
-        'rafamadriz/friendly-snippets',
+        { 'quantumsnowball/friendly-snippets', branch = 'typescriptreact-link-to-html' },
         -- add color to cmp menu
         -- https://github.com/xzbdmw/colorful-menu.nvim
         'xzbdmw/colorful-menu.nvim',
