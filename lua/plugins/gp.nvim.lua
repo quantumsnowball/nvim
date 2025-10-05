@@ -51,5 +51,7 @@ return {
         -- direct text manipulation
         { '<leader>ae', ':GpImplement<cr>', desc = 'implement selection using GP', mode = { 'n', 'v' } },
         { '<leader>ar', ':GpRewrite<cr>', desc = 'rewrite selection using GP', mode = { 'n', 'v' } },
+        -- chat finder
+        { '<leader>af', ':GpChatFinder<cr>', desc = 'find GP chats', mode = { 'n', 'v' } },
     },
 }
