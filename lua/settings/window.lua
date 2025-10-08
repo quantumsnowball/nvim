@@ -9,8 +9,10 @@ map('n', 'qW', '<cmd>qa<cr>', { desc = 'quit all windows' })
 map('n', 'qq', '<cmd>qa<cr>', { desc = 'quit neovim' })
 map('n', 'qQ', '<cmd>qa!<cr>', { desc = 'quit neovim (force)' })
 -- toggle split windows
-map('n', 'g-', '<cmd>split<cr>', { desc = 'split horizontally to bottom' })
-map('n', 'g\\', '<cmd>vsplit<cr>', { desc = 'split vertically to right' })
+map('n', 'g-', '<cmd>split<cr><c-w>k', { desc = 'split horizontally, cursor stay top' })
+map('n', 'g_', '<cmd>split<cr>', { desc = 'split horizontally, cursor to bottom' })
+map('n', 'g\\', '<cmd>vsplit<cr><c-w>h', { desc = 'split vertically, cursor stay left' })
+map('n', 'g|', '<cmd>vsplit<cr>', { desc = 'split vertically, cursor to right' })
 -- window rotation
 map('n', 'q]', '<c-w>r', { desc = 'rotate windows (forward)' })
 map('n', 'q[', '<c-w>R', { desc = 'rotate windows (backward)' })
