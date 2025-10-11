@@ -47,8 +47,13 @@ map('n', 'zca', 'ggVG"_c', { desc = 'change all text' })
 -- copy/duplicate lines/block above/below
 map('n', 'zk', '""yy""P^', { desc = 'duplicate line to above' })
 map('v', 'zk', '""y`<""P`[V`]', { desc = 'duplicate block to above' })
-map('n', 'zj', '""yy""p$', { desc = 'duplicate line to below' })
+map('n', 'zj', '""yy""p^', { desc = 'duplicate line to below' })
 map('v', 'zj', '""y`>""p`[V`]', { desc = 'duplicate block to below' })
+-- comment lines/block, then copy/duplicate lines/block above/below
+map('n', 'zK', '""yygcc""Pk^', { remap = true, desc = 'comment and duplicate line to above' })
+map('v', 'zK', 'gcgv""y`<""P`[V`]gc', { remap = true, desc = 'comment and duplicate block to above' })
+map('n', 'zJ', '""yygcc""p^', { remap = true, desc = 'comment and duplicate line to below' })
+map('v', 'zJ', 'gcgv""y`>""p`[V`]gc', { remap = true, desc = 'comment and duplicate block to below' })
 -- #debug yy is delay, yj/yk somethings will copy the adjacent lines
 -- temp fix map all mistake key to copy line
 map('n', 'yj', 'yy')
