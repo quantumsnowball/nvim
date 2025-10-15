@@ -5,10 +5,7 @@ return {
     event = 'VimEnter',
     opts = {
         on_attach = function(bufnr)
-            local function map(mode, lhs, rhs, opts)
-                opts = vim.tbl_extend('force', { noremap = true, silent = true }, opts or {})
-                vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts)
-            end
+            local map = require('utils').map
 
             -- Navigation
             map('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<cr>'", { expr = true })
@@ -24,11 +21,11 @@ return {
             map('n', ';hz', '<cmd>Gitsigns undo_stage_hunk<cr>')
             map('n', ';hR', '<cmd>Gitsigns reset_buffer<cr>')
             map('n', ';hp', '<cmd>Gitsigns preview_hunk<cr>')
-            map('n', ';hb', '<cmd>lua require"gitsigns".blame_line{full=true}<cr>')
-            map('n', ';hB', '<cmd>Gitsigns toggle_current_line_blame<cr>')
-            map('n', ';hd', '<cmd>Gitsigns diffthis<cr>')
-            map('n', ';hD', '<cmd>lua require"gitsigns".diffthis("~")<cr>')
-            map('n', ';hx', '<cmd>Gitsigns toggle_deleted<cr>')
+            map('n', ';gb', '<cmd>lua require"gitsigns".blame_line{full=true}<cr>')
+            map('n', ';gB', '<cmd>Gitsigns toggle_current_line_blame<cr>')
+            map('n', ';gd', '<cmd>Gitsigns diffthis<cr>')
+            map('n', ';gD', '<cmd>lua require"gitsigns".diffthis("~")<cr>')
+            map('n', ';gx', '<cmd>Gitsigns toggle_deleted<cr>')
 
             -- Text object
             map('o', 'ih', '<cmd><C-U>Gitsigns select_hunk<cr>')
