@@ -1,6 +1,10 @@
 local M = {}
 
 -- create keymap with presets
+--- @param mode string|string[] Mode(s) for the keymap (e.g., 'n', 'v', {'n', 'v'})
+--- @param lhs string Left-hand side of the keymap
+--- @param rhs string|function Right-hand side of the keymap (command or function)
+--- @param opts? table Optional keymap options
 function M.map(mode, lhs, rhs, opts)
     -- defaults
     local defaults = {
