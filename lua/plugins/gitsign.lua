@@ -3,35 +3,7 @@
 return {
     'lewis6991/gitsigns.nvim',
     event = 'VimEnter',
-    opts = {
-        on_attach = function(bufnr)
-            local map = require('utils').map
-
-            -- Navigation
-            map('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<cr>'", { expr = true })
-            map('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<cr>'", { expr = true })
-
-            -- Actions
-            map('n', ';hs', '<cmd>Gitsigns stage_hunk<cr>')
-            map('v', ';hs', '<cmd>Gitsigns stage_hunk<cr>')
-            map('n', ';hr', '<cmd>Gitsigns reset_hunk<cr>')
-            map('v', ';hr', '<cmd>Gitsigns reset_hunk<cr>')
-            map('n', ';hS', '<cmd>Gitsigns stage_buffer<cr>')
-            map('n', ';hu', '<cmd>Gitsigns undo_stage_hunk<cr>')
-            map('n', ';hz', '<cmd>Gitsigns undo_stage_hunk<cr>')
-            map('n', ';hR', '<cmd>Gitsigns reset_buffer<cr>')
-            map('n', ';hp', '<cmd>Gitsigns preview_hunk<cr>')
-            map('n', ';gb', '<cmd>lua require"gitsigns".blame_line{full=true}<cr>')
-            map('n', ';gB', '<cmd>Gitsigns toggle_current_line_blame<cr>')
-            map('n', ';gd', '<cmd>Gitsigns diffthis<cr>')
-            map('n', ';gD', '<cmd>lua require"gitsigns".diffthis("~")<cr>')
-            map('n', ';gx', '<cmd>Gitsigns toggle_deleted<cr>')
-
-            -- Text object
-            map('o', 'ih', '<cmd><C-U>Gitsigns select_hunk<cr>')
-            map('x', 'ih', '<cmd><C-U>Gitsigns select_hunk<cr>')
-        end,
-    },
+    opts = {},
     init = function()
         -- show line number
         vim.opt.number = true
@@ -60,5 +32,32 @@ return {
         --         print(os.date(), ':', vim.inspect(args))
         --     end
         -- })
+
+        -- keymaps
+        local map = require('utils').map
+
+        -- Navigation
+        map('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<cr>'", { expr = true })
+        map('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<cr>'", { expr = true })
+
+        -- Actions
+        map('n', ';hs', '<cmd>Gitsigns stage_hunk<cr>')
+        map('v', ';hs', '<cmd>Gitsigns stage_hunk<cr>')
+        map('n', ';hr', '<cmd>Gitsigns reset_hunk<cr>')
+        map('v', ';hr', '<cmd>Gitsigns reset_hunk<cr>')
+        map('n', ';hS', '<cmd>Gitsigns stage_buffer<cr>')
+        map('n', ';hu', '<cmd>Gitsigns undo_stage_hunk<cr>')
+        map('n', ';hz', '<cmd>Gitsigns undo_stage_hunk<cr>')
+        map('n', ';hR', '<cmd>Gitsigns reset_buffer<cr>')
+        map('n', ';hp', '<cmd>Gitsigns preview_hunk<cr>')
+        map('n', ';gb', '<cmd>lua require"gitsigns".blame_line{full=true}<cr>')
+        map('n', ';gB', '<cmd>Gitsigns toggle_current_line_blame<cr>')
+        map('n', ';gd', '<cmd>Gitsigns diffthis<cr>')
+        map('n', ';gD', '<cmd>lua require"gitsigns".diffthis("~")<cr>')
+        map('n', ';gx', '<cmd>Gitsigns toggle_deleted<cr>')
+
+        -- Text object
+        map('o', 'ih', '<cmd><C-U>Gitsigns select_hunk<cr>')
+        map('x', 'ih', '<cmd><C-U>Gitsigns select_hunk<cr>')
     end,
 }
