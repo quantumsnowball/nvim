@@ -45,6 +45,9 @@ M.defaults = {
     dynamic_preview_title = true,
     prompt_prefix = '🔍 ',
     cache_picker = { num_pickers = 50 },
+    file_ignore_patterns = {
+        '**/__editable__',
+    },
 }
 
 M.pickers = {
