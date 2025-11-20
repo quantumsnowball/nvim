@@ -13,6 +13,10 @@ map('n', 'g_', '<cmd>split<cr><c-w>k', { desc = 'split horizontally, cursor stay
 map('n', 'g-', '<cmd>split<cr>', { desc = 'split horizontally, cursor to bottom' })
 map('n', 'g|', '<cmd>vsplit<cr><c-w>h', { desc = 'split vertically, cursor stay left' })
 map('n', 'g\\', '<cmd>vsplit<cr>', { desc = 'split vertically, cursor to right' })
+-- split and jump to file start or end
+map('n', 'q_', '<cmd>split<cr><c-w>kgg', { desc = 'split horizontally, cursor stay top, jump to file start' })
+map('n', 'qi', '<cmd>split<cr><c-w>kgg', { desc = 'split horizontally, cursor stay top, jump to file start' })
+map('n', 'q-', '<cmd>split<cr>G', { desc = 'split horizontally, cursor to bottom, jump to file end' })
 -- window rotation
 map('n', 'q]', '<c-w>r', { desc = 'rotate windows (forward)' })
 map('n', 'q[', '<c-w>R', { desc = 'rotate windows (backward)' })
