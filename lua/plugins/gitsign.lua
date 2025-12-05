@@ -37,8 +37,8 @@ return {
         local map = require('utils').map
 
         -- Navigation
-        map('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<cr>'", { expr = true })
-        map('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<cr>'", { expr = true })
+        map('n', ']c', '<cmd>Gitsigns next_hunk<cr>')
+        map('n', '[c', '<cmd>Gitsigns prev_hunk<cr>')
 
         -- Actions
         map('n', ';hs', '<cmd>Gitsigns stage_hunk<cr>')
