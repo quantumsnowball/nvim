@@ -8,6 +8,7 @@ local selected_parser = {
     'bash',
     'markdown',
     'markdown_inline',
+    'xml',
     'sql',
     'ini',
     'toml',
@@ -69,5 +70,12 @@ return {
         -- HACK: Hot patch for issue in Neovim v0.10.3 where vim.hl is not defined
         -- TODO: remove neodev when dropping 0.9 support
         if vim.fn.has('nvim-0.10.3') == 1 and not vim.hl then vim.hl = vim.highlight end
+
+        -- Using an existing parser for another filetype
+        vim.filetype.add({
+            extension = {
+                xaml = 'xml',
+            },
+        })
     end,
 }
