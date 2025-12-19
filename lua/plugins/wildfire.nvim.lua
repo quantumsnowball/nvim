@@ -6,5 +6,11 @@ return {
     dependencies = {
         'nvim-treesitter/nvim-treesitter',
     },
-    opts = {},
+    opts = {
+        keymaps = {
+            init_selection = '<Tab>',
+            node_incremental = '<Tab>',
+            node_decremental = '<BS>',
+        },
+    },
 }

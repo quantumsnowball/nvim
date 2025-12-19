@@ -50,7 +50,7 @@ map('n', '<leader>sc', '<cmd>set spell!<cr>', { desc = 'toggle spell checking' }
 -- -- normal mode: matching  or tags (by matchit.vim, need to set remap=true)
 -- -- visual mode: easily select the opposite matching whole section
 -- -- operation pending mode: can delete, yank, or cut the whole section, very handy!
-map({ 'n', 'v', 'o' }, '<Tab>', '%', { remap = true })
+map({ 'n', 'v', 'o' }, '<CR>', '%', { remap = true })
 map({ 'n', 'v', 'o' }, '[<Tab>', '[m', { remap = true })
 map({ 'n', 'v', 'o' }, ']<Tab>', ']m', { remap = true })
 -- search for pairable symbols
