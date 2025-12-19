@@ -10,13 +10,17 @@ return {
         -- for the new nvim-tresitteer at main branch, need to manually enable treesitter
         -- via the build vim.treesitter api, nvim-treesitter no longer handle these
         vim.api.nvim_create_autocmd('FileType', {
-            -- enable the languages here
-            pattern = {
-                'python',
-            },
-            callback = function()
-                local lang = vim.treesitter.language.get_lang(vim.bo.filetype)
-                if lang then vim.treesitter.start() end
+            -- here this pattern match all file type, try to start treesitter on everything
+            pattern = '*',
+            callback = function(ev)
+                -- buffer number and type
+                local bufnr = ev.buf
+                local buftype = vim.bo[bufnr].buftype
+                -- empty string means normal buffer, skip all non empty string buftype,
+                -- those are non-file buffers (terminals, prompts, floats, etc.)
+                if buftype ~= '' then return end
+                -- silently attempt to start Treesitter, fails gracefully on any issue
+                pcall(vim.treesitter.start, bufnr)
             end,
         })
     end,
