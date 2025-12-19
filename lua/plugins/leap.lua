@@ -7,9 +7,10 @@
 -- use 'ggandor/lightspeed.nvim'
 
 -- lightspeed successor
--- https://github.com/ggandor/leap.nvim
+-- https://github.com/ggandor/leap.nvim -- old
+-- https://codeberg.org/andyg/leap.nvim
 return {
-    'ggandor/leap.nvim',
+    'https://codeberg.org/andyg/leap.nvim',
     event = 'VeryLazy',
     opts = {
         special_keys = {
@@ -20,5 +21,8 @@ return {
             prev_group = '[',
         },
     },
-    init = function() require('leap').set_default_mappings() end,
+    init = function() 
+        local map = require('utils').map
+        map({'n', 'x', 'o'}, 's', '<Plug>(leap)')
+    end,
 }
