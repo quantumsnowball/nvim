@@ -23,5 +23,12 @@ return {
                 pcall(vim.treesitter.start, bufnr)
             end,
         })
+
+        -- Using an existing parser for another filetype
+        vim.filetype.add({
+            extension = {
+                xaml = 'xml',
+            },
+        })
     end,
 }
