@@ -24,6 +24,14 @@ return {
             end,
         })
 
+        -- check health
+        vim.api.nvim_create_user_command('TSCheckHealth', function()
+            -- Run the built-in health check for nvim-treesitter
+            vim.cmd('checkhealth nvim-treesitter')
+        end, {
+            desc = 'Run nvim-treesitter health check',
+        })
+
         -- Using an existing parser for another filetype
         vim.filetype.add({
             extension = {
