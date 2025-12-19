@@ -30,5 +30,51 @@ return {
                 xaml = 'xml',
             },
         })
+
+        -- allow to install all selected parsers by running this command when ready
+        -- this prevent from freezing on first run by not using ensure_installed table directly
+        vim.api.nvim_create_user_command('TSEnsureInstalled', function()
+            -- manually install the list above
+            require('nvim-treesitter').install({
+                -- neovim
+                'lua',
+                'vim',
+                'vimdoc',
+                -- general
+                'make',
+                'bash',
+                'markdown',
+                'markdown_inline',
+                'xml',
+                'sql',
+                'ini',
+                'toml',
+                'yaml',
+                'regex',
+                'comment',
+                -- git
+                'gitignore',
+                'git_rebase',
+                'gitcommit',
+                'gitattributes',
+                -- python
+                'python',
+                -- webdev
+                'tsx',
+                'typescript',
+                'javascript',
+                'css',
+                'scss',
+                'html',
+                'json',
+                'json5',
+                'vue',
+                'http',
+                -- web3
+                'solidity',
+                -- windows
+                'c_sharp',
+            })
+        end, {})
     end,
 }
