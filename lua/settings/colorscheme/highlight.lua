@@ -17,7 +17,7 @@ M.setup = function(c, opts)
         CursorLine = { bg = c.base4 },
         CursorColumn = { bg = c.base4 },
         NonText = { fg = c.base5 },
-        Visual = { bg = c.base4 },
+        Visual = { bg = c.base4, reverse = true },
         VisualNOS = { bg = c.base3 },
         Search = { fg = c.base2, bg = c.yellow },
         IncSearch = { fg = c.base2, bg = c.orange },
