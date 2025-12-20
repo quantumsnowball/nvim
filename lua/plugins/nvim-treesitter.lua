@@ -32,12 +32,19 @@ return {
             desc = 'Run nvim-treesitter health check',
         })
 
-        -- Using an existing parser for another filetype
+        -- declare missing filetype here
         vim.filetype.add({
             extension = {
-                xaml = 'xml',
+                xaml = 'xaml',
             },
         })
+        -- using an existing parser for another filetype
+        for parser, filetypes in pairs({
+            xml = { 'xaml' },
+            bash = { 'zsh' },
+        }) do
+            vim.treesitter.language.register(parser, filetypes)
+        end
 
         -- allow to install all selected parsers by running this command when ready
         -- this prevent from freezing on first run by not using ensure_installed table directly
