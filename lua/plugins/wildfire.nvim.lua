@@ -23,26 +23,17 @@ return {
             if node then
                 -- get node_type
                 local t = node:type()
-                -- special case where I want to select inner word first
-                if
-                    t:find('^string')
-                    or t:find('^class')
-                    or t:find('^function')
-                    or t:find('^function')
-                    or t:find('^if')
-                    or t:find('^elif')
-                    or t:find('^for')
-                    or t:find('^while')
-                    or t:find('^with')
-                    or t:find('^try')
-                    or t:find('^except')
-                then
-                    vim.fn.feedkeys('viw,is')
+                -- special cases
+                -- where it is suitable to directly to init selection
+                if t:find('^identifier') then
+                    vim.fn.feedkeys(',is')
                     return
                 end
             end
-            -- default is init selection
-            vim.fn.feedkeys(',is')
-        end, { desc = 'smart incremental selection' })
+            -- default is  inner word first, then init selection
+            vim.fn.feedkeys('viw,is')
+        end, {
+            desc = 'smart incremental selection',
+        })
     end,
 }
