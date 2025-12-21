@@ -14,8 +14,6 @@ return {
         vim.opt.cursorcolumn = true
 
         -- BUG: Gitsigns doesn't always refresh after stage or commit
-        vim.opt.autoread = true
-        vim.opt.updatetime = 1000
         ---@param caller string
         local function refresh_gitsigns(caller)
             vim.schedule(function()
@@ -23,24 +21,15 @@ return {
                 if vim.bo.buftype == '' and vim.api.nvim_buf_is_valid(0) then
                     -- manually reload the file if autoread failed
                     vim.cmd('silent! checktime')
-                    local gs = require('gitsigns')
-                    -- then refresh gitsigns
-                    gs.reset_base()
-                    gs.refresh()
-                    -- debug
-                    print(os.date('%H:%M:%S') .. ': ' .. caller .. ': gitsigns refresh and base reset')
+                    -- then reset base on gitsigns
+                    require('gitsigns').reset_base()
+                    -- debug message
+                    -- print(os.date('%H:%M:%S') .. ': ' .. caller .. ': file reloaded and gitsigns base reset')
                 end
             end)
         end
-        -- refresh on these events
-        vim.api.nvim_create_autocmd({
-            'BufEnter',
-            'BufWinEnter',
-            'FocusGained',
-            'BufWritePre',
-            'CursorHold',
-            'FileChangedShell',
-        }, {
+        -- refresh on enter or re-enter any window
+        vim.api.nvim_create_autocmd({ 'WinEnter' }, {
             pattern = '*',
             callback = function(args) refresh_gitsigns(args.event) end,
         })
