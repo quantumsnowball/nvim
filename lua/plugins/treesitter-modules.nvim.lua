@@ -12,16 +12,16 @@ return {
             -- set value to `false` to disable individual mapping
             keymaps = {
                 init_selection = '<leader>is',
-                node_incremental = '<Tab>',
+                node_incremental = '<leader>ii',
                 scope_incremental = false,
-                node_decremental = '<BS>',
+                node_decremental = '<leader>id',
             },
         },
     },
     init = function()
         local map = require('utils').map
 
-        -- smart incremental selection
+        -- init selection (smart)
         map('n', '<Tab>', function()
             -- get node
             local node = vim.treesitter.get_node()
@@ -40,5 +40,10 @@ return {
         end, {
             desc = 'smart incremental selection',
         })
+        -- node incremental
+        map('v', '<Tab>', function() vim.fn.feedkeys(',ii') end)
+        -- node decremental
+        map('v', '<S-Tab>', function() vim.fn.feedkeys(',id') end)
+        map('v', '<BS>', function() vim.fn.feedkeys(',id') end)
     end,
 }
