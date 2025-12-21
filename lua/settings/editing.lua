@@ -51,8 +51,9 @@ map('n', '<leader>sc', '<cmd>set spell!<cr>', { desc = 'toggle spell checking' }
 -- -- visual mode: easily select the opposite matching whole section
 -- -- operation pending mode: can delete, yank, or cut the whole section, very handy!
 map({ 'n', 'v', 'o' }, '<CR>', '%', { remap = true })
-map({ 'n', 'v', 'o' }, '[<Tab>', '[m', { remap = true })
-map({ 'n', 'v', 'o' }, ']<Tab>', ']m', { remap = true })
+map({ 'n', 'v', 'o' }, '`', '%', { remap = true })
+map({ 'n', 'v', 'o' }, '[`', '[m', { remap = true })
+map({ 'n', 'v', 'o' }, ']`', ']m', { remap = true })
 -- search for pairable symbols
 vim.cmd("noremap zl <Cmd>call search('[([{<>}\\])]')<cr>")
 vim.cmd("noremap zh <Cmd>call search('[([{<>}\\])]', 'b')<cr>")
