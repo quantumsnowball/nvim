@@ -201,6 +201,8 @@ M.setup = function(c, opts)
         ['@variable.parameter.python'] = { fg = c.orange },
         -- lua
         ['@lsp.typemod.parameter.declaration.lua'] = { fg = c.orange },
+        -- powershell
+        ['@variable.parameter.builtin.powershell'] = { fg = c.red },
 
         -- diagnostic
         dbui_tables = { fg = c.white },
