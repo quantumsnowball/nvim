@@ -67,6 +67,10 @@ map('n', ';C', '"_ciW', { desc = 'change inner word' })
 -- delete line
 map('n', ';l', '"_dd', { desc = 'delete whole line' })
 -- Inspect lexical / syntax / semantics
+map('n', ';n', function()
+    local success, node = pcall(vim.treesitter.get_node)
+    if success and node then print(node:type()) end
+end, { desc = 'show node type under cursor' })
 map('n', ';i', '<cmd>Inspect<cr>', { desc = 'Inspect semantics under cursor' })
 map('n', ';I', '<cmd>InspectTree<cr>', { desc = 'InspectTree' })
 --
