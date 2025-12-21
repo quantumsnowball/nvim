@@ -5,6 +5,8 @@ return {
     event = 'VimEnter',
     opts = {},
     init = function()
+        local gitsigns = require('gitsigns')
+
         -- show line number
         vim.opt.number = true
         -- always include sign column to fix gutter width
@@ -22,19 +24,25 @@ return {
                     -- manually reload the file if autoread failed
                     vim.cmd('silent! checktime')
                     -- then reset base on gitsigns
-                    require('gitsigns').reset_base()
+                    gitsigns.reset_base()
                     -- debug message
                     -- print(os.date('%H:%M:%S') .. ': ' .. caller .. ': file reloaded and gitsigns base reset')
                 end
             end)
         end
-        -- refresh on enter or re-enter any window
-        vim.api.nvim_create_autocmd({ 'WinEnter' }, {
+        -- refresh on these events
+        vim.api.nvim_create_autocmd({
+            -- when switching between windows or tabpages
+            'WinEnter',
+            -- fire when task or tmux pane switching
+            --   tmux must passing down the focus event (set -g focus-events on)
+            'FocusGained'
+        }, {
             pattern = '*',
             callback = function(args) refresh_gitsigns(args.event) end,
         })
         -- refresh on regular interval: 10s
-        vim.uv.new_timer():start(0, 10000, function() refresh_gitsigns('uv.timer') end)
+        -- vim.uv.new_timer():start(0, 10000, function() refresh_gitsigns('uv.timer') end)
 
         -- keymaps
         local map = require('utils').map
