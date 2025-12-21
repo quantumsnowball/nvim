@@ -13,8 +13,9 @@ map('n', '<space>4', '<cmd>set shiftwidth=4<cr>')
 -- commenting code
 map('n', 'zb', 'gccj', { remap = true, desc = 'toggle line comment' })
 map('v', 'zb', 'gc', { remap = true, desc = 'toggle selection comment' })
-map('n', '<leader>/', 'gccj', { remap = true, desc = 'toggle line comment' })
-map('v', '<leader>/', 'gc', { remap = true, desc = 'toggle selection comment' })
+--     note: <C-_> is ctrl-/, <C-/> won't work, go to insert mode to test it
+map('n', '<C-_>', 'gccj', { remap = true, desc = 'toggle line comment' })
+map('v', '<C-_>', 'gc', { remap = true, desc = 'toggle selection comment' })
 -- home and end in normal, visual, operator mode
 map({ 'n', 'v', 'o' }, 'gh', '^', { desc = 'Home' })
 map({ 'n', 'v', 'o' }, 'gl', '$', { desc = 'End' })
