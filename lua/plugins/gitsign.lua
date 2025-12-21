@@ -12,26 +12,40 @@ return {
         -- highlight current line and column
         vim.opt.cursorline = true
         vim.opt.cursorcolumn = true
-        -- TODO: #bug
-        -- Gitsigns doesn't always refresh after stage or commit
-        -- force reset_base every BufEnter event may be a temp solution
-        -- vim.api.nvim_create_autocmd("BufEnter", {
-        --     pattern = "*",
-        --     callback = function()
-        --         local success, gitsigns = pcall(require, 'gitsigns')
-        --         if success then
-        --             gitsigns.reset_base()
-        --             -- print(':Gitsigns reset_base')
-        --         end
-        --     end,
-        -- })
-        -- debug logging
-        -- vim.api.nvim_create_autocmd('User', {
-        --     pattern = { 'GitSignsUpdate', 'GitSignsChanged' },
-        --     callback = function(args)
-        --         print(os.date(), ':', vim.inspect(args))
-        --     end
-        -- })
+
+        -- BUG: Gitsigns doesn't always refresh after stage or commit
+        vim.opt.autoread = true
+        vim.opt.updatetime = 1000
+        ---@param caller string
+        local function refresh_gitsigns(caller)
+            vim.schedule(function()
+                -- check if a normal file and buffer is valid
+                if vim.bo.buftype == '' and vim.api.nvim_buf_is_valid(0) then
+                    -- manually reload the file if autoread failed
+                    vim.cmd('silent! checktime')
+                    local gs = require('gitsigns')
+                    -- then refresh gitsigns
+                    gs.reset_base()
+                    gs.refresh()
+                    -- debug
+                    print(os.date('%H:%M:%S') .. ': ' .. caller .. ': gitsigns refresh and base reset')
+                end
+            end)
+        end
+        -- refresh on these events
+        vim.api.nvim_create_autocmd({
+            'BufEnter',
+            'BufWinEnter',
+            'FocusGained',
+            'BufWritePre',
+            'CursorHold',
+            'FileChangedShell',
+        }, {
+            pattern = '*',
+            callback = function(args) refresh_gitsigns(args.event) end,
+        })
+        -- refresh on regular interval: 10s
+        vim.uv.new_timer():start(0, 10000, function() refresh_gitsigns('uv.timer') end)
 
         -- keymaps
         local map = require('utils').map
