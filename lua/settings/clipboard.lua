@@ -15,6 +15,8 @@ map({ 'n', 'v' }, 'yx', '"+x', { desc = 'cut text, copy to clipboard' })
 map({ 'n', 'v' }, 'yX', '"+X', { desc = 'cut text, copy to clipboard' })
 map({ 'n', 'v' }, 'yd', '"+d', { desc = 'delete text, copy to clipboard' })
 map({ 'n', 'v' }, 'yD', '"+D', { desc = 'delete text, copy to clipboard' })
+map({ 'n', 'v' }, '<leader>d', '"+d', { desc = 'delete text, copy to clipboard' })
+map({ 'n', 'v' }, '<leader>D', '"+D', { desc = 'delete text, copy to clipboard' })
 map({ 'n', 'v' }, 'yc', '"+c', { desc = 'change text, copy to clipboard' })
 map({ 'n', 'v' }, 'yC', '"+C', { desc = 'change text, copy to clipboard' })
 -- visual mode retain selection after copying
