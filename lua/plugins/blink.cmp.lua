@@ -89,12 +89,19 @@ return {
                     border = 'rounded',
                 },
             },
+            completion = {
+                trigger = {
+                    -- minuet: recommended to avoid unnecessary request
+                    prefetch_on_insert = false,
+                },
+            },
         },
 
         -- Default list of enabled providers defined so that you can extend it
         -- elsewhere in your config, without redefining it, due to `opts_extend`
         sources = {
             default = {
+                'minuet',
                 'lsp',
                 'snippets',
                 'path',
@@ -102,6 +109,15 @@ return {
                 'dictionary',
             },
             providers = {
+                minuet = {
+                    name = 'minuet',
+                    module = 'minuet.blink',
+                    async = true,
+                    -- Should match minuet.config.request_timeout * 1000,
+                    -- since minuet.config.request_timeout is in seconds
+                    timeout_ms = 3000,
+                    score_offset = 50, -- Gives minuet higher priority among suggestions
+                },
                 lsp = {
                     -- Empty fallbacks: buffer no longer waits for LSP to fail
                     -- so buffer will always provide suggestion along with LSP
