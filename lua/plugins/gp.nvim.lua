@@ -31,9 +31,10 @@ return {
             },
         },
         -- optional curl parameters (for proxy, etc.)
+        -- (do no use HTTP_PROXY, other network tools may auto respect this env var and mess up local network, unless you also specify NO_PROXY=localhost,127.0.0.1
         curl_params = {
             '--proxy',
-            os.getenv('HTTP_PROXY'),
+            os.getenv('GEMINI_HTTP_PROXY'),
         },
     },
     keys = {
