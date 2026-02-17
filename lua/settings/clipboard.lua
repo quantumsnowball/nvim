@@ -28,12 +28,17 @@ map('v', 'P', '"_dP')
 map('n', 'P', 'gP')
 map('n', 'gP', 'P')
 map('n', 'p', 'p`]')
--- z*a as change all text operation
+-- z*a/<space>*a as change all text operation
 map('n', 'zva', 'ggVG', { desc = 'select all text' })
 map('n', 'zya', 'ggVGy', { desc = 'copy all text' })
 map('n', 'zda', 'ggVG"_d', { desc = 'delete all text' })
 map('n', 'zxa', 'ggVGd', { desc = 'cut all text' })
 map('n', 'zca', 'ggVG"_c', { desc = 'change all text' })
+map('n', '<space>va', 'ggVG', { desc = 'select all text' })
+map('n', '<space>ya', 'ggVGy', { desc = 'copy all text' })
+map('n', '<space>da', 'ggVG"_d', { desc = 'delete all text' })
+map('n', '<space>xa', 'ggVGd', { desc = 'cut all text' })
+map('n', '<space>ca', 'ggVG"_c', { desc = 'change all text' })
 -- copy/duplicate lines/block above/below
 map('n', 'zk', '""yy""P^', { desc = 'duplicate line to above' })
 map('v', 'zk', '""y`<""P`[V`]', { desc = 'duplicate block to above' })
