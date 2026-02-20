@@ -19,7 +19,7 @@ return {
         },
         formatters = {
             autopep8 = {
-                prepend_args = { '--max-line-length', '120' },
+                prepend_args = { '--max-line-length', '999999' },
             },
             jq = {
                 append_args = function() return { '--indent', vim.bo.shiftwidth } end,
