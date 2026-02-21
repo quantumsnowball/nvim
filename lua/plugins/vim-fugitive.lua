@@ -2,6 +2,9 @@
 -- https://github.com/tpope/vim-fugitive
 
 local git_push_async = function()
+    -- initial notification
+    print('Git pushing to remote ...')
+
     -- exit callback
     local on_exit = function(obj)
         print(obj.code)
