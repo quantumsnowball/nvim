@@ -19,6 +19,8 @@ map('v', '<C-_>', 'gc', { remap = true, desc = 'toggle selection comment' })
 -- home and end in normal, visual, operator mode
 map({ 'n', 'v', 'o' }, 'gh', '^', { desc = 'Home' })
 map({ 'n', 'v', 'o' }, 'gl', '$', { desc = 'End' })
+map({ 'n', 'v', 'o' }, '<space>h', '^', { desc = 'Home' })
+map({ 'n', 'v', 'o' }, '<space>l', '$', { desc = 'End' })
 map({ 'n', 'v', 'o' }, 'L', 'E')
 map({ 'n', 'v', 'o' }, 'H', 'B')
 -- center cursor line
