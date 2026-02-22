@@ -7,7 +7,7 @@ return {
         -- enable formatter when useful
         formatters_by_ft = {
             lua = { 'stylua' },
-            python = { 'isort', 'autopep8' },
+            python = { 'ruff_isort', 'autopep8' },
             json = { 'jq' },
             jsonc = { 'jq' },
             html = { 'prettier' },
@@ -18,11 +18,19 @@ return {
             css = { 'prettier' },
         },
         formatters = {
+            -- Define a surgical Ruff formatter for imports only
+            ruff_isort = {
+                command = 'ruff',
+                args = { 'check', '--select', 'I', '--fix', '--force-exclude', '--exit-zero', '--no-cache', '--stdin-filename', '$FILENAME', '-' },
+                stdin = true,
+            },
             autopep8 = {
                 prepend_args = { '--max-line-length', '999999' },
             },
             jq = {
-                append_args = function() return { '--indent', vim.bo.shiftwidth } end,
+                append_args = function()
+                    return { '--indent', vim.bo.shiftwidth }
+                end,
             },
         },
     },
