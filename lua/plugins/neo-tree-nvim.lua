@@ -30,6 +30,7 @@ return {
             -- git
             { '<leader>EG', '<cmd>Neotree git_status float toggle<cr>', desc = 'Neotree Git Status' },
             { '<space>EG', '<cmd>Neotree git_status float toggle<cr>', desc = 'Neotree Git Status' },
+            { '<leader>ge', '<cmd>Neotree git_status float toggle<cr>', desc = 'Neotree Git Status' },
         },
         opts = {
             sources = {
