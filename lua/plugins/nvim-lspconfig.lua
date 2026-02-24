@@ -29,6 +29,7 @@ return {
             { 'gr', tb.lsp_references, desc = 'LSP references' },
             { 'gD', vim.lsp.buf.declaration, desc = 'LSP declaration' },
             { 'gd', tb.lsp_definitions, desc = 'LSP definitions' },
+            { 'qd', vim.diagnostic.open_float, desc = 'LSP diagnostic under cursor' },
             { 'K', hover, desc = 'LSP hover' },
             { 'gi', tb.lsp_implementations, desc = 'LSP implementation' },
             { '<leader>k', signature_help, desc = 'LSP signature help' },
