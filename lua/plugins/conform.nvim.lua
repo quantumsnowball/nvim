@@ -6,7 +6,7 @@ return {
     opts = {
         -- enable formatter when useful
         formatters_by_ft = {
-            lua = { lsp_format = 'prefer' },
+            lua = {},
             python = { 'ruff_isort', 'autopep8' },
             json = { 'jq' },
             jsonc = { 'jq' },
@@ -48,8 +48,8 @@ return {
                 format({
                     -- as given by official example
                     bufnr = args.buf,
-                    -- default skip lsp format, always use a specific formatter
-                    lsp_format = 'never',
+                    -- skip lsp format if given a specific formatter
+                    lsp_format = 'fallback',
                     -- milliseconds to block for formatting, default = 1000
                     timeout_ms = 1000,
                 })
