@@ -6,7 +6,7 @@ return {
     opts = {
         -- enable formatter when useful
         formatters_by_ft = {
-            lua = { 'stylua' },
+            lua = { lsp_format = 'prefer' },
             python = { 'ruff_isort', 'autopep8' },
             json = { 'jq' },
             jsonc = { 'jq' },
