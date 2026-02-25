@@ -1,0 +1,10 @@
+{
+  "Universal Divider": {
+    "prefix": "div",
+    "body": [
+      "${LINE_COMMENT} -------------------------------------------------------------------------",
+      "$0"
+    ],
+    "description": "Insert divider using the current language comment"
+  }
+}
