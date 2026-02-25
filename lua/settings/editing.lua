@@ -17,12 +17,15 @@ map('v', 'zb', 'gc', { remap = true, desc = 'toggle selection comment' })
 map('n', '<C-_>', 'gccj', { remap = true, desc = 'toggle line comment' })
 map('v', '<C-_>', 'gc', { remap = true, desc = 'toggle selection comment' })
 -- home and end in normal, visual, operator mode
-map({ 'n', 'v', 'o' }, 'gh', '^', { desc = 'Home' })
-map({ 'n', 'v', 'o' }, 'gl', '$', { desc = 'End' })
 map({ 'n', 'v', 'o' }, '<space>h', '^', { desc = 'Home' })
 map({ 'n', 'v', 'o' }, '<space>l', '$', { desc = 'End' })
 map({ 'n', 'v', 'o' }, 'L', 'E')
 map({ 'n', 'v', 'o' }, 'H', 'B')
+-- indent unindent in normal
+map('n', 'gl', '>>')
+map('n', 'gh', '<<')
+map('v', 'gl', '>')
+map('v', 'gh', '<')
 -- center cursor line
 map({ 'n', 'v' }, 'M', 'zz')
 -- home and end in insert mode
@@ -73,7 +76,9 @@ map('n', ';l', '"_dd', { desc = 'delete whole line' })
 -- Inspect lexical / syntax / semantics
 map('n', ';n', function()
     local success, node = pcall(vim.treesitter.get_node)
-    if success and node then print(node:type()) end
+    if success and node then
+        print(node:type())
+    end
 end, { desc = 'show node type under cursor' })
 map('n', ';i', '<cmd>Inspect<cr>', { desc = 'Inspect semantics under cursor' })
 map('n', ';I', '<cmd>InspectTree<cr>', { desc = 'InspectTree' })
