@@ -31,15 +31,16 @@ return {
         vim.api.nvim_create_user_command('MasonInstallSelectedTools', function()
             -- selected tools
             local selected_tools = {
+                -- system
+                'tree-sitter-cli',
                 -- lua
                 'lua_ls',
-                'stylua',
                 -- shell
                 'bashls',
                 -- python
+                'ruff',
                 'pyright',
                 'autopep8',
-                'isort',
                 -- web dev
                 'ts_ls',
                 'cssls',
