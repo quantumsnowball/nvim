@@ -24,8 +24,8 @@ map('n', '<space>b', tb.buffers, { desc = 'telescope.buffers()' })
 map('n', '<leader>B', function() tb.buffers({ initial_mode = 'insert' }) end, { desc = 'telescope.buffers()' })
 map('n', '<space>B', function() tb.buffers({ initial_mode = 'insert' }) end, { desc = 'telescope.buffers()' })
 -- fzf current buffer
-map('n', '<leader>z', tb.current_buffer_fuzzy_find, { desc = 'telescope.current_buffer_fuzzy_find()' })
-map('n', '<space>z', tb.current_buffer_fuzzy_find, { desc = 'telescope.current_buffer_fuzzy_find()' })
+-- map('n', '<leader>z', tb.current_buffer_fuzzy_find, { desc = 'telescope.current_buffer_fuzzy_find()' })
+-- map('n', '<space>z', tb.current_buffer_fuzzy_find, { desc = 'telescope.current_buffer_fuzzy_find()' })
 -- find helps
 map('n', '<leader>H', tb.help_tags, { desc = 'telescope.help_tags()' })
 map('n', '<space>H', tb.help_tags, { desc = 'telescope.help_tags()' })
