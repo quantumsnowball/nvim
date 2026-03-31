@@ -7,7 +7,7 @@
   "close-buffers.nvim": { "branch": "master", "commit": "3acbcad1211572342632a6c0151f839e7dead27f" },
   "colorful-menu.nvim": { "branch": "master", "commit": "b51a659459df8d078201aefc995db8175ed55e84" },
   "conform.nvim": { "branch": "master", "commit": "086a40dc7ed8242c03be9f47fbcee68699cc2395" },
-  "friendly-snippets": { "branch": "typescriptreact-link-to-html", "commit": "2c4bdb080d42492fa8f815e75b335639759f257b" },
+  "friendly-snippets": { "branch": "typescriptreact-link-to-html", "commit": "60349d7a49b8d83ac07d6f4bc292ed6c1451f12c" },
   "fzf": { "branch": "master", "commit": "259e841a77a8eb562444440a6f57ee5e89ec106e" },
   "gitsigns.nvim": { "branch": "main", "commit": "7c4faa3540d0781a28588cafbd4dd187a28ac6e3" },
   "guess-indent.nvim": { "branch": "main", "commit": "84a4987ff36798c2fc1169cbaff67960aed9776f" },
