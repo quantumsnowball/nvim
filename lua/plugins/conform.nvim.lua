@@ -7,7 +7,7 @@ return {
         -- enable formatter when useful
         formatters_by_ft = {
             lua = {},
-            python = { 'ruff_isort', 'autopep8' },
+            python = { 'ruff_fix', 'autopep8' },
             json = { 'jq' },
             jsonc = { 'jq' },
             html = { 'prettier' },
@@ -19,9 +19,9 @@ return {
         },
         formatters = {
             -- Define a surgical Ruff formatter for imports only
-            ruff_isort = {
+            ruff_fix = {
                 command = 'ruff',
-                args = { 'check', '--select', 'I', '--fix', '--force-exclude', '--exit-zero', '--no-cache', '--stdin-filename', '$FILENAME', '-' },
+                args = { 'check', '--select', 'I,Q', '--fix', '--force-exclude', '--exit-zero', '--no-cache', '--stdin-filename', '$FILENAME', '-' },
                 stdin = true,
             },
             autopep8 = {
