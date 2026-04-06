@@ -1,0 +1,15 @@
+#
+# The lua-language-server (lua_ls) config file located at root of project
+#
+# The .editorconfig file with all default values:
+#   https://github.com/CppCXY/EmmyLuaCodeStyle/blob/master/lua.template.editorconfig
+#
+# The official lua_ls formatter docs:
+#   https://luals.github.io/wiki/formatter/
+#
+
+# see https://github.com/CppCXY/EmmyLuaCodeStyle
+[*.lua]
+
+# [align]
+align_array_table = false
