@@ -19,9 +19,12 @@ return {
         },
     },
     keys = {
-        { '<leader>ai',  ':CodeCompanionChat<cr><c-w>J', desc = 'Code Companion Chat (H-Split)',     mode = { 'n', 'v' } },
-        { '<leader>a-',  ':CodeCompanionChat<cr><c-w>J', desc = 'Code Companion Chat (H-Split)',     mode = { 'n', 'v' } },
-        { '<leader>a\\', ':CodeCompanionChat<cr>',       desc = 'Code Companion Chat (V-Split)',     mode = { 'n', 'v' } },
-        { '<leader>A',   ':CodeCompanionChat<cr><c-w>T', desc = 'Code Companion Chat (New Tabpage)', mode = { 'n', 'v' } },
+        -- chats
+        { '<leader>ai', ':CodeCompanionChat<cr><c-w>J', desc = 'CodeCompanion Chat', mode = { 'n', 'v' } },
+        { '<leader>a-', ':CodeCompanionChat<cr><c-w>J', desc = 'CodeCompanion Chat', mode = { 'n', 'v' } },
+        { '<leader>a\\', ':CodeCompanionChat<cr>', desc = 'CodeCompanion Chat (V-Split)', mode = { 'n', 'v' } },
+        { '<leader>A', ':CodeCompanionChat<cr><c-w>T', desc = 'CodeCompanion Chat (New Tabpage)', mode = { 'n', 'v' } },
+        -- commit message
+        { '<leader>ac', ':CodeCompanion /commit<cr><c-w>J', desc = 'CodeCompanion Generate Commit Message (H-Split)' },
     }
 }
