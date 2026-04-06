@@ -19,9 +19,9 @@ return {
         },
     },
     keys = {
-        { '<space>ai',  '<cmd>CodeCompanionChat<cr><c-w>J', desc = 'Code Companion Chat (H-Split)' },
-        { '<space>a-',  '<cmd>CodeCompanionChat<cr><c-w>J', desc = 'Code Companion Chat (H-Split)' },
-        { '<space>a\\', '<cmd>CodeCompanionChat<cr>',       desc = 'Code Companion Chat (V-Split)' },
-        { '<space>A',   '<cmd>CodeCompanionChat<cr><c-w>T', desc = 'Code Companion Chat (New Tabpage)' },
+        { '<space>ai',  ':CodeCompanionChat<cr><c-w>J', desc = 'Code Companion Chat (H-Split)',     mode = { 'n', 'v' } },
+        { '<space>a-',  ':CodeCompanionChat<cr><c-w>J', desc = 'Code Companion Chat (H-Split)',     mode = { 'n', 'v' } },
+        { '<space>a\\', ':CodeCompanionChat<cr>',       desc = 'Code Companion Chat (V-Split)',     mode = { 'n', 'v' } },
+        { '<space>A',   ':CodeCompanionChat<cr><c-w>T', desc = 'Code Companion Chat (New Tabpage)', mode = { 'n', 'v' } },
     }
 }
