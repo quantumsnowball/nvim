@@ -24,7 +24,15 @@ return {
         { '<leader>a-', ':CodeCompanionChat<cr><c-w>J', desc = 'CodeCompanion Chat', mode = { 'n', 'v' } },
         { '<leader>a\\', ':CodeCompanionChat<cr>', desc = 'CodeCompanion Chat (V-Split)', mode = { 'n', 'v' } },
         { '<leader>A', ':CodeCompanionChat<cr><c-w>T', desc = 'CodeCompanion Chat (New Tabpage)', mode = { 'n', 'v' } },
-        -- commit message
-        { '<leader>ac', ':CodeCompanion /commit<cr><c-w>J', desc = 'CodeCompanion Generate Commit Message (H-Split)' },
+        -- generate commit message
+        {
+            '<leader>ac',
+            function()
+                vim.cmd('CodeCompanion /commit')
+                vim.cmd('wincmd J')
+                vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-s>", true, false, true))
+            end,
+            desc = 'CodeCompanion Generate Commit Message (H-Split)'
+        },
     }
 }
