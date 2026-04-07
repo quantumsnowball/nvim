@@ -19,6 +19,10 @@ return {
         },
     },
     keys = function()
+        -- helpers
+        local move_win_bottom = function() vim.cmd('wincmd J') end
+        local send_prompt = function() vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-s>", true, false, true)) end
+
         return {
             -- chats
             { '<leader>ai', ':CodeCompanionChat<cr><c-w>J', desc = 'CodeCompanion Chat', mode = { 'n', 'v' } },
@@ -30,8 +34,8 @@ return {
                 '<leader>ac',
                 function()
                     vim.cmd('CodeCompanion /commit')
-                    vim.cmd('wincmd J')
-                    vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-s>", true, false, true))
+                    move_win_bottom()
+                    send_prompt()
                 end,
                 desc = 'CodeCompanion Generate Commit Message (H-Split)'
             },
@@ -40,8 +44,8 @@ return {
                 '<leader>ae',
                 function()
                     vim.cmd('CodeCompanion /explain')
-                    vim.cmd('wincmd J')
-                    vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-s>", true, false, true))
+                    move_win_bottom()
+                    send_prompt()
                 end,
                 desc = 'CodeCompanion Generate Commit Message (H-Split)',
                 mode = 'v'
