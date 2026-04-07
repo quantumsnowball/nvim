@@ -34,7 +34,7 @@ return {
         prompt_library = {
             markdown = {
                 dirs = {
-                    vim.fn.getcwd() .. "/lua/plugins/codecompapnion.nvim/prompts",
+                    os.getenv('XDG_CONFIG_HOME') .. "/nvim/lua/plugins/codecompapnion.nvim/prompts",
                 },
             },
         }
