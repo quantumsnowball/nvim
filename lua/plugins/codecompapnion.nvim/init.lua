@@ -9,6 +9,12 @@ return {
         "nvim-treesitter/nvim-treesitter",
     },
     opts = {
+        display = {
+            chat = {
+                auto_scroll = false,
+                start_in_insert_mode = true,
+            },
+        },
         interactions = {
             chat = {
                 adapter = { name = "ollama", model = "qwen2.5-coder:7b" },
