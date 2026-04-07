@@ -12,6 +12,14 @@ return {
         interactions = {
             chat = {
                 adapter = { name = "ollama", model = "qwen2.5-coder:7b" },
+                keymaps = {
+                    stop = {
+                        modes = { n = "gq" },
+                        index = 5,
+                        callback = "keymaps.stop",
+                        description = "[Request] Stop",
+                    }
+                }
             },
             inline = {
                 adapter = { name = "ollama", model = "qwen2.5-coder:7b" },
