@@ -67,14 +67,6 @@ return {
                 end,
                 desc = 'CodeCompanion Generate Commit Message in Chat'
             },
-            {
-                '<leader>aC',
-                function()
-                    vim.cmd('CodeCompanion /ai_commit_chat')
-                    move_win_bottom()
-                end,
-                desc = 'CodeCompanion Generate Commit Message (H-Split)'
-            },
             -- explain selection
             {
                 '<leader>ae',
