@@ -42,7 +42,6 @@ return {
                 function()
                     vim.cmd('CodeCompanion /ai_commit')
                     move_win_bottom()
-                    send_prompt()
                 end,
                 desc = 'CodeCompanion Generate Commit Message (H-Split)'
             },

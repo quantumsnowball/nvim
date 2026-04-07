@@ -4,7 +4,7 @@ interaction: chat
 description: Generate a commit message
 opts:
   alias: ai_commit
-  auto_submit: false
+  auto_submit: true
   is_slash_cmd: true
 ---
 
