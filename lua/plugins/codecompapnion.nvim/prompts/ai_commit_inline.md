@@ -16,9 +16,9 @@ You are an expert at following the Conventional Commit specification.
 Given the git diff listed below, please generate a commit message for me.
 - Output only the commit message, nothing else.
 - Skip empty lines.
-- First line format template: [tag]: [description text].
-- Do NOT write path in first line.
-- Then use bullet point for details.
+- First line format example: tag: description.
+- DO NOT include path in first line.
+- Then use bullet point for other details.
 
 `````diff
 ${ai_commit.diff}
