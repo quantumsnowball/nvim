@@ -40,7 +40,23 @@ return {
             {
                 '<leader>ac',
                 function()
-                    vim.cmd('CodeCompanion /ai_commit')
+                    vim.cmd('Git commit')
+                    vim.cmd('CodeCompanion /ai_commit_inline')
+                end,
+                desc = 'CodeCompanion Generate Commit Message Inline'
+            },
+            {
+                '<leader>aC',
+                function()
+                    vim.cmd('CodeCompanion /ai_commit_chat')
+                    move_win_bottom()
+                end,
+                desc = 'CodeCompanion Generate Commit Message in Chat'
+            },
+            {
+                '<leader>aC',
+                function()
+                    vim.cmd('CodeCompanion /ai_commit_chat')
                     move_win_bottom()
                 end,
                 desc = 'CodeCompanion Generate Commit Message (H-Split)'
