@@ -34,5 +34,16 @@ return {
             end,
             desc = 'CodeCompanion Generate Commit Message (H-Split)'
         },
+        -- explain selection
+        {
+            '<leader>ae',
+            function()
+                vim.cmd('CodeCompanion /explain')
+                vim.cmd('wincmd J')
+                vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-s>", true, false, true))
+            end,
+            desc = 'CodeCompanion Generate Commit Message (H-Split)',
+            mode = 'v'
+        },
     }
 }
