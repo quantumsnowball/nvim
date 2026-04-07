@@ -10,6 +10,9 @@ return {
     },
     opts = {
         display = {
+            action_palette = {
+                provider = 'default',
+            },
             chat = {
                 auto_scroll = false,
                 start_in_insert_mode = true,
@@ -45,6 +48,8 @@ return {
         local send_prompt = function() vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-s>", true, false, true)) end
 
         return {
+            -- action palette
+            { '<leader>ap', ':CodeCompanionActions<cr>', desc = 'CodeCompanion Action Palette', mode = { 'n', 'v' } },
             -- chats
             { '<leader>ai', ':CodeCompanionChat<cr><c-w>J', desc = 'CodeCompanion Chat', mode = { 'n', 'v' } },
             { '<leader>a-', ':CodeCompanionChat<cr><c-w>J', desc = 'CodeCompanion Chat', mode = { 'n', 'v' } },
