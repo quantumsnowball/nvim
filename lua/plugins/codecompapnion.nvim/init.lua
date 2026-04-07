@@ -17,6 +17,13 @@ return {
                 adapter = { name = "ollama", model = "qwen2.5-coder:7b" },
             },
         },
+        prompt_library = {
+            markdown = {
+                dirs = {
+                    vim.fn.getcwd() .. "/lua/plugins/codecompapnion.nvim/prompts",
+                },
+            },
+        }
     },
     keys = function()
         -- helpers
@@ -33,7 +40,7 @@ return {
             {
                 '<leader>ac',
                 function()
-                    vim.cmd('CodeCompanion /commit')
+                    vim.cmd('CodeCompanion /ai_commit')
                     move_win_bottom()
                     send_prompt()
                 end,
