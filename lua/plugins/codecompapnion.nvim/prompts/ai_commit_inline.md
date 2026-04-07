@@ -4,9 +4,10 @@ interaction: inline
 description: Generate a commit message inline
 opts:
   alias: ai_commit_inline
+  user_prompt: false
   auto_submit: true
   is_slash_cmd: true
-  placement: add
+  placement: before
 ---
 
 ## user
