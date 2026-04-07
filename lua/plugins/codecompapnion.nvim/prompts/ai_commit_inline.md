@@ -12,15 +12,14 @@ opts:
 
 ## user
 
-You are an expert at following the Conventional Commit specification.
-Given the git diff listed below, please generate a commit message for me.
-- Output only the commit message, nothing else.
-- Skip empty lines.
-- First line format example: tag: description.
-- DO NOT include path in first line.
-- Then use bullet point for other details.
+You are an expert at following the Conventional Commit specification. 
+Below is a `git diff`. Generate a commit message based on these rules:
 
-`````diff
+1. **Format**: `<type>: <description>` (e.g., `feat: add login functionality`).
+2. **First Line**: Use ONLY the commit type and a brief description. 
+   - **STRICT RULE**: Do NOT include file paths, folder names, or filenames in the first line.
+3. **Body**: Use bullet points for additional details if the changes are complex.
+4. **Cleanliness**: Skip all empty lines. Output ONLY the raw commit message text.
+
+```diff
 ${ai_commit.diff}
-`````
-
