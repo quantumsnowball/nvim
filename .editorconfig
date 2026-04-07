@@ -11,5 +11,8 @@
 # see https://github.com/CppCXY/EmmyLuaCodeStyle
 [*.lua]
 
+# [basic]
+max_line_length = unset
+
 # [align]
 align_array_table = false
