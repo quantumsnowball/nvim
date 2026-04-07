@@ -5,7 +5,7 @@ local map = require('utils').map
 -- quit window shortcut
 map('n', ';q', '<cmd>q<cr>', { desc = 'quit window' })
 map('n', 'qw', '<cmd>q<cr>', { desc = 'quit window' })
-map('n', 'qW', '<cmd>qa<cr>', { desc = 'quit all windows' })
+map('n', 'qW', '<cmd>q!<cr>', { desc = 'quit window (force)' })
 map('n', 'qq', '<cmd>qa<cr>', { desc = 'quit neovim' })
 map('n', 'qQ', '<cmd>qa!<cr>', { desc = 'quit neovim (force)' })
 -- toggle split windows
