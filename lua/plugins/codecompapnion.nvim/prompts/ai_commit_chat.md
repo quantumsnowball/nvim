@@ -10,7 +10,13 @@ opts:
 
 ## user
 
-You are an expert at following the Conventional Commit specification. Given the git diff listed below, please generate a commit message for me. Output only the commit message, nothing else. The first line only contain precise descriptive text, no tags or paths. Then use bullet point for details.
+You are an expert at following the Conventional Commit specification.
+Given the git diff listed below, please generate a commit message for me.
+- Output only the commit message, nothing else.
+- Skip empty lines.
+- First line only contain precise descriptive text
+- Do NOT write tags or paths.
+- Then use bullet point for details.
 
 `````diff
 ${ai_commit.diff}
