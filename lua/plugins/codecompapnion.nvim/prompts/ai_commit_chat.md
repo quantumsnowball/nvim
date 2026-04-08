@@ -17,6 +17,8 @@ Below is a `git diff`. Generate a commit message based on these rules:
 2. **First Line**: Use ONLY the commit type and a brief description. 
    - **STRICT RULE**: Do NOT include file paths, folder names, or filenames in the first line.
 3. **Body**: Use bullet points for additional details if the changes are complex.
+   - include at least two bullet points as details.
+   - details should be as explicit as possible
 
 ```diff
 ${ai_commit.diff}
