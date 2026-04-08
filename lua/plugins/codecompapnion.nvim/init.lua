@@ -86,7 +86,14 @@ return {
             {
                 '<leader>ac',
                 function()
-                    vim.cmd('Git commit')
+                    local status = os.execute("git diff --cached --quiet")
+                    if status == 0 then
+                        vim.notify("Please add and stage changes before commit.", vim.log.levels.ERROR, { title = "CodeCompanion /ai_commit_inline" })
+                        return
+                    end
+                    if vim.bo.filetype ~= "gitcommit" then
+                        vim.cmd('Git commit')
+                    end
                     vim.cmd('CodeCompanion /ai_commit_inline')
                 end,
                 desc = 'CodeCompanion Generate Commit Message Inline'
