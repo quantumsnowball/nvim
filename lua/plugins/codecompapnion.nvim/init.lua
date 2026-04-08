@@ -36,6 +36,7 @@ return {
                         schema = {
                             model = { default = "qwen3.5:4b" },
                             think = { default = false },
+                            temperature = { default = 0.1 },
                         },
                     })
                 end,
