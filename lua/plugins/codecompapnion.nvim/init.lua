@@ -9,6 +9,10 @@ return {
         "nvim-treesitter/nvim-treesitter",
     },
     opts = {
+        opts = {
+            -- use TRACE or DEBUG for debug
+            -- log_level = 'TRACE',
+        },
         display = {
             action_palette = {
                 provider = 'default',
