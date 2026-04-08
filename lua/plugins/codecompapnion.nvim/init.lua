@@ -21,8 +21,8 @@ return {
             },
             chat = {
                 auto_scroll = false,
-                start_in_insert_mode = true,
                 window = {
+                    buflisted = true,
                     layout = "horizontal",
                     height = 0.5,
                     position = "bottom",
@@ -79,10 +79,9 @@ return {
             -- action palette
             { '<leader>ap', ':CodeCompanionActions<cr>', desc = 'CodeCompanion Action Palette', mode = { 'n', 'v' } },
             -- chats
-            { '<leader>ai', ':CodeCompanionChat<cr>', desc = 'CodeCompanion Chat', mode = { 'n', 'v' } },
-            { '<leader>a-', ':CodeCompanionChat<cr>', desc = 'CodeCompanion Chat', mode = { 'n', 'v' } },
-            { '<leader>a\\', ':CodeCompanionChat<cr><c-w>L', desc = 'CodeCompanion Chat (V-Split)', mode = { 'n', 'v' } },
-            { '<leader>A', ':CodeCompanionChat<cr><c-w>T', desc = 'CodeCompanion Chat (New Tabpage)', mode = { 'n', 'v' } },
+            { '<leader>ai', ':CodeCompanionChat<cr>i', desc = 'CodeCompanion Chat' },
+            { '<leader>ai', ':CodeCompanionChat<cr>o<cr>', desc = 'CodeCompanion Chat (with selection)', mode = 'v' },
+            { '<leader>A', ':CodeCompanionChat<cr><c-w>Ti', desc = 'CodeCompanion Chat (New Tabpage)', mode = { 'n', 'v' } },
             -- generate commit message
             {
                 '<leader>ac',
