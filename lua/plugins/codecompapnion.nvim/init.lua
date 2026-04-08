@@ -29,9 +29,21 @@ return {
                 },
             },
         },
+        adapters = {
+            http = {
+                ["qwen3.5:4b-nothink"] = function()
+                    return require("codecompanion.adapters.http").extend("ollama", {
+                        schema = {
+                            model = { default = "qwen3.5:4b" },
+                            think = { default = false },
+                        },
+                    })
+                end,
+            },
+        },
         interactions = {
             chat = {
-                adapter = { name = "ollama", model = "qwen3.5:4b" },
+                adapter = "qwen3.5:4b-nothink",
                 keymaps = {
                     stop = {
                         modes = { n = "gq" },
@@ -42,7 +54,7 @@ return {
                 }
             },
             inline = {
-                adapter = { name = "ollama", model = "qwen3.5:4b" },
+                adapter = "qwen3.5:4b-nothink",
             },
         },
         prompt_library = {
