@@ -21,6 +21,10 @@ Below is a `git diff`. Generate a commit message based on these rules:
 3. **Body**: Use bullet points for additional details if the changes are complex.
    - include at least two bullet points as details.
    - details should be as explicit as possible
+4. **Output**:
+   - only output the commit message, nothing else 
+   - do NOT provide any introductory text, conversational filler, or explanations
 
-```diff
+`````diff
 ${ai_commit.diff}
+`````
