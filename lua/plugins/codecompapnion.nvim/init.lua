@@ -20,7 +20,7 @@ return {
         },
         interactions = {
             chat = {
-                adapter = { name = "ollama", model = "qwen2.5-coder:7b" },
+                adapter = { name = "ollama", model = "qwen3.5:4b" },
                 keymaps = {
                     stop = {
                         modes = { n = "gq" },
@@ -31,7 +31,7 @@ return {
                 }
             },
             inline = {
-                adapter = { name = "ollama", model = "qwen2.5-coder:7b" },
+                adapter = { name = "ollama", model = "qwen3.5:4b" },
             },
         },
         prompt_library = {
