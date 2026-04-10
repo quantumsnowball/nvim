@@ -40,6 +40,11 @@ return {
         },
         -- lsp related
         lsp = {
+            -- short message of lsp processing something
+            progress = {
+                -- disable here to avoid lsp spaming the mini notification, e.g. pyright often do this
+                enabled = false,
+            },
             -- somehow using Noice to display is better looking, e.g. correct escape chars, alignment
             -- also have a vertical scroll bar for longer content
             override = {
@@ -128,16 +133,17 @@ return {
             },
             -- auto disappearing popup at bottom right corner, fast and lightweight
             mini = {
-                timeout = 7000,
+                timeout = 5000,
+                reverse = false,
                 position = {
                     row = -1,
                 },
                 border = {
                     style = 'none',
-                    padding = { left = 0, right = 3 },
+                    padding = { left = 0, right = 1 },
                 },
                 size = {
-                    max_height = 20,
+                    max_height = 10,
                 },
                 win_options = {
                     winhighlight = {
