@@ -79,8 +79,9 @@ return {
             -- action palette
             { '<leader>ap', ':CodeCompanionActions<cr>', desc = 'CodeCompanion Action Palette', mode = { 'n', 'v' } },
             -- chats
-            { '<leader>ai', ':CodeCompanionChat<cr>i', desc = 'CodeCompanion Chat' },
-            { '<leader>ai', ':CodeCompanionChat<cr>o<cr>', desc = 'CodeCompanion Chat (with selection)', mode = 'v' },
+            { '<leader>ai', ':CodeCompanionChat Toggle<cr>i', desc = 'CodeCompanion Chat (Toggle)' },
+            { '<leader>aI', ':CodeCompanionChat<cr>i', desc = 'CodeCompanion Chat (New)' },
+            { '<leader>ai', ':CodeCompanionChat<cr>o<cr>', desc = 'CodeCompanion Chat (New, insert selected text)', mode = 'v' },
             { '<leader>A', ':CodeCompanionChat<cr><c-w>Ti', desc = 'CodeCompanion Chat (New Tabpage)', mode = { 'n', 'v' } },
             -- generate commit message
             {
