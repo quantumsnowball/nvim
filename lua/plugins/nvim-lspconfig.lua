@@ -18,9 +18,8 @@ return {
         -- lsp related keymaps
         return {
             -- service
-            { '<leader>lr', '<cmd>LspRestart<cr>', desc = 'LSP restart' },
-            { '<leader>ll', '<cmd>LspLog<cr>', desc = 'LSP log' },
-            { '<leader>li', '<cmd>LspInfo<cr>', desc = 'LSP info' },
+            { '<leader>lr', '<cmd>lsp restart<cr>', desc = 'LSP restart' },
+            { '<leader>li', '<cmd>checkhealth vim.lsp<cr>', desc = 'LSP info' },
             -- editing
             { '<leader>r', vim.lsp.buf.rename, desc = 'LSP rename' },
             -- { ';f',         vim.lsp.buf.format,      desc = 'LSP format code' },
