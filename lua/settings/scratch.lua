@@ -35,8 +35,15 @@ end
 map('n', '<space>\\', function() open_scratch(true) end, { desc = 'new vertical scratch buffer' })
 map('n', '<space>-', function() open_scratch(false) end, { desc = 'new horizontal scratch buffer' })
 
-function open_scratch_tabpage()
-    vim.cmd('tabnew')
+---@param newtab boolean|nil Whether to scratch on a new tabpage
+function open_scratch_tabpage(newtab)
+    -- Choose the scratch type, either new tabpage or a new buffer on existing tabpage
+    if newtab then
+        vim.cmd('tabnew')
+    else
+        vim.cmd('enew')
+    end
+    -- Make the buffer scratch in nature
     local buf = vim.api.nvim_get_current_buf()
     vim.api.nvim_buf_set_name(buf, "Scratch " .. os.date("%H:%M:%S"))
     vim.api.nvim_set_option_value('buftype', 'nofile', { buf = buf })
@@ -45,4 +52,4 @@ function open_scratch_tabpage()
     vim.api.nvim_set_option_value('buflisted', true, { buf = buf })
 end
 
-map('n', '<space>t', function() open_scratch_tabpage() end, { desc = 'new scratch tabpage' })
+map('n', '<space>t', function() open_scratch_tabpage(true) end, { desc = 'new scratch tabpage' })
