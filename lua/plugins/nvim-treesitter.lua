@@ -36,6 +36,7 @@ return {
         vim.filetype.add({
             extension = {
                 xaml = 'xaml',
+                service = 'sysctl',
             },
         })
         -- using an existing parser for another filetype
