@@ -32,3 +32,14 @@ end
 
 map('n', '<space>\\', function() open_scratch(true) end, { desc = 'new vertical scratch buffer' })
 map('n', '<space>-', function() open_scratch(false) end, { desc = 'new horizontal scratch buffer' })
+
+function open_scratch_tabpage()
+    vim.cmd('tabnew')
+    local buf = vim.api.nvim_get_current_buf()
+    vim.api.nvim_set_option_value('buftype', 'nofile', { buf = buf })
+    vim.api.nvim_set_option_value('bufhidden', 'hide', { buf = buf })
+    vim.api.nvim_set_option_value('swapfile', false, { buf = buf })
+    vim.api.nvim_set_option_value('buflisted', true, { buf = buf })
+end
+
+map('n', '<space>t', function() open_scratch_tabpage() end, { desc = 'new scratch tabpage' })
