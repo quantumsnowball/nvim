@@ -14,13 +14,13 @@ function open_scratch(vertical)
     -- 3. Set buffer-local options for the new buffer
     local buf = vim.api.nvim_get_current_buf()
     -- 'nofile' makes it a scratch buffer (no file on disk)
-    vim.api.nvim_buf_set_option(buf, 'buftype', 'nofile')
+    vim.api.nvim_set_option_value('buftype', 'nofile', { buf = buf })
     -- 'wipe' deletes the buffer from memory when you close the window
-    vim.api.nvim_buf_set_option(buf, 'bufhidden', 'hide')
+    vim.api.nvim_set_option_value('bufhidden', 'hide', { buf = buf })
     -- Disable swap files for this temporary buffer
-    vim.api.nvim_buf_set_option(buf, 'swapfile', false)
+    vim.api.nvim_set_option_value('swapfile', false, { buf = buf })
     -- include the buffer in the buffer list
-    vim.api.nvim_buf_set_option(buf, 'buflisted', true)
+    vim.api.nvim_set_option_value('buflisted', true, { buf = buf })
 
     -- 4. Apply the original filetype to the new buffer
     if original_ft ~= '' then
