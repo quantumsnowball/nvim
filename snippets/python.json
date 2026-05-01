@@ -43,7 +43,7 @@
   "fstring": {
     "prefix": "fstr",
     "body": [
-      "f'{${1:name}}'"
+      "f'{$0}'"
     ],
     "description": "Basic Python f-string"
   }
