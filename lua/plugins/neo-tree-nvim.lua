@@ -54,6 +54,7 @@ return {
                     ['e'] = 'open',
                     ['<space>'] = 'open_tabnew',
                     ['t'] = 'open_tabnew',
+                    ['T'] = 'open_tabnew_left', -- custom
                     ['<tab>'] = 'open_tabnew',
                     ['<bs>'] = 'close_node',
                     ['E'] = 'expand_all_nodes',
@@ -65,6 +66,14 @@ return {
                     ['S'] = '',
                     ['.'] = '',
                 },
+            },
+            commands = {
+                open_tabnew_left = function(state)
+                    if state.tree:get_node().type ~= 'directory' then
+                        require("neo-tree.sources.common.commands").open_tabnew(state, function() end)
+                        vim.cmd("-tabmove")
+                    end
+                end,
             },
             git_status = {
                 window = {
