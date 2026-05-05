@@ -46,5 +46,23 @@
       "f'{$0}'"
     ],
     "description": "Basic Python f-string"
+  },
+  "uv.shebang": {
+    "prefix": "uv.shebang",
+    "body": [
+      "#!/usr/bin/env uv run"
+    ],
+    "description": "Output a standard uv run shebang"
+  },
+  "uv.dependencies": {
+    "prefix": "uv.dependencies",
+    "body": [
+      "# /// script",
+      "# dependencies = [",
+      "#   \"$0\"",
+      "# ]",
+      "# ///"
+    ],
+    "description": "Output a standard uv run dependencies"
   }
 }
