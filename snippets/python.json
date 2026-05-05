@@ -47,6 +47,25 @@
     ],
     "description": "Basic Python f-string"
   },
+  "logger": {
+    "prefix": "logger",
+    "body": [
+      "import logging",
+      "logger = logging.getLogger(__file__)"
+    ],
+    "description": "Basic Python logging"
+  },
+  "logger.config": {
+    "prefix": "logger.config",
+    "body": [
+      "import logging",
+      "logging.basicConfig(",
+      "    level=logging.INFO,",
+      "    format='%(levelname)s [%(filename)s:%(lineno)d] %(message)s',",
+      ")"
+    ],
+    "description": "Basic Python logging config"
+  },
   "uv.shebang": {
     "prefix": "uv.shebang",
     "body": [
