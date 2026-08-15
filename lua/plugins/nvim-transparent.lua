@@ -27,6 +27,8 @@ return {
             'CursorLine',
             'CursorColumn',
             'NeoTreeTabActive',
+            'RenderMarkdownCode',
+            'RenderMarkdownCodeInline',
         },
     },
     init = function()
