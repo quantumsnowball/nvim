@@ -122,8 +122,8 @@ return {
                     score_offset = -5,
                     opts = {
                         -- word list download src: https://github.com/dwyl/english-words
-                        --   wget https://raw.github.com/dwyl/english-words/master/words.txt
-                        --   wget https://raw.github.com/dwyl/english-words/master/words_alpha.txt
+                        --   wget -P ~/.config/nvim/.dictionary https://raw.github.com/dwyl/english-words/master/words_alpha.txt
+                        --   wget -P ~/.config/nvim/.dictionary https://raw.github.com/dwyl/english-words/master/words.txt
                         -- word definition: wn, download src: https://wordnet.princeton.edu
                         --   yay -S wordnet-common
                         dictionary_files = {
