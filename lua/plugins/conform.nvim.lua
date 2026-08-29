@@ -20,7 +20,8 @@ return {
         formatters = {
             -- Define a surgical Ruff formatter for imports only
             ruff_fix = {
-                command = 'ruff',
+                -- use mason ruff or system ruff (mason ruff does not work on Termux, so fallback to system ruff)
+                command = vim.fn.exepath('ruff'),
                 args = { 'check', '--select', 'I,Q', '--fix', '--force-exclude', '--exit-zero', '--no-cache', '--stdin-filename', '$FILENAME', '-' },
                 stdin = true,
             },
