@@ -2,6 +2,8 @@ local map = require('utils').map
 -------------
 -- general --
 -------------
+-- git edit local config
+map('n', '<leader>ge', '<cmd>GitConfig<cr>', { desc = 'Edit local Git config' })
 -- lazy.nvim plugin manager quick launch
 map('n', '<leader>L', '<cmd>Lazy<cr>')
 -- quick save buffer
