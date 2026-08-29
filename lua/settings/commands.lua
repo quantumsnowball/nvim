@@ -39,3 +39,14 @@ vim.api.nvim_create_user_command(
     end,
     {}
 )
+
+-- Git
+vim.api.nvim_create_user_command('GitConfig', function()
+    local git_dir = vim.fn.systemlist('git rev-parse --git-dir')[1]
+    if vim.v.shell_error == 0 and git_dir then
+        local config_path = git_dir .. '/config'
+        vim.cmd('edit ' .. vim.fn.fnameescape(config_path))
+    else
+        vim.notify('Not inside a Git repository', vim.log.levels.WARN)
+    end
+end, { desc = 'Open local .git/config' })
