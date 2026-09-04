@@ -51,6 +51,7 @@ return {
                     ['h'] = 'close_node',
                     ['<right>'] = 'toggle_node',
                     ['<left>'] = 'close_node',
+                    ['.'] = 'toggle_hidden', -- custom
                     ['e'] = 'open',
                     ['<space>'] = 'open_tabnew',
                     ['t'] = 'open_tabnew',
@@ -64,7 +65,6 @@ return {
                     -- disable
                     ['s'] = '',
                     ['S'] = '',
-                    ['.'] = '',
                 },
             },
             commands = {
