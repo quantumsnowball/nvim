@@ -45,6 +45,8 @@ return {
                 'ts_ls',
                 'cssls',
                 'html',
+                -- rust
+                'rust_analyzer',
                 -- data
                 'jsonls',
             }
