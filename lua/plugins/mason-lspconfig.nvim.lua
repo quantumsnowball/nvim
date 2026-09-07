@@ -33,8 +33,10 @@ return {
         if os.getenv('TERMUX_VERSION') then
             server_opts = vim.tbl_extend('force', server_opts, server_opts_termux_specific)
         end
+        -- config and enable
         for server, opts in pairs(server_opts) do
             vim.lsp.config(server, opts)
+            vim.lsp.enable(server)
         end
 
         -- vim cmd to manually install the some selected tools, use lspconfig naming
