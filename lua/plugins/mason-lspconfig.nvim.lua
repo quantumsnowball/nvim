@@ -29,35 +29,41 @@ return {
 
         -- vim cmd to manually install the some selected tools, use lspconfig naming
         vim.api.nvim_create_user_command('MasonEnsureInstalled', function()
-            -- selected tools
-            local selected_tools = {
+            -- tools
+            local tools = {
                 -- system
                 'tree-sitter-cli',
-                -- lua
-                'lua_ls',
                 -- shell
                 'bashls',
                 -- python
-                'ruff',
                 'pyright',
                 'autopep8',
                 -- web dev
                 'ts_ls',
                 'cssls',
                 'html',
-                -- rust
-                'rust_analyzer',
                 -- data
                 'jsonls',
             }
+            local tools_termux_unsupported = {
+                -- lua
+                'lua_ls',
+                -- python
+                'ruff',
+                -- rust
+                'rust_analyzer',
+            }
+            if not os.getenv('TERMUX_VERSION') then
+                vim.list_extend(tools, tools_termux_unsupported)
+            end
             -- translation to mason names
             local translation = require('mason-lspconfig').get_mappings()
-            for i, name in pairs(selected_tools) do
+            for i, name in pairs(tools) do
                 local mason_name = translation.lspconfig_to_package[name]
-                if mason_name then selected_tools[i] = mason_name end
+                if mason_name then tools[i] = mason_name end
             end
             -- install using MasonInstall command
-            local args = table.concat(selected_tools, ' ')
+            local args = table.concat(tools, ' ')
             vim.cmd(':MasonInstall ' .. args)
         end, { desc = 'Install selected Mason tools' })
     end,
