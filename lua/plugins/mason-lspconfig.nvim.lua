@@ -28,7 +28,7 @@ return {
         end
 
         -- vim cmd to manually install the some selected tools, use lspconfig naming
-        vim.api.nvim_create_user_command('MasonInstallSelectedTools', function()
+        vim.api.nvim_create_user_command('MasonEnsureInstalled', function()
             -- selected tools
             local selected_tools = {
                 -- system
