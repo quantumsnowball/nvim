@@ -86,6 +86,8 @@ return {
                 'json5',
                 'vue',
                 'http',
+                -- rust
+                'rust',
                 -- web3
                 'solidity',
                 -- windows
