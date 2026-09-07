@@ -25,8 +25,12 @@ return {
         }
         -- unsupported on termux, need to manually add config here
         local server_opts_termux_specific = {
+            lua_ls = {
+                cmd = { 'lua-language-server', },
+                filetypes = { 'lua', },
+            },
             rust_analyzer = {
-                cmd = { 'rust-analyzer', }, 
+                cmd = { 'rust-analyzer', },
                 filetypes = { 'rust', },
             },
         }
