@@ -23,6 +23,16 @@ return {
                 filetypes = { 'sh', 'bash', 'zsh' },
             },
         }
+        -- unsupported on termux, need to manually add config here
+        local server_opts_termux_specific = {
+            rust_analyzer = {
+                cmd = { 'rust-analyzer', }, 
+                filetypes = { 'rust', },
+            },
+        }
+        if os.getenv('TERMUX_VERSION') then
+            server_opts = vim.tbl_extend('force', server_opts, server_opts_termux_specific)
+        end
         for server, opts in pairs(server_opts) do
             vim.lsp.config(server, opts)
         end
