@@ -131,6 +131,12 @@ return {
                     keys = { '<esc>', 'q' },
                 },
             },
+            -- hover a variable
+            hover = {
+                size = {
+                    max_width = vim.o.columns - 6,
+                },
+            },
             -- auto disappearing popup at bottom right corner, fast and lightweight
             mini = {
                 timeout = 5000,
