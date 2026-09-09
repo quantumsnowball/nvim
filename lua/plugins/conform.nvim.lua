@@ -16,6 +16,8 @@ return {
             typescript = { 'prettier' },
             typescriptreact = { 'prettier' },
             css = { 'prettier' },
+            rust = { 'fix_indent', 'trim_whitespace', },
+            -- ["*"] = { 'trim_whitespace', 'trim_newlines', 'squeeze_blanks', }
         },
         formatters = {
             -- Define a surgical Ruff formatter for imports only
