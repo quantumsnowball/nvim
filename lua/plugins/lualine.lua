@@ -51,7 +51,10 @@ return {
                     'filetype',
                 },
                 lualine_z = {
-                    'location',
+                    -- reimplement 'location' but it can go beyond end of line
+                    function()
+                        return string.format('%d:%d', vim.fn.line('.'), vim.fn.virtcol('.'))
+                    end,
                 },
             },
             inactive_sections = {
