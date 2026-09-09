@@ -33,9 +33,9 @@ map('i', '<C-h>', '<home>')
 map('i', '<C-l>', '<end>')
 -- shift-tab will go one tab backward
 map('i', '<S-Tab>', '<C-d>')
--- \ break line, | break line to above
-map('n', '|', 'i<C-m><esc><cmd>move-2<cr>')
-map('n', '\\', 'i<C-m><esc>')
+-- | or \ break line at cursor begin or end
+map('n', '|', 'i<C-m><esc>')
+map('n', '\\', 'a<C-m><esc>')
 -- go and gO will open new line but stay in normal mode
 map('n', 'gO', 'O<esc>', { desc = 'open a new line above' })
 map('n', 'go', 'o<esc>', { desc = 'open a new line below' })
