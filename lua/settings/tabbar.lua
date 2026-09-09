@@ -34,10 +34,9 @@ map('n', '<F12>', '<C-W>T', { desc = 'move window to new tabpage' })
 
 -- closing tabs
 local close_onto_previous_tab = function()
-    local idx = vim.fn.tabpagenr()
-    local cnt = vim.fn.tabpagenr('$')
-    vim.cmd('tabclose')
-    if (idx ~= 1) and (idx < cnt) then vim.cmd('tabprevious') end
+    if vim.fn.tabpagenr('$') <= 1 then return end
+    if vim.fn.tabpagenr() > 1 then vim.cmd('tabprevious') end
+    vim.cmd('tabclose#')
 end
 map('n', 'qt', close_onto_previous_tab, { desc = 'close tab' })
 map('n', 'tq', close_onto_previous_tab, { desc = 'close tab' })
