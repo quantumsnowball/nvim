@@ -33,6 +33,18 @@ return {
                     return { '--indent', vim.bo.shiftwidth }
                 end,
             },
+            fix_indent = {
+                format = function(self, ctx, callback)
+                    -- Save cursor, gg=G fix indent, then jump back
+                    local view = vim.fn.winsaveview()
+                    vim.cmd('keepjumps normal! gg=G')
+                    vim.fn.winrestview(view)
+                    callback(nil)
+                end,
+            },
+        },
+        default_format_opts = {
+            lsp_format = 'fallback',
         },
     },
     init = function()
