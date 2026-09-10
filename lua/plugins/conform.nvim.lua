@@ -16,7 +16,7 @@ return {
             typescript = { 'prettier' },
             typescriptreact = { 'prettier' },
             css = { 'prettier' },
-            rust = { 'fix_indent', 'trim_whitespace', },
+            rust = { 'fix_indent', 'trim_whitespace', 'trim_newlines', },
             -- ["*"] = { 'trim_whitespace', 'trim_newlines', 'squeeze_blanks', }
         },
         formatters = {
