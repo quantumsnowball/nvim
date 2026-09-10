@@ -16,7 +16,7 @@ return {
             typescript = { 'prettier' },
             typescriptreact = { 'prettier' },
             css = { 'prettier' },
-            rust = { 'fix_indent', 'trim_whitespace', },
+            rust = { 'topiary_rust', 'trim_whitespace', },
             -- ["*"] = { 'trim_whitespace', 'trim_newlines', 'squeeze_blanks', }
         },
         formatters = {
@@ -34,6 +34,16 @@ return {
                 append_args = function()
                     return { '--indent', vim.bo.shiftwidth }
                 end,
+            },
+            topiary_rust = {
+                command = "topiary",
+                args = {
+                    "format",
+                    "--language", "rust",
+                    "--skip-idempotence",
+                    "--tolerate-parsing-errors",
+                },
+                stdin = true,
             },
             fix_indent = {
                 format = function(self, ctx, callback)
