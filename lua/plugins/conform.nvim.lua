@@ -16,8 +16,8 @@ return {
             typescript = { 'prettier' },
             typescriptreact = { 'prettier' },
             css = { 'prettier' },
-            rust = { 'fix_indent', 'trim_whitespace', 'trim_newlines', },
-            -- ["*"] = { 'trim_whitespace', 'trim_newlines', 'squeeze_blanks', }
+            rust = { 'rustfmt' },
+            -- ["*"] = { 'fix_indent', 'trim_whitespace', 'trim_newlines', 'squeeze_blanks', }
         },
         formatters = {
             -- Define a surgical Ruff formatter for imports only
@@ -34,6 +34,12 @@ return {
                 append_args = function()
                     return { '--indent', vim.bo.shiftwidth }
                 end,
+            },
+            rustfmt = {
+                args = {
+                    -- longer max_width prevent auto break long line, use fake comment line // to prevent force joining lines by formatter
+                    "--config", "max_width=120",
+                },
             },
             fix_indent = {
                 format = function(self, ctx, callback)
