@@ -38,6 +38,8 @@ return {
             rustfmt = {
                 args = {
                     -- longer max_width prevent auto break long line, use fake comment line // to prevent force joining lines by formatter
+                    "--emit", "stdout",
+                    "--edition", "2024",
                     "--config", "max_width=120",
                 },
             },
