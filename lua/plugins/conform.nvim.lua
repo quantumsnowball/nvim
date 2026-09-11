@@ -41,6 +41,7 @@ return {
                     "--emit", "stdout",
                     "--edition", "2024",
                     "--config", "max_width=120",
+                    "--config", 'use_small_heuristics=Max', -- prevent early line break well below max_width
                 },
             },
             fix_indent = {
