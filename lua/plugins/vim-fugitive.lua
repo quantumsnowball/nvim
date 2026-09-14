@@ -1,6 +1,18 @@
 -- git fugitive
 -- https://github.com/tpope/vim-fugitive
 
+local git_commit_safe = function(args)
+    -- check if ssh-agent has any loaded identities
+    vim.fn.system('ssh-add -l')
+    if vim.v.shell_error ~= 0 then
+        -- open a small 10-line bottom split and run your shell function 'kc'
+        vim.cmd('botright 10split | terminal zsh -i -c "kc"')
+        vim.cmd('startinsert')
+        return
+    end
+    vim.cmd('Git commit ' .. (args or ''))
+end
+
 local git_push_async = function()
     -- initial notification
     print('Git pushing to remote ...')
@@ -21,8 +33,8 @@ return {
     'tpope/vim-fugitive',
     event = 'VeryLazy',
     keys = {
-        { '<leader>gc', '<cmd>Git commit<cr>', desc = 'Git commit', silent = true },
-        { '<leader>ga', '<cmd>Git commit --amend<cr>', desc = 'Git commit --amend', silent = true },
+        { '<leader>gc', function() git_commit_safe() end, desc = 'Git commit', silent = true },
+        { '<leader>ga', function() git_commit_safe('--amend') end, desc = 'Git commit --amend', silent = true },
         { '<leader>gp', git_push_async, desc = 'Git push', silent = true },
     },
 }
