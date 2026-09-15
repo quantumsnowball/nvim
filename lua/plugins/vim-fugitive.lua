@@ -1,15 +1,34 @@
 -- git fugitive
 -- https://github.com/tpope/vim-fugitive
 
-local git_commit_safe = function(args)
+local function git_commit_safe(args)
     -- check if ssh-agent has any loaded identities
     vim.fn.system('ssh-add -l')
     if vim.v.shell_error ~= 0 then
-        -- open a small 10-line bottom split and run your shell function 'kc'
-        vim.cmd('botright 10split | terminal zsh -i -c "kc"')
+        -- open a bottom split and start terminal with 'kc'
+        vim.cmd('bot split | terminal zsh -i -c "kc"')
         vim.cmd('startinsert')
+
+        -- create a TermClose autocmd only bound to the terminal buffer
+        local buf = vim.api.nvim_get_current_buf()
+        vim.api.nvim_create_autocmd('TermClose', {
+            buffer = buf,
+            once = true,
+            -- wait for the terminal process to finish and close
+            callback = function()
+                -- async close the terminal split window and then do the git commit
+                vim.schedule(function()
+                    if vim.api.nvim_buf_is_valid(buf) then
+                        vim.api.nvim_buf_delete(buf, { force = true })
+                    end
+                    vim.cmd('Git commit ' .. (args or ''))
+                end)
+            end,
+        })
+        --
         return
     end
+    -- normal git commit with agent active
     vim.cmd('Git commit ' .. (args or ''))
 end
 
