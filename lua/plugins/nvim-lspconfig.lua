@@ -57,6 +57,7 @@ return {
                 },
             },
             bashls = {
+                cmd = { 'bash-language-server', 'start', },
                 filetypes = { 'sh', 'bash', 'zsh' },
             },
             rust_analyzer = {
