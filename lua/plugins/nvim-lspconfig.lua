@@ -39,6 +39,36 @@ return {
         }
     end,
     init = function()
+        -- enable LSPs
+        for server, opts in pairs({
+            lua_ls = {
+                cmd = { 'lua-language-server', },
+                filetypes = { 'lua', },
+                settings = {
+                    Lua = {
+                        format = {
+                            enable = true,
+                            defaultConfig = {
+                                align_array_table = 'none',
+                                align_continuous_rect_table = 'false',
+                            },
+                        },
+                    },
+                },
+            },
+            bashls = {
+                filetypes = { 'sh', 'bash', 'zsh' },
+            },
+            rust_analyzer = {
+                cmd = { 'rust-analyzer', },
+                filetypes = { 'rust', },
+            },
+        }) do
+            vim.lsp.config(server, opts)
+            vim.lsp.enable(server)
+        end
+
+        -- style
         vim.diagnostic.config({
             float = {
                 border = 'rounded',
