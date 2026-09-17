@@ -60,6 +60,10 @@ return {
                 cmd = { 'bash-language-server', 'start', },
                 filetypes = { 'sh', 'bash', 'zsh' },
             },
+            pyright = {
+                cmd = { 'pyright-langserver', '--stdio', },
+                filetypes = { 'python', },
+            },
             rust_analyzer = {
                 cmd = { 'rust-analyzer', },
                 filetypes = { 'rust', },
