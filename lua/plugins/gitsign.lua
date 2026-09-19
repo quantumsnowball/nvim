@@ -53,7 +53,9 @@ return {
 
         -- Actions
         map('n', ';hs', '<cmd>Gitsigns stage_hunk<cr>')
-        map('v', ';hs', '<cmd>Gitsigns stage_hunk<cr>')
+        map('v', ';hs', function()
+            require('gitsigns').stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
+        end, { desc = 'Gitsigns stage selection' })
         map('n', ';hr', '<cmd>Gitsigns reset_hunk<cr>')
         map('v', ';hr', '<cmd>Gitsigns reset_hunk<cr>')
         map('n', ';hS', '<cmd>Gitsigns stage_buffer<cr>')
