@@ -34,6 +34,12 @@ return {
                     return { '--indent', vim.bo.shiftwidth }
                 end,
             },
+            prettier = {
+                prepend_args = {
+                    '--tab-width', '4',
+                    '--single-quote'
+                },
+            },
             rustfmt = {
                 args = {
                     -- longer max_width prevent auto break long line, use fake comment line // to prevent force joining lines by formatter
