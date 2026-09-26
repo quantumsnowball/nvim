@@ -50,6 +50,9 @@ return {
         -- Navigation
         map('n', ']c', '<cmd>Gitsigns next_hunk<cr>')
         map('n', '[c', '<cmd>Gitsigns prev_hunk<cr>')
+        map('n', '<leader>n', '<cmd>Gitsigns next_hunk<cr>')
+        map('n', '<leader>p', '<cmd>Gitsigns prev_hunk<cr>')
+        map('n', '<leader><leader>', '<cmd>Gitsigns next_hunk<cr>')
 
         -- Actions
         map('n', '<leader>s', '<cmd>Gitsigns stage_hunk<cr>')
@@ -64,6 +67,7 @@ return {
         map('n', ';hR', '<cmd>Gitsigns reset_buffer<cr>')
         map('n', ';hp', '<cmd>Gitsigns preview_hunk<cr>')
         map('n', ';hx', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'Gitsigns toggle show deletiion' })
+        map('n', '<leader>x', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'Gitsigns toggle show deletiion' })
         map('n', ';gb', '<cmd>lua require"gitsigns".blame_line{full=true}<cr>')
         map('n', ';gB', '<cmd>Gitsigns toggle_current_line_blame<cr>')
         map('n', ';gd', '<cmd>Gitsigns diffthis<cr>')
