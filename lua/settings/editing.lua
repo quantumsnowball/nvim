@@ -63,16 +63,6 @@ map({ 'n', 'v', 'o' }, ']`', ']m', { remap = true })
 -- search for pairable symbols
 vim.cmd("noremap zl <Cmd>call search('[([{<>}\\])]')<cr>")
 vim.cmd("noremap zh <Cmd>call search('[([{<>}\\])]', 'b')<cr>")
--- select inner word/line(without linebreak)
-map('n', ';w', 'hevb', { desc = 'select word, curosr to beginning' })
-map('n', ';e', 'viw', { desc = 'select word, cursor to end' })
--- edit/delete inner word
-map('n', ';d', '"_diw', { desc = 'delete inner word' })
-map('n', ';D', '"_diW', { desc = 'delete inner word' })
-map('n', ';c', '"_ciw', { desc = 'change inner word' })
-map('n', ';C', '"_ciW', { desc = 'change inner word' })
--- delete line
-map('n', ';l', '"_dd', { desc = 'delete whole line' })
 -- Inspect lexical / syntax / semantics
 map('n', ';n', function()
     local success, node = pcall(vim.treesitter.get_node)
