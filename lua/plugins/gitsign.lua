@@ -50,21 +50,21 @@ return {
         -- Navigation
         map('n', ']c', '<cmd>Gitsigns next_hunk<cr>')
         map('n', '[c', '<cmd>Gitsigns prev_hunk<cr>')
-        map('n', '<leader>n', '<cmd>Gitsigns next_hunk<cr>')
-        map('n', '<leader>p', '<cmd>Gitsigns prev_hunk<cr>')
-        map('n', '<leader><leader>', '<cmd>Gitsigns next_hunk<cr>')
+        map('n', '<leader>n', '<cmd>Gitsigns next_hunk --target=all<cr>')
+        map('n', '<leader>p', '<cmd>Gitsigns prev_hunk --target=all<cr>')
+        map('n', '<leader><leader>', '<cmd>Gitsigns next_hunk --target=all<cr>')
+        map('n', '<leader><', '<cmd>Gitsigns prev_hunk --target=all<cr>')
 
         -- Actions
         map('n', '<leader>s', '<cmd>Gitsigns stage_hunk<cr>')
         map('v', '<leader>s', function()
             require('gitsigns').stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
         end, { desc = 'Gitsigns stage selection' })
+        map('n', '<leader>S', '<cmd>Gitsigns stage_buffer<cr>')
         map('n', '<leader>d', '<cmd>Gitsigns reset_hunk<cr>')
         map('v', '<leader>d', '<cmd>Gitsigns reset_hunk<cr>')
-        map('n', '<leader>S', '<cmd>Gitsigns stage_buffer<cr>')
-        map('n', ';hu', '<cmd>Gitsigns undo_stage_hunk<cr>')
-        map('n', ';hz', '<cmd>Gitsigns undo_stage_hunk<cr>')
-        map('n', ';hR', '<cmd>Gitsigns reset_buffer<cr>')
+        map('n', '<leader>D', '<cmd>Gitsigns reset_buffer<cr>')
+        map('n', '<leader>U', '<cmd>Gitsigns reset_buffer_index<cr>')
         map('n', ';hp', '<cmd>Gitsigns preview_hunk<cr>')
         map('n', ';hx', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'Gitsigns toggle show deletiion' })
         map('n', '<leader>x', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'Gitsigns toggle show deletiion' })
@@ -72,7 +72,6 @@ return {
         map('n', ';gB', '<cmd>Gitsigns toggle_current_line_blame<cr>')
         map('n', ';gd', '<cmd>Gitsigns diffthis<cr>')
         map('n', ';gD', '<cmd>lua require"gitsigns".diffthis("~")<cr>')
-        map('n', ';gx', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'Gitsigns toggle show deletiion' })
 
         -- Text object
         map('o', 'ih', '<cmd><C-U>Gitsigns select_hunk<cr>')
