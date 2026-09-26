@@ -48,8 +48,6 @@ return {
         local map = require('utils').map
 
         -- Navigation
-        map('n', ']c', '<cmd>Gitsigns next_hunk<cr>')
-        map('n', '[c', '<cmd>Gitsigns prev_hunk<cr>')
         map('n', '<leader>n', '<cmd>Gitsigns next_hunk --target=all<cr>')
         map('n', '<leader>p', '<cmd>Gitsigns prev_hunk --target=all<cr>')
         map('n', '<leader><leader>', '<cmd>Gitsigns next_hunk --target=all<cr>')
