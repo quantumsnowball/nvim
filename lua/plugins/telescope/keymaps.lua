@@ -33,7 +33,6 @@ map('n', '<space>H', tb.help_tags, { desc = 'telescope.help_tags()' })
 map('n', '<leader>K', function() tb.keymaps({ initial_mode = 'insert' }) end, { desc = 'telescope.keymaps()' })
 map('n', '<space>K', function() tb.keymaps({ initial_mode = 'insert' }) end, { desc = 'telescope.keymaps()' })
 -- find dictionary
-map('n', '<leader>ss', tb.spell_suggest, { desc = 'telescope.spell_suggest()' })
 map('n', '<space>ss', tb.spell_suggest, { desc = 'telescope.spell_suggest()' })
 -- lsp
 map('n', '<leader>v', tb.lsp_references, { desc = 'telescope.lsp_references()' })

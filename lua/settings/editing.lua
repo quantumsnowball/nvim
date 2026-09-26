@@ -51,7 +51,7 @@ map('n', 'g;', 'mzA;<esc>`z', { desc = 'insert `:` at line end' })
 -- C-o will also open new line in insert mode
 map('i', '<C-o>', '<esc>o')
 -- toggle spell checking
-map('n', '<leader>sc', '<cmd>set spell!<cr>', { desc = 'toggle spell checking' })
+map('n', '<space>sc', '<cmd>set spell!<cr>', { desc = 'toggle spell checking' })
 -- use Tab to toggle matching group
 -- -- normal mode: matching  or tags (by matchit.vim, need to set remap=true)
 -- -- visual mode: easily select the opposite matching whole section
@@ -63,16 +63,6 @@ map({ 'n', 'v', 'o' }, ']`', ']m', { remap = true })
 -- search for pairable symbols
 vim.cmd("noremap zl <Cmd>call search('[([{<>}\\])]')<cr>")
 vim.cmd("noremap zh <Cmd>call search('[([{<>}\\])]', 'b')<cr>")
--- select inner word/line(without linebreak)
-map('n', ';w', 'hevb', { desc = 'select word, curosr to beginning' })
-map('n', ';e', 'viw', { desc = 'select word, cursor to end' })
--- edit/delete inner word
-map('n', ';d', '"_diw', { desc = 'delete inner word' })
-map('n', ';D', '"_diW', { desc = 'delete inner word' })
-map('n', ';c', '"_ciw', { desc = 'change inner word' })
-map('n', ';C', '"_ciW', { desc = 'change inner word' })
--- delete line
-map('n', ';l', '"_dd', { desc = 'delete whole line' })
 -- Inspect lexical / syntax / semantics
 map('n', ';n', function()
     local success, node = pcall(vim.treesitter.get_node)

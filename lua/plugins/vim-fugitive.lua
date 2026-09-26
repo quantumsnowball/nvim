@@ -53,8 +53,8 @@ return {
     'tpope/vim-fugitive',
     event = 'VeryLazy',
     keys = {
-        { '<leader>gc', function() git_commit_safe() end, desc = 'Git commit', silent = true },
-        { '<leader>ga', function() git_commit_safe('--amend') end, desc = 'Git commit --amend', silent = true },
-        { '<leader>gp', git_push_async, desc = 'Git push', silent = true },
+        { '<leader>c', function() git_commit_safe() end, desc = 'Git commit', silent = true },
+        { '<leader>a', function() git_commit_safe('--amend') end, desc = 'Git commit --amend', silent = true },
+        { '<leader>p', git_push_async, desc = 'Git push', silent = true },
     },
 }
