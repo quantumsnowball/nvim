@@ -11,10 +11,10 @@ map({ 'n', 'v' }, 'D', '"_D')
 map({ 'n', 'v' }, 'c', '"_c')
 map({ 'n', 'v' }, 'C', '"_C')
 -- cut
-map({ 'n', 'v' }, '<leader>d', '"+d', { desc = 'delete text, copy to clipboard' })
-map({ 'n', 'v' }, '<leader>D', '"+D', { desc = 'delete text, copy to clipboard' })
-map({ 'n', 'v' }, '<leader>c', '"+c', { desc = 'change text, copy to clipboard' })
-map({ 'n', 'v' }, '<leader>C', '"+C', { desc = 'change text, copy to clipboard' })
+map({ 'n', 'v' }, ';d', '"+d', { desc = 'delete text, copy to clipboard' })
+map({ 'n', 'v' }, ';D', '"+D', { desc = 'delete text, copy to clipboard' })
+map({ 'n', 'v' }, ';c', '"+c', { desc = 'change text, copy to clipboard' })
+map({ 'n', 'v' }, ';C', '"+C', { desc = 'change text, copy to clipboard' })
 -- visual mode retain selection after copying
 map('v', 'Y', 'ygv')
 -- visual mode replace without copying the deleted text
