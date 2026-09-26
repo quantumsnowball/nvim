@@ -50,9 +50,9 @@ return {
         -- Navigation
         map('n', ']c', '<cmd>Gitsigns next_hunk<cr>')
         map('n', '[c', '<cmd>Gitsigns prev_hunk<cr>')
-        map('n', '<leader>n', '<cmd>Gitsigns next_hunk<cr>')
-        map('n', '<leader>p', '<cmd>Gitsigns prev_hunk<cr>')
-        map('n', '<leader><leader>', '<cmd>Gitsigns next_hunk<cr>')
+        map('n', '<leader>n', '<cmd>Gitsigns next_hunk --target=all<cr>')
+        map('n', '<leader>p', '<cmd>Gitsigns prev_hunk --target=all<cr>')
+        map('n', '<leader><leader>', '<cmd>Gitsigns next_hunk --target=all<cr>')
 
         -- Actions
         map('n', '<leader>s', '<cmd>Gitsigns stage_hunk<cr>')
