@@ -43,7 +43,7 @@ return {
             ),
             -- dashboard.button('n', '-  New file', ':ene <BAR> startinsert <cr>'),
             dashboard.button('l', '-  Lazy', '<cmd>Lazy<cr>'),
-            dashboard.button('M', '-  Mason', '<cmd>Mason<cr>'),
+            -- dashboard.button('M', '-  Mason', '<cmd>Mason<cr>'),
             -- dashboard.button("q", "  > Quit NVIM", "<cmd>qa<cr>"),
         }
 
