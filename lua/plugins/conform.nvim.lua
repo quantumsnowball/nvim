@@ -17,7 +17,10 @@ return {
             typescriptreact = { 'prettier' },
             css = { 'prettier' },
             rust = { 'rustfmt' },
+            -- apply to file types without formatter
             -- ["*"] = { 'fix_indent', 'trim_whitespace', 'trim_newlines', 'squeeze_blanks', }
+            -- apply to all file types
+            ['_'] = { 'trim_whitespace', },
         },
         formatters = {
             -- Define a surgical Ruff formatter for imports only
