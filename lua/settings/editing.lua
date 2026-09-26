@@ -51,7 +51,7 @@ map('n', 'g;', 'mzA;<esc>`z', { desc = 'insert `:` at line end' })
 -- C-o will also open new line in insert mode
 map('i', '<C-o>', '<esc>o')
 -- toggle spell checking
-map('n', '<leader>sc', '<cmd>set spell!<cr>', { desc = 'toggle spell checking' })
+map('n', '<space>sc', '<cmd>set spell!<cr>', { desc = 'toggle spell checking' })
 -- use Tab to toggle matching group
 -- -- normal mode: matching  or tags (by matchit.vim, need to set remap=true)
 -- -- visual mode: easily select the opposite matching whole section
