@@ -58,7 +58,7 @@ return {
         end, { desc = 'Gitsigns stage selection' })
         map('n', ';hr', '<cmd>Gitsigns reset_hunk<cr>')
         map('v', ';hr', '<cmd>Gitsigns reset_hunk<cr>')
-        map('n', ';hS', '<cmd>Gitsigns stage_buffer<cr>')
+        map('n', '<leader>S', '<cmd>Gitsigns stage_buffer<cr>')
         map('n', ';hu', '<cmd>Gitsigns undo_stage_hunk<cr>')
         map('n', ';hz', '<cmd>Gitsigns undo_stage_hunk<cr>')
         map('n', ';hR', '<cmd>Gitsigns reset_buffer<cr>')
