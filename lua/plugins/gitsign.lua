@@ -70,7 +70,6 @@ return {
         map('n', ';gB', '<cmd>Gitsigns toggle_current_line_blame<cr>')
         map('n', ';gd', '<cmd>Gitsigns diffthis<cr>')
         map('n', ';gD', '<cmd>lua require"gitsigns".diffthis("~")<cr>')
-        map('n', ';gx', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'Gitsigns toggle show deletiion' })
 
         -- Text object
         map('o', 'ih', '<cmd><C-U>Gitsigns select_hunk<cr>')
