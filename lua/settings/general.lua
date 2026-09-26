@@ -12,7 +12,7 @@ map('i', '<c-s>', '<c-o><cmd>w<cr>')
 map('v', '<c-s>', '<esc><cmd>w<cr>')
 map('n', 'qs', '<cmd>w<cr>', { desc = 'quick save' })
 map('n', ';s', '<cmd>w<cr>', { desc = 'quick save' })
-map('n', ';;', '<cmd>wa<cr>', { desc = 'quick save all buffers' })
+map('n', '<leader>.', '<cmd>w<cr>', { desc = 'quick save' })
 map('n', ';z', '<cmd>wq<cr>', { desc = 'quick save and quit window' })
 -- show which-key root
 map('n', '<F1>', '<cmd>WhichKey<cr>', { silent = true })
@@ -39,7 +39,7 @@ map('t', '<c-j>', '<c-\\><c-n><c-w>j')
 map('t', '<c-k>', '<c-\\><c-n><c-w>k')
 map('t', '<c-l>', '<c-\\><c-n><c-w>l')
 -- manually setfiletype
-map('n', '<leader>.', function() vim.fn.feedkeys(':setfiletype ') end, { desc = 'Set file type manually' })
+map('n', '<leader>/', function() vim.fn.feedkeys(':setfiletype ') end, { desc = 'Set file type manually' })
 -- jumping
 map('n', 'g<bs>', '<c-o>zz', { desc = 'jump to previous position' })
 map('n', 'g<cr>', '<c-i>zz', { desc = 'jump to next position' })
