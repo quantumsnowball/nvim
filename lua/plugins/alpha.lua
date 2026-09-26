@@ -55,6 +55,7 @@ return {
         local map = require('utils').map
 
         -- ;a is 'Home' gesture
-        map('n', ';a', '<cmd>Alpha<cr><cmd>tabonly<cr>', { desc = 'open Alpha and quit other tabpages' })
+        map('n', 'z<space>', '<cmd>Alpha<cr>', { desc = 'toggle Alpha page' })
+        map('n', ';<space>', '<cmd>Alpha<cr>', { desc = 'toggle Alpha page' })
     end,
 }
