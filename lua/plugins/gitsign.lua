@@ -64,6 +64,7 @@ return {
         map('n', '<leader>d', '<cmd>Gitsigns reset_hunk<cr>')
         map('v', '<leader>d', '<cmd>Gitsigns reset_hunk<cr>')
         map('n', '<leader>D', '<cmd>Gitsigns reset_buffer<cr>')
+        map('n', '<leader>U', '<cmd>Gitsigns reset_buffer_index<cr>')
         map('n', ';hp', '<cmd>Gitsigns preview_hunk<cr>')
         map('n', ';hx', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'Gitsigns toggle show deletiion' })
         map('n', '<leader>x', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'Gitsigns toggle show deletiion' })
