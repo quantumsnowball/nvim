@@ -37,7 +37,8 @@ return {
             prettier = {
                 prepend_args = {
                     '--tab-width', '4',
-                    '--single-quote'
+                    '--single-quote',
+                    '--print-width', '10000',
                 },
             },
             rustfmt = {
