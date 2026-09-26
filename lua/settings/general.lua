@@ -14,6 +14,7 @@ map('n', 'qs', '<cmd>w<cr>', { desc = 'quick save' })
 map('n', ';s', '<cmd>w<cr>', { desc = 'quick save' })
 map('n', '<leader>.', '<cmd>w<cr>', { desc = 'quick save' })
 map('n', ';z', '<cmd>wq<cr>', { desc = 'quick save and quit window' })
+map('n', ';;', '<cmd>wa<cr>', { desc = 'quick save all buffers' })
 -- show which-key root
 map('n', '<F1>', '<cmd>WhichKey<cr>', { silent = true })
 -- cancel search highlight after search
