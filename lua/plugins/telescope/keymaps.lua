@@ -6,8 +6,12 @@ local map = require('utils').map
 -- should be as handy as possible, and not sharing a prefix with other combos
 --
 -- find files
-map('n', '<leader>f', function() tb.find_files({ hidden = true, file_ignore_patterns = { '^%.git/' }, }) end, { desc = 'telescope.find_files()' })
-map('n', '<space>f', function() tb.find_files({ hidden = true, file_ignore_patterns = { '^%.git/' }, }) end, { desc = 'telescope.find_files()' })
+map('n', '<leader>f', function()
+    tb.find_files({ hidden = true, file_ignore_patterns = { '^%.git/' }, })
+end, { desc = 'telescope.find_files()' })
+map('n', '<space>f', function()
+    tb.find_files({ hidden = true, file_ignore_patterns = { '^%.git/' }, })
+end, { desc = 'telescope.find_files()' })
 -- find words
 map('n', '<leader>w', function()
     tb.live_grep({ additional_args = function() return { '--hidden' } end })
@@ -49,12 +53,9 @@ map('n', '<leader>F/', tb.pickers, { desc = 'telescope.pickers()' })
 
 -- find files
 map('n', '<leader>Fnf', tb.find_files, { desc = 'telescope.find_files(--no-hidden)' })
-map(
-    'n',
-    '<leader>Faf',
-    function() tb.find_files({ hidden = true, no_ignore = true }) end,
-    { desc = 'telescope.find_files(--everything)' }
-)
+map('n', '<leader>Faf', function()
+    tb.find_files({ hidden = true, no_ignore = true })
+end, { desc = 'telescope.find_files(--everything)' })
 
 -- find words
 map('n', '<leader>Fnw', tb.live_grep, { desc = 'telescope.live_grep(--no-hidden)' })
@@ -76,12 +77,9 @@ map('n', '<leader>Fj', tb.jumplist, { desc = 'telescope.jumplist()' })
 map('v', '<leader>w', tb.grep_string, { desc = 'telescope.grep_string(--visual-mode)' })
 
 -- color scheme
-map(
-    'n',
-    '<leader>T',
-    function() tb.colorscheme({ enable_preview = true, ignore_builtins = true }) end,
-    { desc = 'telescope.colorscheme()' }
-)
+map('n', '<leader>T', function()
+    tb.colorscheme({ enable_preview = true, ignore_builtins = true })
+end, { desc = 'telescope.colorscheme()' })
 
 -- git navigation
 map('n', '<leader>gC', tb.git_commits, { desc = 'telescope.git_commits()' })
