@@ -65,6 +65,7 @@ return {
         map('n', '<leader>U', '<cmd>Gitsigns reset_buffer_index<cr>')
         map('n', '<leader>x', '<cmd>Gitsigns toggle_deleted<cr>', { desc = 'Gitsigns toggle show deletiion' })
         map('n', ';hp', '<cmd>Gitsigns preview_hunk<cr>')
+        map('n', ';b', '<cmd>lua require"gitsigns".blame_line{full=true}<cr>')
         map('n', ';gb', '<cmd>lua require"gitsigns".blame_line{full=true}<cr>')
         map('n', ';gB', '<cmd>Gitsigns toggle_current_line_blame<cr>')
         map('n', ';gd', '<cmd>Gitsigns diffthis<cr>')
