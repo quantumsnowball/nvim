@@ -6,8 +6,8 @@ local map = require('utils').map
 -- should be as handy as possible, and not sharing a prefix with other combos
 --
 -- find files
-map('n', '<leader>f', function() tb.find_files({ hidden = true }) end, { desc = 'telescope.find_files()' })
-map('n', '<space>f', function() tb.find_files({ hidden = true }) end, { desc = 'telescope.find_files()' })
+map('n', '<leader>f', function() tb.find_files({ hidden = true, file_ignore_patterns = { '^%.git/' }, }) end, { desc = 'telescope.find_files()' })
+map('n', '<space>f', function() tb.find_files({ hidden = true, file_ignore_patterns = { '^%.git/' }, }) end, { desc = 'telescope.find_files()' })
 -- find words
 map('n', '<leader>w', function()
     tb.live_grep({ additional_args = function() return { '--hidden' } end })
