@@ -3,7 +3,9 @@
 return {
     'lewis6991/gitsigns.nvim',
     event = 'VimEnter',
-    opts = {},
+    opts = {
+        preview_config = { border = 'rounded', },
+    },
     init = function()
         local gitsigns = require('gitsigns')
 
