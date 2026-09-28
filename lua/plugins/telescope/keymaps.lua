@@ -14,10 +14,10 @@ map('n', '<space>f', function()
 end, { desc = 'telescope.find_files()' })
 -- find words
 map('n', '<leader>w', function()
-    tb.live_grep({ additional_args = function() return { '--hidden' } end })
+    tb.live_grep({ additional_args = function() return { '--hidden', '--glob=!**/.git/*' } end })
 end, { desc = 'telescope.live_grep()' })
 map('n', '<space>w', function()
-    tb.live_grep({ additional_args = function() return { '--hidden' } end })
+    tb.live_grep({ additional_args = function() return { '--hidden', '--glob=!**/.git/*' } end })
 end, { desc = 'telescope.live_grep()' })
 -- find recent files
 map('n', '<leader>R', function() tb.oldfiles({ only_cwd = true }) end, { desc = 'telescope.oldfiles()' })
