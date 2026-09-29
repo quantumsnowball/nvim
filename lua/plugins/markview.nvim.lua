@@ -6,5 +6,6 @@ return {
     opts = {},
     keys = {
         { 'zp', '<CMD>Markview<CR>', desc = 'Toggles `markview` previews globally.' },
+        { 'z\\', '<CMD>Markview splitToggle<CR>', desc = 'Toggles `splitview` for current buffer.' },
     },
 }
