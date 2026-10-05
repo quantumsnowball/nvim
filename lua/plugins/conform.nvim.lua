@@ -92,7 +92,7 @@ return {
         })
 
         -- manual trigger keymap
-        map('n', ';f', format, { desc = 'conform: format current buffer' })
-        map('v', ';f', format, { desc = 'conform: format selected lines' })
+        map('n', 'zf', format, { desc = 'conform: format current buffer' })
+        map('v', 'zf', format, { desc = 'conform: format selected lines' })
     end,
 }

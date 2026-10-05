@@ -16,6 +16,8 @@ map('v', 'zb', 'gc', { remap = true, desc = 'toggle selection comment' })
 --     note: <C-_> is ctrl-/, <C-/> won't work, go to insert mode to test it
 map('n', '<C-_>', 'gccj', { remap = true, desc = 'toggle line comment' })
 map('v', '<C-_>', 'gc', { remap = true, desc = 'toggle selection comment' })
+-- folding code
+map('v', ';f', ':fold<cr>', { desc = 'fold selection' })
 -- home and end in normal, visual, operator mode
 map({ 'n', 'v', 'o' }, '<space>h', '^', { desc = 'Home' })
 map({ 'n', 'v', 'o' }, '<space>l', '$', { desc = 'End' })
