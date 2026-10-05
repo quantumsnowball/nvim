@@ -18,7 +18,8 @@ map('n', '<C-_>', 'gccj', { remap = true, desc = 'toggle line comment' })
 map('v', '<C-_>', 'gc', { remap = true, desc = 'toggle selection comment' })
 -- folding code
 map('v', ';f', ':fold<cr>', { desc = 'fold selection' })
-map('n', ';f', function() vim.wo.foldlevel = vim.wo.foldlevel > 0 and 0 or 99 end, { desc = 'Toggle all folds' })
+map('n', ';f', function() vim.wo.foldlevel = vim.wo.foldlevel > 0 and 0 or 99 end, { desc = 'toggle all folds' })
+map('n', ';u', 'zD', { desc = 'delete fold under cursor' })
 -- home and end in normal, visual, operator mode
 map({ 'n', 'v', 'o' }, '<space>h', '^', { desc = 'Home' })
 map({ 'n', 'v', 'o' }, '<space>l', '$', { desc = 'End' })
