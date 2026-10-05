@@ -35,12 +35,14 @@ return {
         -- declare missing filetype here
         vim.filetype.add({
             extension = {
+                kbd = 'kbd',
                 xaml = 'xaml',
                 service = 'sysctl',
             },
         })
         -- using an existing parser for another filetype
         for parser, filetypes in pairs({
+            clojure = { 'kbd' },
             xml = { 'xaml' },
             bash = { 'zsh' },
         }) do
@@ -68,6 +70,7 @@ return {
                 'yaml',
                 'regex',
                 'comment',
+                'clojure',
                 -- git
                 'gitignore',
                 'git_rebase',
