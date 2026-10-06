@@ -63,6 +63,7 @@ return {
             pyright = {
                 cmd = { 'pyright-langserver', '--stdio', },
                 filetypes = { 'python', },
+                root_markers = { 'pyproject.toml', 'pyrightconfig.json', '.git' },
             },
             rust_analyzer = {
                 cmd = { 'rust-analyzer', },
