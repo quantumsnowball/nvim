@@ -2,10 +2,36 @@ local map = require('utils').map
 ---------------
 -- clipboard --
 ---------------
+-- Copy over ssh
+if vim.env.SSH_TTY then
+    local osc52 = require("vim.ui.clipboard.osc52")
+
+    local function copy_reg(reg)
+        local orig = osc52.copy(reg)
+        return function(lines, regtype)
+            -- Write to Vim's internal register
+            vim.fn.setreg(reg, table.concat(lines, "\n"), regtype)
+            -- Send OSC52 to local clipboard
+            orig(lines, regtype)
+        end
+    end
+    vim.g.clipboard = {
+        name = "OSC 52 with register sync",
+        copy = {
+            ["+"] = copy_reg("+"),
+            ["*"] = copy_reg("*"),
+        },
+        -- Do NOT use OSC52 paste, just use internal registers
+        paste = {
+            ["+"] = function() return vim.fn.getreg('+'), 'v' end,
+            ["*"] = function() return vim.fn.getreg('*'), 'v' end,
+        },
+    }
+end
 -- copy and paste to system clipboard
 --   "*, unnamed clipboard: primary selection, highlight text with mouse to copy, middleclick to paste
 --   "+, unnamedplus clipboard: main system clipboard, ctrl+c to copy, ctrl+v to paste
-vim.cmd('set clipboard^=unnamed,unnamedplus')
+vim.o.clipboard = "unnamed,unnamedplus"
 
 -- delete
 map({ 'n', 'v' }, 'x', '"_x')
