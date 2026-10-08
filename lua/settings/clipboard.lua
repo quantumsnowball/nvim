@@ -13,6 +13,22 @@ if vim.env.SSH_TTY then
             copy_to_osc52(lines, regtype)
         end
     end
+    local function safe_getreg(name)
+        return function()
+            -- read from reg * or +
+            local content = vim.fn.getreg(name)
+            -- fallback to unnamed register (") if target register is empty or invalid
+            if content == nil or content == "" then
+                content = vim.fn.getreg('"')
+            end
+            -- ensure valid fallback values for neovim clipboard contract
+            if content == nil or content == "" then
+                return { "" }, "v"
+            end
+            local lines = vim.split(content, "\n", { plain = true })
+            return lines, "v"
+        end
+    end
     vim.g.clipboard = {
         name = "OSC 52 with register sync",
         -- on copy, copy to both osc52 and neovim register
@@ -22,8 +38,8 @@ if vim.env.SSH_TTY then
         },
         -- on paste, paste from internal register only, osc52 is disabled for security reasons
         paste = {
-            ["+"] = function() return vim.fn.getreg('+'), 'v' end,
-            ["*"] = function() return vim.fn.getreg('*'), 'v' end,
+            ["+"] = safe_getreg('+'),
+            ["*"] = safe_getreg('*'),
         },
     }
 end
