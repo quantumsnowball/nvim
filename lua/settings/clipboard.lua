@@ -4,24 +4,23 @@ local map = require('utils').map
 ---------------
 -- Copy over ssh
 if vim.env.SSH_TTY then
-    local osc52 = require("vim.ui.clipboard.osc52")
-
-    local function copy_reg(reg)
-        local orig = osc52.copy(reg)
+    local function copy_to_osc52_and_register(name)
+        local copy_to_osc52 = require("vim.ui.clipboard.osc52").copy(name)
         return function(lines, regtype)
-            -- Write to Vim's internal register
-            vim.fn.setreg(reg, table.concat(lines, "\n"), regtype)
-            -- Send OSC52 to local clipboard
-            orig(lines, regtype)
+            -- copy to register
+            vim.fn.setreg(name, table.concat(lines, "\n"), regtype)
+            -- copy to osc 52
+            copy_to_osc52(lines, regtype)
         end
     end
     vim.g.clipboard = {
         name = "OSC 52 with register sync",
+        -- on copy, copy to both osc52 and neovim register
         copy = {
-            ["+"] = copy_reg("+"),
-            ["*"] = copy_reg("*"),
+            ["+"] = copy_to_osc52_and_register("+"),
+            ["*"] = copy_to_osc52_and_register("*"),
         },
-        -- Do NOT use OSC52 paste, just use internal registers
+        -- on paste, paste from internal register only, osc52 is disabled for security reasons
         paste = {
             ["+"] = function() return vim.fn.getreg('+'), 'v' end,
             ["*"] = function() return vim.fn.getreg('*'), 'v' end,
