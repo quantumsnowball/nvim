@@ -2,6 +2,11 @@ local map = require('utils').map
 ---------------
 -- clipboard --
 ---------------
+-- copy and paste to system clipboard
+--   "*, unnamed clipboard: primary selection, highlight text with mouse to copy, middleclick to paste
+--   "+, unnamedplus clipboard: main system clipboard, ctrl+c to copy, ctrl+v to paste
+vim.cmd('set clipboard^=unnamed,unnamedplus')
+
 -- delete
 map({ 'n', 'v' }, 'x', '"_x')
 map({ 'n', 'v' }, 'X', '"_X')
