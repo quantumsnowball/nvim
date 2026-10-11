@@ -2,6 +2,29 @@ local map = require('utils').map
 ---------------
 -- clipboard --
 ---------------
+local function safe_getreg(name)
+    return function()
+        -- read from reg * or +
+        local content = vim.fn.getreg(name)
+        -- fallback to unnamed register (") if target register is empty or invalid
+        if content == nil or content == "" then
+            content = vim.fn.getreg('"')
+        end
+        -- ensure valid fallback values for neovim clipboard contract
+        if content == nil or content == "" then
+            return { "" }, "v"
+        end
+        local lines = vim.split(content, "\n", { plain = true })
+        return lines, "v"
+    end
+end
+local function paste_trimmed(name, is_after)
+    local lines = safe_getreg(name)()
+    local content = table.concat(lines, "\n")
+    local trimmed = content:gsub("^[%s\n\r]+", ""):gsub("[%s\n\r]+$", "")
+    local trimmed_lines = vim.split(trimmed, "\n", { plain = true })
+    vim.api.nvim_put(trimmed_lines, "c", is_after, true)
+end
 -- Copy over ssh
 if vim.env.SSH_TTY then
     local function copy_to_osc52_and_register(name)
@@ -11,22 +34,6 @@ if vim.env.SSH_TTY then
             vim.fn.setreg(name, table.concat(lines, "\n"), regtype)
             -- copy to osc 52
             copy_to_osc52(lines, regtype)
-        end
-    end
-    local function safe_getreg(name)
-        return function()
-            -- read from reg * or +
-            local content = vim.fn.getreg(name)
-            -- fallback to unnamed register (") if target register is empty or invalid
-            if content == nil or content == "" then
-                content = vim.fn.getreg('"')
-            end
-            -- ensure valid fallback values for neovim clipboard contract
-            if content == nil or content == "" then
-                return { "" }, "v"
-            end
-            local lines = vim.split(content, "\n", { plain = true })
-            return lines, "v"
         end
     end
     vim.g.clipboard = {
@@ -70,6 +77,9 @@ map('v', 'P', '"_dP')
 map('n', 'P', 'gP')
 map('n', 'gP', 'P')
 map('n', 'p', 'p`]')
+-- paste trimmed
+map('n', '<space>p', function() paste_trimmed('+', true) end, { desc = 'paste trimmed after cursor' })
+map('n', '<space>P', function() paste_trimmed('+', false) end, { desc = 'paste trimmed before cursor' })
 -- z*a/<space>*a as change all text operation
 map('n', 'zva', 'ggVG', { desc = 'select all text' })
 map('n', 'zya', 'ggVGy', { desc = 'copy all text' })
