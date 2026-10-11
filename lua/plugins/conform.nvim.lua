@@ -28,7 +28,19 @@ return {
             -- Define a surgical Ruff formatter for imports only
             ruff_fix = {
                 command = vim.fn.exepath('ruff'),
-                args = { 'check', '--select', 'I,Q', '--fix', '--force-exclude', '--exit-zero', '--no-cache', '--stdin-filename', '$FILENAME', '-' },
+                args = {
+                    'check',
+                    '--select', 'I,Q,F401',
+                    '--config', 'lint.flake8-quotes.inline-quotes="single"',
+                    '--config', 'lint.flake8-quotes.docstring-quotes="single"',
+                    '--config', 'lint.flake8-quotes.multiline-quotes="single"',
+                    '--fix',
+                    '--force-exclude',
+                    '--exit-zero',
+                    '--no-cache',
+                    '--stdin-filename', '$FILENAME',
+                    '-'
+                },
                 stdin = true,
             },
             autopep8 = {
