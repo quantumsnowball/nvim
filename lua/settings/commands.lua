@@ -1,6 +1,22 @@
 -- greeting
 vim.api.nvim_create_user_command('MyGreeting', 'echo "Hello world!"', {})
 
+-- swap
+vim.api.nvim_create_user_command('ClearAllSwapFiles', function()
+    local swapdir = vim.fn.stdpath('state') .. '/swap/*'
+    local files = vim.fn.glob(swapdir, true, true)
+
+    if #files == 0 then
+        print('No swap files found.')
+        return
+    end
+
+    for _, file in ipairs(files) do
+        vim.fn.delete(file)
+    end
+    print('Cleared ' .. #files .. ' swap file(s).')
+end, {})
+
 -- LSP
 vim.api.nvim_create_user_command('MyLSPServerCaps', function()
     -- LSPs should be `servers`
