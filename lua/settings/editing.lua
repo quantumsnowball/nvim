@@ -27,8 +27,8 @@ map({ 'n', 'v', 'o' }, '<space>l', '$', { desc = 'End' })
 map({ 'n', 'v', 'o' }, 'L', 'E')
 map({ 'n', 'v', 'o' }, 'H', 'B')
 -- scroll up and down
-map({ 'n', 'v', 'o' }, 'J', '<C-d>zz', { desc = 'scroll down' })
-map({ 'n', 'v', 'o' }, 'K', '<C-u>zz', { desc = 'scroll up' })
+map({ 'n', 'v', 'o' }, 'J', '<C-d>', { desc = 'scroll down' })
+map({ 'n', 'v', 'o' }, 'K', '<C-u>', { desc = 'scroll up' })
 -- indent unindent in normal
 map('n', 'gl', '>>')
 map('n', 'gh', '<<')
