@@ -23,8 +23,12 @@ map('n', ';u', 'zD', { desc = 'delete fold under cursor' })
 -- home and end in normal, visual, operator mode
 map({ 'n', 'v', 'o' }, '<space>h', '^', { desc = 'Home' })
 map({ 'n', 'v', 'o' }, '<space>l', '$', { desc = 'End' })
+-- jump between whole words back and forth
 map({ 'n', 'v', 'o' }, 'L', 'E')
 map({ 'n', 'v', 'o' }, 'H', 'B')
+-- scroll up and down
+map({ 'n', 'v', 'o' }, 'J', '<C-d>zz', { desc = 'scroll down' })
+map({ 'n', 'v', 'o' }, 'K', '<C-u>zz', { desc = 'scroll up' })
 -- indent unindent in normal
 map('n', 'gl', '>>')
 map('n', 'gh', '<<')
