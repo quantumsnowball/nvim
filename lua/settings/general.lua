@@ -44,5 +44,7 @@ map('n', '<leader>/', function() vim.fn.feedkeys(':setfiletype ') end, { desc = 
 -- jumping
 map('n', '{', '<c-o>', { desc = 'jump to previous position' })
 map('n', '}', '<c-i>', { desc = 'jump to next position' })
+map('n', '(', '{', { desc = 'jump to previous paragraph' })
+map('n', ')', '}', { desc = 'jump to next paragraph' })
 map('n', '[j', '<c-o>zz', { desc = 'jump to previous position' })
 map('n', ']j', '<c-i>zz', { desc = 'jump to next position' })
