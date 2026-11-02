@@ -28,13 +28,13 @@ return {
                 -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
                 left = '',
                 right = '',
-                down = 'gj',
-                up = 'gk',
+                down = '<space>j',
+                up = '<space>k',
                 -- Move current line in Normal mode
                 line_left = '',
                 line_right = '',
-                line_down = 'gj',
-                line_up = 'gk',
+                line_down = '<space>j',
+                line_up = '<space>k',
             },
         })
 
