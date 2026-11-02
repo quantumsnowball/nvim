@@ -6,9 +6,8 @@ return {
     opts = {
         -- enable formatter when useful
         formatters_by_ft = {
-            lua = {
-                lsp_format = 'prefer'
-            },
+            -- lua = { lsp_format = 'prefer', },
+            lua = { 'stylua' },
             python = { 'ruff_fix', 'autopep8' },
             json = { 'jq' },
             jsonc = { 'jq' },
@@ -25,7 +24,15 @@ return {
             ['_'] = { 'trim_whitespace', },
         },
         formatters = {
-            -- Define a surgical Ruff formatter for imports only
+            stylua = {
+                prepend_args = {
+                    '--quote-style', 'AutoPreferSingle',
+                    '--indent-type', 'Spaces',
+                    '--indent-width', '4',
+                    '--column-width', '100000',
+                    '--collapse-simple-statement', 'Always',
+                },
+            },
             ruff_fix = {
                 command = vim.fn.exepath('ruff'),
                 args = {
