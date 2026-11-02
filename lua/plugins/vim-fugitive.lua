@@ -24,7 +24,7 @@ local function git_commit_safe(args)
         callback = function()
             -- async close the terminal split window and then do the git commit
             vim.schedule(function()
-                if vim.api.nvim_buf_is_valid(buf) then
+                if vim.api.nvim_buf_is_valid(buf) then --
                     vim.api.nvim_buf_delete(buf, { force = true })
                 end
                 vim.cmd('Git commit ' .. (args or ''))

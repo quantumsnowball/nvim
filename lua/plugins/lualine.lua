@@ -52,7 +52,7 @@ return {
                 },
                 lualine_z = {
                     -- reimplement 'location' but it can go beyond end of line
-                    function()
+                    function() --
                         return string.format('%d:%d', vim.fn.line('.'), vim.fn.virtcol('.'))
                     end,
                 },

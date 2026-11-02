@@ -6,9 +6,8 @@ return {
     opts = {
         -- enable formatter when useful
         formatters_by_ft = {
-            lua = {
-                lsp_format = 'prefer'
-            },
+            -- lua = { lsp_format = 'prefer', },
+            lua = { 'stylua' },
             python = { 'ruff_fix', 'autopep8' },
             json = { 'jq' },
             jsonc = { 'jq' },
@@ -22,12 +21,22 @@ return {
             -- apply to file types without formatter
             -- ["*"] = { 'fix_indent', 'trim_whitespace', 'trim_newlines', 'squeeze_blanks', }
             -- apply to all file types
-            ['_'] = { 'trim_whitespace', },
+            ['_'] = { 'trim_whitespace' },
         },
         formatters = {
-            -- Define a surgical Ruff formatter for imports only
+            stylua = {
+                -- stylua: ignore
+                prepend_args = {
+                    '--quote-style', 'AutoPreferSingle',
+                    '--indent-type', 'Spaces',
+                    '--indent-width', '4',
+                    '--column-width', '100000',
+                    '--collapse-simple-statement', 'Always',
+                },
+            },
             ruff_fix = {
                 command = vim.fn.exepath('ruff'),
+                -- stylua: ignore
                 args = {
                     'check',
                     '--select', 'I,Q,F401',
@@ -39,7 +48,7 @@ return {
                     '--exit-zero',
                     '--no-cache',
                     '--stdin-filename', '$FILENAME',
-                    '-'
+                    '-',
                 },
                 stdin = true,
             },
@@ -47,11 +56,10 @@ return {
                 prepend_args = { '--max-line-length', '999999' },
             },
             jq = {
-                append_args = function()
-                    return { '--indent', vim.bo.shiftwidth }
-                end,
+                append_args = function() return { '--indent', vim.bo.shiftwidth } end,
             },
             prettier = {
+                -- stylua: ignore
                 prepend_args = {
                     '--tab-width', '4',
                     '--single-quote',
@@ -59,12 +67,13 @@ return {
                 },
             },
             rustfmt = {
+                -- stylua: ignore
                 args = {
                     -- longer max_width prevent auto break long line, use fake comment line // to prevent force joining lines by formatter
-                    "--emit", "stdout",
-                    "--edition", "2024",
-                    "--config", "max_width=120",
-                    "--config", 'use_small_heuristics=Max', -- prevent early line break well below max_width
+                    '--emit', 'stdout',
+                    '--edition', '2024',
+                    '--config', 'max_width=120',
+                    '--config', 'use_small_heuristics=Max', -- prevent early line break well below max_width
                 },
             },
             fix_indent = {

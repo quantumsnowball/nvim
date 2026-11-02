@@ -47,5 +47,5 @@ return {
                 dismiss = '<A-e>',
             },
         },
-    }
+    },
 }

@@ -26,22 +26,10 @@ return {
             dashboard.button('e', '-  File Explorer', '<cmd>Neotree reveal float<cr>'),
             dashboard.button('y', '-  Yazi', '<cmd>Yazi<cr>'),
             dashboard.button('g', '-  LazyGit', '<cmd>LazyGit<cr>'),
-            dashboard.button(
-                'f',
-                '-  Find file',
-                '<cmd>lua require("telescope.builtin").find_files({layout_strategy="vertical", hidden=true})<cr>'
-            ),
-            dashboard.button(
-                'w',
-                '-  Find Word',
-                '<cmd>lua require("telescope.builtin").live_grep({layout_strategy="vertical", additional_args=function(opts) return {"--hidden"} end})<cr>'
-            ),
+            dashboard.button('f', '-  Find file', '<cmd>lua require("telescope.builtin").find_files({layout_strategy="vertical", hidden=true})<cr>'),
+            dashboard.button('w', '-  Find Word', '<cmd>lua require("telescope.builtin").live_grep({layout_strategy="vertical", additional_args=function(opts) return {"--hidden"} end})<cr>'),
             dashboard.button('b', '-  Buffers', '<cmd>lua require("telescope.builtin").buffers()<cr>'),
-            dashboard.button(
-                'r',
-                '-  Recent',
-                '<cmd>lua require("telescope.builtin").oldfiles({layout_strategy="vertical"})<cr>'
-            ),
+            dashboard.button('r', '-  Recent', '<cmd>lua require("telescope.builtin").oldfiles({layout_strategy="vertical"})<cr>'),
             -- dashboard.button('n', '-  New file', ':ene <BAR> startinsert <cr>'),
             dashboard.button('l', '-  Lazy', '<cmd>Lazy<cr>'),
             -- dashboard.button('M', '-  Mason', '<cmd>Mason<cr>'),

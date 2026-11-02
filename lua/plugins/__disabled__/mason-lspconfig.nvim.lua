@@ -23,18 +23,18 @@ return {
                 filetypes = { 'sh', 'bash', 'zsh' },
             },
             rust_analyzer = {
-                cmd = { 'rust-analyzer', },
-                filetypes = { 'rust', },
+                cmd = { 'rust-analyzer' },
+                filetypes = { 'rust' },
             },
         }
         -- unsupported on termux, need to manually add config here
         local server_opts_termux_specific = {
             lua_ls = {
-                cmd = { 'lua-language-server', },
-                filetypes = { 'lua', },
+                cmd = { 'lua-language-server' },
+                filetypes = { 'lua' },
             },
         }
-        if os.getenv('TERMUX_VERSION') then
+        if os.getenv('TERMUX_VERSION') then --
             server_opts = vim.tbl_extend('force', server_opts, server_opts_termux_specific)
         end
         -- config and enable
@@ -69,7 +69,7 @@ return {
                 -- rust
                 'rust_analyzer',
             }
-            if not os.getenv('TERMUX_VERSION') then
+            if not os.getenv('TERMUX_VERSION') then --
                 vim.list_extend(tools, tools_termux_unsupported)
             end
             -- translation to mason names
