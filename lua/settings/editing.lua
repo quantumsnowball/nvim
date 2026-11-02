@@ -21,8 +21,8 @@ map('v', ';f', ':fold<cr>', { desc = 'fold selection' })
 map('n', ';f', function() vim.wo.foldlevel = vim.wo.foldlevel > 0 and 0 or 99 end, { desc = 'toggle all folds' })
 map('n', ';u', 'zD', { desc = 'delete fold under cursor' })
 -- home and end in normal, visual, operator mode
-map({ 'n', 'v', 'o' }, '<space>h', '^', { desc = 'Home' })
-map({ 'n', 'v', 'o' }, '<space>l', '$', { desc = 'End' })
+map({ 'n', 'v', 'o' }, 'gh', '^', { desc = 'Home' })
+map({ 'n', 'v', 'o' }, 'gl', '$', { desc = 'End' })
 -- jump between whole words back and forth
 map({ 'n', 'v', 'o' }, 'L', 'E')
 map({ 'n', 'v', 'o' }, 'H', 'B')
@@ -30,10 +30,10 @@ map({ 'n', 'v', 'o' }, 'H', 'B')
 map({ 'n', 'v', 'o' }, 'J', '<C-d>', { desc = 'scroll down' })
 map({ 'n', 'v', 'o' }, 'K', '<C-u>', { desc = 'scroll up' })
 -- indent unindent in normal
-map('n', 'gl', '>>')
-map('n', 'gh', '<<')
-map('v', 'gl', '>')
-map('v', 'gh', '<')
+map('n', '<space>l', '>>')
+map('n', '<space>h', '<<')
+map('v', '<space>l', '>')
+map('v', '<space>h', '<')
 -- center cursor line
 map({ 'n', 'v' }, 'M', 'zz')
 -- home and end in insert mode
