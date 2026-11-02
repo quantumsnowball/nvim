@@ -20,9 +20,13 @@ map('v', '<C-_>', 'gc', { remap = true, desc = 'toggle selection comment' })
 map('v', ';f', ':fold<cr>', { desc = 'fold selection' })
 map('n', ';f', function() vim.wo.foldlevel = vim.wo.foldlevel > 0 and 0 or 99 end, { desc = 'toggle all folds' })
 map('n', ';u', 'zD', { desc = 'delete fold under cursor' })
--- home and end in normal, visual, operator mode
-map({ 'n', 'v', 'o' }, 'gh', '^', { desc = 'Home' })
-map({ 'n', 'v', 'o' }, 'gl', '$', { desc = 'End' })
+-- smart home and end in normal, visual, operator mode
+map({ 'n', 'v', 'o' }, 'gh', function() --
+    return vim.fn.col('.') <= vim.fn.indent('.') + 1 and '0' or '^'
+end, { expr = true, desc = 'Home (Smart)' })
+map({ 'n', 'v', 'o' }, 'gl', function() --
+    return vim.fn.col('.') >= vim.fn.indent('.') + 1 and '$' or '^'
+end, { expr = true, desc = 'End (Smart)' })
 -- jump between whole words back and forth
 map({ 'n', 'v', 'o' }, 'L', 'E')
 map({ 'n', 'v', 'o' }, 'H', 'B')
