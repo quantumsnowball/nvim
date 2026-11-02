@@ -59,11 +59,9 @@ return {
     init = function()
         -- allow to install all selected parsers by running this command when ready
         -- this prevent from freezing on first run by not using ensure_installed table directly
-        vim.api.nvim_create_user_command(
-            'TSEnsureInstalled',
-            function() require('nvim-treesitter.install').ensure_installed(selected_parser) end,
-            {}
-        )
+        vim.api.nvim_create_user_command('TSEnsureInstalled', function() --
+            require('nvim-treesitter.install').ensure_installed(selected_parser)
+        end, {})
 
         -- fix for :Inspect not working
         -- ref: https://github.com/neovim/neovim/pull/31676

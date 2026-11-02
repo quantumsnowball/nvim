@@ -7,53 +7,49 @@ local function safe_getreg(name)
         -- read from reg * or +
         local content = vim.fn.getreg(name)
         -- fallback to unnamed register (") if target register is empty or invalid
-        if content == nil or content == "" then
-            content = vim.fn.getreg('"')
-        end
+        if content == nil or content == '' then content = vim.fn.getreg('"') end
         -- ensure valid fallback values for neovim clipboard contract
-        if content == nil or content == "" then
-            return { "" }, "v"
-        end
-        local lines = vim.split(content, "\n", { plain = true })
-        return lines, "v"
+        if content == nil or content == '' then return { '' }, 'v' end
+        local lines = vim.split(content, '\n', { plain = true })
+        return lines, 'v'
     end
 end
 local function paste_trimmed(name, is_after)
     local lines = safe_getreg(name)()
-    local content = table.concat(lines, "\n")
-    local trimmed = content:gsub("^[%s\n\r]+", ""):gsub("[%s\n\r]+$", "")
-    local trimmed_lines = vim.split(trimmed, "\n", { plain = true })
-    vim.api.nvim_put(trimmed_lines, "c", is_after, true)
+    local content = table.concat(lines, '\n')
+    local trimmed = content:gsub('^[%s\n\r]+', ''):gsub('[%s\n\r]+$', '')
+    local trimmed_lines = vim.split(trimmed, '\n', { plain = true })
+    vim.api.nvim_put(trimmed_lines, 'c', is_after, true)
 end
 -- Copy over ssh
 if vim.env.SSH_TTY then
     local function copy_to_osc52_and_register(name)
-        local copy_to_osc52 = require("vim.ui.clipboard.osc52").copy(name)
+        local copy_to_osc52 = require('vim.ui.clipboard.osc52').copy(name)
         return function(lines, regtype)
             -- copy to register
-            vim.fn.setreg(name, table.concat(lines, "\n"), regtype)
+            vim.fn.setreg(name, table.concat(lines, '\n'), regtype)
             -- copy to osc 52
             copy_to_osc52(lines, regtype)
         end
     end
     vim.g.clipboard = {
-        name = "OSC 52 with register sync",
+        name = 'OSC 52 with register sync',
         -- on copy, copy to both osc52 and neovim register
         copy = {
-            ["+"] = copy_to_osc52_and_register("+"),
-            ["*"] = copy_to_osc52_and_register("*"),
+            ['+'] = copy_to_osc52_and_register('+'),
+            ['*'] = copy_to_osc52_and_register('*'),
         },
         -- on paste, paste from internal register only, osc52 is disabled for security reasons
         paste = {
-            ["+"] = safe_getreg('+'),
-            ["*"] = safe_getreg('*'),
+            ['+'] = safe_getreg('+'),
+            ['*'] = safe_getreg('*'),
         },
     }
 end
 -- copy and paste to system clipboard
 --   "*, unnamed clipboard: primary selection, highlight text with mouse to copy, middleclick to paste
 --   "+, unnamedplus clipboard: main system clipboard, ctrl+c to copy, ctrl+v to paste
-vim.o.clipboard = "unnamed,unnamedplus"
+vim.o.clipboard = 'unnamed,unnamedplus'
 
 -- delete
 map({ 'n', 'v' }, 'x', '"_x')
@@ -122,16 +118,12 @@ local function parse_range(opts)
         return arg1 .. ',' .. arg2
     end
 end
-vim.api.nvim_create_user_command(
-    'YankPutBefore',
-    function(opts) vim.cmd('' .. parse_range(opts) .. 'yank | put!') end,
-    { nargs = '+' }
-)
-vim.api.nvim_create_user_command(
-    'YankPutAfter',
-    function(opts) vim.cmd('' .. parse_range(opts) .. 'yank | put') end,
-    { nargs = '+' }
-)
+vim.api.nvim_create_user_command('YankPutBefore', function(opts) --
+    vim.cmd('' .. parse_range(opts) .. 'yank | put!')
+end, { nargs = '+' })
+vim.api.nvim_create_user_command('YankPutAfter', function(opts) --
+    vim.cmd('' .. parse_range(opts) .. 'yank | put')
+end, { nargs = '+' })
 map('n', 'yP', function() vim.fn.feedkeys(':YankPutBefore ') end)
 map('n', 'yp', function() vim.fn.feedkeys(':YankPutAfter ') end)
 vim.api.nvim_create_user_command('DeletePutBefore', function(opts)
