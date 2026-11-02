@@ -42,7 +42,7 @@ map('t', '<c-l>', '<c-\\><c-n><c-w>l')
 -- manually setfiletype
 map('n', '<leader>/', function() vim.fn.feedkeys(':setfiletype ') end, { desc = 'Set file type manually' })
 -- jumping
-map('n', 'g<bs>', '<c-o>zz', { desc = 'jump to previous position' })
-map('n', 'g<cr>', '<c-i>zz', { desc = 'jump to next position' })
+map('n', '{', '<c-o>', { desc = 'jump to previous position' })
+map('n', '}', '<c-i>', { desc = 'jump to next position' })
 map('n', '[j', '<c-o>zz', { desc = 'jump to previous position' })
 map('n', ']j', '<c-i>zz', { desc = 'jump to next position' })
