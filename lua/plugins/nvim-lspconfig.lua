@@ -44,8 +44,8 @@ return {
         -- enable LSPs
         for server, opts in pairs({
             lua_ls = {
-                cmd = { 'lua-language-server', },
-                filetypes = { 'lua', },
+                cmd = { 'lua-language-server' },
+                filetypes = { 'lua' },
                 settings = {
                     Lua = {
                         format = {
@@ -59,17 +59,17 @@ return {
                 },
             },
             bashls = {
-                cmd = { 'bash-language-server', 'start', },
+                cmd = { 'bash-language-server', 'start' },
                 filetypes = { 'sh', 'bash', 'zsh' },
             },
             pyright = {
-                cmd = { 'pyright-langserver', '--stdio', },
-                filetypes = { 'python', },
+                cmd = { 'pyright-langserver', '--stdio' },
+                filetypes = { 'python' },
                 root_markers = { 'pyproject.toml', 'pyrightconfig.json', '.git' },
             },
             rust_analyzer = {
-                cmd = { 'rust-analyzer', },
-                filetypes = { 'rust', },
+                cmd = { 'rust-analyzer' },
+                filetypes = { 'rust' },
             },
         }) do
             vim.lsp.config(server, opts)

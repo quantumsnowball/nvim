@@ -18,31 +18,11 @@ return {
         -- temp fix: setup keymaps using vim cmd
 
         -- example keymaps, see :help Spectre-usage
-        map(
-            'n',
-            '<space>sr',
-            '<cmd>lua require("spectre").open_file_search()<cr><c-w>Ji',
-            { noremap = true, desc = 'spectre: search and replace in current file' }
-        )
-        map(
-            'n',
-            '<space>SR',
-            ":lua require('spectre').open()<cr><c-w>J<c-w>_i",
-            { noremap = true, desc = 'spectre: search and replace, all files' }
-        )
+        map('n', '<space>sr', '<cmd>lua require("spectre").open_file_search()<cr><c-w>Ji', { noremap = true, desc = 'spectre: search and replace in current file' })
+        map('n', '<space>SR', ":lua require('spectre').open()<cr><c-w>J<c-w>_i", { noremap = true, desc = 'spectre: search and replace, all files' })
         -- step: copy, restore selection, open_visual, pull to far bottom, enter insert, paste from " register
-        map(
-            'v',
-            '<space>sr',
-            "ygv<esc>:lua require('spectre').open_visual()<cr><c-w>Jjji<c-r>\"",
-            { noremap = true, desc = 'spectre: search and replace selected text, bottom window' }
-        )
+        map('v', '<space>sr', "ygv<esc>:lua require('spectre').open_visual()<cr><c-w>Jjji<c-r>\"", { noremap = true, desc = 'spectre: search and replace selected text, bottom window' })
         -- step: copy, restore selection, open_visual, pull to far right, enter insert, paste from " register
-        map(
-            'v',
-            '<space>SR',
-            "ygv<esc>:lua require('spectre').open_visual()<cr><c-w>Ljji<c-r>\"",
-            { noremap = true, desc = 'spectre: search and replace selected text, right window' }
-        )
+        map('v', '<space>SR', "ygv<esc>:lua require('spectre').open_visual()<cr><c-w>Ljji<c-r>\"", { noremap = true, desc = 'spectre: search and replace selected text, right window' })
     end,
 }

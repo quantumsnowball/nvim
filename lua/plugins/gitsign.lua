@@ -4,7 +4,7 @@ return {
     'lewis6991/gitsigns.nvim',
     event = 'VimEnter',
     opts = {
-        preview_config = { border = 'rounded', },
+        preview_config = { border = 'rounded' },
     },
     init = function()
         local gitsigns = require('gitsigns')
@@ -38,7 +38,7 @@ return {
             'WinEnter',
             -- fire when task or tmux pane switching
             --   tmux must passing down the focus event (set -g focus-events on)
-            'FocusGained'
+            'FocusGained',
         }, {
             pattern = '*',
             callback = function(args) refresh_gitsigns(args.event) end,
@@ -57,9 +57,7 @@ return {
 
         -- Actions
         map('n', '<leader>s', '<cmd>Gitsigns stage_hunk<cr>')
-        map('v', '<leader>s', function()
-            require('gitsigns').stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
-        end, { desc = 'Gitsigns stage selection' })
+        map('v', '<leader>s', function() require('gitsigns').stage_hunk({ vim.fn.line('.'), vim.fn.line('v') }) end, { desc = 'Gitsigns stage selection' })
         map('n', '<leader>S', '<cmd>Gitsigns stage_buffer<cr>')
         map('n', '<leader>d', '<cmd>Gitsigns reset_hunk<cr>')
         map('v', '<leader>d', '<cmd>Gitsigns reset_hunk<cr>')

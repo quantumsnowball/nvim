@@ -21,8 +21,8 @@ return {
             prev_group = '[',
         },
     },
-    init = function() 
+    init = function()
         local map = require('utils').map
-        map({'n', 'x', 'o'}, 's', '<Plug>(leap)')
+        map({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
     end,
 }

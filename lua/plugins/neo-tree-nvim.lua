@@ -70,8 +70,8 @@ return {
             commands = {
                 open_tabnew_left = function(state)
                     if state.tree:get_node().type ~= 'directory' then
-                        require("neo-tree.sources.common.commands").open_tabnew(state, function() end)
-                        vim.cmd("-tabmove")
+                        require('neo-tree.sources.common.commands').open_tabnew(state, function() end)
+                        vim.cmd('-tabmove')
                     end
                 end,
             },

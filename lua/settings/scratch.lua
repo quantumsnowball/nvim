@@ -14,7 +14,7 @@ function open_scratch(vertical)
     -- 3. Set buffer-local options for the new buffer
     local buf = vim.api.nvim_get_current_buf()
     -- set a unique name for scratch buffer
-    vim.api.nvim_buf_set_name(buf, "Scratch " .. os.date("%H:%M:%S"))
+    vim.api.nvim_buf_set_name(buf, 'Scratch ' .. os.date('%H:%M:%S'))
     -- 'nofile' makes it a scratch buffer (no file on disk)
     vim.api.nvim_set_option_value('buftype', 'nofile', { buf = buf })
     -- 'wipe' deletes the buffer from memory when you close the window
@@ -45,7 +45,7 @@ function open_scratch_tabpage(newtab)
     end
     -- Make the buffer scratch in nature
     local buf = vim.api.nvim_get_current_buf()
-    vim.api.nvim_buf_set_name(buf, "Scratch " .. os.date("%H:%M:%S"))
+    vim.api.nvim_buf_set_name(buf, 'Scratch ' .. os.date('%H:%M:%S'))
     vim.api.nvim_set_option_value('buftype', 'nofile', { buf = buf })
     vim.api.nvim_set_option_value('bufhidden', 'hide', { buf = buf })
     vim.api.nvim_set_option_value('swapfile', false, { buf = buf })
