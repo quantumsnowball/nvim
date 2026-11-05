@@ -53,6 +53,7 @@ M.defaults = {
 M.pickers = {
     find_files = { initial_mode = 'insert' },
     live_grep = { initial_mode = 'insert' },
+    oldfiles = { only_cwd = true },
     jumplist = { show_line = false },
     help_tags = { initial_mode = 'insert' },
     buffers = {
