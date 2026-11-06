@@ -38,6 +38,7 @@ return {
                 kbd = 'kbd',
                 xaml = 'xaml',
                 service = 'sysctl',
+                pbtx = 'textproto',
             },
         })
         -- using an existing parser for another filetype
@@ -71,6 +72,7 @@ return {
                 'regex',
                 'comment',
                 'clojure',
+                'textproto',
                 -- git
                 'gitignore',
                 'git_rebase',
