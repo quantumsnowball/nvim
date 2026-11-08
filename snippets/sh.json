@@ -1,0 +1,65 @@
+{
+    "black": {
+        "prefix": "black",
+        "body": [
+            "\\${BLACK}"
+        ],
+        "description": "Shell BLACK escape sequence"
+    },
+    "red": {
+        "prefix": "red",
+        "body": [
+            "\\${RED}"
+        ],
+        "description": "Shell RED escape sequence"
+    },
+    "green": {
+        "prefix": "green",
+        "body": [
+            "\\${GREEN}"
+        ],
+        "description": "Shell GREEN escape sequence"
+    },
+    "yellow": {
+        "prefix": "yellow",
+        "body": [
+            "\\${YELLOW}"
+        ],
+        "description": "Shell YELLOW escape sequence"
+    },
+    "blue": {
+        "prefix": "blue",
+        "body": [
+            "\\${BLUE}"
+        ],
+        "description": "Shell BLUE escape sequence"
+    },
+    "magenta": {
+        "prefix": "magenta",
+        "body": [
+            "\\${MAGENTA}"
+        ],
+        "description": "Shell MAGENTA escape sequence"
+    },
+    "cyan": {
+        "prefix": "cyan",
+        "body": [
+            "\\${CYAN}"
+        ],
+        "description": "Shell CYAN escape sequence"
+    },
+    "white": {
+        "prefix": "white",
+        "body": [
+            "\\${WHITE}"
+        ],
+        "description": "Shell WHITE escape sequence"
+    },
+    "reset": {
+        "prefix": "reset",
+        "body": [
+            "\\${RESET}"
+        ],
+        "description": "Shell RESET escape sequence"
+    }
+}
