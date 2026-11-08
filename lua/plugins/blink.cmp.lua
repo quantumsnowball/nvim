@@ -96,6 +96,7 @@ return {
         -- elsewhere in your config, without redefining it, due to `opts_extend`
         sources = {
             default = {
+                'lazydev',
                 'lsp',
                 'snippets',
                 'path',
@@ -103,6 +104,12 @@ return {
                 'dictionary',
             },
             providers = {
+                lazydev = {
+                    name = 'LazyDev',
+                    module = 'lazydev.integrations.blink',
+                    -- make lazydev completions top priority (see `:h blink.cmp`)
+                    score_offset = 100,
+                },
                 lsp = {
                     -- Empty fallbacks: buffer no longer waits for LSP to fail
                     -- so buffer will always provide suggestion along with LSP
