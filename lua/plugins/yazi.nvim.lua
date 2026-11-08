@@ -12,4 +12,10 @@ return {
         -- 👇 in this section, choose your own keymappings!
         { '<leader>z', mode = { 'n', 'v' }, '<cmd>Yazi<cr>', desc = 'Open yazi at the current file' },
     },
+    ---@type YaziConfig | {}
+    opts = {
+        keymaps = {
+            cycle_open_buffers = false,
+        },
+    },
 }
