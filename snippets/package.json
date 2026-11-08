@@ -7,7 +7,11 @@
         "path": "./global.json"
       },
       {
-        "language": "sh",
+        "language": [
+          "sh",
+          "zsh",
+          "bash"
+        ],
         "path": "./sh.json"
       },
       {
