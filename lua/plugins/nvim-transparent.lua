@@ -27,6 +27,7 @@ return {
             'CursorLine',
             'CursorColumn',
             'NeoTreeTabActive',
+            'NeoTreeCursorLine',
             'RenderMarkdownCode',
             'RenderMarkdownCodeInline',
         },
