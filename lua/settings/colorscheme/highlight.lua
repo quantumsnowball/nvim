@@ -2,6 +2,9 @@
 local M = {}
 
 M.setup = function(c, opts)
+    local cursor_line = '#0D542B'
+    local cursor_column = '#032E15'
+
     local groups = {
         -- neovim
         Normal = { fg = c.white, bg = c.base2 },
@@ -14,8 +17,8 @@ M.setup = function(c, opts)
         PmenuSbar = { bg = c.base3 },
         ColorColumn = { bg = c.base3 },
         Cursor = { reverse = true },
-        CursorLine = { bg = c.base4 },
-        CursorColumn = { bg = c.base4 },
+        CursorLine = { bg = cursor_line },
+        CursorColumn = { bg = cursor_column },
         NonText = { fg = c.base5 },
         Visual = { bg = c.base4, reverse = true },
         VisualNOS = { bg = c.base3 },
