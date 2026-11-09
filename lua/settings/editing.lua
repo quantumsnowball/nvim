@@ -40,6 +40,9 @@ map('v', '<space>l', '>')
 map('v', '<space>h', '<')
 -- center cursor line
 map({ 'n', 'v' }, 'M', 'zz')
+-- jump to top and bottom of page
+map({ 'n', 'v' }, '{', 'H')
+map({ 'n', 'v' }, '}', 'L')
 -- home and end in insert mode
 map('i', '<C-h>', '<home>')
 map('i', '<C-l>', '<end>')
