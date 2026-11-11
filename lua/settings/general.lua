@@ -40,7 +40,7 @@ map('t', '<c-j>', '<c-\\><c-n><c-w>j')
 map('t', '<c-k>', '<c-\\><c-n><c-w>k')
 map('t', '<c-l>', '<c-\\><c-n><c-w>l')
 -- manually setfiletype
-map('n', '<leader>/', function() vim.fn.feedkeys(':setfiletype ') end, { desc = 'Set file type manually' })
+map('n', '<leader>;', function() vim.fn.feedkeys(':setfiletype ') end, { desc = 'Set file type manually' })
 -- jumping
 map('n', '(', '{', { desc = 'jump to previous paragraph' })
 map('n', ')', '}', { desc = 'jump to next paragraph' })

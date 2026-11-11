@@ -36,6 +36,7 @@ local close_onto_previous_tab = function()
     vim.cmd('tabprevious')
     vim.cmd('tabclose ' .. current_tab)
 end
+map('n', '<leader>/', close_onto_previous_tab, { desc = 'close tab' })
 map('n', 'qt', close_onto_previous_tab, { desc = 'close tab' })
 map('n', 'tq', close_onto_previous_tab, { desc = 'close tab' })
 map('n', 'tc', '<cmd>tabclose<cr>', { desc = 'close tab' })
