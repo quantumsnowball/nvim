@@ -9,8 +9,8 @@ map('n', 'q=', '<cmd>bnext<cr>', { desc = 'next buffer' })
 map('n', 'q;', '<cmd>e #<cr>', { desc = 'edit previous buffer' })
 
 -- navigate between tabpages
-map('n', '<C-]>', '<cmd>tabprevious<cr>', { desc = 'previous tab' })
-map('n', '<C-\\>', '<cmd>tabnext<cr>', { desc = 'next tab' })
+map({ 'n', 'v' }, '<', '<cmd>tabprevious<cr>', { desc = 'previous tab' })
+map({ 'n', 'v' }, '>', '<cmd>tabnext<cr>', { desc = 'next tab' })
 map('n', 'th', '<cmd>tabprevious<cr>', { desc = 'previous tab' })
 map('n', 'tl', '<cmd>tabnext<cr>', { desc = 'next tab' })
 map('n', 'tj', '<cmd>-tabmove<cr>', { desc = 'move tab left' })
